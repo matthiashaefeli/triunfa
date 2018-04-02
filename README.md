@@ -5,13 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby 2.5.0p0
+
+* Rails 5.1.6
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Postgresql
 
 * Database initialization
 
@@ -21,4 +23,43 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+
+
+# Superate Y Triunfa
+
+## Student
+⋅⋅* Name
+⋅⋅* LastName
+⋅⋅* Email
+⋅⋅* Password
+⋅⋅* Course => belongs to course
+⋅⋅* Credits => has many through courses
+⋅⋅* Groupe => belongs to groupe
+
+
+## Admin
+⋅⋅* Name
+⋅⋅* Email
+⋅⋅* Password
+
+
+## Teacher
+⋅⋅* Name
+⋅⋅* Email
+⋅⋅* Password
+⋅⋅* Courses => has many courses
+⋅⋅* Groupes => has many groupes
+
+
+## Course
+⋅⋅* Name
+⋅⋅* Start Date
+⋅⋅* Finish Date
+⋅⋅* Credits => has many credits
+⋅⋅* Groupes => has many groupes
+⋅⋅* Students => has many students
+⋅⋅* Teacher => has many teachers
+
+## Credits
+⋅⋅* Activity
+⋅⋅* Points
