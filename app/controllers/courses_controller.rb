@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
         if course.save
             redirect_to courses_path
         else
-            # missing redirect or errors
+            # missing errors
         end
     end
 
