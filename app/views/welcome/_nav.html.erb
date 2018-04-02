@@ -28,7 +28,11 @@
         <li><a href="">seis</a></li>
         <li><a href="">siete</a></li>
         <li><a href="">ocho</a></li> -->
-        <li><%= link_to "Entrar", new_user_session_path %></li>
+        <% if !current_user %>
+          <li><%= link_to "Entrar", new_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "Salida", destroy_user_session_path, method:"delete" %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
