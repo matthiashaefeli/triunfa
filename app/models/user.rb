@@ -4,9 +4,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :lastname, presence: true
-  validates :group, presence: true
+  # validates :group, presence: true
 
-  belongs_to :group
+  # belongs_to :group
 
   devise :database_authenticatable, :validatable, password_length: 4..4
   

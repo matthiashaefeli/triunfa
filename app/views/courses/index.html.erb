@@ -1,0 +1,20 @@
+<h1>Cursos</h1>
+<div>
+    <table style="width: 50%">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha inicio</th>
+            <th>Fecha final</th>
+        </tr>
+        <% @courses.each do |c| %>
+        <tr>
+          <td><%= link_to c.name, course_path(c.id) %></td>
+          <td><%= c.start %></td>
+          <td><%= c.end %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
+<div>
+    <p><%= link_to "Crear nuevo Curso", new_course_path %></p>
+</div>
