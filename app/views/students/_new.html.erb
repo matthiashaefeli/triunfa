@@ -1,0 +1,14 @@
+<% if @error %>
+<h1><%= @error %></h1>
+<% end %>
+<p>Tienes que pertenecer a un grupo para seguir</p>
+<p>Pregunta el Facilitador por la clave del Grupo</p>
+<%= form_for :student, url: students_path do |f| %>
+    <p>
+        <%= f.label :clave %>
+        <%= f.text_field :key %>
+    </p>
+    <p>
+        <%= f.submit "Guardar Grupo" %>
+    </p>
+<% end %>
