@@ -9,9 +9,14 @@
     </p>
     <p>
         <%= f.label :facilitador %>
-        <%= options_from_collection_for_select(Teacher.all, :id, :name) %>
+        <%= f.select(:teacher, teacher_array, :include_blank => true ) %>
+    </p>
+    <p>
+        <%= f.label :cursos %>
+        <%= f.select(:course, course_array, :include_blank => true ) %>
     </p>
     <p>
         <%= f.submit %>
     </p>
 <% end %>
+<p><%= link_to "Regresar", groups_path %></p>

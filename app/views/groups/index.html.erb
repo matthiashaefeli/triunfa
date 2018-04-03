@@ -1,5 +1,31 @@
 <div>
     <h1>Grupos</h1>
+    <div>
+        <table style="width: 60%">
+            <tr>
+                <th>Nombre</th>
+                <th>Facilitador</th>
+                <th>Curso</th>
+                <th>clave</th>
+                <th>Estudiantes</th>
+                <th>Activo</th>
+            </tr>
+            <% @groups.each do |g| %>
+            <tr>
+                <td><%= link_to g.name, group_path(g.id) %></td>
+                <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
+                <td><%= g.course.name %></td>
+                <td><%= g.key %></td>
+                <td>missing numbers of students</td>
+                <% if g.activ == true %>
+                <td>Si</td>
+                <% else %>
+                <td>No</td>
+                <% end %>
+            </tr>
+            <% end %>
+        </table>
+    </div>
     <p><%= link_to "Crear nuevo Grupo", new_group_path %></p>
 </div>
 <p><%= link_to "Pagina de Inicio", root_path %></p>
