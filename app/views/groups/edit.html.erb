@@ -1,0 +1,31 @@
+<div>
+    <h1>Editar Grupo <%= @group.name %></h1>
+</div>
+<div>
+    <%= form_for :group, url: group_path(@group.id), method: "put" do |f| %>
+        <p>
+            <%= f.label :nombre %>
+            <%= f.text_field :name %>
+        </p>
+        <p>
+            <%= f.label :clave %>
+            <%= f.text_field :key %>
+        </p>
+        <p>
+            <%= f.label :facilitador %>
+            <%= f.select :teacher, options_for_select(teacher_array, selected: actual_teacher(@group.teacher)) %>
+        </p>
+        <p>
+            <%= f.label :cursos %>
+            <%= f.select :course, options_for_select(course_array, selected: [@group.course.name, @group.course.id]) %>
+        </p>
+        <p>
+            <%= f.label :activo %>
+            <%= f.check_box(:activ) %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+    <p><%= link_to "Regresar", groups_path %></p>
+</div>

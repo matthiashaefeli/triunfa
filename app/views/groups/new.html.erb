@@ -1,0 +1,22 @@
+<%= form_for :group, url: groups_path do |f| %>
+    <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :clave %>
+        <%= f.text_field :key %>
+    </p>
+    <p>
+        <%= f.label :facilitador %>
+        <%= f.select(:teacher, teacher_array, :include_blank => true ) %>
+    </p>
+    <p>
+        <%= f.label :cursos %>
+        <%= f.select(:course, course_array, :include_blank => true ) %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+<p><%= link_to "Regresar", groups_path %></p>

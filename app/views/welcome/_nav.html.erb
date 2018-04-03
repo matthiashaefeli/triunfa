@@ -31,13 +31,12 @@
         <% if !current_user %>
           <li><%= link_to "Entrar", new_user_session_path %></li>
         <% else %>
-          <% if current_user.admin %>
-            <li><%= link_to "Cursos", courses_path %></li>
-            <li><%= link_to "Grupos", groups_path %></li>
-          <% else if current_user.teacher %>
-            <li><%= link_to "Grupos", groups_path %></li>
+          <% if check_admin(current_user) == true %>
+          <li><%= link_to "Cursos", courses_path %></li>
+          <li><%= link_to "Grupos", groups_path %></li>
+          <li><%= link_to "Facilitadores", teachers_path %></li>
           <% end %>
-        <% end %>
+
           <li><%= link_to "Salida", destroy_user_session_path, method:"delete" %></li>
         <% end %>
       </ul>
