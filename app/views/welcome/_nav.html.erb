@@ -39,7 +39,7 @@
           <% elsif searched_user == "teacher" %>
             <li><%= link_to "Grupos", groups_path %></li>
           <% elsif searched_user == "student" %> 
-          <li>Students</li>
+          <li><%= link_to "Students" %></li>
           <% else %>
           <% end %>
           <li><%= link_to "Salida", destroy_user_session_path, method:"delete" %></li>
