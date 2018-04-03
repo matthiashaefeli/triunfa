@@ -1,0 +1,17 @@
+<%= form_for @teacher.user, url: teacher_path(@teacher.id), method: "put" do |f| %>
+    <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :apellido %>
+        <%= f.text_field :lastname %>
+    </p>
+    <p>
+        <%= f.label :correo %>
+        <%= f.text_field :email %>
+    </p>
+    <p>
+        <%= f.submit "Guardar Cambios" %>
+    </p>
+<% end %>

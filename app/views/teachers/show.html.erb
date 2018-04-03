@@ -1,0 +1,13 @@
+<div>
+    <p>Nombre: <%= @teacher.user.name %></p>
+    <p>Apellido: <%= @teacher.user.lastname %></p>
+    <p>Correo: <%= @teacher.user.email %></p>
+    <p>Grupos que pertenece:</p>
+    <ul>
+        <% @teacher.groups.each do |group| %>
+        <li>Nombre Grupo: <%= link_to group.name, group_path(group.id) %></li>
+        <% end %>
+    </ul>
+</div>
+<p><%= link_to "editar", edit_teacher_path(@teacher.id) %></p>
+<p><%= link_to "regresa", teachers_path %></p>

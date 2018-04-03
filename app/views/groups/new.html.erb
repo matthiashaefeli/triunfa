@@ -1,0 +1,17 @@
+<%= form_for :group, url: groups_path do |f| %>
+    <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :clave %>
+        <%= f.text_field :key %>
+    </p>
+    <p>
+        <%= f.label :facilitador %>
+        <%= options_from_collection_for_select(Teacher.all, :id, :name) %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

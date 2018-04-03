@@ -34,6 +34,7 @@
           <% if check_admin(current_user) == true %>
           <li><%= link_to "Cursos", courses_path %></li>
           <li><%= link_to "Grupos", groups_path %></li>
+          <li><%= link_to "Facilitadores", teachers_path %></li>
           <% end %>
 
           <li><%= link_to "Salida", destroy_user_session_path, method:"delete" %></li>

@@ -1,0 +1,20 @@
+<h1>Facilitadores</h1>
+<div>
+    <table style="width: 50%">
+        <tr>
+            <th>Nombre</th>
+            <th>Appelido</th>
+            <th>Correo</th>
+        </tr>
+        <% @teachers.each do |t| %>
+        <tr>
+          <td><%= link_to t.user.name, teacher_path(t.id) %></td>
+          <td><%= t.user.lastname %></td>
+          <td><%= t.user.email %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
+<div>
+    <p><%= link_to "Adjuntar Facilitador", new_teacher_path %></p>
+</div>
