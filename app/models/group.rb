@@ -3,5 +3,7 @@ class Group < ApplicationRecord
     validates :activ, presence: true
     validates :key, presence: true
 
-    belongs_to :cours
+    # belongs_to :cours
+    belongs_to :teacher
+    has_many :students
 end
