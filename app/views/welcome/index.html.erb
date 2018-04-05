@@ -2,14 +2,15 @@
 <% if searched_user == "new_user" %>
     <%= render "./students/new.html.erb" %>
 <% end %>
-<% if searched_user == "admin" %>
+<% if searched_user == "admin" || searched_user == "teacher" %>
     <p>Forums de los grupos</p>
     <% @rooms.each do |r| %>
         <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
     <% end %>
 <% end %>
-<h2>Forum</h2>
+
 <% if searched_user == "student" %>
+    <h2>Forum</h2>
     <%= form_for :message, url: messages_path do |f| %>
         <%= f.label :text %>
         <%= f.text_area :body, id: "message-body" %>
