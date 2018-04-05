@@ -3,7 +3,7 @@
     <%= render "./students/new.html.erb" %>
 <% end %>
 <% if searched_user == "admin" %>
-    <p>Groups Chats</p>
+    <p>Forums de los grupos</p>
     <% @rooms.each do |r| %>
         <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
     <% end %>
