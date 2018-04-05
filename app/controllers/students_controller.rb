@@ -13,4 +13,16 @@ class StudentsController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+        student = Student.find(params[:id])
+        student.avatar = params[:student][:avatar]
+        student.save
+        redirect_to root_path
+    end
+
+
+
 end
