@@ -25,12 +25,14 @@ class TeachersController < ApplicationController
 
     def update
         teacher = Teacher.find(params[:id])
+        teacher.avatar = params[:user][:avatar]
+        teacher.save
         user = User.find(teacher.user.id)
         user.name = params[:user][:name]
         user.lastname = params[:user][:lastname]
         user.email = params[:user][:email]
         user.save
-        redirect_to teachers_path
+        redirect_to root_path
     end
 
     private
