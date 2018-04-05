@@ -14,7 +14,10 @@
     <%= form_for :message, url: messages_path do |f| %>
         <%= f.label :text %>
         <%= f.text_area :body, id: "message-body" %>
-
+        <p>
+            <%= f.label :adjuntar_imagen %>
+            <%= f.file_field :avatar %>
+        </p>
         <br>
         <%= f.submit "Enviar Mensaje" %>
     <% end %>
