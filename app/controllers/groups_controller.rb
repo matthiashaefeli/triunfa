@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
        course = Course.find(group_params[:course])
        group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course)
        group.save
+       room = Room.create(group: group)
        redirect_to groups_path
     end
 

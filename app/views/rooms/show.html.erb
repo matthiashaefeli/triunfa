@@ -1,0 +1,9 @@
+<div><%= @room.group.name %></div>
+<%= form_for :message, url: messages_path do |f| %>
+  <%= f.label :text %>
+  <%= f.text_area :body, id: "message-body" %>
+  <%= hidden_field_tag "room", @room.id  %>
+  <br>
+  <%= f.submit "Enviar Mensaje" %>
+<% end %>
+<%= render "messages/messages" %>
