@@ -2,11 +2,11 @@
     <div class="message">
         <strong><%= m.user.name %> <%= m.user.lastname %></strong> dijo:
         <%= m.body %>
-        <br>
         <% if  m.avatar_file_name != nil %>
-        <%= image_tag m.avatar.url(:medium) %>
-        <% end %>
         <br>
+        <%= image_tag m.avatar.url(:medium) %>
+        <br>
+        <% end %>
         <small>el <%= l m.created_at, format: :short %></small>
         <hr>
     </div>

@@ -2,7 +2,7 @@
 <% if searched_user == "new_user" %>
     <%= render "./students/new.html.erb" %>
 <% end %>
-<% if searched_user == "admin" || searched_user == "teacher" %>
+<% if searched_user == "admin" %>
     <p>Forums de los grupos</p>
     <% @rooms.each do |r| %>
         <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
@@ -10,10 +10,28 @@
 <% end %>
 
 <% if searched_user == "student" %>
-    <h2>Forum</h2>
-    <%= form_for :message, url: messages_path do |f| %>
+    <p>Forums de tu grupo</p>
+    <% @rooms.each do |r| %>
+        <% if r.group == (Student.find_by(user: current_user)).group %>
+            <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
+        <% end %>
+    <% end %>
+<% end %>
+
+<% if searched_user == "teacher" %>
+    <p>Forums de los grupos</p>
+    <% @rooms.each do |r| %>
+        <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
+    <% end %>
+<% end %>
+
+
+
+<% if current_user %>
+    <h2>Chat para todos</h2>
+    <%= form_for :chat, url: chats_path, remote: true do |f| %>
         <%= f.label :text %>
-        <%= f.text_area :body, id: "message-body" %>
+        <%= f.text_area :body %>
         <p>
             <%= f.label :adjuntar_imagen %>
             <%= f.file_field :avatar %>
@@ -21,5 +39,8 @@
         <br>
         <%= f.submit "Enviar Mensaje" %>
     <% end %>
-    <%= render "messages/messages" %>
+    <div id="chat-table">
+    <%= render "chats/chats" %>
+    </div>
+    
 <% end %>
