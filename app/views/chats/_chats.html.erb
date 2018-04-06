@@ -1,0 +1,21 @@
+<% @chats.each do |c| %>
+    <div class="chats">
+        <div class="chat-user">
+        <%= c.user.name %> <%=c.user.lastname %> dijo:
+        </div>
+        <div class="chat-body">
+        <%=c.body %>
+        </div>
+        <div class="chat-image">
+        <% if  c.avatar_file_name != nil %>
+        <br>
+        <%= image_tag c.avatar.url(:medium) %>
+        <br>
+        <% end %>
+        </div>
+        <div class="chat-fin">
+        <small>el <%= l c.created_at, format: :short %></small>
+        </div>
+        <hr>
+    </div>
+<% end %>
