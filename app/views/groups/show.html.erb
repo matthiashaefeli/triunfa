@@ -3,13 +3,43 @@
     <p>Curso: <%= @group.course.name %></p>
     <p>Clave: <%= @group.key %></p>
     <p>Facilitador: <%= @group.teacher.user.name %> <%= @group.teacher.user.lastname %></p>
-    <p>Activo: 
-        <% if @group.activ == true %>
-         Si
-        <% else %>
-         No
-        <% end %> 
-    </p>
+    <% if @group.activ == true %>
+        <p>Activo: Si</p>
+        <p><%= link_to "Editar Grupo", edit_group_path(@group.id) %></p>
+        <h3>Estudiantes:</h3>
+        <table style="width: 50%">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            <% @group.students.each do |student| %>
+            <tr>
+                <td><%= student.user.name %></td>
+                <td><%= student.user.lastname %></td>
+                <td><%= student.user.email %></td>
+            </tr>    
+            <% end %>
+        </table>
+    <% else %>
+        <p>Activo: No</p>
+        <h3>Estudiantes:</h3>
+        <table style="width: 50%">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+            <% @igroups.each do |group| %>
+            <tr>
+                <td><%= group.user.name %></td>
+                <td><%= group.user.lastname %></td>
+                <td><%= group.user.email %></td>
+            </tr>    
+            <% end %>
+        </table>
+
+    <% end %> 
 </div>
-<p><%= link_to "Editar Grupo", edit_group_path(@group.id) %></p>
+
 <p><%= link_to "Regresar", groups_path %></p>

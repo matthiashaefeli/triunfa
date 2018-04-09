@@ -51,13 +51,10 @@
             <% end %>
 
             <!-- nav for students -->
-          <% elsif searched_user == "student" %>
-            <% if  (Student.find_by(user: current_user)).avatar_file_name == nil %>
-              <li><%= link_to current_user.name, edit_student_path(Student.find_by(user: current_user.id)) %></li>
-            <% else %>
-              <li><%= link_to image_tag (Student.find_by(user: current_user)).avatar.url(:thumb), :class => "user-avatar" %></li>
-            <% end %>
+
+
           <% else %>
+
           <% end %>
 
           <!-- logout for all -->

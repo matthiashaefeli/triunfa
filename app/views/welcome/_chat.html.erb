@@ -1,0 +1,18 @@
+<div>
+    <h2>Chat para todos</h2>
+    <%= form_for :chat, url: chats_path do |f| %>  
+        <p>
+            <%= f.text_area :body, :id => "chat_box" %>
+        </p>
+        <p>
+            <%= f.label :adjuntar_imagen %>
+            <%= f.file_field :avatar %>
+        </p>
+
+        <%= f.submit "Enviar Mensaje", :id => "chat_send"%>
+    <% end %>
+
+    <div id="chat-table">
+            <%= render "chats/chats" %>
+    </div> 
+</div>

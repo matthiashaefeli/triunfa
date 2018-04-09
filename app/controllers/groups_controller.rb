@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
     before_action :who_is
 
     def index
-        @groups = Group.all
+        @groups = Group.order(created_at: :desc)
     end
 
     def new
@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
 
     def show
         @group = Group.find(params[:id])
+        @igroups = Igroup.where(group_id: @group.id)
     end
 
     def edit
@@ -30,6 +31,12 @@ class GroupsController < ApplicationController
         group = Group.find(params[:id])
         teacher = Teacher.find(group_params[:teacher])
         course = Course.find(group_params[:course])
+        if params[:group][:activ] == "0"
+            group.students.each do |student|
+                igroup = Igroup.create(user: student.user, group: group)
+                student.delete
+            end
+        end
         group.update_attributes(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, activ: params[:group][:activ].to_i)
         group.save
         redirect_to groups_path

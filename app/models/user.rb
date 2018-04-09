@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :students
   has_many :messages
   has_many :chats
+  has_many :igroups
 
   devise :database_authenticatable, :validatable, password_length: 4..4
   
