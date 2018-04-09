@@ -1,34 +1,33 @@
-<% searched_user = check_user(current_user) %>
-<% if searched_user == "new_user" %>
-    <%= render "./students/new.html.erb" %>
-<% end %>
+<% if current_user %>
 
-<% if searched_user == "admin" %>
-    <p>Forums de los grupos</p>
-    <% @rooms.each do |r| %>
-        <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
-    <% end %>
-<% end %>
+    <% searched_user = check_user(current_user) %>
+    <% if searched_user == "new_user" %>
+        <%= render "./students/new.html.erb" %>
 
-<% if searched_user == "student" %>
-    <p>Forums de tu grupo</p>
-    <% @rooms.each do |r| %>
-        <% if r.group == (Student.find_by(user: current_user)).group %>
+
+    <% elsif searched_user == "admin" %>
+        <p>Forums de los grupos</p>
+        <% @rooms.each do |r| %>
+            <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
+        <% end %>
+
+
+    <% elsif searched_user == "student" %>
+        <p>Forums de tu grupo</p>
+        <% @rooms.each do |r| %>
+            <% if r.group == (Student.find_by(user: current_user)).group %>
+                <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
+            <% end %>
+        <% end %>
+
+
+    <% elsif searched_user == "teacher" %>
+        <p>Forums de los grupos</p>
+        <% @rooms.each do |r| %>
             <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
         <% end %>
     <% end %>
-<% end %>
 
-<% if searched_user == "teacher" %>
-    <p>Forums de los grupos</p>
-    <% @rooms.each do |r| %>
-        <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
-    <% end %>
-<% end %>
-
-
-
-<% if current_user %>
     <h2>Chat para todos</h2>
     <%= form_for :chat, url: chats_path do |f| %>  
         <p>
