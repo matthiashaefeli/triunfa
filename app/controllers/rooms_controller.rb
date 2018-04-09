@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
 
     def show
         @room = Room.find(params[:id])
-        @messages = Message.where(room: @room).order(created_at: :desc)
+        @messages = Message.where(room: @room).order(created_at: :desc).limit(10)
     end
 
     def logged_in
