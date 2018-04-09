@@ -16,12 +16,8 @@
                 <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
                 <td><%= g.course.name %></td>
                 <td><%= g.key %></td>
-                <td>missing numbers of students</td>
-                <% if g.activ == true %>
-                <td>Si</td>
-                <% else %>
-                <td>No</td>
-                <% end %>
+                <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
+                <td><%= g.activ ? "Si" : "No" %></td>
             </tr>
             <% end %>
         </table>
