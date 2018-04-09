@@ -2,6 +2,7 @@
 <% if searched_user == "new_user" %>
     <%= render "./students/new.html.erb" %>
 <% end %>
+
 <% if searched_user == "admin" %>
     <p>Forums de los grupos</p>
     <% @rooms.each do |r| %>
@@ -29,18 +30,21 @@
 
 <% if current_user %>
     <h2>Chat para todos</h2>
-    <%= form_for :chat, url: chats_path, remote: true do |f| %>
-        <%= f.label :text %>
-        <%= f.text_area :body %>
+    <%= form_for :chat, url: chats_path do |f| %>  
+        <p>
+            <%= f.text_area :body, :id => "chat_box" %>
+        </p>
         <p>
             <%= f.label :adjuntar_imagen %>
             <%= f.file_field :avatar %>
         </p>
-        <br>
-        <%= f.submit "Enviar Mensaje" %>
+
+        <%= f.submit "Enviar Mensaje", :id => "chat_send"%>
     <% end %>
+
     <div id="chat-table">
     <%= render "chats/chats" %>
     </div>
+
     
 <% end %>
