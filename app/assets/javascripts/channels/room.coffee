@@ -6,8 +6,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+  
     # Called when there's incoming data on the websocket for this channel
-    unless data.image == ""
+    if data.image != ""
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
         data.name + '<span> dijo: </span>' +
@@ -24,7 +25,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '</div>' +
         '<hr>' +
         '</div>'
-    else
+    else 
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
         data.name + '<span> dijo: </span>' +
