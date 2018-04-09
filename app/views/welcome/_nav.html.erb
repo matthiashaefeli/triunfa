@@ -61,9 +61,9 @@
           <% end %>
 
           <!-- logout for all -->
-          <li><%= link_to "Salida", destroy_user_session_path, method:"delete" %></li>
+          <li><%= link_to "Salida", welcome_path(current_user.id), method:"delete" %></li>
         <% end %>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

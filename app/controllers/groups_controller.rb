@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
 
+    before_action :who_is
+
     def index
         @groups = Group.all
     end
@@ -36,6 +38,17 @@ class GroupsController < ApplicationController
     private
     def group_params
         params.require(:group).permit(:name, :key, :teacher, :course)
+    end
+
+    def who_is
+        admins  = []
+        Admin.all.each do |a|
+            admins.push(a.user.email)
+        end
+        if admins.include?(current_user.email)
+            return true  
+        end
+        redirect_to root_path
     end
 
 end

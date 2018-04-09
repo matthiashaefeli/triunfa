@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
 
+    before_action :who_is
+
     def index
         @courses = Course.all
     end
@@ -42,6 +44,17 @@ class CoursesController < ApplicationController
     private
     def course_params
         params.require(:course).permit(:name, :start, :end, :avatar)
+    end
+    
+    def who_is
+        admins  = []
+        Admin.all.each do |a|
+            admins.push(a.user.email)
+        end
+        if admins.include?(current_user.email)
+            return true  
+        end
+        redirect_to root_path
     end
 
 

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-    
+
     def index
         @rooms = Room.all
         @groups = Group.all
@@ -10,5 +10,11 @@ class WelcomeController < ApplicationController
             @messages = Message.where(room: room).order(created_at: :desc)
         end
     end
+
+    def destroy
+        sign_out_and_redirect(current_user)
+    end
+
+    private
 
 end

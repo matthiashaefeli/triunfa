@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+
+    before_action :logged_in
+    
     def create
             room = Room.find(params[:room])
             message = Message.new(room: room, body: params[:message][:body], user: current_user, avatar: params[:message][:avatar])
@@ -17,6 +20,14 @@ class MessagesController < ApplicationController
                                              room: room.id
             end
             redirect_to room_path(params[:room])
+    end
+
+    private
+
+    def logged_in
+        if !current_user
+            redirect_to root_path
+        end
     end
 end
 
