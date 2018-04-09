@@ -1,13 +1,16 @@
 <div><%= @room.group.name %></div>
 <%= form_for :message, url: messages_path do |f| %>
   <%= f.label :text %>
-  <%= f.text_area :body, id: "message-body" %>
+  <%= f.text_area :body, :id => "message-body" %>
   <%= hidden_field_tag "room", @room.id  %>
   <br>
   <p>
     <%= f.label :adjuntar_imagen %>
     <%= f.file_field :avatar %>
   </p>
-  <%= f.submit "Enviar Mensaje" %>
+  <%= f.submit "Enviar Mensaje", :id => "message_send" %>
 <% end %>
+<div id="message_room<%= @room.id %>">
 <%= render "messages/messages" %>
+</div>
+

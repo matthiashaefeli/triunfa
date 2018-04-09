@@ -1,13 +1,22 @@
+
 <% @messages.each do |m| %>
     <div class="message">
-        <strong><%= m.user.name %> <%= m.user.lastname %></strong> dijo:
-        <%= m.body %>
+        <div class="message-user">
+        <%= m.user.name %> <%=m.user.lastname %> dijo:
+        </div>
+        <div class="message-body">
+        <%=m.body %>
+        </div>
+        <div class="message-image">
         <% if  m.avatar_file_name != nil %>
         <br>
         <%= image_tag m.avatar.url(:medium) %>
         <br>
         <% end %>
+        </div>
+        <div class="message-fin">
         <small>el <%= l m.created_at, format: :short %></small>
+        </div>
         <hr>
     </div>
 <% end %>
