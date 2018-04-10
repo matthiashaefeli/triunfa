@@ -1,23 +1,33 @@
 <% if current_user %>
+    <% if !online.online %>
+        <% update_online(check_user(current_user)) %>
+    <% end %>
+
+
+    <div id="online_users">
+    <% all_users.each do |user| %>
+        <p><%= user.user.name %> <%= user.user.lastname %></p>
+    <% end %>
+    </div>
 
     <% searched_user = check_user(current_user) %>
 
     <% if searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
-    <% elsif searched_user == "admin" %>
+    <% elsif searched_user == Admin %>
         <p>Forums de los grupos</p>
         <% @rooms.each do |r| %>
             <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
         <% end %>
         <%= render "chat.html.erb" %>
 
-    <% elsif searched_user == "student" %>
+    <% elsif searched_user == Student %>
         <p>Forum de tu grupo</p>
         <%= link_to Student.find_by(user: current_user).group.name, room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %>
         <%= render "chat.html.erb" %>
 
-    <% elsif searched_user == "teacher" %>
+    <% elsif searched_user == Teacher %>
         <p>Forums de los grupos</p>
         <% @teacher_rooms.each do |r| %>
             <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
@@ -25,4 +35,6 @@
         <%= render "chat.html.erb" %>
     <% end %>
 <% end %>
+
+
     
