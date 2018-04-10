@@ -10,10 +10,12 @@ class WelcomeController < ApplicationController
     
 
     def destroy
-        ActionCable.server.broadcast 'offline_channel',
-                                         delete_id:  current_user.id
+        if check_user(current_user) != "new_user"
+            ActionCable.server.broadcast 'offline_channel',
+                                            delete_id:  current_user.id
 
-        update_offline(check_user(current_user))
+            update_offline(check_user(current_user))
+        end
         sign_out_and_redirect(current_user)
     end
 
@@ -44,6 +46,8 @@ class WelcomeController < ApplicationController
                 return Teacher
             elsif admins.include?(user.email)
                 return Admin 
+            else
+                return "new_user"
             end
         end
     end

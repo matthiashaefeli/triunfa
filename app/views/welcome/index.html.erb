@@ -1,5 +1,5 @@
 <% if current_user %>
-    <% if !online.online %>
+    <% if check_user(current_user) != "new_user" && !online.online %>
         <% update_online(check_user(current_user)) %>
     <% end %>
 
