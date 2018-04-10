@@ -1,4 +1,4 @@
-App.online = App.cable.subscriptions.create "OnlineChannel",
+App.offline = App.cable.subscriptions.create "OfflineChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -6,9 +6,6 @@ App.online = App.cable.subscriptions.create "OnlineChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-  
     # Called when there's incoming data on the websocket for this channel
-    $("#online_users").prepend '<p id="'+data.id+'" >' +
-    data.name +
-    '</p>'
-    
+    id = '#online'+data.delete_id
+    $(id).remove()

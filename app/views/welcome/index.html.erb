@@ -6,7 +6,7 @@
 
     <div id="online_users">
     <% all_users.each do |user| %>
-        <p><%= user.user.name %> <%= user.user.lastname %></p>
+        <p id="online<%= user.user.id %>"><%= user.user.name %> <%= user.user.lastname %></p>
     <% end %>
     </div>
 

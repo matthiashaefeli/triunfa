@@ -8,9 +8,11 @@ module WelcomeHelper
         u = user_to_update.find_by(user: current_user)
         u.online = true
         u.save
+        id = "online#{current_user.id}"
         name = "#{current_user.name} #{current_user.lastname}" 
         ActionCable.server.broadcast 'online_channel',
-                                         name:  name
+                                         name:  name,
+                                         id: id
     end
 
     def all_users
