@@ -10,6 +10,9 @@ class WelcomeController < ApplicationController
     
 
     def destroy
+        ActionCable.server.broadcast 'offline_channel',
+                                         delete_id:  current_user.id
+
         update_offline(check_user(current_user))
         sign_out_and_redirect(current_user)
     end
