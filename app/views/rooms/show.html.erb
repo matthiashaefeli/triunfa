@@ -1,16 +1,21 @@
-<div><%= @room.group.name %></div>
-<%= form_for :message, url: messages_path do |f| %>
-  <%= f.label :text %>
-  <%= f.text_area :body, :id => "message-body" %>
-  <%= hidden_field_tag "room", @room.id  %>
-  <br>
-  <p>
-    <%= f.label :adjuntar_imagen %>
-    <%= f.file_field :avatar %>
-  </p>
-  <%= f.submit "Enviar Mensaje", :id => "message_send" %>
-<% end %>
-<div id="message_room<%= @room.id %>">
-<%= render "messages/messages" %>
+<div class="room">
+  <h3>Forum del Grupo <%= @room.group.name %></h3>
+  <%= form_for :message, url: messages_path do |f| %>
+    <p>
+      <%= f.label :adjuntar_imagen %>
+      <%= f.file_field :avatar, :id => "file-field" %>
+    </p>
+    <p>
+      <%= f.label :text %>
+      <%= f.text_area :body, :id => "message-body" %>
+      <%= hidden_field_tag "room", @room.id  %>
+    </p>
+    <br>
+    <%= f.submit "Enviar Mensaje", :id => "message_send" %>
+  <% end %>
+  <hr>
+  <div id="message_room<%= @room.id %>">
+  <%= render "messages/messages" %>
+  </div>
+  <%= link_to "Regresar", root_path %>
 </div>
-<%= link_to "Regresar", root_path %>

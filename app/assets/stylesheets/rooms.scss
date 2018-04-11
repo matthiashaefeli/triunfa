@@ -1,3 +1,18 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.room {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#file-field {
+    margin: 0 auto;
+}
+
+#message-body {
+    width: 300px;
+    height: 80px;
+}

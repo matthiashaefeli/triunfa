@@ -51,7 +51,8 @@
             <% end %>
 
             <!-- nav for students -->
-
+            <% elsif searched_user == Student %>
+            <li><%= link_to "Forum", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></li>
 
           <% else %>
 

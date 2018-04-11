@@ -13,7 +13,7 @@
     background-size: cover;
 }
 
-.programa {
+.program {
     width: 20em;
     height: 15em;
     background-color: #B3E5FC;
@@ -22,11 +22,11 @@
     
 }
 
-.programa p {
+.program p {
     font-size: 1em;
 }
 
-.programa-child {
+.program-child {
     display: table-cell;
     vertical-align: middle;
 }
@@ -103,7 +103,7 @@
         margin: 5%;
     }
 
-    .programa {
+    .program {
         margin: auto;
     }
 
@@ -115,5 +115,9 @@
     .logo_login {
         width: 80%;
         height: auto;
+    }
+
+    .home-currentuser {
+        flex-direction: column;
     }
 }
