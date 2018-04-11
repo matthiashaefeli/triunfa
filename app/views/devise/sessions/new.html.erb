@@ -1,9 +1,9 @@
 
 <div class="text-center flex-container">
-  <div class="item">
+  <div class="item-login">
       <%= image_tag "logo.png", :class => "logo_login" %>
   </div>
-  <div class="item">
+  <div class="item-login">
     <h2>Entrar</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -30,6 +30,7 @@
       <% end %>
 
       <div>
+      <br>
         <%= link_to "Registrar", new_user_registration_path %>
       </div>
   </div>

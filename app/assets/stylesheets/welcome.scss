@@ -1,10 +1,9 @@
 // welcome page without current user
 
 #index-home {
-
     width: 100%;
     height: auto;
-    padding: 200px 0;
+    padding: 250px 0;
     text-align: center;
     background: url("home.jpg") no-repeat top center scroll;
     background-color: black;
@@ -32,6 +31,21 @@
     vertical-align: middle;
 }
 
+#courses-title {
+    width: 100%;
+    height: 50px;
+    background-color: #E1F5FE;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#courses {
+    display: flex;
+    justify-content: center;
+}
+
+
+
 
 // login and registaration
 
@@ -40,7 +54,7 @@
     justify-content: center;
 }
 
-.item {
+.item-login {
     margin: 15%;
 }
 
@@ -54,7 +68,11 @@
         flex-direction: column;
     }
 
-    .item {
+    .item-login {
         margin: 5%;
+    }
+
+    .programa {
+        margin: auto;
     }
 }
