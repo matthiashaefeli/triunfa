@@ -1,8 +1,27 @@
-<% if current_user %>
+
+<% if !current_user %>
+<div id="index-home">
+    <div class="programa">
+        <div class="programa-child">
+            <h4>Programa educativo de<br>Superate y Triunfa</h4>
+            <p>
+            Una experiencia de aprendizaje práctica<br> que
+            enseña Aprendizaje Digital y Alfabetización Financiera
+            en una sala de computación siguiendo nuestro
+            plan de estudios amigable.
+            </p>
+        </div>
+    </div>
+
+</div>
+<div id="courses">
+</div>
+
+<% else %>
+<div>
     <% if check_user(current_user) != "new_user" && !online.online %>
         <% update_online(check_user(current_user)) %>
     <% end %>
-
 
     <div id="online_users">
     <% all_users.each do |user| %>
@@ -34,7 +53,9 @@
         <% end %>
         <%= render "chat.html.erb" %>
     <% end %>
+</div>
 <% end %>
+
 
 
     
