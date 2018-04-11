@@ -76,6 +76,21 @@
     flex-grow: 3;
 }
 
+#all-rooms {
+    display: none;
+}
+
+#all-rooms-text:hover {
+    cursor: pointer;
+}
+
+#who-is-online {
+    display: none;
+}
+
+#who-is:hover {
+    cursor: pointer;
+}
 
 
 // login and registaration
