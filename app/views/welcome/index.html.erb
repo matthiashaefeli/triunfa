@@ -18,7 +18,16 @@
     <h1>Cursos</h1>
 </div>
 <div id="courses">
-
+    <div class="items-courses"><%= link_to image_tag("word.png", :class => "course-img"), new_user_session_path %></div>
+    <div class="items-courses"><%= link_to image_tag("excel.png", :class => "course-img"), new_user_session_path %></div>
+    <div class="items-courses"><%= link_to image_tag("power.png", :class => "course-img"), new_user_session_path %></div>
+</div>
+<div id="courses-title">
+    <h1>Links</h1>
+</div>
+<div id="courses">
+    <div class="items-courses"><%= link_to image_tag("juntos.jpg", :class => "course-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
+    <div class="items-courses"><%= link_to image_tag("parents.png", :class => "course-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
 </div>
 
 <% else %>

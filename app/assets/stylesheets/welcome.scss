@@ -16,7 +16,7 @@
 .programa {
     width: 20em;
     height: 15em;
-    background-color: #E1F5FE;
+    background-color: #B3E5FC;
     margin-left: 60%;
     display: table;
     
@@ -34,14 +34,32 @@
 #courses-title {
     width: 100%;
     height: 50px;
-    background-color: #E1F5FE;
-    margin-top: 20px;
+    background-color: #B3E5FC;
+    margin-top: 30px;
     text-align: center;
 }
 
 #courses {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.items-courses {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.course-img {
+    width: 100px;
+    height: 100px;
+}
+
+.things-title {
+    width: 100%;
+    height: 50px;
+    background-color: #B3E5FC;
+    margin-top: 30px;
+    text-align: center;
 }
 
 
@@ -74,5 +92,15 @@
 
     .programa {
         margin: auto;
+    }
+
+    .course-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo_login {
+        width: 80%;
+        height: auto;
     }
 }
