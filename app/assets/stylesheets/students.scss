@@ -7,3 +7,15 @@
     height: 20px;
     width: 20px;
 }
+
+.new-student {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    .new-student {
+        font-size: 1.2em;
+    }
+}

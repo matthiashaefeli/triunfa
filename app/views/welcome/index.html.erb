@@ -29,15 +29,18 @@
     <div class="items-courses"><%= link_to image_tag("juntos.jpg", :class => "course-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
     <div class="items-courses"><%= link_to image_tag("parents.png", :class => "course-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
 </div>
-
+<%= render 'welcome/footer' %>
 <% else %>
-<div>
+
+
+<div class="home-currentuser">
     <% if check_user(current_user) != "new_user" && !online.online %>
         <% update_online(check_user(current_user)) %>
     <% end %>
 
-    <div id="online_users">
-    <% all_users.each do |user| %>
+    <div id="online_users" class="currentuser-item-size-one">
+        <p>Quien esta en linea?</p>
+        <% all_users.each do |user| %>
         <p id="online<%= user.user.id %>"><%= user.user.name %> <%= user.user.lastname %></p>
     <% end %>
     </div>
@@ -47,6 +50,8 @@
     <% if searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
+        
+
     <% elsif searched_user == Admin %>
         <p>Forums de los grupos</p>
         <% @rooms.each do |r| %>
@@ -55,9 +60,15 @@
         <%= render "chat.html.erb" %>
 
     <% elsif searched_user == Student %>
-        <p>Forum de tu grupo</p>
-        <%= link_to Student.find_by(user: current_user).group.name, room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %>
+    <div class="currentuser-item-size-two">
+        <div>
+            <%= image_tag (check_user(current_user)).find_by(user: current_user).group.course.avatar.url(:medium) %>
+        </div>
+        <br>
+        <p><%= link_to "Click aqui para entrar al Forum de tu Grupo", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></p>
+        <br>
         <%= render "chat.html.erb" %>
+    </div>
 
     <% elsif searched_user == Teacher %>
         <p>Forums de los grupos</p>
@@ -68,6 +79,7 @@
     <% end %>
 </div>
 <% end %>
+
 
 
 

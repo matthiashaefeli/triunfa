@@ -62,6 +62,19 @@
     text-align: center;
 }
 
+.home-currentuser {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.currentuser-item-size-one {
+    flex-grow: 1;
+}
+
+.currentuser-item-size-two {
+    flex-grow: 3;
+}
 
 
 
