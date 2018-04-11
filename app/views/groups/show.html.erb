@@ -2,13 +2,16 @@
     <p>Nombre de Grupo: <%= @group.name %></p>
     <p>Curso: <%= @group.course.name %></p>
     <p>Clave: <%= @group.key %></p>
-    <p>Facilitador: <%= @group.teacher.user.name %> <%= @group.teacher.user.lastname %></p>
+    <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
+    <p>Facilitador: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
     <% if @group.activ == true %>
         <p>Activo: Si</p>
-        <p id="edit-group">Editar Grupo</p>
-        <div id="edit-group-hidden">
-            <%= render "edit.html.erb" %>
-        </div>
+        <% if check_user(current_user) == Admin %>
+            <p id="edit-group">Editar Grupo</p>
+            <div id="edit-group-hidden">
+                <%= render "edit.html.erb" %>
+            </div>
+        <% end %>
         <h3>Estudiantes:</h3>
         <table class="table table-hover table-bordered" id="group-table-show">
             <thead>
@@ -31,19 +34,23 @@
     <% else %>
         <p>Activo: No</p>
         <h3>Estudiantes:</h3>
-        <table style="width: 50%">
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-            </tr>
-            <% @igroups.each do |group| %>
-            <tr>
-                <td><%= group.user.name %></td>
-                <td><%= group.user.lastname %></td>
-                <td><%= group.user.email %></td>
-            </tr>    
-            <% end %>
+        <table class="table table-hover table-bordered" id="igroup-table-show">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @igroups.each do |group| %>
+                <tr>
+                    <td><%= group.user.name %></td>
+                    <td><%= group.user.lastname %></td>
+                    <td><%= group.user.email %></td>
+                </tr>    
+                <% end %>
+            </tbody>
         </table>
 
     <% end %> 

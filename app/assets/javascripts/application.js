@@ -19,8 +19,8 @@
 
 
 $( document ).on('turbolinks:load', function() {
-    $("#all-rooms-text").click(function(){
-        $("#all-rooms").toggle();
+    $(".all-rooms-text").click(function(){
+        $(".all-rooms").toggle();
     });
 
     $("#who-is").click(function(){
@@ -41,5 +41,9 @@ $( document ).on('turbolinks:load', function() {
 
     $("#edit-group").click(function(){
         $("#edit-group-hidden").toggle();
+    });
+
+    $("#new-teacher").click(function(){
+        $("#new-teacher-hidden").toggle();
     });
   })

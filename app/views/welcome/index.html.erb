@@ -55,8 +55,8 @@
     <% elsif searched_user == Admin %>
     <div class="currentuser-item-size-two">
         <div>
-            <p id="all-rooms-text">Mostrar Forums de los grupos</p>
-            <div id="all-rooms">
+            <p class="all-rooms-text">Mostrar Forums de los grupos</p>
+            <div class="all-rooms">
                 <% @rooms.each do |r| %>
                     <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
                 <% end %>
@@ -78,11 +78,17 @@
     </div>
 
     <% elsif searched_user == Teacher %>
-        <p>Forums de los grupos</p>
-        <% @teacher_rooms.each do |r| %>
-            <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
-        <% end %>
+    <div class="currentuser-item-size-two">
+        <p class="all-rooms-text">Mostrar todos los Grupos a los que pertenezco</p>
+        <div class="all-rooms">
+            <% @teacher_rooms.each do |r| %>
+                <% if r.group.activ %>
+                    <p><%=  r.group.name %> <%=  r.group.key %>: <br><%= link_to "Ir a Forum", room_path(r.id) %><br><%= link_to "Ir a Grupo", group_path(r.group.id) %></p>
+                <% end %>
+            <% end %>
+        </div>
         <%= render "chat.html.erb" %>
+    </div>
     <% end %>
 </div>
 <% end %>
