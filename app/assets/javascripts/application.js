@@ -19,11 +19,31 @@
 
 
 $( document ).on('turbolinks:load', function() {
-    $("#all-rooms-text").click(function(){
-        $("#all-rooms").toggle();
+    $(".all-rooms-text").click(function(){
+        $(".all-rooms").toggle();
     });
 
     $("#who-is").click(function(){
         $("#who-is-online").toggle();
+    });
+
+    $("#new-course").click(function(){
+        $("#new-course-hidden").toggle();
+    });
+
+    $("#edit-course").click(function(){
+        $("#edit-course-hidden").toggle();
+    });
+
+    $("#new-group").click(function(){
+        $("#new-group-hidden").toggle();
+    });
+
+    $("#edit-group").click(function(){
+        $("#edit-group-hidden").toggle();
+    });
+
+    $("#new-teacher").click(function(){
+        $("#new-teacher-hidden").toggle();
     });
   })

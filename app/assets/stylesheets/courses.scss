@@ -1,3 +1,44 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.course-index {
+    margin-top: 60px;
+}
+
+#course-table {
+    width: 70%;
+}
+
+#new-course {
+    width: 150px;
+}
+
+#new-course:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
+
+#new-course-hidden {
+    display: none;
+}
+
+#edit-course {
+    width: 150px;
+}
+
+#edit-course:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
+
+#edit-course-hidden {
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #course-table {
+        width: 100%;
+    }
+}

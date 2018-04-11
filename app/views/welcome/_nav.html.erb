@@ -43,7 +43,6 @@
 
             <!-- nav for teachers -->
           <% elsif searched_user == Teacher %>
-            <li><%= link_to "Grupos", groups_path %></li>
             <% if  (Teacher.find_by(user: current_user)).avatar_file_name == nil %>
               <li><%= link_to current_user.name, edit_teacher_path(Teacher.find_by(user: current_user.id)) %></li>
             <% else %>

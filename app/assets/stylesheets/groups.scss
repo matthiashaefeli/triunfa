@@ -1,3 +1,47 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-group {
+    width: 150px;
+}
+
+#new-group:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
+
+#new-group-hidden {
+    display: none;
+}
+
+#edit-group {
+    width: 150px;
+}
+
+#edit-group:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
+
+#edit-group-hidden {
+    display: none;
+}
+
+#group-table-show {
+    width: 60%;
+}
+
+#igroup-table-show {
+    width: 60%;
+}
+
+@media only screen and (max-width: 600px) {
+    #group-table-show {
+        width: 100%;
+    }
+    
+    #igroup-table-show {
+        width: 100%;
+    }
+}
