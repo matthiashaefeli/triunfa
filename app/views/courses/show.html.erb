@@ -1,11 +1,14 @@
-<div>
+<div class="course-index">
     <h1><%= @course.name %></h1>
     <p>Fecha Inicio: <%= @course.start %></p>
     <p>Fecha Final: <%= @course.end %></p>
     <% if @course.avatar_file_name != nil %>
         <p><%= image_tag @course.avatar.url(:thumb), :class => "course-avatar"%></p>
     <% end %>
-    <p><%= link_to "Editar Curso", edit_course_path(@course.id) %></p>
+    <p id="edit-course">Editar Curso</p>
+    <div id="edit-course-hidden">
+        <%= render "edit.html.erb" %>
+    </div>
     <!-- <p><%= link_to "Borrar Curso", course_path(@course.id), method: "delete" %></p> -->
     <p><%= link_to "Regresar", courses_path %></p>
 </div>

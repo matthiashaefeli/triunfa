@@ -1,0 +1,25 @@
+<div>
+  <%= form_for :course, url: courses_path do |f| %>
+    <p>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+    </p>
+  
+    <p>
+      <%= f.label :fecha_inicio %>
+      <%= f.date_field :start %>
+    </p>
+    <p>
+      <%= f.label :fecha_final %>
+      <%= f.date_field :end %>
+    </p>
+    <p>
+      <%= f.label :adjuntar_imagen %>
+      <%= f.file_field :avatar %>
+    </p>
+  
+    <p>
+      <%= f.submit "Crear Curso" %>
+    </p>
+  <% end %>
+</div>

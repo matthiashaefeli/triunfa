@@ -26,4 +26,20 @@ $( document ).on('turbolinks:load', function() {
     $("#who-is").click(function(){
         $("#who-is-online").toggle();
     });
+
+    $("#new-course").click(function(){
+        $("#new-course-hidden").toggle();
+    });
+
+    $("#edit-course").click(function(){
+        $("#edit-course-hidden").toggle();
+    });
+
+    $("#new-group").click(function(){
+        $("#new-group-hidden").toggle();
+    });
+
+    $("#edit-group").click(function(){
+        $("#edit-group-hidden").toggle();
+    });
   })

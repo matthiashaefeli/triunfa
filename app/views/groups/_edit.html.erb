@@ -1,7 +1,4 @@
 <div>
-    <h1>Editar Grupo <%= @group.name %></h1>
-</div>
-<div>
     <%= form_for :group, url: group_path(@group.id), method: "put" do |f| %>
         <p>
             <%= f.label :nombre %>
@@ -27,5 +24,4 @@
             <%= f.submit "Guardar Gambios"%>
         </p>
     <% end %>
-    <p><%= link_to "Regresar", groups_path %></p>
 </div>
