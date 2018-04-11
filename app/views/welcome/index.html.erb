@@ -1,8 +1,8 @@
 
 <% if !current_user %>
 <div id="index-home">
-    <div class="programa">
-        <div class="programa-child">
+    <div class="program">
+        <div class="program-child">
             <h4>Programa educativo de<br>Superate y Triunfa</h4>
             <p>
             Una experiencia de aprendizaje práctica<br> que
@@ -14,19 +14,37 @@
     </div>
 
 </div>
-<div id="courses">
+<div id="courses-title">
+    <h1>Cursos</h1>
 </div>
-
+<div id="courses">
+    <div class="items-courses"><%= link_to image_tag("word.png", :class => "course-img"), new_user_session_path %></div>
+    <div class="items-courses"><%= link_to image_tag("excel.png", :class => "course-img"), new_user_session_path %></div>
+    <div class="items-courses"><%= link_to image_tag("power.png", :class => "course-img"), new_user_session_path %></div>
+</div>
+<div id="courses-title">
+    <h1>Links</h1>
+</div>
+<div id="courses">
+    <div class="items-courses"><%= link_to image_tag("juntos.jpg", :class => "course-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
+    <div class="items-courses"><%= link_to image_tag("parents.png", :class => "course-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
+</div>
+<%= render 'welcome/footer' %>
 <% else %>
-<div>
+
+
+<div class="home-currentuser">
     <% if check_user(current_user) != "new_user" && !online.online %>
         <% update_online(check_user(current_user)) %>
     <% end %>
 
-    <div id="online_users">
-    <% all_users.each do |user| %>
-        <p id="online<%= user.user.id %>"><%= user.user.name %> <%= user.user.lastname %></p>
-    <% end %>
+    <div id="online_users" class="currentuser-item-size-one">
+        <p id="who-is">Quien esta en linea?</p>
+        <div id="who-is-online">
+            <% all_users.each do |user| %>
+            <p id="online<%= user.user.id %>"><%= user.user.name %> <%= user.user.lastname %></p>
+            <% end %>
+        </div>
     </div>
 
     <% searched_user = check_user(current_user) %>
@@ -35,16 +53,29 @@
         <%= render "./students/new.html.erb" %>
 
     <% elsif searched_user == Admin %>
-        <p>Forums de los grupos</p>
-        <% @rooms.each do |r| %>
-            <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
-        <% end %>
+    <div class="currentuser-item-size-two">
+        <div>
+            <p id="all-rooms-text">Mostrar Forums de los grupos</p>
+            <div id="all-rooms">
+                <% @rooms.each do |r| %>
+                    <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
+                <% end %>
+            </div>
+        </div>
+        <br>
         <%= render "chat.html.erb" %>
+    </div>
 
     <% elsif searched_user == Student %>
-        <p>Forum de tu grupo</p>
-        <%= link_to Student.find_by(user: current_user).group.name, room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %>
+    <div class="currentuser-item-size-two">
+        <div>
+            <%= image_tag (check_user(current_user)).find_by(user: current_user).group.course.avatar.url(:medium) %>
+        </div>
+        <br>
+        <p><%= link_to "Click aqui para entrar al Forum de tu Grupo", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></p>
+        <br>
         <%= render "chat.html.erb" %>
+    </div>
 
     <% elsif searched_user == Teacher %>
         <p>Forums de los grupos</p>
@@ -55,6 +86,7 @@
     <% end %>
 </div>
 <% end %>
+
 
 
 

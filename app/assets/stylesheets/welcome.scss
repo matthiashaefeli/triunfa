@@ -1,10 +1,9 @@
 // welcome page without current user
 
 #index-home {
-
     width: 100%;
     height: auto;
-    padding: 200px 0;
+    padding: 250px 0;
     text-align: center;
     background: url("home.jpg") no-repeat top center scroll;
     background-color: black;
@@ -14,22 +13,83 @@
     background-size: cover;
 }
 
-.programa {
+.program {
     width: 20em;
     height: 15em;
-    background-color: #E1F5FE;
+    background-color: #B3E5FC;
     margin-left: 60%;
     display: table;
     
 }
 
-.programa p {
+.program p {
     font-size: 1em;
 }
 
-.programa-child {
+.program-child {
     display: table-cell;
     vertical-align: middle;
+}
+
+#courses-title {
+    width: 100%;
+    height: 50px;
+    background-color: #B3E5FC;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#courses {
+    display: flex;
+    justify-content: space-around;
+}
+
+.items-courses {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.course-img {
+    width: 100px;
+    height: 100px;
+}
+
+.things-title {
+    width: 100%;
+    height: 50px;
+    background-color: #B3E5FC;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.home-currentuser {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.currentuser-item-size-one {
+    flex-grow: 1;
+}
+
+.currentuser-item-size-two {
+    flex-grow: 3;
+}
+
+#all-rooms {
+    display: none;
+}
+
+#all-rooms-text:hover {
+    cursor: pointer;
+}
+
+#who-is-online {
+    display: none;
+}
+
+#who-is:hover {
+    cursor: pointer;
 }
 
 
@@ -40,7 +100,7 @@
     justify-content: center;
 }
 
-.item {
+.item-login {
     margin: 15%;
 }
 
@@ -54,7 +114,25 @@
         flex-direction: column;
     }
 
-    .item {
+    .item-login {
         margin: 5%;
+    }
+
+    .program {
+        margin: auto;
+    }
+
+    .course-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo_login {
+        width: 80%;
+        height: auto;
+    }
+
+    .home-currentuser {
+        flex-direction: column;
     }
 }
