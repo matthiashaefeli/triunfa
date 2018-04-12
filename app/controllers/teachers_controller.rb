@@ -1,8 +1,7 @@
 class TeachersController < ApplicationController
-    
-    before_action :who_is
 
     def index
+        who_is
         @teachers = Teacher.all
     end
 
@@ -10,6 +9,7 @@ class TeachersController < ApplicationController
     end
     
     def create
+        who_is
         new_user = User.create(teacher_params)
         new_user.save
         teacher = Teacher.create(user: new_user)
@@ -18,6 +18,7 @@ class TeachersController < ApplicationController
     end
 
     def show
+        who_is
         @teacher = Teacher.find(params[:id])
     end
 

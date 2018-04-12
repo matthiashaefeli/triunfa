@@ -1,12 +1,12 @@
 <div class="stat-index">
     <h1>Estatisticas</h1>
     <hr>
-    <p><strong>Total Cursos: </strong><%= @courses.count %></p>
-    <p><strong>Total Grupos Activos: </strong><%= @agroups.count %></p>
-    <p><strong>Total Grupos Inactivos: </strong><%= @igroups.count %></p>
-    <p><strong>Total Facilitadores: </strong><%= @teachers.count %></p>
-    <p><strong>Total Estudiantes en Grupos: </strong><%= @students.count %></p>
-    <p><strong>Total Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
+    <p><strong>Cursos: </strong><%= @courses.count %></p>
+    <p><strong>Grupos Activos: </strong><%= @agroups.count %></p>
+    <p><strong>Grupos Inactivos: </strong><%= @igroups.count %></p>
+    <p><strong>Facilitadores: </strong><%= @teachers.count %></p>
+    <p><strong>Estudiantes en Grupos: </strong><%= @students.count %></p>
+    <p><strong>Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
     <hr>
     <p class="stat-show">Ver Estatisticas pasadas</p>
     <div class="stat-show-child">
@@ -33,6 +33,7 @@
                     <td><%= e.teachers %></td>
                     <td><%= e.students %></td>
                     <td><%= e.nostudents %></td>
+                    <td><%= link_to "Borrar Estatistica", statistic_path(e.id), :method => "delete", :onclick => "return confirm('Quiere borrar la estatistica?')" %></td>
                 </tr>
                 <% end %>
             </tbody>

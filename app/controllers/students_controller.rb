@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
 
+    def index
+        @students = Student.all
+    end
+
     def create
         group = Group.find_by(key: params[:student][:key])
         student = Student.new()

@@ -5,6 +5,7 @@
     <% if @course.avatar_file_name != nil %>
         <p><%= image_tag @course.avatar.url(:thumb), :class => "course-avatar"%></p>
     <% end %>
+    <hr>
     <p id="edit-course">Editar Curso</p>
     <div id="edit-course-hidden">
         <%= render "edit.html.erb" %>

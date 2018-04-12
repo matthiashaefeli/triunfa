@@ -30,7 +30,8 @@ Things you may want to cover:
 * gem 'autoprefixer-rails'
 * gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 * gem "font-awesome-rails"
-* gem 'pry'
+* gem 'devise'
+* gem "paperclip", "~> 6.0.0"
 
 
 # Superate Y Triunfa
@@ -40,34 +41,26 @@ Things you may want to cover:
 * LastName
 * Email
 * Password
-* Course => belongs to course
-* Credits => has many through courses
-* Groupe => belongs to groupe
+
 
 
 ## Admin
 * Name
+* LastName
 * Email
 * Password
 
 
 ## Teacher
 * Name
+* LastName
 * Email
 * Password
-* Courses => has many courses
-* Groupes => has many groupes
-
 
 ## Course
 * Name
 * Start Date
 * Finish Date
-* Credits => has many credits
-* Groupes => has many groupes
-* Students => has many students
-* Teacher => has many teachers
 
-## Credits
-* Activity
-* Points
+
+
