@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :welcome, only: [:index, :destroy]
+  resources :statistics, only: [:index, :create, :destroy]
   resources :courses
   resources :groups
   resources :teachers

@@ -46,4 +46,8 @@ $( document ).on('turbolinks:load', function() {
     $("#new-teacher").click(function(){
         $("#new-teacher-hidden").toggle();
     });
+
+    $(".stat-show").click(function(){
+        $(".stat-show-child").toggle();
+    });
   })
