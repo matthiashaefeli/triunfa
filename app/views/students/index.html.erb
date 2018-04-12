@@ -1,0 +1,23 @@
+<div class="student-index">
+    <h1>Estudiantes</h1>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Grupo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @students.each do |s| %>
+            <tr>
+                <td><%= s.user.name %></td>
+                <td><%= s.user.lastname %></td>
+                <td><%= s.user.email %></td>
+                <td><%= s.group.name %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

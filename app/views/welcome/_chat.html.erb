@@ -2,7 +2,7 @@
     <h2>Forum Superate y Triunfa</h2>
     <%= form_for :chat, url: chats_path do |f| %>  
         <p>
-            <%= f.text_area :body, :id => "chat_box" %>
+            <%= f.text_area :body, :class => "text-area" %>
         </p>
         <p>
             <%= f.label :adjuntar_imagen %>
@@ -11,7 +11,8 @@
 
         <%= f.submit "Enviar Mensaje", :id => "chat_send"%>
     <% end %>
-
+    <br>
+    <hr>
     <div id="chat-table">
             <%= render "chats/chats" %>
     </div> 
