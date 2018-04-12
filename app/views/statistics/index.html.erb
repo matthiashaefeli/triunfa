@@ -1,0 +1,41 @@
+<div class="stat-index">
+    <h1>Estatisticas</h1>
+    <hr>
+    <p><strong>Total Cursos: </strong><%= @courses.count %></p>
+    <p><strong>Total Grupos Activos: </strong><%= @agroups.count %></p>
+    <p><strong>Total Grupos Inactivos: </strong><%= @igroups.count %></p>
+    <p><strong>Total Facilitadores: </strong><%= @teachers.count %></p>
+    <p><strong>Total Estudiantes en Grupos: </strong><%= @students.count %></p>
+    <p><strong>Total Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
+    <hr>
+    <p class="stat-show">Ver Estatisticas pasadas</p>
+    <div class="stat-show-child">
+        <p><%= link_to "Crear nueva Estatistica", statistics_path, :method => "Post" %></p>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Cursos</th>
+                    <th>Grupos A</th>
+                    <th>Grupos I</th>
+                    <th>Facilitadores</th>
+                    <th>Estudiantes</th>
+                    <th>E No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @statistics.each do |e| %>
+                <tr>
+                    <td><%= l e.created_at, format: :short %></td>
+                    <td><%= e.courses %></td>
+                    <td><%= e.groups %></td>
+                    <td><%= e.igroups %></td>
+                    <td><%= e.teachers %></td>
+                    <td><%= e.students %></td>
+                    <td><%= e.nostudents %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
