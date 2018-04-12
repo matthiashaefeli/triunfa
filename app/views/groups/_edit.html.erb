@@ -21,7 +21,7 @@
             <%= f.check_box(:activ) %>
         </p>
         <p>
-            <%= f.submit "Guardar Gambios"%>
+            <%= f.submit "Guardar Gambios", :onclick => "return confirm('Despues de desactivar el grupo los estudiantes no tienen acceso al portal')" %>
         </p>
     <% end %>
 </div>

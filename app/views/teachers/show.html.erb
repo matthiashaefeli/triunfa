@@ -10,8 +10,8 @@
             <% end %>
         <% end %>
     </ul>
-    <p><strong>Total Grupos de </strong><%= @teacher.user.name %>: <%= @teacher.groups.count %></p>
-    <p><strong>Grupos Activos </strong><%= @teacher.groups.where(activ: true).count %></p>
-    <p><strong>Grupos Cerrados </strong><%= @teacher.groups.where(activ: false).count %></p>
+    <p><strong>Total Grupos de <%= @teacher.user.name %>: </strong> <%= @teacher.groups.count %></p>
+    <p><strong>Grupos Activos: </strong><%= @teacher.groups.where(activ: true).count %></p>
+    <p><strong>Grupos Cerrados: </strong><%= @teacher.groups.where(activ: false).count %></p>
 </div>
 <p><%= link_to "Regresar", teachers_path %></p>
