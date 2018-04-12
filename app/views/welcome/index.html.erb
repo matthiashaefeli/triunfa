@@ -14,20 +14,48 @@
     </div>
 
 </div>
-<div id="courses-title">
-    <h1>Cursos</h1>
+<div>
+    <div class="courses-title">
+        <h1>Cursos</h1>
+    </div>
+    <div id="courses">
+        <div class="items-courses">
+            <div>
+                <%= link_to image_tag("word.png", :class => "course-img"), new_user_session_path %>
+            </div>
+            <div class="course-text-desc">
+                <h3>Word Basico</h3>
+                <p>Los estudiantes aprenderán<br> a usar Word 2016 para crear<br> y editar documentos simples</p>
+            </div> 
+        </div>
+        <div class="items-courses">
+            <div>
+                <%= link_to image_tag("excel.png", :class => "course-img"), new_user_session_path %>
+            </div>
+            <div class="course-text-desc">
+                <h3>Excel Basico</h3>
+                <p>Los estudiantes crearán y<br> editarán hojas de trabajo y libros<br> de Excel, usarán fórmulas y funciones</p>
+            </div> 
+        </div>
+        <div class="items-courses">
+            <div>
+                <%= link_to image_tag("power.png", :class => "course-img"), new_user_session_path %>
+            </div>
+            <div class="course-text-desc">
+                <h3>PowerPoint Basico</h3>
+                <p>Los estudiantes aprenderán<br> a identificar las características y<br> funciones básicas de PowerPoint</p>
+            </div> 
+        </div>
+    </div>
 </div>
-<div id="courses">
-    <div class="items-courses"><%= link_to image_tag("word.png", :class => "course-img"), new_user_session_path %></div>
-    <div class="items-courses"><%= link_to image_tag("excel.png", :class => "course-img"), new_user_session_path %></div>
-    <div class="items-courses"><%= link_to image_tag("power.png", :class => "course-img"), new_user_session_path %></div>
-</div>
-<div id="courses-title">
-    <h1>Links</h1>
-</div>
-<div id="courses">
-    <div class="items-courses"><%= link_to image_tag("juntos.jpg", :class => "course-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
-    <div class="items-courses"><%= link_to image_tag("parents.png", :class => "course-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
+<div class="links-home">
+    <div class="links-title">
+        <h1>Links</h1>
+    </div>
+    <div id="courses">
+        <div class="items-courses"><%= link_to image_tag("juntos.jpg", :class => "course-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
+        <div class="items-courses"><%= link_to image_tag("parents.png", :class => "course-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
+    </div>
 </div>
 <%= render 'welcome/footer' %>
 <% else %>
