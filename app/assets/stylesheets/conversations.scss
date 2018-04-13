@@ -9,14 +9,14 @@
 }
 
 .conversation-border {
-    border: 0.5px solid grey;
+    background-color: #EEEEEE;
     width: 150px;
 }
 
-#submit_conversation {
+.submit_conversation {
     display: none;
 }
 
-#conv-table {
+.line-high {
     line-height: 70%;
 }

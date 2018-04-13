@@ -1,0 +1,16 @@
+<div id="online_users" class="currentuser-item-size-one">
+    <p id="who-is">Quien esta en linea?</p>
+    <div id="my_conversation_id<%= current_user.id %>">
+    <%= render "./tables/table.html.erb" %>
+    </div>
+    <div id="who-is-online">
+        <% all_users.each do |user| %>
+            <% if user.user != current_user %>
+                <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path([current_user, user.user.id]), :method => "create" %></p>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+
+

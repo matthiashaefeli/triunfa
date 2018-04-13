@@ -65,27 +65,13 @@
         <% update_online(check_user(current_user)) %>
     <% end %>
 
-    <div id="online_users" class="currentuser-item-size-one">
-        <p id="who-is">Quien esta en linea?</p>
-        <div id="who-is-online">
-            <% all_users.each do |user| %>
-                    <% if user.user != current_user %>
-                    <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path([current_user, user.user.id]), :method => "create" %></p>
-                    <% @table = find_table(current_user, user.user.id) %>
-                    <% if @table != nil %>
-                        <%= render "./tables/table.html.erb" %>
-                    <% end %>
-                <% end %>
-            <% end %>
-        </div>
-    </div>
-
     <% searched_user = check_user(current_user) %>
 
     <% if searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
     <% elsif searched_user == Admin %>
+    <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
         <div>
             <p class="all-rooms-text">Mostrar Forums de los grupos</p>
@@ -100,6 +86,7 @@
     </div>
 
     <% elsif searched_user == Student %>
+    <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
         <div>
             <%= image_tag (check_user(current_user)).find_by(user: current_user).group.course.avatar.url(:medium) %>
@@ -111,6 +98,7 @@
     </div>
 
     <% elsif searched_user == Teacher %>
+    <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
         <p class="all-rooms-text">Mostrar todos los Grupos a los que pertenezco</p>
         <div class="all-rooms">
