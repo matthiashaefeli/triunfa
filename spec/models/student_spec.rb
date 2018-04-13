@@ -28,4 +28,9 @@ describe User, type: :model do
         expect(student.group.teacher.user.name).to eq "teacher"
     end
 
+    it "is online" do
+        student.online = true
+        expect(student.online).to eq true
+    end
+
 end
