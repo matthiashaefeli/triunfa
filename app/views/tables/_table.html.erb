@@ -1,0 +1,11 @@
+<div class="conversation-border">
+    <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
+        <p>
+            <%= f.text_area :body, :class => "text-conversation", :id => "conversation_content" %>
+        </p>
+        <%= hidden_field_tag "table", @table.id  %>
+
+        <%= f.submit "Enviar Mensaje", :id => "submit_conversation"%>
+    <% end %>
+    <%= render "conversations/conversations.html.erb" %>
+</div>

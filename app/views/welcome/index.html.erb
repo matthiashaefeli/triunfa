@@ -69,7 +69,13 @@
         <p id="who-is">Quien esta en linea?</p>
         <div id="who-is-online">
             <% all_users.each do |user| %>
-            <p id="online<%= user.user.id %>"><%= user.user.name %> <%= user.user.lastname %></p>
+                    <% if user.user != current_user %>
+                    <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path([current_user, user.user.id]), :method => "create" %></p>
+                    <% @table = find_table(current_user, user.user.id) %>
+                    <% if @table != nil %>
+                        <%= render "./tables/table.html.erb" %>
+                    <% end %>
+                <% end %>
             <% end %>
         </div>
     </div>
