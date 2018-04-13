@@ -8,14 +8,18 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
   received: (data) ->
   
     # Called when there's incoming data on the websocket for this channel
-    $("#conv-table").prepend '<p>' + data.content + '<p>'
+    id = '#conv-table'+data.table
+    $(id).prepend '<p>' + data.content + '<p>'
+
+
+
 
 $(document).on 'turbolinks:load', ->
   submit_message()
 
 submit_message = () ->
-  $('#conversation_content').on 'keydown', (event) ->
+  $('.conversation_content').on 'keydown', (event) ->
     if event.keyCode is 13
-      $('#submit_conversation').click()
+      $('.submit_conversation').click()
       event.target.value = ""
       event.preventDefault()
