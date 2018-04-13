@@ -5,8 +5,11 @@ class WelcomeController < ApplicationController
     def index
         @rooms = Room.where(group: Group.where(activ: true))
         @chats = Chat.order(created_at: :desc).limit(10)
-        @tables = Table.where(user: current_user).or(Table.where(seconduser: current_user.id))
         @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true)) 
+        if current_user
+             @tables = Table.where(user: current_user).or(Table.where(seconduser: current_user.id))
+        end
+
     end
     
 

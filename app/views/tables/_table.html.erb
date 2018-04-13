@@ -1,39 +1,33 @@
-  <% @tables.each do |t| %>
-<div class="conversation-border">
+<% @tables.each do |t| %>
+    <div class="conversation-border">
   
-    <div class="conv-title">
-    <div class="conv-name">
-        <% if t.user == current_user %>
-            <%= User.find(t.seconduser).name %>
-        <% else %>
-            <%= t.user.name %>
+        <div class="conv-title">
+            <div class="conv-name">
+                <% if t.user == current_user %>
+                    <%= User.find(t.seconduser).name %>
+                <% else %>
+                    <%= t.user.name %>
+                <% end %>
+            </div>
+
+            <div class="conv-x">
+                X
+            </div>
+        </div>
+
+        <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
+            <p>
+                <%= f.text_area :body, :class => "text-conversation conversation_content"%>
+            </p>
+            <%= hidden_field_tag "table", t.id  %>
+            <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>
         <% end %>
-    </div>
 
-    <div class="conv-x">
-        X
-    </div>
-
-
-    </div>
-
-
-    <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
-        <p>
-            <%= f.text_area :body, :class => "text-conversation conversation_content"%>
-        </p>
-        <%= hidden_field_tag "table", t.id  %>
-
-        <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>
-
-    <% end %>
-
-
-    <div id="conv-table<%= t.id %>" class="line-high">
-        <% t.conversations.order(created_at: :desc).each do |conv| %>
-            <p><%= conv.body %></p>
-        <% end %>
-    </div>
+        <div id="conv-table<%= t.id %>" class="line-high">
+            <% t.conversations.order(created_at: :desc).each do |conv| %>
+                <p><%= conv.body %></p>
+            <% end %>
+        </div>
     </div>
     <br>
-    <% end %>
+<% end %>
