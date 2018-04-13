@@ -1,5 +1,5 @@
-<div>
-    <% @table.conversations.each do |conv| %>
+<div id="conv-table">
+    <% @table.conversations.order(created_at: :desc).each do |conv| %>
         <p><%= conv.body %></p>
     <% end %>
 </div>

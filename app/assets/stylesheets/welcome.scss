@@ -90,6 +90,12 @@
     flex-grow: 3;
 }
 
+.currentuser-item-size-one p {
+    width: 150px;
+}
+
+
+
 .all-rooms {
     display: none;
 }
@@ -100,7 +106,7 @@
 }
 
 #who-is-online {
-    display: none;
+    // display: none;
 }
 
 #who-is:hover {
