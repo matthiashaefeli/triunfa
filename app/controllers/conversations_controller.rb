@@ -12,6 +12,7 @@ class ConversationsController < ApplicationController
 
     def destroy
         table = Table.find(params[:id])
+        id = table.id
         table.conversations.each do |c|
             c.delete
         end
@@ -21,6 +22,8 @@ class ConversationsController < ApplicationController
                 format.html {}
                 format.json {}
             end
+            ActionCable.server.broadcast 'conversation_channel',
+                                            remove: id
         else
             redirect_to root_path
         end

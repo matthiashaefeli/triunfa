@@ -8,8 +8,12 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
   received: (data) ->
   
     # Called when there's incoming data on the websocket for this channel
-    id = '#conv-table'+data.table
-    $(id).prepend '<p>' + data.content + '<p>'
+    if data.remove > 0
+        id = "#conv"+data.remove
+        $(id).remove()
+    else
+        id = '#conv-table'+data.table
+        $(id).prepend '<p>' + data.content + '<p>'
 
 
 
