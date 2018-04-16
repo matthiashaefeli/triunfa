@@ -1,15 +1,15 @@
 <div>
     <h2>Forum Superate y Triunfa</h2>
-    <%= form_for :chat, url: chats_path do |f| %>  
+    <%= form_for :chat, url: chats_path, remote: "true"  do |f| %>  
         <p>
-            <%= f.text_area :body, :class => "text-area" %>
+            <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body" %>
         </p>
         <p>
             <%= f.label :adjuntar_imagen %>
             <%= f.file_field :avatar %>
         </p>
 
-        <%= f.submit "Enviar Mensaje", :id => "chat_send", remote: "true" %>
+        <%= f.submit "Enviar Mensaje", :class => "chat_send"%>
     <% end %>
     <br>
     <hr>
