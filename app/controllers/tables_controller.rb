@@ -7,7 +7,10 @@ class TablesController < ApplicationController
             user = User.find(u1)
             table = Table.create(user: user, seconduser: u2)
             ActionCable.server.broadcast 'table_channel',
-                                        user: u1
+                                        seconduser: u2,
+                                        user: u1,
+                                        table: table.id
+             redirect_to root_path                             
 
         else
             redirect_to root_path
@@ -15,7 +18,7 @@ class TablesController < ApplicationController
     end
 
 
-    
+
     private
 
     def table_exists(u1, u2)

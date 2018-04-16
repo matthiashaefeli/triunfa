@@ -9,4 +9,18 @@ class ConversationsController < ApplicationController
 
     end
 
+    def destroy
+        table = Table.find(params[:id])
+        table.conversations.each do |c|
+            c.delete
+        end
+        table.delete
+        # if request.xhr?
+        #     format.js
+        #     format.json {"done"}
+        # else
+            redirect_to root_path
+        # end
+    end
+
 end
