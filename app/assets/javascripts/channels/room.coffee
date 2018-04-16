@@ -38,3 +38,24 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '</div>' +
         '<hr>' +
         '</div>'
+
+$(document).on 'turbolinks:load', ->
+  submit_message()
+  submit_chat()
+
+submit_message = () ->
+  $('#chat_body').on 'keydown', (event) ->
+    if event.keyCode is 13
+      $('#chat_send').click()
+      event.target.value = ""
+      event.preventDefault()
+
+      
+
+submit_chat = () ->
+  $('#room-message-text').on 'keydown', (event) ->
+    if event.keyCode is 13
+      $('#room-message-text-submit').click()
+      event.target.value = ""
+      event.preventDefault()
+

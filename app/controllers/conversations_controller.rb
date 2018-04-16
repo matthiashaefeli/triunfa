@@ -1,3 +1,4 @@
+
 class ConversationsController < ApplicationController
 
     def create 
@@ -15,12 +16,14 @@ class ConversationsController < ApplicationController
             c.delete
         end
         table.delete
-        # if request.xhr?
-        #     format.js
-        #     format.json {"done"}
-        # else
+        if request.xhr?
+            respond_to do |format|
+                format.html {}
+                format.json {}
+            end
+        else
             redirect_to root_path
-        # end
+        end
     end
 
 end

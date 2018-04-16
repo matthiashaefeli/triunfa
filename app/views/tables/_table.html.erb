@@ -1,7 +1,7 @@
 <div id="new-conversation"></div>
 <div id="table-conversation">
     <% @tables.each do |t| %>
-        <div class="conversation-border">
+        <div class="conversation-border" id="conv<%= t.id %>">
             <div class="conv-title">
                 <div class="conv-name">
                     <% if t.user == current_user %>
@@ -11,8 +11,8 @@
                     <% end %>
                 </div>
 
-                <div class="conv-x" id="conv<%= t.id %>">
-                    <%= link_to "X", conversation_path(t.id), :method => "DELETE" %>
+                <div>
+                    <%= link_to "X", conversation_path(t.id), :class => "conv-x", :method => "DELETE", :remote => "true" %>
                 </div>
             </div>
 

@@ -18,6 +18,7 @@
 
 
 $( document ).on('turbolinks:load', function() {
+    
     $(".all-rooms-text").click(function(){
         $(".all-rooms").toggle();
     });
@@ -50,19 +51,21 @@ $( document ).on('turbolinks:load', function() {
         $(".stat-show-child").toggle();
     });
 
-    // $(".conv-x").click(function(event){
-    //     event.preventDefault()
-    //     $that = $(this);
-    //     $.ajax({
-    //         type: 'DELETE',
-    //         url: $that.find('a').attr('href'),
-    //         datatype: 'html'
+    $(".conv-x").click(function(event){
+        event.preventDefault()
+        let $that = $(this);
+        let $id = $that.attr('href').match(/\d/g).join("")
+        $.ajax({
+            type: 'DELETE',
+            url: $that.attr('href'),
+            datatype: 'html'
 
-
-    //     })
-    //     .done(function(){
+        })
+        .done(function(response){
+            let id = "#conv"+$id
+            $(id).remove()
             
-    //     });
-    // })
+        });
+    })
 
   })
