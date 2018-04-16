@@ -1,3 +1,4 @@
+
 class ConversationsController < ApplicationController
 
     def create 
@@ -7,6 +8,22 @@ class ConversationsController < ApplicationController
                                              content:  conver.body,
                                              table: table.id
 
+    end
+
+    def destroy
+        table = Table.find(params[:id])
+        table.conversations.each do |c|
+            c.delete
+        end
+        table.delete
+        if request.xhr?
+            respond_to do |format|
+                format.html {}
+                format.json {}
+            end
+        else
+            redirect_to root_path
+        end
     end
 
 end

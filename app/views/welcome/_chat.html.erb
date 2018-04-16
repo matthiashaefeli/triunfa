@@ -9,7 +9,7 @@
             <%= f.file_field :avatar %>
         </p>
 
-        <%= f.submit "Enviar Mensaje", :id => "chat_send"%>
+        <%= f.submit "Enviar Mensaje", :id => "chat_send", remote: "true" %>
     <% end %>
     <br>
     <hr>

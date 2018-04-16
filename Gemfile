@@ -38,6 +38,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "font-awesome-rails"
 gem 'devise'
 gem "paperclip", "~> 6.0.0"
+gem 'json'
 
 
 group :development, :test do

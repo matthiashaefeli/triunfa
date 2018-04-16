@@ -7,11 +7,11 @@
     </p>
     <p>
       <%= f.label :text %>
-      <%= f.text_area :body, :class => "text-area" %>
+      <%= f.text_area :body, :class => "text-area", :id => "room-message-text" %>
       <%= hidden_field_tag "room", @room.id  %>
     </p>
     <br>
-    <%= f.submit "Enviar Mensaje" %>
+    <%= f.submit "Enviar Mensaje", :id => "room-message-text-submit", remote: "true" %>
   <% end %>
   <hr>
   <div id="message_room<%= @room.id %>">

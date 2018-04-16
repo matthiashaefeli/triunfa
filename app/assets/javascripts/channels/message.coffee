@@ -39,3 +39,5 @@ App.message = App.cable.subscriptions.create "MessageChannel",
         '</div>' +
         '<hr>' +
         '</div>'
+
+
