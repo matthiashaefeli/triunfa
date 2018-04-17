@@ -9,7 +9,21 @@ class WelcomeController < ApplicationController
         if current_user
              @tables = Table.where(user: current_user).or(Table.where(seconduser: current_user.id))
         end
+    end
 
+    def edituser
+        @user = User.find(params[:id])
+    end
+
+    def updateuser
+        user = User.find(params[:id])
+        user.street = userupdate_params[:street]
+        user.cp = userupdate_params[:cp]
+        user.tel = userupdate_params[:tel]
+        user.state = userupdate_params[:state]
+        user.city = userupdate_params[:city]
+        user.save
+        redirect_to root_path
     end
     
 
@@ -54,6 +68,10 @@ class WelcomeController < ApplicationController
                 return "new_user"
             end
         end
+    end
+
+    def userupdate_params
+        params.require(:user).permit(:street, :city, :cp, :tel, :state)
     end
 
 end
