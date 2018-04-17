@@ -4,8 +4,10 @@
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
+                    <th scope="col">Forum</th>
+                    <th scope="col">Tarea</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Facilitador</th>
+                    <th scope="col">Instructor</th>
                     <th scope="col">Curso</th>
                     <th scope="col">clave</th>
                     <th scope="col">Estudiantes</th>
@@ -15,6 +17,13 @@
             <tbody>
                 <% @groups.each do |g| %>
                 <tr>
+                    <% if g.activ %>
+                        <td><%= link_to "Forum", room_path(Room.find_by(group: g)) %></td>
+                        <td><%= link_to "Ir a la Tarea", tasks_path(group: g) %></td>
+                    <% else %>
+                        <td></td>
+                        <td></td>
+                    <% end %>
                     <td><%= link_to g.name, group_path(g.id) %></td>
                     <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
                     <td><%= g.course.name %></td>

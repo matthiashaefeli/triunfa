@@ -70,17 +70,9 @@
     <% if searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
-    <% elsif searched_user == Admin %>
+    <% elsif searched_user == Admin || searched_user == Teacher %>
     <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
-        <div>
-            <p class="all-rooms-text">Mostrar Forums de los grupos</p>
-            <div class="all-rooms">
-                <% @rooms.each do |r| %>
-                    <p><%= link_to r.group.name, room_path(r.id) %> <%=  r.group.key %></p>
-                <% end %>
-            </div>
-        </div>
         <br>
         <%= render "chat.html.erb" %>
     </div>
@@ -92,22 +84,8 @@
             <%= image_tag (check_user(current_user)).find_by(user: current_user).group.course.avatar.url(:medium) %>
         </div>
         <br>
-        <p><%= link_to "Click aqui para entrar al Forum de tu Grupo", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></p>
-        <br>
-        <%= render "chat.html.erb" %>
-    </div>
+        <!-- <p><%= link_to "Click aqui para entrar al Forum de tu Grupo", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></p> -->
 
-    <% elsif searched_user == Teacher %>
-    <%= render "online.html.erb" %>
-    <div class="currentuser-item-size-two">
-        <p class="all-rooms-text">Mostrar todos los Grupos a los que pertenezco</p>
-        <div class="all-rooms">
-            <% @teacher_rooms.each do |r| %>
-                <% if r.group.activ %>
-                    <p><%=  r.group.name %> <%=  r.group.key %>: <br><%= link_to "Ir a Forum", room_path(r.id) %><br><%= link_to "Ir a Grupo", group_path(r.group.id) %><br><%= link_to "Ir a Tarea", tasks_path(group: r.group) %></p>
-                <% end %>
-            <% end %>
-        </div>
         <%= render "chat.html.erb" %>
     </div>
     <% end %>

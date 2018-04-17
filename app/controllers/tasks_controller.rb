@@ -2,7 +2,7 @@ class TasksController < ApplicationController
     
     def index
         @group = Group.find(params[:group])
-        @tasks = Task.where(user: current_user, group: @group).order(created_at: :desc)
+        @tasks = Task.where(group: @group).order(created_at: :desc)
     end
 
     def create

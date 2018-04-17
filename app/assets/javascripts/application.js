@@ -18,10 +18,6 @@
 
 
 $( document ).on('turbolinks:load', function() {
-    
-    $(".all-rooms-text").click(function(){
-        $(".all-rooms").toggle();
-    });
 
     $("#who-is").click(function(){
         $("#who-is-online").toggle();
