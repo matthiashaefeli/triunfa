@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :chats
   resources :conversations
   resources :tables
+  resources :tasks
+  get 'tasks/download/:id', to: 'tasks#download', as: 'download'
   root "welcome#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

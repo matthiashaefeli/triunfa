@@ -4,7 +4,7 @@
     <p><strong>Cursos: </strong><%= @courses.count %></p>
     <p><strong>Grupos Activos: </strong><%= @agroups.count %></p>
     <p><strong>Grupos Inactivos: </strong><%= @igroups.count %></p>
-    <p><strong>Facilitadores: </strong><%= @teachers.count %></p>
+    <p><strong>Instructores: </strong><%= @teachers.count %></p>
     <p><strong>Estudiantes en Grupos: </strong><%= @students.count %></p>
     <p><strong>Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
     <hr>
@@ -18,7 +18,7 @@
                     <th>Cursos</th>
                     <th>Grupos A</th>
                     <th>Grupos I</th>
-                    <th>Facilitadores</th>
+                    <th>Instructores</th>
                     <th>Estudiantes</th>
                     <th>E No</th>
                 </tr>

@@ -39,12 +39,13 @@
           <% if searched_user == Admin %>
             <li><%= link_to "Cursos", courses_path %></li>
             <li><%= link_to "Grupos", groups_path %></li>
-            <li><%= link_to "Facilitadores", teachers_path %></li>
+            <li><%= link_to "Instructores", teachers_path %></li>
             <li><%= link_to "Estudiantes", students_path %></li>
             <li><%= link_to "Estatisticas", statistics_path %></li>
 
             <!-- nav for teachers -->
           <% elsif searched_user == Teacher %>
+          <li><%= link_to "Grupos", rooms_path %></li>
             <% if  (Teacher.find_by(user: current_user)).avatar_file_name == nil %>
               <li><%= link_to current_user.name, edit_teacher_path(Teacher.find_by(user: current_user.id)) %></li>
             <% else %>
@@ -53,6 +54,7 @@
 
             <!-- nav for students -->
             <% elsif searched_user == Student %>
+            <li><%= link_to "Ir a la Tarea", tasks_path(group: Student.find_by(user: current_user).group) %></li>
             <li><%= link_to "Forum", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></li>
 
           <% else %>

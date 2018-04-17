@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
     before_action :logged_in
 
     def index
+        @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true)) 
     end
 
     def show

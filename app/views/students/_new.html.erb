@@ -5,12 +5,12 @@
     <% end %>
     <h3>Bienvenido <%= current_user.name %> <%= current_user.lastname %></h3>
     <p>Tienes que pertenecer a un grupo para seguir</p>
-    <p>Pregunta el Facilitador por la clave del Grupo</p>
+    <p>Pregunta el Instructor por la clave del Grupo</p>
     <br>
     <%= form_for :student, url: students_path do |f| %>
         <p>
             <%= f.label :clave %>
-            <%= f.text_field :key %>
+            <%= f.password_field :key %>
         </p>
         <br>
         <p>

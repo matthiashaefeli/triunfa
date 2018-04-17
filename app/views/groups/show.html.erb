@@ -3,7 +3,7 @@
     <p>Curso: <%= @group.course.name %></p>
     <p>Clave: <%= @group.key %></p>
     <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
-    <p>Facilitador: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
+    <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
     <% if @group.activ == true %>
         <p>Activo: Si</p>
         <% if check_user(current_user) == Admin %>
@@ -56,4 +56,10 @@
     <% end %> 
 </div>
 
-<p><%= link_to "Regresar", groups_path %></p>
+<% searched_user = check_user(current_user) %>
+<% if searched_user == Admin %>
+    <p><%= link_to "Regresar", groups_path %></p>
+<% elsif searched_user == Teacher  %>
+    <p><%= link_to "Regresar", rooms_path %></p>
+<% end %>
+    

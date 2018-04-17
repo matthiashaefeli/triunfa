@@ -16,5 +16,10 @@
   <div id="message_room<%= @room.id %>">
   <%= render "messages/messages" %>
   </div>
-  <%= link_to "Regresar", root_path %>
+  <% searched_user = check_user(current_user) %>
+  <% if searched_user == Teacher  %>
+    <p><%= link_to "Regresar", rooms_path %></p>
+  <% else %>
+    <%= link_to "Regresar", root_path %>
+  <% end %>
 </div>
