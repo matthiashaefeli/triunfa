@@ -7,16 +7,32 @@
                 <th>Apellido</th>
                 <th>Email</th>
                 <th>Grupo</th>
+                <th>Calle</th>
+                <th>C.P</th>
+                <th>Ciudad</th>
+                <th>Estado</th>
+                <th>Tel</th>
             </tr>
         </thead>
         <tbody>
-            <% @students.each do |s| %>
-            <tr>
-                <td><%= s.user.name %></td>
-                <td><%= s.user.lastname %></td>
-                <td><%= s.user.email %></td>
-                <td><%= s.group.name %></td>
-            </tr>
+            <% @users.each do |s| %>
+                <% if check_user(s) == Student || check_user(s) == "new_user" %>
+                    <tr>
+                        <td><%= s.name %></td>
+                        <td><%= s.lastname %></td>
+                        <td><%= s.email %></td>
+                        <% if check_user(s) == Student %>
+                            <td><%= (Student.find_by(user: s)).group.name %></td>
+                        <% else %>
+                            <td></td>
+                        <% end %>
+                        <td><%= s.street %></td>
+                        <td><%= s.cp %></td>
+                        <td><%= s.city %></td>
+                        <td><%= s.state %></td>
+                        <td><%= s.tel %></td>
+                    </tr>
+                <% end %>
             <% end %>
         </tbody>
     </table>
