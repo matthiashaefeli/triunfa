@@ -63,8 +63,7 @@ $( document ).on('turbolinks:load', function() {
         })
         .done(function(response){
             let id = "#conv"+$id
-            $(id).remove()
-            
+            // $(id).remove()   
         });
     })
 

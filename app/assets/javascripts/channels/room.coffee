@@ -44,9 +44,9 @@ $(document).on 'turbolinks:load', ->
   submit_chat()
 
 submit_message = () ->
-  $('#chat_body').on 'keydown', (event) ->
+  $('#wellcome-chat-body').on 'keydown', (event) ->
     if event.keyCode is 13
-      $('#chat_send').click()
+      $('.chat_send').click()
       event.target.value = ""
       event.preventDefault()
 
