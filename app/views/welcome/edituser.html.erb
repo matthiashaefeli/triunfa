@@ -1,0 +1,29 @@
+<div class="edituser">
+    <h3>Completa tu direccion</h3>
+    <%= form_for :user, url: updateuser_path do |f| %>
+        <p>
+            <%= f.label :calle %>
+            <%= f.text_field :street %>
+        </p>
+        <p>
+            <%= f.label :codico_postal %>
+            <%= f.number_field :cp %>
+        </p>
+        <p>
+            <%= f.label :ciudad %>
+            <%= f.text_field :city %>
+        </p>
+        <p>
+            <%= f.label :estado %>
+            <%= f.text_field :state %>
+        </p>
+        <p>
+            <%= f.label :telefono %>
+            <%= f.number_field :tel %>
+        </p>
+
+        <p>
+            <%= f.submit "Guardar Cambios" %>
+        </p>
+    <% end %>
+</div>

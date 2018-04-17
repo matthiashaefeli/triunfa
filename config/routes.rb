@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :conversations
   resources :tables
   resources :tasks
+  get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
+  post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'tasks/download/:id', to: 'tasks#download', as: 'download'
   root "welcome#index"
 
