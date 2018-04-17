@@ -5,9 +5,9 @@
         <% if task.link != "" %>
             <p>Link: <%= link_to task.link, task.link, :target => "_blank" %></p>
         <% end %>
-
+        <% if task.document_file_name != nil %>
+            <p>Bajar el archivo: <%= link_to task.document_file_name, download_path(task.id) %></p>
+        <% end %>
         <hr>
     <% end %>
-
-
 </div>
