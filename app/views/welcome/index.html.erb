@@ -104,7 +104,7 @@
         <div class="all-rooms">
             <% @teacher_rooms.each do |r| %>
                 <% if r.group.activ %>
-                    <p><%=  r.group.name %> <%=  r.group.key %>: <br><%= link_to "Ir a Forum", room_path(r.id) %><br><%= link_to "Ir a Grupo", group_path(r.group.id) %></p>
+                    <p><%=  r.group.name %> <%=  r.group.key %>: <br><%= link_to "Ir a Forum", room_path(r.id) %><br><%= link_to "Ir a Grupo", group_path(r.group.id) %><br><%= link_to "Ir a Tarea", tasks_path(group: r.group) %></p>
                 <% end %>
             <% end %>
         </div>

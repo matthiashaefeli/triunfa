@@ -1,0 +1,13 @@
+<div>
+    <% @tasks.each do |task| %>
+        <p><%= task.body %></p>
+        <p>Terminar antes de: <%= task.end %></p>
+        <% if task.link != "" %>
+            <p>Link: <%= link_to task.link, task.link, :target => "_blank" %></p>
+        <% end %>
+
+        <hr>
+    <% end %>
+
+
+</div>

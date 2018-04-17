@@ -1,0 +1,28 @@
+<div class="task-index">
+    <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
+    <%= form_for :task, url: tasks_path  do |f| %>  
+        <p>
+            <%= f.text_area :body, :class => "text-area" %>
+        </p>
+        <p>
+            <%= f.label :fecha_limite %>
+            <%= f.date_field :end %>
+            <%= hidden_field_tag "group", @group.id  %>
+        </p>
+        <p>
+            <%= f.label :link %>
+            <%= f.text_field :link %>
+        </p>
+        <p>
+            <%= f.label :adjuntar_archivo %>
+            <%= f.file_field :avatar, :class => "file-field"  %>
+        </p>
+
+        <%= f.submit "Crear Tarea" %>
+    <% end %>
+    <br>
+    <hr>
+    <div>
+           <%= render "tasks" %>
+    </div> 
+</div>
