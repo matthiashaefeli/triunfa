@@ -22,6 +22,7 @@ class WelcomeController < ApplicationController
         user.tel = userupdate_params[:tel]
         user.state = userupdate_params[:state]
         user.city = userupdate_params[:city]
+        user.avatar = userupdate_params[:avatar]
         user.save
         redirect_to root_path
     end
@@ -71,7 +72,7 @@ class WelcomeController < ApplicationController
     end
 
     def userupdate_params
-        params.require(:user).permit(:street, :city, :cp, :tel, :state)
+        params.require(:user).permit(:street, :city, :cp, :tel, :state, :avatar)
     end
 
 end
