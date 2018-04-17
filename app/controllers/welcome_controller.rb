@@ -16,15 +16,30 @@ class WelcomeController < ApplicationController
     end
 
     def updateuser
-        user = User.find(params[:id])
-        user.street = userupdate_params[:street]
-        user.cp = userupdate_params[:cp]
-        user.tel = userupdate_params[:tel]
-        user.state = userupdate_params[:state]
-        user.city = userupdate_params[:city]
-        user.avatar = userupdate_params[:avatar]
-        user.save
+        if params[:user][:password] != nil
+            user = User.find(params[:id])
+            user.password = params[:user][:password]
+            user.save
+        else
+            user = User.find(params[:id])
+            user.street = userupdate_params[:street]
+            user.cp = userupdate_params[:cp]
+            user.tel = userupdate_params[:tel]
+            user.state = userupdate_params[:state]
+            user.city = userupdate_params[:city]
+            user.avatar = userupdate_params[:avatar]
+            user.save
+
+        end
         redirect_to root_path
+    end
+
+    def updatepassword
+
+        @user = User.find(params[:id])
+        # user.password = 1111
+        # user.save
+        # redirect_to students_path
     end
     
 
