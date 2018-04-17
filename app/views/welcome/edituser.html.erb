@@ -21,9 +21,18 @@
             <%= f.label :telefono %>
             <%= f.number_field :tel %>
         </p>
+        <% if @user.avatar_file_name != nil %>
+            <p>
+                <%= image_tag current_user.avatar.url(:thumb) %> 
+            </p>
+        <% end %>
+        <p>
+            <%= f.label :Foto %>
+            <%= f.file_field :avatar, :class => "file-field" %>
+        </p>
 
         <p>
-            <%= f.submit "Guardar Cambios" %>
+            <%= f.submit "Guardar" %>
         </p>
     <% end %>
 </div>
