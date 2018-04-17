@@ -13,9 +13,7 @@ class ConversationsController < ApplicationController
     def destroy
         table = Table.find(params[:id])
         id = table.id
-        table.conversations.each do |c|
-            c.delete
-        end
+        table.conversations.delete_all
         table.delete
         if request.xhr?
             respond_to do |format|
