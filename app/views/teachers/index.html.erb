@@ -1,36 +1,35 @@
 <div class="course-index">
     <h1>Instructores</h1>
-    <div>
-        <table class="table table-hover table-bordered" id="teacher-table">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Appelido</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Calle</th>
-                    <th scope="col">C.P</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Tel</th>
+    <input type="text" class="mySearch" id="teacherTableSearch" placeholder="Buscar por Nombre..">
+    <table class="table table-hover table-bordered" id="teacher-table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Appelido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Calle</th>
+                <th scope="col">C.P</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Tel</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <% @teachers.each do |t| %>
-                <tr>
-                    <td><%= link_to t.user.name, teacher_path(t.id) %></td>
-                    <td><%= t.user.lastname %></td>
-                    <td><%= t.user.email %></td>
-                    <td><%= t.user.street %></td>
-                    <td><%= t.user.cp %></td>
-                    <td><%= t.user.city %></td>
-                    <td><%= t.user.state %></td>
-                    <td><%= t.user.tel %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
+            </tr>
+        </thead>
+        <tbody>
+            <% @teachers.each do |t| %>
+            <tr>
+                <td><%= link_to t.user.name, teacher_path(t.id) %></td>
+                <td><%= t.user.lastname %></td>
+                <td><%= t.user.email %></td>
+                <td><%= t.user.street %></td>
+                <td><%= t.user.cp %></td>
+                <td><%= t.user.city %></td>
+                <td><%= t.user.state %></td>
+                <td><%= t.user.tel %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
     <div>
         <p id="new-teacher">Adjuntar Instructor</p>
         <div id="new-teacher-hidden">
