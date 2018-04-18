@@ -1,4 +1,10 @@
 <div class="room">
+  <% searched_user = check_user(current_user) %>
+  <% if searched_user == Teacher  %>
+    <p><%= link_to "Regresar", rooms_path %></p>
+  <% else %>
+    <%= link_to "Regresar", root_path %>
+  <% end %>
   <h3>Forum del Grupo <%= @room.group.name %></h3>
   <%= form_for :message, url: messages_path, remote: "true" do |f| %>
     <p>
@@ -16,10 +22,4 @@
   <div id="message_room<%= @room.id %>">
   <%= render "messages/messages" %>
   </div>
-  <% searched_user = check_user(current_user) %>
-  <% if searched_user == Teacher  %>
-    <p><%= link_to "Regresar", rooms_path %></p>
-  <% else %>
-    <%= link_to "Regresar", root_path %>
-  <% end %>
 </div>
