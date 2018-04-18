@@ -1,28 +1,27 @@
 <div class="course-index">
     <h1>Cursos</h1>
+    <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
     <br>
-    <div>
-        <table class="table table-hover table-bordered" id="course-table">
-            <thead>
-                <tr>
-                    <th scope="col"><%= sortable "id", "#" %></th>
-                    <th scope="col"><%= sortable "name", "Nombre" %></th>
-                    <th scope="col"><%= sortable "start", "Fecha inicio" %></th>
-                    <th scope="col">Fecha final</th>
-                </tr>
-            </thead>
-            <tbody>
-            <% @courses.each do |c| %>
-                <tr>
-                <th scope="row"><%= c.id %></th>
-                <td><%= link_to c.name, course_path(c.id) %></td>
-                <td><%= c.start %></td>
-                <td><%= c.end %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
+    <table class="table table-hover table-bordered" id="course-table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha final</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @courses.each do |c| %>
+            <tr>
+            <th scope="row"><%= c.id %></th>
+            <td><%= link_to c.name, course_path(c.id) %></td>
+            <td><%= c.start %></td>
+            <td><%= c.end %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
     <div>
         <p id="new-course">Crear nuevo Curso</p>
         <div id="new-course-hidden">

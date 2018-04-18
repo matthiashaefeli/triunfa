@@ -1,41 +1,39 @@
 <div class="course-index">
     <h1>Grupos</h1>
-    <div>
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Forum</th>
-                    <th scope="col">Tarea</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Instructor</th>
-                    <th scope="col">Curso</th>
-                    <th scope="col">clave</th>
-                    <th scope="col">Estudiantes</th>
-                    <th scope="col">Activo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @groups.each do |g| %>
-                <tr>
-                    <% if g.activ %>
-                        <td><%= link_to "Forum", room_path(Room.find_by(group: g)) %></td>
-                        <td><%= link_to "Tarea", tasks_path(group: g) %></td>
-                    <% else %>
-                        <td></td>
-                        <td></td>
-                    <% end %>
-                    <td><%= link_to g.name, group_path(g.id) %></td>
-
-                    <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
-                    <td><%= g.course.name %></td>
-                    <td><%= g.key %></td>
-                    <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
-                    <td><%= g.activ ? "Si" : "No" %></td>
-                </tr>
+    <input type="text" class="mySearch" id="groupTableSearch" placeholder="Buscar por Nombre..">
+    <table class="table table-hover table-bordered" id="groupTableTable">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Forum</th>
+                <th scope="col">Tarea</th>
+                <th scope="col">Instructor</th>
+                <th scope="col">Curso</th>
+                <th scope="col">clave</th>
+                <th scope="col">Estudiantes</th>
+                <th scope="col">Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @groups.each do |g| %>
+            <tr>
+                <td><%= link_to g.name, group_path(g.id) %></td>
+                <% if g.activ %>
+                    <td><%= link_to "Forum", room_path(Room.find_by(group: g)) %></td>
+                    <td><%= link_to "Tarea", tasks_path(group: g) %></td>
+                <% else %>
+                    <td></td>
+                    <td></td>
                 <% end %>
-            </tbody>
-        </table>
-    </div>
+                <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
+                <td><%= g.course.name %></td>
+                <td><%= g.key %></td>
+                <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
+                <td><%= g.activ ? "Si" : "No" %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
     <div>
         <p id="new-group">Crear nuevo Grupo</p>
         <div id="new-group-hidden">
