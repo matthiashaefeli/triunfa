@@ -1,9 +1,9 @@
 class CoursesController < ApplicationController
-
+    helper_method :sort_column, :sort_direction
     before_action :who_is
 
     def index
-        @courses = Course.all
+        @courses = Course.order(sort_column + " " + sort_direction)
     end
     
     def new
@@ -55,6 +55,14 @@ class CoursesController < ApplicationController
             return true  
         end
         redirect_to root_path
+    end
+
+    def sort_column
+        Course.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+      
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 

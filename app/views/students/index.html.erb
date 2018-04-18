@@ -3,15 +3,15 @@
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Grupo</th>
-                <th>Calle</th>
-                <th>C.P</th>
-                <th>Ciudad</th>
-                <th>Estado</th>
-                <th>Tel</th>
+                <th><%= sortable "name", "Nombre" %></th>
+                <th><%= sortable"lastname", "Apellido" %></th>
+                <th><%= sortable "email", "Email" %></th>
+                <th><%= sortable "group", "Grupo" %></th>
+                <th><%= sortable "street", "Calle" %></th>
+                <th><%= sortable "cp", "C.P" %></th>
+                <th><%= sortable "city", "Ciudad" %></th>
+                <th><%= sortable "state", "Estado" %></th>
+                <th><%= sortable "tel", "Tel" %></th>
             </tr>
         </thead>
         <tbody>
