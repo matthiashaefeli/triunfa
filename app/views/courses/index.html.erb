@@ -12,12 +12,12 @@
             </tr>
         </thead>
         <tbody>
-        <% @courses.each do |c| %>
+        <% for course in @courses %>
             <tr>
-            <th scope="row"><%= c.id %></th>
-            <td><%= link_to c.name, course_path(c.id) %></td>
-            <td><%= c.start %></td>
-            <td><%= c.end %></td>
+            <th scope="row"><%= course.id %></th>
+            <td><%= link_to course.name, course_path(course.id) %></td>
+            <td><%= course.start %></td>
+            <td><%= course.end %></td>
             </tr>
             <% end %>
         </tbody>

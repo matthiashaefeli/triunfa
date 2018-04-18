@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <% @users.each do |s| %>
+            <% for s in @users %>
                 <% if check_user(s) == Student || check_user(s) == "new_user" %>
                     <tr>
                         <td><%= link_to s.name, updatepassword_path(s.id) %></td>

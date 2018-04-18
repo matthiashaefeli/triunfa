@@ -16,16 +16,16 @@
             </tr>
         </thead>
         <tbody>
-            <% @teachers.each do |t| %>
+            <% for teacher in @teachers %>
             <tr>
-                <td><%= link_to t.user.name, teacher_path(t.id) %></td>
-                <td><%= t.user.lastname %></td>
-                <td><%= t.user.email %></td>
-                <td><%= t.user.street %></td>
-                <td><%= t.user.cp %></td>
-                <td><%= t.user.city %></td>
-                <td><%= t.user.state %></td>
-                <td><%= t.user.tel %></td>
+                <td><%= link_to teacher.user.name, teacher_path(teacher.id) %></td>
+                <td><%= teacher.user.lastname %></td>
+                <td><%= teacher.user.email %></td>
+                <td><%= teacher.user.street %></td>
+                <td><%= teacher.user.cp %></td>
+                <td><%= teacher.user.city %></td>
+                <td><%= teacher.user.state %></td>
+                <td><%= teacher.user.tel %></td>
             </tr>
             <% end %>
         </tbody>

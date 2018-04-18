@@ -1,4 +1,10 @@
 <div class="course-index">
+    <% searched_user = check_user(current_user) %>
+    <% if searched_user == Admin %>
+        <p><%= link_to "Regresar", groups_path %></p>
+    <% elsif searched_user == Teacher  %>
+        <p><%= link_to "Regresar", rooms_path %></p>
+    <% end %>
     <p>Nombre de Grupo: <%= @group.name %></p>
     <p>Curso: <%= @group.course.name %></p>
     <p>Clave: <%= @group.key %></p>
@@ -13,6 +19,7 @@
             </div>
         <% end %>
         <h3>Estudiantes:</h3>
+        <input type="text" class="mySearch" id="studentGroupsTableSearch" placeholder="Buscar por Nombre..">
         <table class="table table-hover table-bordered" id="group-table-show">
             <thead>
                 <tr>
@@ -27,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% @group.students.each do |student| %>
+                <% for student in @group.students %>
                 <tr>
                     <td><%= student.user.name %></td>
                     <td><%= student.user.lastname %></td>
@@ -44,6 +51,7 @@
     <% else %>
         <p>Activo: No</p>
         <h3>Estudiantes:</h3>
+        <input type="text" class="mySearch" id="studentIgroupsTableSearch" placeholder="Buscar por Nombre..">
         <table class="table table-hover table-bordered" id="igroup-table-show">
             <thead>
                 <tr>
@@ -58,7 +66,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% @igroups.each do |group| %>
+                <% for group in @igroups %>
                 <tr>
                     <td><%= group.user.name %></td>
                     <td><%= group.user.lastname %></td>
@@ -76,10 +84,5 @@
     <% end %> 
 </div>
 
-<% searched_user = check_user(current_user) %>
-<% if searched_user == Admin %>
-    <p><%= link_to "Regresar", groups_path %></p>
-<% elsif searched_user == Teacher  %>
-    <p><%= link_to "Regresar", rooms_path %></p>
-<% end %>
+
     

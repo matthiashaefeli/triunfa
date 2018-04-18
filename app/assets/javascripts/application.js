@@ -19,14 +19,23 @@
 
 $( document ).on('turbolinks:load', function() {
 
-    $(".mySearch").on('keyup', function() {
-        let $that = $(this);
-        let inputId = $that.children().context.id
-        let tableId = $that.siblings("table")[0].id
-        searchUserFilter(tableId, inputId)
-    })
 
+    $(".mySearch").on("keyup", function() {
+        let tableId = $(this).siblings("table")[0].id
+        let table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+        var value = $(this).val().toLowerCase();
+        $(tr).filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
 
+    // $(".mySearch").on('keyup', function() {
+    //     let $that = $(this);
+    //     let inputId = $that.children().context.id
+    //     let tableId = $that.siblings("table")[0].id
+    //     searchUserFilter(tableId, inputId)
+    // })
 
     $("#who-is").click(function(){
         $("#who-is-online").toggle();
@@ -74,23 +83,3 @@ $( document ).on('turbolinks:load', function() {
 
   })
 
-  function searchUserFilter(tableId, inputId) {
-    // Declare variables 
-    var input, filter, table, tr, td, i;
-    input = document.getElementById(inputId);
-    filter = input.value.toUpperCase();
-    table = document.getElementById(tableId);
-    tr = table.getElementsByTagName("tr");
-  
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      } 
-    }
-  }
