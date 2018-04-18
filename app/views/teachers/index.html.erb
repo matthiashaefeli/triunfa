@@ -7,6 +7,12 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Appelido</th>
                     <th scope="col">Correo</th>
+                    <th scope="col">Calle</th>
+                    <th scope="col">C.P</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Tel</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -15,6 +21,11 @@
                     <td><%= link_to t.user.name, teacher_path(t.id) %></td>
                     <td><%= t.user.lastname %></td>
                     <td><%= t.user.email %></td>
+                    <td><%= t.user.street %></td>
+                    <td><%= t.user.cp %></td>
+                    <td><%= t.user.city %></td>
+                    <td><%= t.user.state %></td>
+                    <td><%= t.user.tel %></td>
                 </tr>
                 <% end %>
             </tbody>

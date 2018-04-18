@@ -5,9 +5,9 @@
         <table class="table table-hover table-bordered" id="course-table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Fecha inicio</th>
+                    <th scope="col"><%= sortable "id", "#" %></th>
+                    <th scope="col"><%= sortable "name", "Nombre" %></th>
+                    <th scope="col"><%= sortable "start", "Fecha inicio" %></th>
                     <th scope="col">Fecha final</th>
                 </tr>
             </thead>
