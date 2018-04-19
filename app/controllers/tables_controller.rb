@@ -1,11 +1,9 @@
 class TablesController < ApplicationController
 
     def create
-        u1 = params[:format].split("/")[0]
-        u2 = params[:format].split("/")[1]
-        if !table_exists(u1,u2)
-            user = User.find(u1)
-            table = Table.create(user: user, seconduser: u2)
+        u2 = params[:format]
+        if !table_exists(current_user.id,u2)
+            table = Table.create(user: current_user, seconduser: u2)
             ActionCable.server.broadcast 'table_channel',
                                         seconduser: u2
                                         # table: render_table(table)
