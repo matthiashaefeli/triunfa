@@ -1,4 +1,4 @@
-App.message = App.cable.subscriptions.create "MessageChannel",
+App.talk = App.cable.subscriptions.create "TalkChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -6,38 +6,35 @@ App.message = App.cable.subscriptions.create "MessageChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-  
     # Called when there's incoming data on the websocket for this channel
-    id = '#message_room'+data.room
+
     if data.image != "" && data.content != ""
-      $(id).prepend '<div class="message">' +
-        '<div class="message-user">' +
+      $('#talk-table').prepend '<div class="talks">' +
+        '<div class="talk-user">' +
         data.name + '<span> dijo: </span>' +
         '</div>' +
-        '<div class="message-body">' +
+        '<div class="talk-body">' +
         data.content +
         '</div>' +
           '<br>' +
-          '<div class="message-image">' +
+          '<div class="talk-image">' +
           '<img src="'+data.image+'">' +
           '</div>' +
-        '<div class="message-fin">' +
+        '<div class="talk-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
         '<hr>' +
         '</div>'
     else if data.content != ""
-      $(id).prepend '<div class="message">' +
-        '<div class="message-user">' +
+      $('#talk-table').prepend '<div class="talks">' +
+        '<div class="talk-user">' +
         data.name + '<span> dijo: </span>' +
         '</div>' +
-        '<div class="message-body">' +
+        '<div class="talk-body">' +
         data.content +
         '</div>' +
-        '<div class="message-fin">' +
+        '<div class="talk-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
         '<hr>' +
         '</div>'
-
-

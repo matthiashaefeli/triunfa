@@ -1,0 +1,21 @@
+<% @talks.each do |t| %>
+    <div class="chats">
+        <div class="chat-user">
+        <%= t.user.name %> <%=t.user.lastname %> dijo:
+        </div>
+        <div class="chat-body">
+        <%=t.body %>
+        </div>
+        <div class="chat-image">
+        <% if  t.avatar_file_name != nil %>
+        <br>
+        <%= image_tag t.avatar.url(:medium) %>
+        <br>
+        <% end %>
+        </div>
+        <div class="chat-fin">
+        <small>el <%= l t.created_at, format: :short %></small>
+        </div>
+        <hr>
+    </div>
+<% end %>
