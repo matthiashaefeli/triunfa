@@ -43,6 +43,7 @@ $(document).on 'turbolinks:load', ->
   submit_message()
   submit_chat()
   submit_talk()
+  submit_conversation()
 
 submit_message = () ->
   $('#wellcome-chat-body').on 'keydown', (event) ->
@@ -65,5 +66,13 @@ submit_talk = () ->
   $('#talk-text').on 'keydown', (event) ->
     if event.keyCode is 13
       $('#talk-text-submit').click()
+      event.target.value = ""
+      event.preventDefault()
+
+
+submit_conversation = () ->
+  $('.conversation_content').on 'keydown', (event) ->
+    if event.keyCode is 13
+      $('.submit_conversation').click()
       event.target.value = ""
       event.preventDefault()

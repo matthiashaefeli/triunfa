@@ -9,4 +9,5 @@ App.table = App.cable.subscriptions.create "TableChannel",
     # Called when there's incoming data on the websocket for this channel
     id = '#my_conversation_id'+data.seconduser
     $(id).prepend '<p><a href="/">Click aqui para ver el mensaje privado</a></p>'
-    
+    # $(id).append data.table
+
