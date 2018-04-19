@@ -35,11 +35,7 @@ class WelcomeController < ApplicationController
     end
 
     def updatepassword
-
         @user = User.find(params[:id])
-        # user.password = 1111
-        # user.save
-        # redirect_to students_path
     end
     
 

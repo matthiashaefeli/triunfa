@@ -8,7 +8,9 @@ App.online = App.cable.subscriptions.create "OnlineChannel",
   received: (data) ->
   
     # Called when there's incoming data on the websocket for this channel
-    $("#online_users").append '<p id="'+data.id+'" >' +
-    data.name +
+    $("#who-is-online").append '<p id="online'+data.id+'" >' +
+    '<a href="/tables.'+data.id+'" data-method="create">'+data.name+'</a>' +
     '</p>'
     
+# <%= link_to "#{user.user.name} #{user.user.lastname}", tables_path([current_user, user.user.id]), :method => "create" %></p>
+

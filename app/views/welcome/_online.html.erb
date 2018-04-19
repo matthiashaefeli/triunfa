@@ -6,7 +6,7 @@
     <div id="who-is-online">
         <% all_users.each do |user| %>
             <% if user.user != current_user %>
-                <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path([current_user, user.user.id]), :method => "create" %></p>
+                <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path(user.user.id), :method => "create" %></p>
             <% end %>
         <% end %>
     </div>
