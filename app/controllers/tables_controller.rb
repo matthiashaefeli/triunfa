@@ -5,8 +5,9 @@ class TablesController < ApplicationController
         if !table_exists(current_user.id,u2)
             table = Table.create(user: current_user, seconduser: u2)
             ActionCable.server.broadcast 'table_channel',
-                                        seconduser: u2
-                                        # table: render_table(table)
+                                        seconduser: u2,
+                                        # table: render_table(table),
+                                        user: current_user.id
 
              redirect_to root_path                             
 
@@ -29,7 +30,7 @@ class TablesController < ApplicationController
     end
 
     def render_table(table)
-        render(partial: 'tables/_conversationtable.html.erb', locals: { table: t })
+        render(partial: 'conversationtable.html.erb', locals: { table: table })
       end
 
 end
