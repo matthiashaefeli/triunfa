@@ -1,40 +1,7 @@
 <div class="course-index">
-    <h1>Instructores</h1>
-    <input type="text" class="mySearch" id="teacherTableSearch" placeholder="Buscar por Nombre..">
-    <table class="table table-hover table-bordered" id="teacher-table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Appelido</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Calle</th>
-                <th scope="col">C.P</th>
-                <th scope="col">Ciudad</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Tel</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <% for teacher in @teachers %>
-            <tr>
-                <td><%= link_to teacher.user.name, teacher_path(teacher.id) %></td>
-                <td><%= teacher.user.lastname %></td>
-                <td><%= teacher.user.email %></td>
-                <td><%= teacher.user.street %></td>
-                <td><%= teacher.user.cp %></td>
-                <td><%= teacher.user.city %></td>
-                <td><%= teacher.user.state %></td>
-                <td><%= teacher.user.tel %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <%= render "teachers_all" %>
     <div>
-        <p id="new-teacher">Adjuntar Instructor</p>
-        <div id="new-teacher-hidden">
-            <%= render "new.html.erb" %>
-        </div>
+        <%= render "talks/talks.html.erb" %>
     </div>
-    <p><%= link_to "Pagina de Inicio", root_path %></p>
+    <!-- <p><%= link_to "Pagina de Inicio", root_path %></p> -->
 </div>

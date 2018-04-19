@@ -1,7 +1,8 @@
 class TeachersController < ApplicationController
 
     def index
-        who_is
+        # who_is
+        @talks = Talk.order(created_at: :desc).limit(10)
         @teachers = Teacher.all
     end
 

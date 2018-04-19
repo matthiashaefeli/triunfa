@@ -1,0 +1,20 @@
+<div class="teacher-talk">
+    <h2>Forum Instructores</h2>
+    <%= form_for :talk, url: talks_path, remote: "true"  do |f| %>  
+        <p>
+            <%= f.text_area :body, :class => "text-area", :id => "talk-text" %>
+        </p>
+        <p>
+            <%= f.label :adjuntar_imagen %>
+            <%= f.file_field :avatar, :class => "file-field" %>
+        </p>
+
+        <%= f.submit "Enviar Mensaje", :class => "talk_send", :id => "talk-text-submit" %>
+    <% end %>
+    <br>
+    <hr>
+    <div id="talk-table">
+            <%= render "talks/talk" %>
+    </div> 
+</div>
+

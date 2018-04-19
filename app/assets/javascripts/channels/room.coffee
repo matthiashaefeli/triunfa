@@ -8,7 +8,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   received: (data) ->
   
     # Called when there's incoming data on the websocket for this channel
-    if data.image != ""
+    if data.image != "" && data.content != ""
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
         data.name + '<span> dijo: </span>' +
@@ -25,7 +25,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '</div>' +
         '<hr>' +
         '</div>'
-    else 
+    else if data.content != ""
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
         data.name + '<span> dijo: </span>' +
@@ -42,6 +42,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 $(document).on 'turbolinks:load', ->
   submit_message()
   submit_chat()
+  submit_talk()
 
 submit_message = () ->
   $('#wellcome-chat-body').on 'keydown', (event) ->
@@ -59,3 +60,10 @@ submit_chat = () ->
       event.target.value = ""
       event.preventDefault()
 
+
+submit_talk = () ->
+  $('#talk-text').on 'keydown', (event) ->
+    if event.keyCode is 13
+      $('#talk-text-submit').click()
+      event.target.value = ""
+      event.preventDefault()
