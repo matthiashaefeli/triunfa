@@ -15,6 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Pagina de inicio</a></li>
+
         <!-- <li><a href="">uno</a></li> -->
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dropdown <span class="caret"></span></a>
@@ -31,6 +32,8 @@
 
           <!-- nav for all -->
         <% if !current_user %>
+          <li><a href="#courselink">Cursos</a></li>
+          <li><a href="#linkslink">Links</a></li>
           <li><%= link_to "Entrar", new_user_session_path %></li>
         <% else %>
           <% searched_user = check_user(current_user) %>

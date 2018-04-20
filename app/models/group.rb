@@ -6,4 +6,5 @@ class Group < ApplicationRecord
     belongs_to :course
     belongs_to :teacher
     has_many :students
+    has_many :tasks
 end
