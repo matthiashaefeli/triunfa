@@ -5,7 +5,7 @@
   <% else %>
     <%= link_to "Regresar", root_path %>
   <% end %>
-  <h3>Forum del Grupo <%= @room.group.name %></h3>
+  <h3>Foro del Grupo <%= @room.group.name %></h3>
   <%= form_for :message, url: messages_path, remote: "true" do |f| %>
     <p>
       <%= f.label :adjuntar_imagen %>
