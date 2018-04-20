@@ -36,7 +36,7 @@
             <tbody>
                 <% for student in @group.students %>
                 <tr>
-                    <td><%= student.user.name %></td>
+                    <td><%= link_to student.user.name, updatepassword_path(student.user.id) %></td>
                     <td><%= student.user.lastname %></td>
                     <td><%= student.user.email %></td>
                     <td><%= student.user.street %></td>

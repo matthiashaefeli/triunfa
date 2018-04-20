@@ -86,8 +86,6 @@
             <%= image_tag (check_user(current_user)).find_by(user: current_user).group.course.avatar.url(:medium) %>
         </div>
         <br>
-        <!-- <p><%= link_to "Click aqui para entrar al Forum de tu Grupo", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></p> -->
-
         <%= render "chat.html.erb" %>
     </div>
     <% end %>

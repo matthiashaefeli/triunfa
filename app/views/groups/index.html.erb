@@ -5,7 +5,7 @@
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Forum</th>
+                <th scope="col">Foro</th>
                 <th scope="col">Tarea</th>
                 <th scope="col">Instructor</th>
                 <th scope="col">Curso</th>
@@ -19,7 +19,7 @@
             <tr>
                 <td><%= link_to g.name, group_path(g.id) %></td>
                 <% if g.activ %>
-                    <td><%= link_to "Forum", room_path(Room.find_by(group: g)) %></td>
+                    <td><%= link_to "Foro", room_path(Room.find_by(group: g)) %></td>
                     <td><%= link_to "Tarea", tasks_path(group: g) %></td>
                 <% else %>
                     <td></td>
