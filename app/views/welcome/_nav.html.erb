@@ -37,12 +37,12 @@
 
           <!-- nav for admin -->
           <% if searched_user == Admin %>
-            <li><%= link_to "biblioteca", libraries_path %></li>
             <li><%= link_to "Cursos", courses_path %></li>
-            <li><%= link_to "Grupos", groups_path %></li>
             <li><%= link_to "Instructores", teachers_path %></li>
+            <li><%= link_to "Grupos", groups_path %></li>
             <li><%= link_to "Estudiantes", students_path %></li>
             <li><%= link_to "Estatisticas", statistics_path %></li>
+            <li><%= link_to "biblioteca", libraries_path %></li>
 
             <!-- nav for teachers -->
           <% elsif searched_user == Teacher %>
