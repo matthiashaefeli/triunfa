@@ -25,8 +25,8 @@
                     <td></td>
                     <td></td>
                 <% end %>
-                <td><%= g.teacher.user.name %> <%= g.teacher.user.lastname %></td>
-                <td><%= g.course.name %></td>
+                <td><%= link_to g.teacher.user.name, teacher_path(g.teacher.id) %> <%= g.teacher.user.lastname %></td>
+                <td><%= link_to g.course.name, course_path(g.course.id) %></td>
                 <td><%= g.key %></td>
                 <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
                 <td><%= g.activ ? "Si" : "No" %></td>
