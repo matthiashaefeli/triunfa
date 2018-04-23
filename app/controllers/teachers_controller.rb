@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
         # who_is
         @talks = Talk.order(created_at: :desc).limit(10)
         @teachers = Teacher.all
+        @admins = Admin.all
     end
 
     def new

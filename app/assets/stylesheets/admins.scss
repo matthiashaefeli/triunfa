@@ -1,0 +1,22 @@
+// Place all the styles related to the admins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.admin-show-all {
+    display: none;
+}
+
+.admin-show-text:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
+
+#new-admin-hidden {
+    display: none;
+}
+
+#new-admin:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}
