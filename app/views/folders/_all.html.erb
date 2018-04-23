@@ -1,0 +1,46 @@
+<div>
+    <% for folder in @folders %>
+        <div>
+                <p>
+                    <span class="papers-text"><%= folder.name %></span>
+                    <span class="folders">
+                        <i class="fas fa-plus-square"></i>
+                    </span>
+                    <span>
+                         <%= link_to folder_path(folder.id), :method => "delete"  do %>
+                           <i class="fas fa-trash-alt"></i>
+                         <% end %>
+                    </span>
+                </p>
+                <div class="add-papper">
+                        <%= form_for :paper, url: papers_path  do |f| %>  
+                        <p>
+                            <%= f.label :nombre %>
+                            <%= f.text_field :name %>
+                            <%= hidden_field_tag "folder", folder.id  %>
+                        </p>
+                        <p>
+                            <%= f.label :adjuntar_archivo %>
+                            <%= f.file_field :document %>
+                        </p>
+                    
+                        <%= f.submit "Adjuntar Archivo" %>
+                    <% end %>       
+                </div>
+                <div class="papers-all">
+                    <ul>
+                        <% for paper in folder.papers %>
+                            <li>
+                                <%= paper.name %>
+                                <span>
+                                    <%= link_to paper_path(paper.id), :method => "delete"  do %>
+                                        <i class="fas fa-trash-alt"></i>
+                                    <% end %>
+                                </span>
+                            </li>
+                        <% end %> 
+                    </ul>
+                </div>
+        </div> 
+    <% end %>
+</div>

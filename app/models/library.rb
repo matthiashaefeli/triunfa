@@ -4,6 +4,6 @@ class Library < ApplicationRecord
     # :storage => :google_drive,
     # :google_drive_credentials => "#{Rails.root}/config/google_drive.yml"
 
-
+    has_many :folders
 
 end
