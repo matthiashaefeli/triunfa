@@ -1,5 +1,12 @@
 <div class="course-index">
-    <%= render "teachers_all" %>
+    <p class="teacher-show-text">Click aqui para ver los Instructores</p>
+    <div class="teacher-show-all">
+        <%= render "teachers_all" %>
+    </div>
+    <p class="admin-show-text">Click aqui para ver los Admins</p>
+    <div class="admin-show-all">
+        <%= render "admins/admin_all" %>
+    </div>
     <div>
         <%= render "talks/talks.html.erb" %>
     </div>

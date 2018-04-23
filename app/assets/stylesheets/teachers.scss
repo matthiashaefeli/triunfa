@@ -29,3 +29,12 @@
     display: flex;
     justify-content: space-around;
 }
+
+.teacher-show-all {
+    display: none;
+}
+
+.teacher-show-text:hover {
+    cursor: pointer;
+    color: #4FC3F7;
+}

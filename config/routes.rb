@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :tasks
   resources :libraries
   resources :talks
+  resources :admins
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'

@@ -1,0 +1,36 @@
+<% if check_user(current_user) == Admin %>
+<h1>Admins</h1>
+<input type="text" class="mySearch" id="adminTableSearch" placeholder="Buscar por Nombre..">
+<table class="table table-hover table-bordered" id="admin-table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Appelido</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Super</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for admin in @admins %>
+        <tr>
+            <td><%= admin.user.name %></td>
+            <td><%= admin.user.lastname %></td>
+            <td><%= admin.user.email %></td>
+            <td><%= admin.super ? "Si" : "No" %></td>
+            <% if (Admin.find_by(user: current_user).super) %>
+                <td><%= link_to "delete admin", admin_path(admin.id), :method => "delete" %></td>
+            <% else %>
+                <td>No tienes accesso</td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<div>
+    <p id="new-admin">Adjuntar Admin</p>
+    <div id="new-admin-hidden">
+        <%= render "admins/new.html.erb" %>
+    </div>
+</div>
+<% end %>

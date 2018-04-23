@@ -65,6 +65,18 @@ $( document ).on('turbolinks:load', function() {
         $(".stat-show-child").toggle();
     });
 
+    $(".teacher-show-text").click(function(){
+        $(".teacher-show-all").toggle();
+    });
+
+    $(".admin-show-text").click(function(){
+        $(".admin-show-all").toggle();
+    });
+
+    $("#new-admin").click(function(){
+        $("#new-admin-hidden").toggle();
+    });
+
     $(".conv-x").click(function(event){
         event.preventDefault()
         let $that = $(this);
