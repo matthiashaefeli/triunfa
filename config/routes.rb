@@ -15,10 +15,11 @@ Rails.application.routes.draw do
   resources :conversations
   resources :tables
   resources :tasks
-  resources :libraries
+  resources :libraries, only: [:index]
   resources :talks
   resources :admins
-  resources :folders
+  resources :folders, only: [:create, :destroy]
+  resources :papers, only: [:create, :destroy]
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'

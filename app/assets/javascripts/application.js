@@ -37,6 +37,16 @@ $( document ).on('turbolinks:load', function() {
     //     searchUserFilter(tableId, inputId)
     // })
 
+    $('.folders').on("click", function() {        
+        let paperNew = $(this);
+        paperNew.parent().siblings(".add-papper").toggle();
+    })
+
+    $(".papers-text").click(function(){
+        let paperShow = $(this);
+        paperShow.parent().siblings(".papers-all").toggle();
+    });
+
     $("#who-is").click(function(){
         $("#who-is-online").toggle();
     });

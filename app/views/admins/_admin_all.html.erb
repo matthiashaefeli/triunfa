@@ -8,7 +8,7 @@
             <th scope="col">Appelido</th>
             <th scope="col">Correo</th>
             <th scope="col">Super</th>
-            <th scope="col">Delete</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -19,9 +19,11 @@
             <td><%= admin.user.email %></td>
             <td><%= admin.super ? "Si" : "No" %></td>
             <% if (Admin.find_by(user: current_user).super) %>
-                <td><%= link_to "delete admin", admin_path(admin.id), :method => "delete" %></td>
-            <% else %>
-                <td>No tienes accesso</td>
+                <td>
+                    <%= link_to admin_path(admin.id), :method => "delete" do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                </td>
             <% end %>
         </tr>
         <% end %>
