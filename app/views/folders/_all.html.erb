@@ -1,0 +1,12 @@
+<div>
+    <% for folder in @folders %>
+        <p id="folder<%= folder.id %>"><span class="folder-delete-link"><%= folder.name %> <%= link_to folder_path(folder.id), :method => "delete"  do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>
+        </span></p>
+            <ul>
+
+            </ul>
+        
+    <% end %>
+</div>

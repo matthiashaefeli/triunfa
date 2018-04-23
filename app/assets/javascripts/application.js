@@ -73,6 +73,10 @@ $( document ).on('turbolinks:load', function() {
         $(".admin-show-all").toggle();
     });
 
+    $(".create-new-folder-text").click(function(){
+        $(".create-new-folder").toggle();
+    });
+
     $("#new-admin").click(function(){
         $("#new-admin-hidden").toggle();
     });
