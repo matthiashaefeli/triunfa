@@ -13,6 +13,15 @@ class PapersController < ApplicationController
         redirect_to libraries_path
     end
 
+    def download
+        download = Paper.find(params[:id])
+        send_file download.document.path,
+        :filename => download.document_file_name,
+        :type => download.document_content_type,
+        :disposition => 'attachment'
+        flash[:notice] = "Your file has been downloaded"
+    end
+
     private
 
     def papers_params

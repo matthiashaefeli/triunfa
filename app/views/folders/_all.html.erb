@@ -31,14 +31,14 @@
                     <ul>
                         <% for paper in folder.papers %>
                             <li>
-                                <%= paper.name %>
+                                <%= link_to paper.name, paperdownload_path(paper.id) %>
                                 <span>
                                     <%= link_to paper_path(paper.id), :method => "delete"  do %>
                                         <i class="fas fa-trash-alt"></i>
                                     <% end %>
                                 </span>
                             </li>
-                        <% end %> 
+                        <% end %>
                     </ul>
                 </div>
         </div> 

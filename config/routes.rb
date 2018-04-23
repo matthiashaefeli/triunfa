@@ -17,13 +17,14 @@ Rails.application.routes.draw do
   resources :tasks
   resources :libraries, only: [:index]
   resources :talks
-  resources :admins
+  resources :admins, only: [:create, :destroy]
   resources :folders, only: [:create, :destroy]
   resources :papers, only: [:create, :destroy]
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
   get 'tasks/download/:id', to: 'tasks#download', as: 'download'
+  get 'papers/download/:id', to: 'papers#download', as:'paperdownload'
   root "welcome#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
