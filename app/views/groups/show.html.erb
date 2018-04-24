@@ -6,12 +6,12 @@
         <p><%= link_to "Regresar", rooms_path %></p>
     <% end %>
     <p>Nombre de Grupo: <%= @group.name %></p>
+    <p>Curso: <%= @group.course.name %></p>
     <% if @group.course.document_file_name != nil %>
         <%= link_to coursedownload_path(@group.course.id) do %>
-        <p><i class="fas fa-file"> Click aqui para bajar Curso</i></p>
+            <p><i class="fas fa-file"> Click aqui para bajar Curso</i></p>
+        <% end %>
     <% end %>
-    <% end %>
-    <p>Curso: <%= @group.course.name %></p>
     <p>Clave: <%= @group.key %></p>
     <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
     <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
