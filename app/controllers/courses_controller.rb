@@ -1,15 +1,18 @@
 class CoursesController < ApplicationController
 
-    before_action :who_is
+
 
     def index
+        who_is
         @courses = Course.all
     end
     
     def new
+        who_is
     end
 
     def create
+        who_is
         course = Course.create(course_params)
         if course.save
             redirect_to courses_path
@@ -19,14 +22,17 @@ class CoursesController < ApplicationController
     end
 
     def show
+        who_is
         @course = Course.find(params[:id])
     end
 
     def edit
+        who_is
         @course = Course.find(params[:id])
     end
 
     def update
+        who_is
         course = Course.find(params[:id])
         course.update_attributes(course_params)
         if course.save
@@ -37,6 +43,7 @@ class CoursesController < ApplicationController
     end
 
     def destroy
+        who_is
         Course.find(params[:id]).destroy
         redirect_to courses_path
     end
