@@ -16,10 +16,10 @@ class Paper < ApplicationRecord
                     :storage => :fog,
                     :fog_credentials => {
                     provider: "AWS",
-                    aws_access_key_id: "AKIAJ3ICLER5G3N7YHBA",
-                    aws_secret_access_key: "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"
+                    aws_access_key_id: ENV["aws_key"],
+                    aws_secret_access_key: ENV["aws_secret_key"]
                     },
-                    :fog_directory => "bibliotecasuperate"
+                    :fog_directory => ENV["aws_library"]
 
     validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/, /\.png?$/, /\.jpg?$/]
 
