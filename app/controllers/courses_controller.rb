@@ -41,9 +41,15 @@ class CoursesController < ApplicationController
         redirect_to courses_path
     end
 
+    def download
+        course = Course.find(params[:id])
+        file_data = open(course.document.url)
+        send_data file_data.read, filename: course.document_file_name, type: course.document.content_type, disposition: 'attachment'
+    end
+
     private
     def course_params
-        params.require(:course).permit(:name, :start, :end, :avatar)
+        params.require(:course).permit(:name, :start, :end, :avatar, :document)
     end
     
     def who_is

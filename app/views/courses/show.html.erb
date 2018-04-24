@@ -5,6 +5,11 @@
     <% if @course.avatar_file_name != nil %>
         <p><%= image_tag @course.avatar.url(:thumb), :class => "course-avatar"%></p>
     <% end %>
+    <% if @course.document_file_name != nil %>
+            <%= link_to coursedownload_path(@course.id) do %>
+            <p><i class="fas fa-file"> <%= @course.name %></i></p>
+        <% end %>
+    <% end %>
     <hr>
     <p id="edit-course">Editar Curso</p>
     <div id="edit-course-hidden">

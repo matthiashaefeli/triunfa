@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
   get 'tasks/download/:id', to: 'tasks#download', as: 'download'
   get 'papers/download/:id', to: 'papers#download', as:'paperdownload'
+  get 'courses/download/:id', to: 'courses#download', as:'coursedownload'
   root "welcome#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
