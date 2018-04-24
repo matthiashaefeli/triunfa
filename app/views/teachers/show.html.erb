@@ -11,6 +11,7 @@
                     <i class="fas fa-thumbs-down"></i></p>
                 <% end %>
             <% end %>
+            <p><%= link_to "Cambiar contraseña", updatepassword_path(@teacher.user.id) %></p>
             <p><strong>Nombre: </strong><%= @teacher.user.name %></p>
             <p><strong>Apellido: </strong><%= @teacher.user.lastname %></p>
             <p><strong>Correo: </strong><%= @teacher.user.email %></p>
