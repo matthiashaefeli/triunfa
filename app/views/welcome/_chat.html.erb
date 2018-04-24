@@ -2,11 +2,11 @@
     <h2>Foro Superate y Triunfa</h2>
     <%= form_for :chat, url: chats_path, remote: "true"  do |f| %>  
         <p>
-            <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body" %>
-        </p>
-        <p>
             <%= f.label :adjuntar_imagen %>
             <%= f.file_field :avatar %>
+        </p>
+        <p>
+            <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body" %>
         </p>
 
         <%= f.submit "Enviar Mensaje", :class => "chat_send"%>

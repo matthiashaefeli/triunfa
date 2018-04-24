@@ -16,12 +16,15 @@ class TasksController < ApplicationController
     end
 
     def download
-        download = Task.find(params[:id])
-        send_file download.document.path,
-        :filename => download.document_file_name,
-        :type => download.document_content_type,
-        :disposition => 'attachment'
-        flash[:notice] = "Your file has been downloaded"
+        task = Task.find(params[:id])
+        file_data = open(task.document.url)
+        send_data file_data.read, filename: task.document_file_name, type: task.document.content_type, disposition: 'attachment'
+        # download = Task.find(params[:id])
+        # send_file download.document.path,
+        # :filename => download.document_file_name,
+        # :type => download.document_content_type,
+        # :disposition => 'attachment'
+        # flash[:notice] = "Your file has been downloaded"
     end
 
     private
