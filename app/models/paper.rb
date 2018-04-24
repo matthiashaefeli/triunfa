@@ -9,7 +9,7 @@ class Paper < ApplicationRecord
                     },
                     :fog_directory => ENV["aws_library"]
 
-    validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/, /\.png?$/, /\.jpg?$/]
+    validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/, /\.png?$/, /\.jpg?$/, /\.jpeg?$/]
 
     belongs_to :folder
 end
