@@ -40,9 +40,12 @@ class GroupsController < ApplicationController
                 igroup = Igroup.create(user: student.user, group: group)
                 student.delete
             end
+            group.tasks.each do |task|
+                task.delete
+            end
             room = Room.find_by(group: group)
             room.messages.delete_all
-            
+
         end
         group.update_attributes(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, activ: params[:group][:activ].to_i)
         group.save

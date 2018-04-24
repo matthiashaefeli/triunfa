@@ -1,6 +1,16 @@
 <div class="course-index">
     <div class="teacher_show">
         <div>
+        <p><strong>Activo?&nbsp&nbsp</strong>
+            <% if @teacher.activ == true %>
+                <%= link_to teacher_path(@teacher.id), :method => "delete" do %>
+                     <i class="fas fa-thumbs-up"></i></p>
+                <% end %>
+            <% else %>
+                <%= link_to teacher_path(@teacher.id), :method => "delete" do %>
+                    <i class="fas fa-thumbs-down"></i></p>
+                <% end %>
+            <% end %>
             <p><strong>Nombre: </strong><%= @teacher.user.name %></p>
             <p><strong>Apellido: </strong><%= @teacher.user.lastname %></p>
             <p><strong>Correo: </strong><%= @teacher.user.email %></p>
