@@ -26,7 +26,12 @@
 
             <div id="conv-table<%= t.id %>" class="line-high">
                 <% t.conversations.order(created_at: :desc).each do |conv| %>
-                    <p><%= conv.body %></p>
+                <p><%= conv.body %></p>
+                    <!-- <% if conv.user == current_user %>
+                        <p class="conv-left"><%= conv.body %></p>
+                    <% else %>
+                        <p class="conv-right"><%= conv.body %></p>
+                    <% end %> -->
                 <% end %>
             </div>
         </div>
