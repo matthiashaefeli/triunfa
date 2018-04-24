@@ -14,12 +14,15 @@ class PapersController < ApplicationController
     end
 
     def download
-        download = Paper.find(params[:id])
-        send_file download.document.path,
-        :filename => download.document_file_name,
-        :type => download.document_content_type,
-        :disposition => 'attachment'
-        flash[:notice] = "Your file has been downloaded"
+        paper = Paper.find(params[:id])
+        file_data = open(paper.document.url)
+        send_data file_data.read, filename: paper.document_file_name, type: paper.document.content_type, disposition: 'attachment'
+        # download = Paper.find(params[:id])
+        # send_file download.document.path,
+        # :filename => download.document_file_name,
+        # :type => download.document_content_type,
+        # :disposition => 'attachment'
+        # flash[:notice] = "Your file has been downloaded"
     end
 
     private

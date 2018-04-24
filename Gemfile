@@ -40,6 +40,8 @@ gem 'devise'
 gem "paperclip", "~> 6.0.0"
 gem 'json'
 gem 'aws-sdk-s3'
+gem 'fog'
+gem 'figaro'
 
 
 group :development, :test do
