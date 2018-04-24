@@ -13,6 +13,7 @@
             <th scope="col">Ciudad</th>
             <th scope="col">Estado</th>
             <th scope="col">Tel</th>
+            <th>Activo</th>
 
         </tr>
     </thead>
@@ -32,6 +33,14 @@
             <td><%= teacher.user.city %></td>
             <td><%= teacher.user.state %></td>
             <td><%= teacher.user.tel %></td>
+            <td>
+                <% if teacher.activ == true %>
+                    <i class="fas fa-thumbs-up"></i>
+                <% else %> 
+                    <i class="fas fa-thumbs-down"></i>
+                <% end %>
+            </td>
+            
         </tr>
         <% end %>
     </tbody>

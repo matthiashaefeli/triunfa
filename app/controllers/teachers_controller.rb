@@ -40,6 +40,17 @@ class TeachersController < ApplicationController
         redirect_to root_path
     end
 
+    def destroy
+        teacher = Teacher.find(params[:id])
+        if teacher.activ == true
+            teacher.activ = false
+        else 
+            teacher.activ = true
+        end
+        teacher.save
+        redirect_to teachers_path
+    end
+
 
 
 

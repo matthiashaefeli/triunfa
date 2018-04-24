@@ -72,12 +72,25 @@
     <% if searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
-    <% elsif searched_user == Admin || searched_user == Teacher %>
-    <%= render "online.html.erb" %>
-    <div class="currentuser-item-size-two">
-        <br>
-        <%= render "chat.html.erb" %>
-    </div>
+    <% elsif searched_user == Admin %>
+        <%= render "online.html.erb" %>
+        <div class="currentuser-item-size-two">
+            <br>
+            <%= render "chat.html.erb" %>
+        </div>
+        
+    <% elsif searched_user == Teacher %>
+        <% if (Teacher.find_by(user: current_user)).activ %>
+            <%= render "online.html.erb" %>
+            <div class="currentuser-item-size-two">
+                <br>
+                <%= render "chat.html.erb" %>
+            </div>
+        <% else %>
+            <h1>Este Instructor no es activo. Porfavor contactar el administrador!</h1>
+        <% end %>
+
+
 
     <% elsif searched_user == Student %>
     <%= render "online.html.erb" %>
