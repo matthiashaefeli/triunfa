@@ -1,40 +1,47 @@
 <div class="task-index">
-    <% searched_user = check_user(current_user) %>
-    <% if searched_user == Teacher  %>
-        <p><%= link_to "Regresar", rooms_path %></p>
-        <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
-        <%= form_for :task, url: tasks_path  do |f| %>  
-            <p>
-                <%= f.text_area :body, :class => "text-area" %>
-            </p>
-            <p>
-                <%= f.label :Terminar_antes_de %>
-                <%= f.date_field :end %>
-                <%= hidden_field_tag "group", @group.id  %>
-            </p>
-            <p>
-                <%= f.label :link %>
-                <%= f.text_field :link %>
-            </p>
-            <p>
-                <%= f.label :adjuntar_archivo %>
-                <%= f.file_field :document, :class => "file-field"  %>
-            </p>
-
-            <%= f.submit "Crear Tarea" %>
+    <div class="task-assignments">
+        <h4>Todas las actividades:</h4>
+        <% for assignment in @group.course.assignments %>
+            <p><strong><%= assignment.name %>:</strong> <span><%= assignment.points %> Puntos</span></p>
         <% end %>
-        <br>
-        <hr>
-    <% elsif searched_user == Student %>
-            <h2>Mi Tarea:</h2>
-            <hr>
-    <% else %>
-            <h2>Tarea del Grupo:</h2>
-            <hr>
-    <% end %>
+    </div>
+    <div class="task-tasks">
+        <% searched_user = check_user(current_user) %>
+        <% if searched_user == Teacher  %>
+            <p><%= link_to "Regresar", rooms_path %></p>
+            <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
+            <%= form_for :task, url: tasks_path  do |f| %>  
+                <p>
+                    <%= f.text_area :body, :class => "text-area" %>
+                </p>
+                <p>
+                    <%= f.label :Terminar_antes_de %>
+                    <%= f.date_field :end %>
+                    <%= hidden_field_tag "group", @group.id  %>
+                </p>
+                <p>
+                    <%= f.label :link %>
+                    <%= f.text_field :link %>
+                </p>
+                <p>
+                    <%= f.label :adjuntar_archivo %>
+                    <%= f.file_field :document, :class => "file-field"  %>
+                </p>
 
-    <div>
-        <%= render "tasks" %>
-    </div> 
+                <%= f.submit "Crear Tarea" %>
+            <% end %>
+            <br>
+            <hr>
+        <% elsif searched_user == Student %>
+                <h2>Mi Tarea:</h2>
+                <hr>
+        <% else %>
+                <h2>Tarea del Grupo:</h2>
+                <hr>
+        <% end %>
 
+        <div>
+            <%= render "tasks" %>
+        </div> 
+    </div>
 </div>

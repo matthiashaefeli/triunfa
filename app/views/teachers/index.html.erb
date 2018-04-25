@@ -1,4 +1,5 @@
 <div class="course-index">
+    <% if check_user(current_user) == Admin %>
     <p class="teacher-show-text">Click aqui para ver los Instructores</p>
     <div class="teacher-show-all">
         <%= render "teachers_all" %>
@@ -7,6 +8,7 @@
     <div class="admin-show-all">
         <%= render "admins/admin_all" %>
     </div>
+    <% end %>
     <div>
         <%= render "talks/talks.html.erb" %>
     </div>
