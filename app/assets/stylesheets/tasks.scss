@@ -4,5 +4,14 @@
 
 .task-index {
     margin-top: 60px;
+    display: flex;
+}
+
+.task-assignments {
+    flex-grow: 1;
+}
+
+.task-tasks {
     text-align: center;
+    flex-grow: 3;
 }

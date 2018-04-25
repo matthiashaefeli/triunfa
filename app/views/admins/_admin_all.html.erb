@@ -1,4 +1,3 @@
-<% if check_user(current_user) == Admin %>
 <h1>Admins</h1>
 <input type="text" class="mySearch" id="adminTableSearch" placeholder="Buscar por Nombre..">
 <table class="table table-hover table-bordered" id="admin-table">
@@ -35,4 +34,3 @@
         <%= render "admins/new.html.erb" %>
     </div>
 </div>
-<% end %>
