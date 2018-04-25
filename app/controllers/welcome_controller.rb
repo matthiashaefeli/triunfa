@@ -49,6 +49,8 @@ class WelcomeController < ApplicationController
         sign_out_and_redirect(current_user)
     end
 
+    private
+
     def update_offline(user_to_update)
         u = user_to_update.find_by(user: current_user)
         u.online = false
