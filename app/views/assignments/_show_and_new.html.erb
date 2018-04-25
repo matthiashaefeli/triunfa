@@ -1,0 +1,48 @@
+<div>
+    <% if @course.assignments.count > 0 %>
+    <table class="table table-hover table-bordered" id="assignment-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntos</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for assignment in @course.assignments %>
+            <tr>
+                <td><%= assignment.name %></td>
+                <td><%= assignment.points %></td>
+                <td>
+                    <%= link_to assignment_path(assignment.id), :method => "delete" do %>
+                        <i class="fas fa-trash-alt"></i>
+                        <% end %>
+                </td>
+            </tr>
+            <% end %>
+            <tr>
+                <td></td>
+                <td><strong><%= total_point(@course.id) %></strong></td>
+                <td></td>
+            </tr>
+        </tbody>
+    
+    
+    </table>
+    <% end %>
+    <div>
+        <%= form_for :assignment, url: assignments_path do |f| %>
+            <p>
+                <%= f.label :nombre %>
+                <%= f.text_field :name, :class => "assignment-text-field" %>
+
+                <%= f.label :puntos %>
+                <%= f.number_field :points, :class => "assignment-points-field" %>
+                <%= hidden_field_tag "course", @course.id  %>
+            </p>
+            <p>
+                <%= f.submit "Adjuntar asignación" %>
+            </p>
+        <% end %>
+    </div>
+</div>

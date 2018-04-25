@@ -27,4 +27,5 @@ class Course < ApplicationRecord
     validates :end, presence: true
 
     has_many :groups
+    has_many :assignments
 end
