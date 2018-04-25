@@ -1,0 +1,22 @@
+<div class="assignment-show">
+    <h3>Assignacion: <%= @assignment.name %></h3>
+    <h4>Estudiantes:</h4>
+
+    <table class="table table-hover table-bordered" id="assignment-table-users">
+        <tr>
+            <th>Nombre</th>
+            <th>Cumplido</th>
+            <th>Guardar</th>
+        </tr>
+        <% for student in @group.students %>
+        <%= form_for :finishedAssignment, url: finished_assignments_path do |f| %>
+        <tr>
+            <td><%= student.user.name %> <%= student.user.lastname %></td>
+            <%= hidden_field_tag "user", student.user.id  %> 
+            <td><%= f.check_box :cumplido %></td>
+            <td><%= f.submit "Guardar" %></td>
+        </tr>
+        <% end %>
+    <% end %>
+</table>
+</div>

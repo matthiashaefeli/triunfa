@@ -2,7 +2,9 @@
     <div class="task-assignments">
         <h4>Todas las actividades:</h4>
         <% for assignment in @group.course.assignments %>
-            <p><strong><%= assignment.name %>:</strong> <span><%= assignment.points %> Puntos</span></p>
+            <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
+                <p class="assignment-show-users"><strong><%= assignment.name %></strong> <span><%= assignment.points %> Puntos</span></p>
+            <% end %>
         <% end %>
     </div>
     <div class="task-tasks">

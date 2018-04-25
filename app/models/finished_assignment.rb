@@ -1,0 +1,2 @@
+class FinishedAssignment < ApplicationRecord
+end
