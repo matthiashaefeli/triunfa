@@ -8,6 +8,11 @@ class AssignmentsController < ApplicationController
         redirect_to course_path(course)
     end
 
+    def show
+        @group = Group.find(params[:group])
+        @assignment = Assignment.find(params[:id])
+    end
+
     def destroy
         assignment = Assignment.find(params[:id])
         course = assignment.course
