@@ -1,5 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:course){Course.new(name: "excel", start: "01-02-2018 10:10:10", end: "02-02-2018 10:10:10")}
+  let(:user){User.new(name: "teacher", lastname: "bosa", email: "bosa@test.com", password: "1234")}
+  let(:teacher){Teacher.new(user: user)}
+  let(:group){Group.new(name: "houston", key: "h20", teacher: teacher, course: course)}
+  let(:task){Task.new(body: "task for today", user: user, group: group, end: "01-02-2018 10:10:10")}
+
+  it "belongs to a user" do 
+    expect(task.user).to eq user
+  end
+
+  it "belongst to a group" do 
+    expect(task.group).to eq group
+  end
+
+  it "has a bdoy" do 
+    expect(task.body).to eq "task for today"
+  end
+
+  it "has a end date" do 
+    expect(task.end?).to eq true
+  end
+
 end

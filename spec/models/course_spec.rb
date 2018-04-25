@@ -7,12 +7,12 @@ describe Course, type: :model do
         expect(course.name).to eq "excel"
     end
 
-    # it "has a start date" do
-    #     expect(course.start).to eq "Thu, 01 Feb 2018"
-    # end
+    it "has a start date" do
+        expect(course.start?).to eq true
+    end
 
-    # it "has a end date" do
-    #     expect(course.end).to eq "Fri, 02 Feb 2018"
-    # end
+    it "has a end date" do
+        expect(course.end?).to eq true
+    end
 
 end

@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TablesHelper. For example:
-#
-# describe TablesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TablesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # let(:user){User.new(name: "juan", lastname: "bosa", email: "bosa@test.com", password: "1234")}
+  # let(:usertwo){User.new(name: "pedro", lastname: "beta", email: "beta@test.com", password: "1234")}
+  # let(:table){Table.new(user: user, seconduser: usertwo.id)}
+
+
+  # describe "find_tables" do 
+  #   it "returns table created from user" do 
+  #     expect(find_tables(user)).to eq table
+  #   end
+  # end
+
+
 end
