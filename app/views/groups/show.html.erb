@@ -17,7 +17,7 @@
     <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
     <% if @group.activ == true %>
         <p>Activo: Si</p>
-        <% if check_user(current_user) == Admin %>
+        <% if searched_user == Admin %>
             <p id="edit-group">Editar Grupo</p>
             <div id="edit-group-hidden">
                 <%= render "edit.html.erb" %>

@@ -17,12 +17,13 @@
         </thead>
         <tbody>
             <% for s in @users %>
-                <% if check_user(s) == Student || check_user(s) == "new_user" %>
+                <% searched_user = check_user(s) %>
+                <% if searched_user == Student || searched_user == "new_user" %>
                     <tr>
                         <td><%= link_to s.name, updatepassword_path(s.id) %></td>
                         <td><%= s.lastname %></td>
                         <td><%= s.email %></td>
-                        <% if check_user(s) == Student %>
+                        <% if searched_user == Student %>
                             <td><%= (Student.find_by(user: s)).group.name %></td>
                         <% else %>
                             <td></td>

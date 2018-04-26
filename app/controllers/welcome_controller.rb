@@ -58,29 +58,14 @@ class WelcomeController < ApplicationController
     end
 
     def check_user(user)
-        if user != nil
-            admins = []
-            Admin.all.each do |a|
-                admins.push(a.user.email)
-            end
-            students = []
-            Student.all.each do |a|
-                students.push(a.user.email)
-            end
-            teachers = []
-            Teacher.all.each do |a|
-                teachers.push(a.user.email)
-            end
-            
-            if students.include?(user.email)
-                return Student
-            elsif teachers.include?(user.email)
-                return Teacher
-            elsif admins.include?(user.email)
-                return Admin 
-            else
-                return "new_user"
-            end
+        if Admin.find_by(user: user)
+            return Admin
+        elsif Student.find_by(user: user)
+            return Student
+        elsif Teacher.find_by(user:user)
+            return Teacher
+        else
+            return "new_user"
         end
     end
 

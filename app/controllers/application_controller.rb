@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user!, except: [:index]
   
 
-
   protected
 
   def configure_permitted_parameters
