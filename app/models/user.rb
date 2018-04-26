@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :tables
   has_many :conversations
   has_many :talks
+  has_many :finishedAssignments
 
   devise :database_authenticatable, :validatable, password_length: 4..4
   

@@ -1,0 +1,26 @@
+<div class="finished">
+    <h4>Todos mis actividades terminados</h4>
+    <table class="table table-hover table-bordered" id="finished_assignments_table">
+        <thead>
+            <tr>
+                <th>Actividad</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% finished_ass(current_user).each do |f| %>
+                <tr>
+                    <td><%= f.assignment.name %></td>
+                    <td><%= f.assignment.course.name %></td>
+                </tr>
+            <% end %>
+
+        </tbody>
+    
+    
+    
+    
+    </table>
+    
+
+</div>

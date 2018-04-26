@@ -68,6 +68,7 @@
                 <li><%= link_to (image_tag current_user.avatar.url(:thumb), :class => "user-avatar"), edituser_path(current_user.id)  %></li>
               <% end %>
               <li><%= link_to "Tareas", tasks_path(group: Student.find_by(user: current_user).group) %></li>
+              <li><%= link_to "Logros", finished_assignments_path %></li>
               <li><%= link_to "Foro", room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) %></li>
 
             <% else %>

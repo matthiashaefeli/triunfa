@@ -58,3 +58,8 @@ Room.create(group: group4)
     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
     student = Student.create(user: studentuser, group: group4)
 end
+
+
+500.times do 
+    studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
+end
