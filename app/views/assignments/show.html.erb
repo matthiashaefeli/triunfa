@@ -1,4 +1,5 @@
 <div class="assignment-show">
+    <p><%= link_to 'Regresar', :back %></p>
     <h3>Assignacion: <%= @assignment.name %></h3>
     <h4>Estudiantes:</h4>
     <%= form_for :finishedAssignment, url: finished_assignments_path do |f| %>
