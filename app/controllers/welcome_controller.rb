@@ -1,8 +1,13 @@
 class WelcomeController < ApplicationController
 
     def index
+        if params[:limit] != nil
+            @chat_limit = params[:limit]
+        else
+            @chat_limit = 5
+        end
         @rooms = Room.where(group: Group.where(activ: true))
-        @chats = Chat.order(created_at: :desc).limit(5)
+        @chats = Chat.order(created_at: :desc).limit(@chat_limit)
         @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true)) 
         if current_user
              @tables = Table.where(user: current_user).or(Table.where(seconduser: current_user.id))

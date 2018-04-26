@@ -2,7 +2,12 @@ class TeachersController < ApplicationController
 
     def index
         # who_is
-        @talks = Talk.order(created_at: :desc).limit(10)
+        if params[:limit] != nil
+            @talks_limit = params[:limit]
+        else
+            @talks_limit = 5
+        end
+        @talks = Talk.order(created_at: :desc).limit(@talks_limit)
         @teachers = Teacher.all
         @admins = Admin.all
     end

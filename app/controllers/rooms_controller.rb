@@ -7,8 +7,13 @@ class RoomsController < ApplicationController
     end
 
     def show
+        if params[:limit] != nil
+            @room_limit = params[:limit]
+        else
+            @room_limit = 5
+        end
         @room = Room.find(params[:id])
-        @messages = Message.where(room: @room).order(created_at: :desc).limit(10)
+        @messages = Message.where(room: @room).order(created_at: :desc).limit(@room_limit)
     end
 
     def logged_in
