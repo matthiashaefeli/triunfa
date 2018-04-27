@@ -1,4 +1,4 @@
-<div class="course-index">
+<div class="course-index container">
     <div class="teacher_show">
         <div>
         <p><strong>Activo?&nbsp&nbsp</strong>
@@ -38,5 +38,5 @@
             <p><strong>Grupos Cerrados: </strong><%= @teacher.groups.where(activ: false).count %></p>
         </div>
     </div>
+    <p><%= link_to "Regresar", teachers_path %></p>
 </div>
-<p><%= link_to "Regresar", teachers_path %></p>
