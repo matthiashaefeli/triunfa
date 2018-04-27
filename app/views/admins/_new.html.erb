@@ -15,10 +15,12 @@
         <%= f.label :contraseña %>
         <%= f.text_field :password %>
     </p>
+    <% if (Admin.find_by(user: current_user).super) %>
     <p>
         <%= f.label :super %>
         <%= f.check_box :super %>
     </p>
+    <% end %>
     <p>
         <%= f.submit "Adjuntar Admin" %>
     </p>
