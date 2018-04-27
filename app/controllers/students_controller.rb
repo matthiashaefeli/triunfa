@@ -1,3 +1,4 @@
+require 'rest-client'
 class StudentsController < ApplicationController
 
     def index
@@ -10,6 +11,7 @@ class StudentsController < ApplicationController
         student.user = current_user
         student.group = group
         if student.save
+            ModelMailer.new_record_notification(student.user, group).deliver
             redirect_to root_path
         else
             @error = "El Grupo no existe"

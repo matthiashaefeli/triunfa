@@ -42,6 +42,8 @@ gem 'json'
 gem 'aws-sdk-s3'
 gem 'fog'
 gem 'figaro'
+gem 'sendgrid-ruby'
+gem 'rest-client'
 
 
 group :development, :test do
