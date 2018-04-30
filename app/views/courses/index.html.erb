@@ -9,6 +9,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Fecha inicio</th>
                 <th scope="col">Fecha final</th>
+                <th scope="col">Link</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,10 @@
             <td><%= link_to course.name, course_path(course.id) %></td>
             <td><%= course.start %></td>
             <td><%= course.end %></td>
+            <td><%= link_to course.link, target: "_blank" do %>
+                <%= course.link %>
+                <% end %>
+            </td>
             </tr>
             <% end %>
         </tbody>
