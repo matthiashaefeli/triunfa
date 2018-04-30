@@ -6,7 +6,11 @@
         <p><%= link_to "Regresar", rooms_path %></p>
     <% end %>
     <p>Nombre de Grupo: <%= @group.name %></p>
-    <p>Curso: <%= @group.course.name %></p>
+    <p>Curso:
+    <%= link_to @group.course.link, target: "_blank" do %>
+        <%= @group.course.name %>
+        <% end %>
+    </p>
     <% if @group.course.document_file_name != nil %>
         <%= link_to coursedownload_path(@group.course.id) do %>
             <p><i class="fas fa-file"> Click aqui para bajar Curso</i></p>
