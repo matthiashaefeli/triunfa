@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-27T14:41:09-05:00">2018-04-27T14:41:09-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-27T15:05:46-05:00">2018-04-27T15:05:46-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">75.3%</span></span>
+    (<span class="covered_percent"><span class="red">75.42%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>113</b> files in total.
-    <b>761</b> relevant lines. 
-    <span class="green"><b>573</b> lines covered</span> and
+    <b>765</b> relevant lines. 
+    <span class="green"><b>577</b> lines covered</span> and
     <span class="red"><b>188</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -152,12 +152,12 @@
       
       <tr>
         <td class="strong"><a href="#c29e6ee2c15a4ce169350b4ff4e5af63ddd8df09" class="src_link" title="app/controllers/tasks_controller.rb">app/controllers/tasks_controller.rb</a></td>
-        <td class="red strong">30.0 %</td>
+        <td class="red strong">35.0 %</td>
         <td>37</td>
         <td>20</td>
-        <td>6</td>
-        <td>14</td>
-        <td>0.3</td>
+        <td>7</td>
+        <td>13</td>
+        <td>0.4</td>
       </tr>
       
       <tr>
@@ -832,12 +832,12 @@
       
       <tr>
         <td class="strong"><a href="#6b18a524649e70018cc181cb6703c3c90e4eff7a" class="src_link" title="spec/controllers/tasks_controller_spec.rb">spec/controllers/tasks_controller_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="yellow strong">83.33 %</td>
+        <td>10</td>
+        <td>6</td>
         <td>5</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>1</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -2967,11 +2967,11 @@
         <div class="source_table" id="c29e6ee2c15a4ce169350b4ff4e5af63ddd8df09">
   <div class="header">
     <h3>app/controllers/tasks_controller.rb</h3>
-    <h4><span class="red">30.0 %</span> covered</h4>
+    <h4><span class="red">35.0 %</span> covered</h4>
     <div>
       <b>20</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>13</b> lines missed.</span>
     </div>
   </div>
   
@@ -2996,8 +2996,8 @@
           <code class="ruby">    def index</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
-          
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
           <code class="ruby">        @group = Group.find(params[:group])</code>
         </li>
@@ -10343,11 +10343,11 @@
         <div class="source_table" id="6b18a524649e70018cc181cb6703c3c90e4eff7a">
   <div class="header">
     <h3>spec/controllers/tasks_controller_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -10372,13 +10372,43 @@
           <code class="ruby">RSpec.describe TasksController, type: :controller do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    describe &quot;Get #index&quot; do </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &quot;renders the :index view&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            get :index</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">            expect(response).to render_template :index</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
