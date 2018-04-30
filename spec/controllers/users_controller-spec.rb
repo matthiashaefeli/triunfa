@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
     it "creates a user" do 
-        user = FactoryBot.create(:user)
-        expect(user.name?).to eq true
+        post :create, user: FactoryBot.attributes_for(:user)
+        expect(response).to redirect_to root_path
       end
 end

@@ -12,14 +12,21 @@ FactoryBot.define do
         password "1234"
     end
 
+    factory :chat do
+        user
+        body "hello" 
+    end
+
     factory :teacher do 
-        user_id user
+        user
     end
 
     factory :group do
         name "test"
         key "kkk"
-        teacher_id teacher
-        course_id course
+        teacher
+        course
     end
+
+
 end
