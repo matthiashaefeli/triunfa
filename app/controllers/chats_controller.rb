@@ -5,18 +5,19 @@ class ChatsController < ApplicationController
     def create
         chat = Chat.new(chat_params)
         chat.user = current_user 
-        chat.save
-        if chat.avatar_file_name == nil
-            imageUrl = ""
-        else
-            imageUrl = chat.avatar.url(:medium)
+        if chat.save
+            if chat.avatar_file_name == nil
+                imageUrl = ""
+            else
+                imageUrl = chat.avatar.url(:medium)
+            end
+            name = "#{chat.user.name} #{chat.user.lastname}"
+            ActionCable.server.broadcast 'room_channel',
+                                            content:  chat.body,
+                                            name: name,
+                                            created: chat.created_at,
+                                            image: imageUrl
         end
-        name = "#{chat.user.name} #{chat.user.lastname}"
-        ActionCable.server.broadcast 'room_channel',
-                                        content:  chat.body,
-                                        name: name,
-                                        created: chat.created_at,
-                                        image: imageUrl
     end
     
     private

@@ -3,8 +3,8 @@ class CreateCourses < ActiveRecord::Migration[5.1]
     create_table :courses do |t|
 
       t.string :name
-      t.date :start
-      t.date :end
+      t.date :startdate
+      t.date :enddate
       t.timestamps
     end
   end
