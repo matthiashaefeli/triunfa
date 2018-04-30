@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20180430164358) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.date "start"
-    t.date "end"
+    t.date "startdate"
+    t.date "enddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"

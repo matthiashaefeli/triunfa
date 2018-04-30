@@ -17,8 +17,8 @@
             <tr>
             <th scope="row"><%= course.id %></th>
             <td><%= link_to course.name, course_path(course.id) %></td>
-            <td><%= course.start %></td>
-            <td><%= course.end %></td>
+            <td><%= course.startdate %></td>
+            <td><%= course.enddate%></td>
             <td><%= link_to course.link, target: "_blank" do %>
                 <%= course.link %>
                 <% end %>

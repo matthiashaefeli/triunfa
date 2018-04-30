@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe FinishedAssignment, type: :model do
-  let(:course){Course.new(name: "excel", start: "01-02-2018 10:10:10", end: "02-02-2018 10:10:10")}
+  let(:course){Course.new(name: "excel", startdate: "01-02-2018 10:10:10", enddate: "02-02-2018 10:10:10")}
   let(:assignment){Assignment.new(name: "email", course: course)}
   let(:user){User.new(name: "Admin", lastname: "Last", email: "admin@test.com", password: "1234")}
   let(:finished){FinishedAssignment.new(user: user, assignment: assignment)}
