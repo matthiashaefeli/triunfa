@@ -4,9 +4,16 @@ class ConversationsController < ApplicationController
     def create 
         table = Table.find(params[:table])
         conver = Conversation.create(user: current_user, table: table, body: params[:conversation][:body])
+        if table.user == current_user
+            content_class = "first_user"
+        else
+            content_class = "second_user"
+        end
+        
         ActionCable.server.broadcast 'conversation_channel',
                                              content:  conver.body,
-                                             table: table.id
+                                             table: table.id,
+                                             content_class: content_class
 
     end
 

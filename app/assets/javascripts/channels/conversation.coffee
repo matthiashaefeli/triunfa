@@ -13,4 +13,4 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
         $(id).remove()
     else
         id = '#conv-table'+data.table
-        $(id).prepend '<p>' + data.content + '<p>'
+        $(id).prepend '<p class="'+data.content_class+'">' + data.content + '<p>'
