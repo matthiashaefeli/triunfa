@@ -13,10 +13,26 @@
     background-size: cover;
 }
 
+.icon-color {
+    background-color: black;
+}
+
+nav a {
+    color: black;
+}
+
+.img-nav-margin {
+    margin-top: 4%;
+}
+
+.bg-color {
+    background-color: #00A7E1;
+}
+
 .program {
     width: 20em;
     height: 15em;
-    background-color:rgba(179,229,252, 0.5);
+    background-color:rgba(0,167,225, 0.5);
     margin-left: 60%;
     display: table;
     
@@ -109,7 +125,7 @@
 
 #who-is:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: #00A7E1;
 }
 
 .edituser {
@@ -134,7 +150,7 @@
     height: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
     .flex-container {
         flex-direction: column;
     }
@@ -153,7 +169,7 @@
     }
 
     .logo_login {
-        width: 80%;
+        width: 50%;
         height: auto;
     }
 
@@ -166,5 +182,9 @@
 
     .course-text-desc h3 {
         font-size: 160%;
+    }
+    
+    .img-nav-margin {
+        margin-top: 0.5%;
     }
 }
