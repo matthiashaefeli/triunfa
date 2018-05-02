@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-30T17:10:51-05:00">2018-04-30T17:10:51-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-02T12:11:16-05:00">2018-05-02T12:11:16-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">70.73%</span></span>
+    (<span class="covered_percent"><span class="red">70.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>123</b> files in total.
-    <b>967</b> relevant lines. 
+    <b>970</b> relevant lines. 
     <span class="green"><b>684</b> lines covered</span> and
-    <span class="red"><b>283</b> lines missed </span>
+    <span class="red"><b>286</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,11 +92,11 @@
       
       <tr>
         <td class="strong"><a href="#dbd0bebdb39f79775762f3e354eb49b0c227ae7a" class="src_link" title="app/controllers/conversations_controller.rb">app/controllers/conversations_controller.rb</a></td>
-        <td class="red strong">17.65 %</td>
-        <td>32</td>
-        <td>17</td>
+        <td class="red strong">15.0 %</td>
+        <td>39</td>
+        <td>20</td>
         <td>3</td>
-        <td>14</td>
+        <td>17</td>
         <td>0.2</td>
       </tr>
       
@@ -2149,11 +2149,11 @@
         <div class="source_table" id="dbd0bebdb39f79775762f3e354eb49b0c227ae7a">
   <div class="header">
     <h3>app/controllers/conversations_controller.rb</h3>
-    <h4><span class="red">17.65 %</span> covered</h4>
+    <h4><span class="red">15.0 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
+      <b>20</b> relevant lines. 
       <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <span class="red"><b>17</b> lines missed.</span>
     </div>
   </div>
   
@@ -2199,154 +2199,196 @@
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">        ActionCable.server.broadcast &#39;conversation_channel&#39;,</code>
+          <code class="ruby">        if table.user == current_user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">                                             content:  conver.body,</code>
+          <code class="ruby">            content_class = &quot;first_user&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">                                             table: table.id</code>
+          <code class="ruby">        else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            content_class = &quot;second_user&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">        ActionCable.server.broadcast &#39;conversation_channel&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">                                             content:  conver.body,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">                                             table: table.id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">                                             content_class: content_class</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def destroy</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
-          
-          <code class="ruby">        table = Table.find(params[:id])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
-          
-          <code class="ruby">        id = table.id</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">        table.conversations.each do |conv|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">            conv.delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">        table.delete</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
-          
-          <code class="ruby">        if request.xhr?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">            respond_to do |format|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">                format.html {}</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">                format.json {}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">            end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
-          
-          <code class="ruby">            ActionCable.server.broadcast &#39;conversation_channel&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">                                            remove: id</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="28">
-          
-          
-          <code class="ruby">            redirect_to root_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
+          
+          <code class="ruby">        table = Table.find(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">        id = table.id</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">        table.conversations.each do |conv|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">            conv.delete</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">        table.delete</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">        if request.xhr?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">            respond_to do |format|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">                format.html {}</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="30">
+          
+          
+          <code class="ruby">                format.json {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">            ActionCable.server.broadcast &#39;conversation_channel&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">                                            remove: id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">            redirect_to root_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>
