@@ -13,7 +13,11 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <% if current_user %>
+      <ul class="nav navbar-nav navbar-right" id="my_conversation_id<%= current_user.id %>">
+    <% else %>
       <ul class="nav navbar-nav navbar-right">
+    <% end %>
         <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
 
         <!-- <li><a href="">uno</a></li> -->

@@ -10,4 +10,4 @@ App.table = App.cable.subscriptions.create "TableChannel",
     id = '#my_conversation_id'+data.seconduser
     # $(id).prepend '<p><a href="/">Click aqui para ver el mensaje privado</a></p>'
     # $(id).append data.table
-    $(".navbar-right").prepend '<li><a href="/"><i class="fas fa-envelope-open"></i></a></li>'
+    $(id).prepend '<li><a href="/"><i class="fas fa-envelope-open"></i></a></li>'
