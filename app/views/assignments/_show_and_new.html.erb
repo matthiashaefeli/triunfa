@@ -4,7 +4,7 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Puntos</th>
+                <th>Creditos</th>
                 <th></th>
             </tr>
         </thead>
@@ -36,7 +36,7 @@
                 <%= f.label :nombre %>
                 <%= f.text_field :name, :class => "assignment-text-field" %>
 
-                <%= f.label :puntos %>
+                <%= f.label :creditos %>
                 <%= f.number_field :points, :class => "assignment-points-field" %>
                 <%= hidden_field_tag "course", @course.id  %>
             </p>

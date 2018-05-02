@@ -5,7 +5,7 @@
             <h4>Todas las actividades:</h4>
             <% for assignment in @group.course.assignments %>
                 <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
-                    <p class="assignment-show-users"><strong><%= assignment.name %></strong> <span><%= assignment.points %> Puntos</span></p>
+                    <p class="assignment-show-users"><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
                 <% end %>
             <% end %>
         <% else %>
@@ -17,7 +17,7 @@
                     <p><%= f.assignment.name %>: <span><%= f.assignment.points %></span></p>
                 <% end %>
             <% end %>
-            <p>Tienes <%= total_points_done %> Puntos de 40</p>
+            <p>Tienes <%= total_points_done %> Creditos de 40</p>
         <% end %>
     </div>
     <div class="task-tasks">
