@@ -1,5 +1,5 @@
 <div class="assignment-show container">
-    <p><%= link_to 'Regresar', :back %></p>
+    <p><%= link_to 'Regresar', rooms_path %></p>
     <h3>Assignacion: <%= @assignment.name %></h3>
     <h4>Estudiantes:</h4>
     <%= form_for :finishedAssignment, url: finished_assignments_path do |f| %>
@@ -14,7 +14,7 @@
                     <td><%= student.user.name %> <%= student.user.lastname %></td>
                     <% if FinishedAssignment.find_by(user: student.user, assignment: @assignment) %>
                     <td>Si</td>
-                    <td></td>
+                    <td><%= link_to "Siempre No", finished_assignment_path(FinishedAssignment.find_by(user: student.user, assignment: @assignment).id, :group => @group), method: "delete" %></td>
                     <% else %>
                     <td>No</td>
                     <td><%= f.check_box student.user.id %></td>

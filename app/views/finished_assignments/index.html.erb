@@ -1,27 +1,8 @@
 <div class="under-nav">
-    <h4>Todos mis Cursos terminados</h4>
-    <table class="table table-hover table-bordered" id="finished_assignments_table">
-        <thead>
-            <tr>
-                <th>Estado</th>
-                <th>Course</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% finished_ass(current_user).each do |f| %>
-                <tr>
-                    
-                    <td><%= f.assignment.name %></td>
-                    <td><%= f.assignment.course.name %></td>
-                </tr>
-            <% end %>
-
-        </tbody>
-    
-    
-    
-    
-    </table>
-    
-
+    <h4>Todos mis Cursos gruaduados:</h4>
+    <ul>
+        <% for group in points_per_course %>
+            <li><%= group.course.name %></li>
+        <% end %>
+    </ol>
 </div>
