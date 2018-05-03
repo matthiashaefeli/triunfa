@@ -17,4 +17,12 @@ class FinishedAssignmentsController < ApplicationController
         redirect_to assignment_path(assignment.id, :group => group.id)
     end
 
+    def destroy
+        group = Group.find(params[:group])
+        finished_assignment = FinishedAssignment.find(params[:id])
+        assignment = finished_assignment.assignment
+        finished_assignment.delete
+        redirect_to assignment_path(assignment.id, :group => group.id)
+    end
+
 end
