@@ -16,6 +16,7 @@
 .icon-color {
     background-color: black;
 }
+// nav
 
 nav a {
     color: black;
@@ -29,13 +30,13 @@ nav a {
     background-color: #00A7E1;
 }
 
+// text in homepage within a colored spot
 .program {
     width: 20em;
     height: 15em;
     background-color:rgba(0,167,225, 0.5);
     margin-left: 60%;
-    display: table;
-    
+    display: table;  
 }
 
 .program p {
@@ -47,6 +48,8 @@ nav a {
     vertical-align: middle;
 }
 
+
+// courses on home without login
 .courses-title {
     margin-top: 40px;
     text-align: center;
@@ -76,8 +79,16 @@ nav a {
     transform: scale(1.1); 
 }
 
+
+// links on home without login
 .links-home {
     background-color: #EEEEEE;
+}
+
+#links-align {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
 }
 
 .links-title {
@@ -93,10 +104,11 @@ nav a {
     text-align: center;
 }
 
+
+// home whit login 
 .home-currentuser {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
 }
 
 .currentuser-item-size-one {
@@ -112,13 +124,7 @@ nav a {
 }
 
 
-
-.all-rooms {
-    margin-top: 60px;
-    text-align: center;
-}
-
-
+// on home with login who is online 
 #who-is-online {
     display: none;
 }
@@ -126,11 +132,6 @@ nav a {
 #who-is:hover {
     cursor: pointer;
     color: #00A7E1;
-}
-
-.edituser {
-    margin-top: 60px;
-    text-align: center;
 }
 
 
@@ -169,6 +170,7 @@ nav a {
     }
 
     .logo_login {
+        margin-top: 20px;
         width: 50%;
         height: auto;
     }
