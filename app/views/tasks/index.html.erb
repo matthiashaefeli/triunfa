@@ -1,11 +1,11 @@
-<div class="task-index container">
+<div class="task-index container under-nav">
     <% searched_user = check_user(current_user) %>
     <div class="task-assignments">
         <% if searched_user == Admin || searched_user == Teacher %>
             <h4>Todas las actividades:</h4>
             <% for assignment in @group.course.assignments %>
                 <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
-                    <p class="assignment-show-users"><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
+                    <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
                 <% end %>
             <% end %>
         <% else %>

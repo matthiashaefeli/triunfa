@@ -29,10 +29,6 @@ class TeachersController < ApplicationController
         @teacher = Teacher.find(params[:id])
     end
 
-    def edit
-        @teacher = Teacher.find(params[:id])
-    end
-
     def update
         teacher = Teacher.find(params[:id])
         teacher.avatar = params[:user][:avatar]
