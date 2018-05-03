@@ -10,7 +10,7 @@ class FinishedAssignmentsController < ApplicationController
         params[:finishedAssignment].each do |key, val|
             if val == "1"
                 user = User.find(key)
-                finished_assignment = FinishedAssignment.new(user: user, assignment: assignment)
+                finished_assignment = FinishedAssignment.new(user: user, assignment: assignment, group: group)
                 finished_assignment.save
             end
         end
