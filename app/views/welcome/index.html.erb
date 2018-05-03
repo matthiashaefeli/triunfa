@@ -108,7 +108,9 @@
     <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
         <div>
-            <%= image_tag (searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
+            <%= link_to (searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
+            <% image_tag (searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
+            <% end %>
         </div>
         <br>
         <%= render "chat.html.erb" %>
