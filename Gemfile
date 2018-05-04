@@ -44,7 +44,7 @@ gem 'fog'
 gem 'figaro'
 gem 'sendgrid-ruby'
 gem 'rest-client'
-gem 'redis-rails'
+gem 'redis'
 
 
 
