@@ -21,8 +21,8 @@ $( document ).on('turbolinks:load', function() {
 
 
     $(".mySearch").on("keyup", function() {
-        let tableId = $(this).siblings("table")[0].id
-        let table = document.getElementById(tableId);
+        let idOfTable = $(this).siblings("table")[0].id
+        let table = document.getElementById(idOfTable);
         tr = table.getElementsByTagName("tr");
         var value = $(this).val().toLowerCase();
         $(tr).filter(function() {
@@ -30,12 +30,6 @@ $( document ).on('turbolinks:load', function() {
         });
       });
 
-    // $(".mySearch").on('keyup', function() {
-    //     let $that = $(this);
-    //     let inputId = $that.children().context.id
-    //     let tableId = $that.siblings("table")[0].id
-    //     searchUserFilter(tableId, inputId)
-    // })
 
     $('.folders').on("click", function() {        
         let paperNew = $(this);
