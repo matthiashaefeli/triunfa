@@ -21,8 +21,8 @@ $( document ).on('turbolinks:load', function() {
 
 
     $(".mySearch").on("keyup", function() {
-        let idOfTable = $(this).siblings("table")[0].id
-        let table = document.getElementById(idOfTable);
+        let tableId = $(this).siblings("table")[0].id
+        let table = document.getElementById(tableId);
         tr = table.getElementsByTagName("tr");
         var value = $(this).val().toLowerCase();
         $(tr).filter(function() {
