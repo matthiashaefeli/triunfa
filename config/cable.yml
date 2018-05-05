@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: superate_production
+  url: redis://redistogo:e613b6e754c056aa85e7133d3723ea37@soldierfish.redistogo.com:11937/
+  # channel_prefix: superate_production

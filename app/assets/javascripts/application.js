@@ -30,12 +30,6 @@ $( document ).on('turbolinks:load', function() {
         });
       });
 
-    // $(".mySearch").on('keyup', function() {
-    //     let $that = $(this);
-    //     let inputId = $that.children().context.id
-    //     let tableId = $that.siblings("table")[0].id
-    //     searchUserFilter(tableId, inputId)
-    // })
 
     $('.folders').on("click", function() {        
         let paperNew = $(this);
