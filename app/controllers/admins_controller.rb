@@ -3,11 +3,14 @@ class AdminsController < ApplicationController
     def create
         who_is
         new_user = User.create(admin_params)
-        new_user.save
-        admin = Admin.create(user: new_user)
-        admin.super = params[:admin][:super]
-        admin.save
-        redirect_to teachers_path
+        if new_user.save
+            admin = Admin.create(user: new_user)
+            admin.super = params[:admin][:super]
+            admin.save
+            redirect_to teachers_path
+        else
+            redirect_to teachers_path
+        end
     end
 
     def destroy

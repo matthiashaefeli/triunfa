@@ -18,10 +18,13 @@ class TeachersController < ApplicationController
     def create
         who_is
         new_user = User.create(teacher_params)
-        new_user.save
-        teacher = Teacher.create(user: new_user)
-        teacher.save
-        redirect_to teachers_path
+        if new_user.save
+            teacher = Teacher.create(user: new_user)
+            teacher.save
+            redirect_to teachers_path
+        else 
+            redirect_to teachers_path
+        end  
     end
 
     def show
