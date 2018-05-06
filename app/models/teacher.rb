@@ -5,4 +5,7 @@ class Teacher < ApplicationRecord
     
     belongs_to :user
     has_many :groups
+
+    validates :user, presence: true
+
 end
