@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-
+    include ServiceUser
     def create
         who_is
         new_user = User.create(admin_params)
@@ -28,21 +28,6 @@ class AdminsController < ApplicationController
 
     def admin_params
         params.require(:admin).permit(:name, :lastname, :email, :password)
-    end
-
-    def who_is
-        if !current_user
-            redirect_to root_path
-        else
-            admins  = []
-            Admin.all.each do |a|
-                admins.push(a.user.email)
-            end
-            if admins.include?(current_user.email)
-                return true  
-            end
-            redirect_to root_path
-        end
     end
 
 end

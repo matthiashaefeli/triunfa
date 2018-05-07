@@ -1,6 +1,8 @@
-class GroupsController < ApplicationController
 
+class GroupsController < ApplicationController
+    include ServiceUser
     helper_method :sort_column, :sort_direction
+
 
     def index
         who_is
@@ -55,21 +57,6 @@ class GroupsController < ApplicationController
     private
     def group_params
         params.require(:group).permit(:name, :key, :teacher, :course)
-    end
-
-    def who_is
-        if !current_user
-            redirect_to root_path
-        else
-            admins  = []
-            Admin.all.each do |a|
-                admins.push(a.user.email)
-            end
-            if admins.include?(current_user.email)
-                return true  
-            end
-            redirect_to root_path
-        end
     end
 
     def sort_column

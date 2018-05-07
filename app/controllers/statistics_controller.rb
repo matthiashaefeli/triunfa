@@ -1,5 +1,5 @@
 class StatisticsController < ApplicationController
-
+    include ServiceUser
 
     def index
         who_is
@@ -28,23 +28,6 @@ class StatisticsController < ApplicationController
         who_is
         Statistic.find(params[:id]).delete
         redirect_to statistics_path
-    end
-
-    private
-
-    def who_is
-        if !current_user
-            redirect_to root_path
-        else
-            admins  = []
-            Admin.all.each do |a|
-                admins.push(a.user.email)
-            end
-            if admins.include?(current_user.email)
-                return true  
-            end
-            redirect_to root_path
-        end
     end
 
 end
