@@ -1,4 +1,7 @@
 <div class="under-nav container">
+    <% if alert %>
+    <%= alert %>
+    <% end %>
     <% if check_user(current_user) == Admin %>
     <p class="teacher-show-text">Click aqui para ver los Instructores</p>
     <div class="teacher-show-all">
@@ -12,5 +15,4 @@
     <div>
         <%= render "talks/talks.html.erb" %>
     </div>
-    <!-- <p><%= link_to "Pagina de Inicio", root_path %></p> -->
 </div>
