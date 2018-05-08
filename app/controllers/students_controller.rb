@@ -3,6 +3,12 @@ class StudentsController < ApplicationController
 
     def index
         @users = User.all
+        respond_to do |format|
+            format.html
+            format.xlsx {
+                response.headers['Content-Disposition'] = 'attachment; filename="estudiantes.xlsx"'
+            }
+        end
     end
 
     def create
