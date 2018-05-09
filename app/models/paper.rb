@@ -11,5 +11,7 @@ class Paper < ApplicationRecord
 
     validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/, /\.png?$/, /\.jpg?$/, /\.jpeg?$/]
 
+    process_in_background :document
+
     belongs_to :folder
 end
