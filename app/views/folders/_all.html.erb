@@ -26,6 +26,10 @@
                             <%= f.label :adjuntar_archivo %>
                             <%= f.file_field :document %>
                         </p>
+                        <p>
+                            <%= f.label :link %>
+                            <%= f.text_field :link %>
+                        </p>
                     
                         <%= f.submit "Adjuntar Archivo" %>
                     <% end %>       
@@ -34,8 +38,14 @@
                     <ul>
                         <% for paper in folder.papers %>
                             <li>
-                                </i> <%= link_to paperdownload_path(paper.id) do %>
-                                <i class="fas fa-file"> <%= paper.name %></i>
+                                <% if paper.link == "" || paper.link == nil %>
+                                    </i> <%= link_to paperdownload_path(paper.id) do %>
+                                        <i class="fas fa-file"> <%= paper.name %></i>
+                                    <% end %>
+                                <% else %>
+                                    </i> <%= link_to paper.link, target: "_blank" do %>
+                                        <i class="fas fa-file"> <%= paper.name %></i>
+                                    <% end %>
                                 <% end %>
                                 <% if searched_user == Admin %>
                                 &nbsp&nbsp&nbsp&nbsp<span>

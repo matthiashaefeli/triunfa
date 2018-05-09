@@ -28,7 +28,7 @@ class PapersController < ApplicationController
     private
 
     def papers_params
-        params.require(:paper).permit(:name, :document)
+        params.require(:paper).permit(:name, :document, :link)
     end
     
 end
