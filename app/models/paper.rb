@@ -1,5 +1,10 @@
 class Paper < ApplicationRecord
 
+    belongs_to :folder
+
+    validates :name, presence: true
+    validates :link, presence: true, unless: ->(paper){paper.document.present?}
+
     has_attached_file :document,
                     :storage => :fog,
                     :fog_credentials => {
@@ -13,5 +18,4 @@ class Paper < ApplicationRecord
 
     process_in_background :document
 
-    belongs_to :folder
 end
