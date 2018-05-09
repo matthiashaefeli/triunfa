@@ -9,7 +9,7 @@
 }
 
 .conversation-border {
-    background-color: #EEEEEE;
+    background-color: #AFE4FD;
     width: 150px;
 }
 
@@ -17,16 +17,18 @@
     display: none;
 }
 
-.line-high {
-    line-height: 70%;
-}
-
 .first_user {
-    text-align: left;
-    color: blue;
+    // text-align: left;
+    color: #4d94ff
+    ;
 }
 
 .second_user {
-    text-align: right;
-    color: red;
+    // text-align: left;
+    color: #ff8080;
+}
+
+.table-scroll {
+    height: 150px;
+    overflow: scroll;
 }

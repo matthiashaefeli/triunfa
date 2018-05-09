@@ -24,7 +24,7 @@
                 <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>
             <% end %>
 
-            <div id="conv-table<%= t.id %>" class="line-high">
+            <div id="conv-table<%= t.id %>" class="table-scroll">
                 <% t.conversations.order(created_at: :desc).each do |conv| %>
                     <% if t.user == current_user %>
                         <% if conv.user != current_user %>
