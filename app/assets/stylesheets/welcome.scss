@@ -3,7 +3,7 @@
 #index-home {
     width: 100vw;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 150px;
     text-align: center;
     background: url("port.jpg") no-repeat top center scroll;
     background-color: black;
@@ -11,6 +11,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center bottom;
 }
 
 .icon-color {
@@ -27,15 +28,15 @@ nav a {
 }
 
 .bg-color {
-    background-color: #00A7E1;
+    background-color: #D0D0D0;
 }
 
 // text in homepage within a colored spot
 .program {
     width: 20em;
     height: 15em;
-    background-color:rgba(0,167,225, 0.5);
-    margin-left: 60%;
+    background-color:rgba(208,208,208,0.5);
+    margin-left: 17%;
     display: table;  
 }
 
@@ -82,7 +83,7 @@ nav a {
 
 // links on home without login
 .links-home {
-    background-color: #EEEEEE;
+    background-color: #D0D0D0;
 }
 
 #links-align {
