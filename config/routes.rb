@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
   resources :welcome, only: [:index, :destroy]
   resources :statistics, only: [:index, :create, :destroy]
   resources :courses
