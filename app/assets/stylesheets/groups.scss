@@ -36,12 +36,19 @@
     width: 80%;
 }
 
-@media only screen and (max-width: 600px) {
-    #group-table-show {
-        width: 100%;
+@media screen and (max-width: 900px) {
+    #groupTableTable td:nth-child(4),
+    #groupTableTable th:nth-child(4),
+    #groupTableTable td:nth-child(5),
+    #groupTableTable th:nth-child(5),
+    #groupTableTable td:nth-child(6),
+    #groupTableTable th:nth-child(6),
+    #groupTableTable td:nth-child(7),
+    #groupTableTable th:nth-child(7),
+    #groupTableTable td:nth-child(8),
+    #groupTableTable th:nth-child(8) {
+        display: none;
     }
-    
-    #igroup-table-show {
-        width: 100%;
-    }
+
+
 }
