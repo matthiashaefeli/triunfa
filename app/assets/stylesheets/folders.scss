@@ -2,8 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// .folder-index {
+//     display: flex;
+//     width: 100%;
+//     justify-content: space-between;
+
+// }
+
 .create-new-folder {
     display: none;
+}
+
+.create-new-folder-text {
+    width: 200px;
 }
 
 .create-new-folder-text:hover {
@@ -12,6 +23,7 @@
 }
 
 .add-papper {
+    // flex-grow: 1;
     display: none;
 }
 
@@ -19,3 +31,22 @@
     cursor: pointer;
     color: #4FC3F7;
 }
+
+.folders-table {
+    // align-self: flex-start;
+    // flex-grow: 3;
+    // font-size: 19px;
+    width: 40%;
+}
+
+.folders-table tr td:nth-child(1)
+.folders-table tr td:nth-child(2)
+.folders-table tr td:nth-child(4)
+.folders-table tr td:nth-child(5) {
+    width: 10%;
+}
+
+.folders-table tr td:nth-child(3) {
+    width: 70%;
+}
+

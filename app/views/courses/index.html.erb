@@ -28,9 +28,7 @@
         </tbody>
     </table>
     <div>
-        <% if alert %>
-            <%= alert %>
-        <% end %>
+        <%= render "layouts/errors" %>
         <p id="new-course">Crear nuevo Curso</p>
         <div id="new-course-hidden">
             <%= render "new.html.erb" %>

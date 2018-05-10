@@ -24,7 +24,7 @@ class TeachersController < ApplicationController
             teacher.save
             redirect_to teachers_path
         else 
-            redirect_to teachers_path
+            redirect_to teachers_path, alert: new_user.errors.full_messages
         end  
     end
 

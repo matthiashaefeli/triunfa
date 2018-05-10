@@ -1,63 +1,29 @@
-<div>
-    <% searched_user = check_user(current_user) %>
-    <% for folder in @folders %>
-        <div>
-                <p>
-                    <span class="papers-text"><i class="fas fa-archive"> <%= folder.name %></i></span>&nbsp&nbsp&nbsp&nbsp
-                    <% if searched_user == Admin %>
-                        <span class="folders">
-                            <i class="fas fa-plus-square"></i>
-                        </span>
-                        <span>
-                            <%= link_to folder_path(folder.id), :method => "delete"  do %>
-                            <i class="fas fa-trash-alt"></i>
+
+<div class="folder-index">
+    <% @searched_user = check_user(current_user) %>
+    <div>
+        <% for @folder in @folders %>
+            <table class="folders-table">
+                <tr class="folder-names">
+                    <td><i class="fas fa-angle-double-down papers-text"></i></td>
+                    <td><i class="fas fa-archive"></i></td>
+                    <td><%= @folder.name %></td>
+                    <% if @searched_user == Admin %>
+                        <td><i class="fas fa-plus-square folders"></i></td>
+                        <td>
+                            <%= link_to folder_path(@folder.id), :method => "delete"  do %>
+                                <i class="fas fa-trash-alt"></i>
                             <% end %>
-                        </span>
+                        </td>
                     <% end %>
-                </p>
-                <div class="add-papper">
-                        <%= form_for :paper, url: papers_path  do |f| %>  
-                        <p>
-                            <%= f.label :nombre %>
-                            <%= f.text_field :name %>
-                            <%= hidden_field_tag "folder", folder.id  %>
-                        </p>
-                        <p>
-                            <%= f.label :adjuntar_archivo %>
-                            <%= f.file_field :document %>
-                        </p>
-                        <p>
-                            <%= f.label :link %>
-                            <%= f.text_field :link %>
-                        </p>
-                    
-                        <%= f.submit "Adjuntar Archivo" %>
-                    <% end %>       
-                </div>
-                <div class="papers-all">
-                    <ul>
-                        <% for paper in folder.papers %>
-                            <li>
-                                <% if paper.link == "" || paper.link == nil %>
-                                    </i> <%= link_to paperdownload_path(paper.id) do %>
-                                        <i class="fas fa-file"> <%= paper.name %></i>
-                                    <% end %>
-                                <% else %>
-                                    </i> <%= link_to paper.link, target: "_blank" do %>
-                                        <i class="fas fa-file"> <%= paper.name %></i>
-                                    <% end %>
-                                <% end %>
-                                <% if searched_user == Admin %>
-                                &nbsp&nbsp&nbsp&nbsp<span>
-                                        <%= link_to paper_path(paper.id), :method => "delete"  do %>
-                                            <i class="fas fa-trash-alt"></i>
-                                        <% end %>
-                                    </span>
-                                <% end %>
-                            </li>
-                        <% end %>
-                    </ul>
-                </div>
-        </div> 
-    <% end %>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><%= render "papers/form", locals: { folder: @folder, user: @searched_user } %></td>
+                </tr>
+                <%= render "papers/papers" %>
+            </table>
+        <% end %>
+    </div>
 </div>

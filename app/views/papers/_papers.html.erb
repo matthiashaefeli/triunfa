@@ -1,0 +1,26 @@
+<% for paper in @folder.papers %>
+    <tr class="papers-all">
+        <td></td>
+        <td></td>
+        <td>
+            <i class="fas fa-file"></i>
+            <% if paper.link == "" || paper.link == nil %>
+                    <%= link_to paperdownload_path(paper.id) do %>
+                    <%= paper.name %>
+                <% end %>
+            <% else %>
+                    <%= link_to paper.link, target: "_blank" do %>
+                    <%= paper.name %>
+                <% end %>
+            <% end %>
+        </td>
+        <td></td>
+        <td>
+            <% if @searched_user == Admin %>
+                <%= link_to paper_path(paper.id), :method => "delete"  do %>
+                    <i class="fas fa-trash-alt"></i>
+                <% end %>    
+            <% end %>
+        </td>
+    </tr>
+<% end %>

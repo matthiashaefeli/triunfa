@@ -9,11 +9,11 @@
     </p>
     <p>
         <%= f.label :instructor %>
-        <%= f.select(:teacher, teacher_array, :include_blank => true ) %>
+        <%= f.select(:teacher, teacher_array ) %>
     </p>
     <p>
         <%= f.label :cursos %>
-        <%= f.select(:course, course_array, :include_blank => true ) %>
+        <%= f.select(:course, course_array) %>
     </p>
     <p>
         <%= f.submit "Guardar Grupo" %>

@@ -17,9 +17,12 @@ class GroupsController < ApplicationController
         teacher = Teacher.find(group_params[:teacher])
         course = Course.find(group_params[:course])
         group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course)
-        group.save
-        room = Room.create(group: group)
-        redirect_to groups_path
+        if group.save
+            room = Room.create(group: group)
+            redirect_to groups_path
+        else
+            redirect_to groups_path, alert: group.errors.full_messages
+        end
     end
 
     def show
