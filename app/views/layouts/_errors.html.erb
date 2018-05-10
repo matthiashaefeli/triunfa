@@ -1,0 +1,10 @@
+<% if alert %>
+    <div class="alert">
+        <p>No se puede Guardar por:</p>
+        <ul>
+            <% for a in alert %>
+                <li><%= a %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

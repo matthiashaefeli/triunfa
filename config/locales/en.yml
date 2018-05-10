@@ -30,4 +30,64 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      paper:
+        name: "Nombre"
+        link: "Link"
+      folder:
+        name: "Nombre"
+      group:
+        name: "Nombre"
+        key: "Clave"
+        teacher: "Instructor"
+        course: "Curso"
+      user:
+        name: "Nombre"
+        lastname: "Apellido"
+        email: "Email"
+        password: "Contraseña"
+      course:
+        startdate: "Fecha de inicio"
+        enddate: "Fecha final"
+        name: "Nombre"
+    errors:
+      models:
+        paper: 
+          attributes:
+            name:
+              blank: "no esta definido"
+            link:
+              blank: "o Archivo no esta definido"
+        folder: 
+          attributes:
+            name:
+              blank: "no esta definido"
+        group:
+          attributes:
+            name: 
+              blank: "no esta definido"
+            key: 
+              blank: "no esta definido"
+            teacher:
+              blank: "no esta definido"
+            course:
+              blank: "no esta definido"
+        user:
+          attributes:
+            name:
+              blank: "no esta definido"
+            lastname:
+              blank: "no esta definido"
+            email: 
+              blank: "no esta definido"
+            password:
+              blank: "no esta definido"
+        course:
+          attributes:
+            name:
+              blank: "no esta definido" 
+            enddate:
+              blank: "no esta definido"
+            startdate:
+              blank: "no esta definido"

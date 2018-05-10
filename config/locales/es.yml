@@ -1,0 +1,14 @@
+
+es:
+  activerecord:
+    attributes:
+      course:
+        startdate: "startdate"
+        enddate: "enddate"
+        name: "nombre"
+    errors:
+      models:
+        course:
+          attributes:
+            startdate:
+              blank: "yes"

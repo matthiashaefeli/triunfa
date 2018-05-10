@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
         if course.save
             redirect_to courses_path
         else
-            # missing errors
+            redirect_to courses_path, alert: course.errors.full_messages
         end
     end
 

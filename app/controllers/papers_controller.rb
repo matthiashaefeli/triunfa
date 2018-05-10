@@ -4,8 +4,11 @@ class PapersController < ApplicationController
         folder = Folder.find(params[:folder])
         paper = Paper.new(papers_params)
         paper.folder = folder
-        paper.save
-        redirect_to libraries_path
+        if paper.save
+            redirect_to libraries_path
+        else
+            redirect_to libraries_path, alert: paper.errors.full_messages
+        end
     end
 
     def destroy
