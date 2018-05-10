@@ -14,7 +14,7 @@
 }
 
 .create-new-folder-text {
-    width: 200px;
+    display: inline-block;
 }
 
 .create-new-folder-text:hover {
@@ -33,9 +33,6 @@
 }
 
 .folders-table {
-    // align-self: flex-start;
-    // flex-grow: 3;
-    // font-size: 19px;
     width: 40%;
 }
 
@@ -50,3 +47,8 @@
     width: 70%;
 }
 
+@media screen and (max-width: 767px) {
+    .folders-table {
+        width: 90%;
+    }
+}

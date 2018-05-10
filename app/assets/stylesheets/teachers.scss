@@ -29,7 +29,31 @@
     display: none;
 }
 
+.teacher-show-text {
+    width: 250px;
+}
+
 .teacher-show-text:hover {
     cursor: pointer;
     color: #4FC3F7;
 }
+
+@media screen and (max-width: 900px) {
+    #teacher-table td:nth-child(1), 
+    #teacher-table th:nth-child(1),
+    #teacher-table td:nth-child(5), 
+    #teacher-table th:nth-child(5),
+    #teacher-table td:nth-child(6), 
+    #teacher-table th:nth-child(6),
+    #teacher-table td:nth-child(7), 
+    #teacher-table th:nth-child(7),
+    #teacher-table td:nth-child(8), 
+    #teacher-table th:nth-child(8),
+    #teacher-table td:nth-child(10), 
+    #teacher-table th:nth-child(10), {
+        display: none;
+    }
+
+
+}
+
