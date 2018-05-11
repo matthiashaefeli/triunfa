@@ -50,5 +50,34 @@
         display: none;
     }
 
+    #group-table-show td:nth-child(1),
+    #group-table-show th:nth-child(1),
+    #group-table-show td:nth-child(5),
+    #group-table-show th:nth-child(5),
+    #group-table-show td:nth-child(6),
+    #group-table-show th:nth-child(6),
+    #group-table-show td:nth-child(7),
+    #group-table-show th:nth-child(7),
+    #group-table-show td:nth-child(8),
+    #group-table-show th:nth-child(8),
+    #group-table-show td:nth-child(9),
+    #group-table-show th:nth-child(9)  {
+        display: none;
+    }
+    #igroup-table-show td:nth-child(4),
+    #igroup-table-show th:nth-child(4),
+    #igroup-table-show td:nth-child(5),
+    #igroup-table-show th:nth-child(5),
+    #igroup-table-show td:nth-child(6),
+    #igroup-table-show th:nth-child(6),
+    #igroup-table-show td:nth-child(7),
+    #igroup-table-show th:nth-child(7),
+    #igroup-table-show td:nth-child(8),
+    #igroup-table-show th:nth-child(8),
+    #igroup-table-show td:nth-child(9),
+    #igroup-table-show th:nth-child(9)  {
+        display: none;
+    }
+
 
 }
