@@ -13,7 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
                     student.group = group
                     student.save
                     ModelMailer.new_record_notification(student.user, group).deliver
-                    redirect_to root_path
+                    # session[:current_user] = u.id
+                    redirect_to user_session_path
                 else 
 
                     redirect_to new_user_registration_path, alert: u.errors.full_messages
@@ -26,7 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     private
     def user_params
-        params.require(:user).permit(:name, :lastname, :email, :passord)
+        params.require(:user).permit(:name, :lastname, :email, :password)
     end
 
 

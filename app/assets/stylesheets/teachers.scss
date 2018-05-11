@@ -41,6 +41,8 @@
 @media screen and (max-width: 900px) {
     #teacher-table td:nth-child(1), 
     #teacher-table th:nth-child(1),
+    #teacher-table td:nth-child(2), 
+    #teacher-table th:nth-child(2),
     #teacher-table td:nth-child(5), 
     #teacher-table th:nth-child(5),
     #teacher-table td:nth-child(6), 
@@ -53,7 +55,11 @@
     #teacher-table th:nth-child(10), {
         display: none;
     }
+}
 
-
+@media screen and (max-width: 700px) {
+    .teacher_show {
+        flex-direction: column;
+    }
 }
 
