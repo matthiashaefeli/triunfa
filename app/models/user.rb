@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :lastname, presence: true
   validates :email, presence: true
-  # validates :password, numericality: { only_integer: true }
+  validates :password, numericality: { only_integer: true }
 
   has_many :teachers
   has_many :admins

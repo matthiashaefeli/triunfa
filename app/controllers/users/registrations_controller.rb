@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
     
     def create
-        if /\A[-+]?\d+\z/ === params[:user][:password]
+        # if /\A[-+]?\d+\z/ === params[:user][:password]
             if Group.exists?(key: params[:group][:key])
                 u = User.new(user_params)
 
@@ -21,9 +21,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
             else
                 redirect_to new_user_registration_path, alert: (["Este Grupo no existe!"])
             end
-        else
-            redirect_to new_user_registration_path, alert: (["La Contraseña no puede tener letras!"])
-        end
+        # else
+        #     redirect_to new_user_registration_path, alert: (["La Contraseña no puede tener letras!"])
+        # end
     end
 
     private
