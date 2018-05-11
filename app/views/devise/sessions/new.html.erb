@@ -35,6 +35,10 @@
       </div>
   </div>
   <div class="item-login">
-    <%= render "layouts/errors" %>
+    <div class="alert">
+      <% if alert %>
+        <%= alert %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,12 +1,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
     
     def create
-
             if Group.exists?(key: params[:group][:key])
                 u = User.new(user_params)
 
                 if u.save
-                # u = User.find_by(email: params[:user][:email])
                     group = Group.find_by(key: params[:group][:key])
                     student = Student.new
                     student.user = u
@@ -14,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                     student.save
                     ModelMailer.new_record_notification(student.user, group).deliver
                     # session[:current_user] = u.id
-                    redirect_to user_session_path
+                    redirect_to user_session_path, alert: ("Para confirmar: Email y Contraseña otravez")
                 else 
 
                     redirect_to new_user_registration_path, alert: u.errors.full_messages
@@ -22,7 +20,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
             else
                 redirect_to new_user_registration_path, alert: (["Este Grupo no existe!"])
             end
-
     end
 
     private
