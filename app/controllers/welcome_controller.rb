@@ -21,8 +21,13 @@ class WelcomeController < ApplicationController
     def updateuser
         if params[:user][:password] != nil
             user = User.find(params[:id])
-            user.password = params[:user][:password]
-            user.save
+            if /\A[-+]?\d+\z/ === params[:user][:password]
+                user.password = params[:user][:password]
+                user.save
+                redirect_to root_path
+            else
+                redirect_to updatepassword_path(user.id), alert: (["La Contraseña no puede tener letras!"])
+            end
         else
             user = User.find(params[:id])
             user.street = userupdate_params[:street]
@@ -32,9 +37,10 @@ class WelcomeController < ApplicationController
             user.city = userupdate_params[:city]
             user.avatar = userupdate_params[:avatar]
             user.save
+            redirect_to root_path
 
         end
-        redirect_to root_path
+        
     end
 
     def updatepassword
