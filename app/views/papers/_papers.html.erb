@@ -5,7 +5,7 @@
         <td>
             <i class="fas fa-file"></i>
             <% if paper.link == "" || paper.link == nil %>
-                    <%= link_to paperdownload_path(paper.id) do %>
+                    <%= link_to paperdownload_path(paper.id), target: "_blank" do %>
                     <%= paper.name %>
                 <% end %>
             <% else %>
