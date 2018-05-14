@@ -12,7 +12,7 @@
       <%= f.file_field :avatar, :class => "file-field" %>
     </p>
     <p>
-      <%= f.text_area :body, :class => "text-area", :id => "room-message-text" %>
+      <%= f.text_area :body, :class => "text-area", :id => "room-message-text", :placeholder => "Escribe aqui..." %>
       <%= hidden_field_tag "room", @room.id  %>
     </p>
     <br>
