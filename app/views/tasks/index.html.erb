@@ -9,7 +9,7 @@
                 <% end %>
             <% end %>
         <% else %>
-            <h4>Mis actividades terminados:</h4>
+            <h4>Mis Actividades Terminadas:</h4>
             <% total_points_done = 0 %>
             <% finished_ass(current_user, :group => @group.id).each do |f| %>
                 <% if f.assignment.course == @group.course %>
