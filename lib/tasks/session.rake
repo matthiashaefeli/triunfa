@@ -1,31 +1,28 @@
-
 namespace :sessions do
-    desc "Clear ActiveRecord sessions"
-    task :clear => :environment do
-        sql = 'TRUNCATE sessions;'
-        ActiveRecord::Base.connection.execute(sql)
+  
+    desc "Clear the sessions table"
+    task :clear => [:environment, 'db:load_config'] do
+        online_false(Admin)
+        online_false(Student)
+        online_false(Teacher)
+      ActiveRecord::Base.connection.execute "TRUNCATE TABLE #{ActiveRecord::SessionStore::Session.table_name}"
+    end
+  
+    desc "Trim old sessions from the table (default: > 30 days)"
+    task :trim => [:environment, 'db:load_config'] do
+      cutoff_period = (ENV['SESSION_DAYS_TRIM_THRESHOLD'] || 30).to_i.days.ago
+      ActiveRecord::SessionStore::Session.
+        where("updated_at < ?", cutoff_period).
+        delete_all
+    end
 
+  end
 
+def online_false(user)
+    users = user.where(online: true)
+    for user in users
+        user.online= false
+        user.save
     end
 end
 
-
-
-# desc "Clear expired sessions"
-# task :clear_expired_sessions => :environment do
-#     sql = 'DELETE FROM sessions WHERE updated_at < DATE_SUB(NOW(), INTERVAL 1 DAY);'
-#     ActiveRecord::Base.connection.execute(sql)
-# end
-
-# namespace :chat do 
-#     task clear_history: :environment do 
-#         oldest_chats = Chat.where("created_at < ?", 15.days.ago)
-#         for chat in oldest_chats
-#             chat.delete
-#         end
-#     end 
-# end
-
-
-# sql = "DELETE FROM sessions WHERE updated_at < (CURRENT_TIMESTAMP - INTERVAL '1 days');"
-# ActiveRecord::Base.connection.execute(sql)
