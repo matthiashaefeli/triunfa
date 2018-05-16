@@ -2,7 +2,6 @@ class TeachersController < ApplicationController
     include ServiceUser
     
     def index
-        who_is
         if params[:limit] != nil
             @talks_limit = params[:limit]
         else
@@ -46,6 +45,7 @@ class TeachersController < ApplicationController
     end
 
     def destroy
+        who_is
         teacher = Teacher.find(params[:id])
         if teacher.activ == true
             teacher.activ = false
