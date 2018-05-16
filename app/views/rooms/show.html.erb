@@ -1,5 +1,4 @@
 <div class="under-nav flyer_forum">
-  <% @searched_user = check_user(current_user) %>
   <div class="forums">
     <% searched_user = check_user(current_user) %>
     <% if searched_user == Teacher  %>
@@ -29,6 +28,5 @@
     <p><%= link_to "Ver mas Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
   </div>
   <div>
-      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
   </div>
 </div>
