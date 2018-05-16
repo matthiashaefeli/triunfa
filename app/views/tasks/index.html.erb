@@ -20,42 +20,46 @@
             <p>Tienes <%= total_points_done %> Creditos de 40</p>
         <% end %>
     </div>
-    <div class="task-tasks">
+    <div class="task-tasks forums">
         
         <% if searched_user == Teacher  %>
             <p><%= link_to "Regresar", rooms_path %></p>
-            <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
-            <%= form_for :task, url: tasks_path  do |f| %>  
-                <p>
-                    <%= f.text_area :body, :class => "text-area", :placeholder => "Escribe aqui..." %>
-                </p>
-                <p>
-                    <%= f.label :Terminar_antes_de %>
-                    <%= f.date_field :end %>
-                    <%= hidden_field_tag "group", @group.id  %>
-                </p>
-                <p>
-                    <%= f.label :link %>
-                    <%= f.text_field :link %>
-                </p>
-                <p>
-                    <%= f.label :adjuntar_archivo %>
-                    <%= f.file_field :document, :class => "file-field"  %>
-                </p>
+            <div class="forum-title">
+                <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
+                <%= form_for :task, url: tasks_path  do |f| %>  
+                    <p>
+                        <%= f.text_area :body, :class => "text-area", :placeholder => "Escribe aqui..." %>
+                    </p>
+                    <p>
+                        <%= f.label :Terminar_antes_de %>
+                        <%= f.date_field :end %>
+                        <%= hidden_field_tag "group", @group.id  %>
+                    </p>
+                    <p>
+                        <%= f.label :link %>
+                        <%= f.text_field :link %>
+                    </p>
+                    <p>
+                        <%= f.label :adjuntar_archivo %>
+                        <%= f.file_field :document, :class => "file-field"  %>
+                    </p>
 
-                <%= f.submit "Crear Tarea" %>
-            <% end %>
+                    <%= f.submit "Crear Tarea" %>
+                <% end %>
+            </div>
             <br>
-            <hr>
         <% elsif searched_user == Student %>
+            <div class="forum-title">
                 <h2>Mi Tarea:</h2>
-                <hr>
+            </div>
         <% else %>
+            <div class="forum-title">
                 <h2>Tarea del Grupo:</h2>
-                <hr>
+            </div>
         <% end %>
 
         <div>
+            <hr>
             <%= render "tasks" %>
         </div> 
     </div>
