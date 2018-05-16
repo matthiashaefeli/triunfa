@@ -4,7 +4,7 @@
         <%= form_for :chat, url: chats_path, remote: "true"  do |f| %>  
             <p>
                 <%= f.label :adjuntar_imagen %>
-                <%= f.file_field :avatar %>
+                <%= f.file_field :avatar, :class => "file-field"  %>
             </p>
             <p>
                 <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body", :placeholder => "Escribe aqui..." %>
