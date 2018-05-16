@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
         else
             @room_limit = 5
         end
+        @flyers = Flyer.all
         @room = Room.find(params[:id])
         @messages = Message.where(room: @room).order(created_at: :desc).limit(@room_limit)
     end

@@ -63,38 +63,39 @@
 <% else %>
 
 
-<div class="home-currentuser container under-nav">
+<div class="home-currentuser under-nav">
 
 
     <!-- check if user is Admin Student Teacher -->
-    <% searched_user = check_user(current_user) %>
+    <% @searched_user = check_user(current_user) %>
 
 
     <!-- change online status form current_user -->
-    <% if searched_user != "new_user" && !online.online %>
+    <% if @searched_user != "new_user" && !online.online %>
         <% update_online(searched_user) %>
     <% end %>
 
    
     <!-- user has no group -->
-    <% if searched_user == "new_user" %>
+    <% if @searched_user == "new_user" %>
         <%= render "./students/new.html.erb" %>
 
 
 
     <!-- Admin user  -->
-    <% elsif searched_user == Admin %>
+    <% elsif @searched_user == Admin %>
         <%= render "online.html.erb" %>
         <div class="currentuser-item-size-two">
             <br>
             <%= render "chat.html.erb" %>
         </div>
         <div class="currentuser-item-size-three">
+            <%= render "flyers/index", locals: { searched_user: @searched_user } %>
         </div>
         
 
     <!-- Teacher user -->
-    <% elsif searched_user == Teacher %>
+    <% elsif @searched_user == Teacher %>
         <% if (Teacher.find_by(user: current_user)).activ %>
             <%= render "online.html.erb" %>
             <div class="currentuser-item-size-two">
@@ -102,6 +103,7 @@
                 <%= render "chat.html.erb" %>
             </div>
             <div class="currentuser-item-size-three">
+                <%= render "flyers/index", locals: { searched_user: @searched_user } %>
             </div>
         <% else %>
             <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Superate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
@@ -109,7 +111,7 @@
 
 
     <!-- Student user  -->
-    <% elsif searched_user == Student %>
+    <% elsif @searched_user == Student %>
     <%= render "online.html.erb" %>
     <div class="currentuser-item-size-two">
         <div>
@@ -121,6 +123,7 @@
         <%= render "chat.html.erb" %>
     </div>
     <div class="currentuser-item-size-three">
+        <%= render "flyers/index", locals: { searched_user: @searched_user } %>
     </div>
     <% end %>
 </div>

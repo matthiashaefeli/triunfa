@@ -32,6 +32,9 @@
 en:
   activerecord:
     attributes:
+      flyer:
+        name: "Nombre"
+        avatar: "Imagen"
       paper:
         name: "Nombre"
         link: "Link"
@@ -90,4 +93,10 @@ en:
             enddate:
               blank: "no esta definido"
             startdate:
+              blank: "no esta definido"
+        flyer:
+          attributes:
+            name:
+              blank: "no esta definido"
+            avatar:
               blank: "no esta definido"

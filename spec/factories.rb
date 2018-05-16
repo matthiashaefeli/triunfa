@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :flyer do
+    
+  end
     factory :course do 
         name "excel"
         startdate "01-02-2018 10:10:10"
