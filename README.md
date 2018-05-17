@@ -1,9 +1,4 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 * Ruby 2.5.0p0
 
@@ -29,41 +24,25 @@ Run your tests, open up coverage/index.html in your browser and check out what y
 
 # Gems
 
-* gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-* gem 'autoprefixer-rails'
-* gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-* gem "font-awesome-rails"
-* gem 'devise'
-* gem "paperclip", "~> 6.0.0"
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'autoprefixer-rails'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem "font-awesome-rails"
+gem 'devise'
+gem "paperclip", "~> 6.0.0"
+gem 'json'
+gem 'aws-sdk-s3'
+gem 'fog'
+gem 'figaro'
+gem 'sendgrid-ruby'
+gem 'rest-client'
+gem 'redis'
+gem 'rubyzip', '>= 1.2.1'
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'axlsx_rails'
+gem 'activerecord-session_store'
+gem 'delayed_paperclip'
 
-
-# Superate Y Triunfa
-
-## Student
-* Name
-* LastName
-* Email
-* Password
-
-
-
-## Admin
-* Name
-* LastName
-* Email
-* Password
-
-
-## Teacher
-* Name
-* LastName
-* Email
-* Password
-
-## Course
-* Name
-* Start Date
-* Finish Date
 
 
 
