@@ -27,6 +27,11 @@ RSpec.describe WelcomeController, type: :controller do
         expect(response.status).to eq(302)
     end
 
+    it "cant updated the password of an user with letters" do
+        put :updateuser, params: {id: user.id, user: { password: "abc"}}
+        expect user.errors.full_messages
+    end
+
     it "updates other data of an user" do
         put :updateuser, params: {id: user.id, user: { street: "street", cp: "12345", tel: "123456789", state: "TX", city: "Houston"}}
         expect(response.status).to eq(302)
@@ -36,4 +41,9 @@ RSpec.describe WelcomeController, type: :controller do
         put :updatepassword, params: {id: user.id}
         expect(response.status).to eq(200)
     end
+
+    # it "redirect if user online status is changed" do 
+    #     get :destroy, params: {id: user.id}
+    #     expect(response.status).to eq(200) 
+    # end
 end
