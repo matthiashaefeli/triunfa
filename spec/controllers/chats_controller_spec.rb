@@ -9,4 +9,9 @@ RSpec.describe ChatsController, type: :controller do
         post :create, params: {chat:{body: "hello"}}
         expect(response.status).to eq(204)
     end
+
+    it "redirect user if not login" do 
+        post :create, params: {chat:{body: "hello"}}
+        expect(response.status).to eq(302)
+    end
 end
