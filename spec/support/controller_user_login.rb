@@ -15,4 +15,12 @@ module UserLogin
   def create_teacher(user)
     Teacher.create(user: user)
   end
+
+  def create_table(user, usertwo)
+    Table.create(user: user, seconduser: usertwo.id)
+  end
+
+  def create_conver(user, table, body)
+    Conversation.create(user: user, table: table, body: body)
+  end
 end 

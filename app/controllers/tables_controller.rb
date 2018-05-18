@@ -6,7 +6,6 @@ class TablesController < ApplicationController
             table = Table.create(user: current_user, seconduser: u2)
             ActionCable.server.broadcast 'table_channel',
                                         seconduser: u2,
-                                        # table: render_table(table),
                                         user: current_user.id
 
              redirect_to root_path                             
@@ -28,9 +27,5 @@ class TablesController < ApplicationController
         end 
         return false
     end
-
-    def render_table(table)
-        render(partial: 'conversationtable.html.erb', locals: { table: table })
-      end
 
 end
