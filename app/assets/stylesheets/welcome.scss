@@ -76,6 +76,11 @@ nav a {
     transition: all .2s ease-in-out;
 }
 
+.link-img {
+    height: 100px;
+    width: auto;
+}
+
 .course-img:hover { 
     transform: scale(1.1); 
 }
@@ -95,6 +100,10 @@ nav a {
     display: flex;
     justify-content: space-around;
     margin-bottom: 60px;
+}
+
+.border-border {
+    border: 1px solid red;
 }
 
 .item-links {
