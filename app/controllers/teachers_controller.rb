@@ -34,8 +34,8 @@ class TeachersController < ApplicationController
 
     def update
         teacher = Teacher.find(params[:id])
-        teacher.avatar = params[:user][:avatar]
-        teacher.save
+        # teacher.avatar = params[:user][:avatar]
+        # teacher.save
         user = User.find(teacher.user.id)
         user.name = params[:user][:name]
         user.lastname = params[:user][:lastname]
