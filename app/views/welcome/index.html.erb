@@ -20,16 +20,19 @@
         <h1>Cursos</h1>
     </div>
     <div id="courses">
+        <% for course in @course %>
         <div class="items-courses">
             <div>
-                <%= link_to image_tag("word.png", :class => "course-img"), new_user_session_path %>
+                <%= link_to new_user_session_path do %>
+                    <%= image_tag(course.avatar.url(:medium), :class => "course-img") %>
+                <% end %>
             </div>
             <div class="course-text-desc">
-                <h3>Word Basico</h3>
-                <p>Los estudiantes aprenderán<br> a usar Word 2016 para crear<br> y editar documentos simples</p>
+                <h3><%= course.name %></h3>
             </div> 
         </div>
-        <div class="items-courses">
+        <% end %>
+        <!-- <div class="items-courses">
             <div>
                 <%= link_to image_tag("excel.png", :class => "course-img"), new_user_session_path %>
             </div>
@@ -46,7 +49,7 @@
                 <h3>PowerPoint Basico</h3>
                 <p>Los estudiantes aprenderán<br> a identificar las características y<br> funciones básicas de PowerPoint</p>
             </div> 
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="ressources-links" id="ressourcen">
