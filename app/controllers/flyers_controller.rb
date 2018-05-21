@@ -17,7 +17,7 @@ class FlyersController < ApplicationController
     private
 
     def flyer_params
-    params.require(:flyer).permit(:name, :avatar)
+    params.require(:flyer).permit(:name, :avatar, :link)
     end
 end
 

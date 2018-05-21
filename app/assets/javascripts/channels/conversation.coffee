@@ -13,4 +13,6 @@ App.conversation = App.cable.subscriptions.create "ConversationChannel",
         $(id).remove()
     else
         id = '#conv-table'+data.table
+        user_id = '#my_conversation_id'+data.message
         $(id).prepend '<p class="'+data.content_class+'">' + data.content + '<p>'
+        $(user_id).prepend '<li><a href="/"><i class="fas fa-envelope-open"></i></a></li>'
