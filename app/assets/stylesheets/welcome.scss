@@ -86,11 +86,34 @@ nav a {
 }
 
 
-// links on home without login
-.links-home {
+// recursos links
+.ressourcen-title {
+    text-align: center;
+    padding-top: 40px;
+}
+
+#ressourcen-align {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ressourcen-imag {
+    width: 200px;
+    height: auto;
+    margin-top: 80px;
+    margin-bottom: 120px;
+}
+
+.ressources-links {
     background-color: #D0D0D0;
 }
 
+.ressourcen-imag:hover { 
+    transform: scale(1.1); 
+}
+
+// links on home without login
 .links-title {
     text-align: center;
     padding-top: 40px;
@@ -124,6 +147,10 @@ nav a {
 
 .parents {
     flex-grow: 1;
+}
+
+.link-img:hover {
+    transform: scale(1.1);
 }
 
 
@@ -216,6 +243,19 @@ nav a {
     
     .img-nav-margin {
         margin-top: 0.5%;
+    }
+
+    .link-img {
+        height: 40%;
+        width: 40%;
+    }
+    
+    .ressourcen-imag {
+        width: 50%;
+    }
+
+    #ressourcen-align {
+        margin: auto;
     }
 }
 
