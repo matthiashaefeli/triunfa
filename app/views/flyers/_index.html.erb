@@ -1,9 +1,14 @@
 <div>
-    
     <div class="flyers">
         <% for flyer in @flyers %>
             <div>
-                <%= image_tag flyer.avatar.url(:medium) %>
+                <% if flyer.link != nil %>
+                    <%= link_to flyer.link, target: "_blank" do %>
+                    <%= image_tag flyer.avatar.url(:medium) %>
+                    <% end %>
+                <% else %>
+                    <%= image_tag flyer.avatar.url(:medium) %>
+                <% end %>
                 <% if @searched_user == Admin %> 
                     <%= link_to flyer_path(flyer.id), :method => "delete" do %>
                     <i class="fas fa-trash-alt"></i>
@@ -19,6 +24,8 @@
             <%= f.label :nombre %>
             <%= f.text_field :name %>
         </p> 
+            <%= f.label :link %>
+            <%= f.text_field :link %>
         <p>
             <%= f.label :adjuntar_imagen %>
             <%= f.file_field :avatar %>
@@ -28,5 +35,4 @@
         </p>
         <% end %>
     <% end %>
-
 </div>
