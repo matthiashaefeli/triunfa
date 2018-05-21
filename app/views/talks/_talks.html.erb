@@ -14,9 +14,9 @@
         <% end %>
     </div>
     <br>
-    
+    <hr>
     <div id="talk-table">
-        <hr>
+        
         <%= render "talks/talk" %>
     </div> 
     <p><%= link_to "Ver mas Mensajes", teachers_path(limit: (@talks_limit.to_i + 5)) %></p>
