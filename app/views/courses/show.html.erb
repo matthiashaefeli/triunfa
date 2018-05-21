@@ -1,7 +1,7 @@
 <div class="under-nav container">
     <h1><%= @course.name %></h1>
-    <p>Fecha Inicio: <%= @course.startdate %></p>
-    <p>Fecha Final: <%= @course.enddate %></p>
+    <!-- <p>Fecha Inicio: <%= @course.startdate %></p>
+    <p>Fecha Final: <%= @course.enddate %></p> -->
     <% if @course.avatar_file_name != nil %>
         <p><%= image_tag @course.avatar.url(:thumb), :class => "course-avatar"%></p>
     <% end %>

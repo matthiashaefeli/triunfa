@@ -7,7 +7,7 @@
 }
 
 #course-table {
-    width: 70%;
+    width: 50%;
 }
 
 #new-course {
@@ -43,11 +43,7 @@
     }
 
     #course-table td:nth-child(1),
-    #course-table th:nth-child(1),
-    #course-table td:nth-child(3),
-    #course-table th:nth-child(3),
-    #course-table td:nth-child(4),
-    #course-table th:nth-child(4) {
+    #course-table th:nth-child(1) {
         display: none;
     }
 

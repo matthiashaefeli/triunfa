@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
         who_is
         teacher = Teacher.find(group_params[:teacher])
         course = Course.find(group_params[:course])
-        group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course)
+        group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, startdate: group_params[:startdate], enddate: group_params[:enddate])
         if group.save
             room = Room.create(group: group)
             redirect_to groups_path
@@ -59,7 +59,7 @@ class GroupsController < ApplicationController
 
     private
     def group_params
-        params.require(:group).permit(:name, :key, :teacher, :course)
+        params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate)
     end
 
     def sort_column

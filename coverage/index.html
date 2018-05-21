@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-21T15:50:49-05:00">2018-05-21T15:50:49-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-21T17:04:05-05:00">2018-05-21T17:04:05-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>132</b> files in total.
-    <b>1255</b> relevant lines. 
-    <span class="green"><b>1114</b> lines covered</span> and
+    <b>1254</b> relevant lines. 
+    <span class="green"><b>1113</b> lines covered</span> and
     <span class="red"><b>141</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -504,8 +504,8 @@
         <td class="strong"><a href="#952caee592a9a3379fa772567ab2cb923c7d926d" class="src_link" title="app/models/course.rb">app/models/course.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>31</td>
-        <td>10</td>
-        <td>10</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -3416,7 +3416,7 @@
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">        group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course)</code>
+          <code class="ruby">        group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, startdate: group_params[:startdate], enddate: group_params[:enddate])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
@@ -3674,7 +3674,7 @@
         <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">        params.require(:group).permit(:name, :key, :teacher, :course)</code>
+          <code class="ruby">        params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
@@ -7544,8 +7544,8 @@
     <h3>app/models/course.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7703,10 +7703,10 @@
           <code class="ruby">    validates :name, presence: true</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="26">
           
-          <code class="ruby">    validates :startdate, presence: true </code>
+          
+          <code class="ruby">    # validates :startdate, presence: true </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
