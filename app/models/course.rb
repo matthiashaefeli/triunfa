@@ -23,7 +23,7 @@ class Course < ApplicationRecord
     validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/, /\.png?$/, /\.jpg?$/]
     
     validates :name, presence: true
-    validates :startdate, presence: true 
+    # validates :startdate, presence: true 
     validates :enddate, presence: true
 
     has_many :groups

@@ -11,6 +11,8 @@
                 <th scope="col">Curso</th>
                 <th scope="col">clave</th>
                 <th scope="col">Estudiantes</th>
+                <th scope="col">Fecha Inicio</th>
+                <th scope="col">Fecha Final </th>
                 <th scope="col">Activo</th>
             </tr>
         </thead>
@@ -29,6 +31,8 @@
                 <td><%= link_to g.course.name, course_path(g.course.id) %></td>
                 <td><%= g.key %></td>
                 <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
+                <td><%= g.startdate %></td>
+                <td><%= g.enddate %></td>
                 <td><%= g.activ ? "Si" : "No" %></td>
             </tr>
             <% end %>

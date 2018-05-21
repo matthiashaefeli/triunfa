@@ -19,6 +19,8 @@
     <p>Clave: <%= @group.key %></p>
     <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
     <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
+    <p>Fecha Inicio: <%= @group.startdate %></p>
+    <p>Fecha Final: <%= @group.enddate %></p>
     <% if @group.activ == true %>
         <p>Activo: Si</p>
         <% if searched_user == Admin %>
