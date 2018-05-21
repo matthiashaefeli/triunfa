@@ -6,14 +6,19 @@ class ConversationsController < ApplicationController
         conver = Conversation.create(user: current_user, table: table, body: params[:conversation][:body])
         if table.user == current_user
             content_class = "first_user"
+            other_user = User.find(table.seconduser)
+            message_id = other_user.id
         else
             content_class = "second_user"
+            other_user = User.find(table.user.id)
+            message_id = other_user.id
         end
         
         ActionCable.server.broadcast 'conversation_channel',
                                              content:  conver.body,
                                              table: table.id,
-                                             content_class: content_class
+                                             content_class: content_class,
+                                             message: message_id
 
     end
 
