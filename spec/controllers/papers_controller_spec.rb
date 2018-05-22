@@ -19,4 +19,8 @@ RSpec.describe PapersController, type: :controller do
         expect(response.status).to eq(302)
     end
 
+    # it "downloads a paper" do 
+    #     get :download, params: {id: paper.id}
+    #     expect(response.status).to eq (302)
+    # end
 end
