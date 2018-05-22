@@ -3,14 +3,14 @@
     <%= f.label :nombre %>
     <%= f.text_field :name %>
   </p>
-  <p>
+  <!-- <p>
     <%= f.label :fecha_inicio %>
     <%= f.date_field :startdate %>
   </p>
   <p>
     <%= f.label :fecha_final %>
     <%= f.date_field :enddate %>
-  </p>
+  </p> -->
     <p>
       <%= f.label :link %>
       <%= f.text_field :link %>
@@ -23,6 +23,10 @@
     <%= f.label :adjuntar_archivo %>
     <%= f.file_field :document %>
   </p> -->
+  <p>
+    <%= f.label :activo? %>
+    <%= f.check_box :activ %>
+  </p>
  
   <p>
     <%= f.submit "Guardar Curso" %>

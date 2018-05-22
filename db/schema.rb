@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521214629) do
+ActiveRecord::Schema.define(version: 20180522164843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20180521214629) do
     t.integer "document_file_size"
     t.datetime "document_updated_at"
     t.string "link"
+    t.boolean "activ", default: true
   end
 
   create_table "finished_assignments", force: :cascade do |t|

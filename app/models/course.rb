@@ -24,7 +24,7 @@ class Course < ApplicationRecord
     
     validates :name, presence: true
     # validates :startdate, presence: true 
-    validates :enddate, presence: true
+    # validates :enddate, presence: true
 
     has_many :groups
     has_many :assignments

@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
         else
             @chat_limit = 5
         end
+        @course = Course.where(activ: true)
         @flyers = Flyer.all
         @rooms = Room.where(group: Group.where(activ: true))
         @chats = Chat.order(created_at: :desc).limit(@chat_limit)

@@ -58,8 +58,13 @@ nav a {
 
 #courses {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 60px;
+}
+
+#courses>* {
+    flex: 1 1 300px;
 }
 
 .items-courses {
