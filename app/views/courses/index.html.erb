@@ -10,6 +10,7 @@
                 <!-- <th>Fecha inicio</th>
                 <th>Fecha final</th> -->
                 <th>Link</th>
+                <th>Activo</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
                 <%= course.link %>
                 <% end %>
             </td>
+            <td><%= course.activ ? "Si" : "NO" %></td>
             </tr>
             <% end %>
         </tbody>

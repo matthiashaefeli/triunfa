@@ -1,7 +1,7 @@
 module GroupsHelper
 
     def teacher_array
-        teachers = Teacher.all
+        teachers = Teacher.where(activ: true)
         result_array = []
         teachers.each do |t|
             full_name = "#{t.user.name} #{t.user.lastname}"
@@ -11,7 +11,7 @@ module GroupsHelper
     end
 
     def course_array
-        courses = Course.all
+        courses = Course.where(activ: true)
         result_array = []
         courses.each do |c|
             result_array.push([c.name, c.id])
