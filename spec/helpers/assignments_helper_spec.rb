@@ -1,14 +1,18 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the AssignmentsHelper. For example:
-#
-# describe AssignmentsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe AssignmentsHelper, type: :helper do
+
+    setup do 
+        @course = Course.create(name: "excel", startdate: "10-01-2018", enddate: "10-02-2018")
+        assignment = Assignment.create(course: @course, name: "ass", points: 10)
+        assignmenttwo = Assignment.create(course: @course, name: "asstwo", points: 10)
+    end
+
+    describe "total_points" do 
+        it "returns total points" do 
+            expect(total_point(@course.id)).to eq 20
+        end
+    end
+
+
 end
