@@ -14,52 +14,32 @@ a.user = u
 a.super = true
 a.save
 
+u2 = User.create(name: "Sandra", lastname: "Lozano", email: "sandra@superateytriunfa.org", password: 1212)
+a2 = Admin.new
+a2.user = u2
+a2.super = false
+a2.save
 
-# course = Course.create(name: "Excel", startdate: "Fri, 27 Apr 2018", enddate: "Fri, 4 May 2018")
-# teacheruser = User.create(password: 1234, name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-# teacher = Teacher.create(user: teacheruser)
-# group = Group.create(name: Faker::Address.city, key: Faker::Lorem.characters(4), teacher: teacher, course: course)
-# Room.create(group: group)
+u3 = User.create(name: "Eduardo", lastname: "Jimenez", email: "eduardo@superateytriunfa.org", password: 1313)
+a3 = Admin.new
+a3.user = u3
+a3.super = false
+a3.save
 
-# 10.times do 
-#     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-#     student = Student.create(user: studentuser, group: group)
-# end
+u4 = User.create(name: "Jeanell", lastname: "Davila", email: "j.davila@juntospodemos.org", password: 9898)
+a4 = Admin.new
+a4.user = u4
+a4.super = true
+a4.save
 
-# course2 = Course.create(name: "Word", startdate: "Fri, 27 Apr 2018", enddate: "Fri, 4 May 2018")
-# teacheruser2 = User.create(password: 1234, name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-# teacher2 = Teacher.create(user: teacheruser2)
-# group2 = Group.create(name: Faker::Address.city, key: Faker::Lorem.characters(4), teacher: teacher2, course: course2)
-# Room.create(group: group2)
+u5 = User.create(name: "Martin", lastname: "Mireles", email: "martin@superateytriunfa.org", password: 1414)
+a5 = Admin.new
+a5.user = u5
+a5.super = false
+a5.save
 
-# 10.times do 
-#     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-#     student = Student.create(user: studentuser, group: group2)
-# end
-
-# course3 = Course.create(name: "Excel Advanced", startdate: "Fri, 27 Apr 2018", enddate: "Fri, 4 May 2018")
-# teacheruser3 = User.create(password: 1234, name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-# teacher3 = Teacher.create(user: teacheruser3)
-# group3 = Group.create(name: Faker::Address.city, key: Faker::Lorem.characters(4), teacher: teacher3, course: course3)
-# Room.create(group: group3)
-
-# 10.times do 
-#     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-#     student = Student.create(user: studentuser, group: group3)
-# end
-
-# course4 = Course.create(name: "Word Advanced", startdate: "Fri, 27 Apr 2018", enddate: "Fri, 4 May 2018")
-# teacheruser4 = User.create(password: 1234, name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-# teacher4 = Teacher.create(user: teacheruser4)
-# group4 = Group.create(name: Faker::Address.city, key: Faker::Lorem.characters(4), teacher: teacher4, course: course4)
-# Room.create(group: group4)
-
-# 10.times do 
-#     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-#     student = Student.create(user: studentuser, group: group4)
-# end
-
-
-# 500.times do 
-#     studentuser = User.create(password: 1234,name: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.unique.email, street: Faker::Address.street_name, city: Faker::Address.city, cp: Faker::Address.zip_code, state: Faker::Address.state)
-# end
+u6 = User.create(name: "Kattya", lastname: "Alvarado", email: "mk.alvarado@juntospodemos.org", password: 9090)
+a6 = Admin.new
+a6.user = u6
+a6.super = false
+a6.save
