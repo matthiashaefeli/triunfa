@@ -8,7 +8,7 @@
     <p><strong>Estudiantes en Grupos: </strong><%= @students.count %></p>
     <p><strong>Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
     <hr>
-    <p class="stat-show">Ver Estatisticas pasadas</p>
+    <p class="stat-show"><i class="fas fa-angle-double-down"></i> Ver Estatisticas pasadas</p>
     <div class="stat-show-child">
         <p><%= link_to "Crear nueva Estatistica", statistics_path, :method => "Post" %></p>
         <table class="table table-hover table-bordered" id="estatistic-table">

@@ -17,8 +17,8 @@
 .icon-color {
     background-color: black;
 }
-// nav
 
+// nav
 nav a {
     color: black;
 }
@@ -58,8 +58,7 @@ nav a {
 
 #courses {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-flow: row wrap;
     margin-bottom: 60px;
 }
 
@@ -213,6 +212,7 @@ nav a {
 
 @media only screen and (max-width: 767px) {
     .flex-container {
+        margin-top: 40px;
         flex-direction: column;
     }
 
@@ -265,6 +265,10 @@ nav a {
 
     .currentuser-item-size-three {
         display: none;
+    }
+
+    #courses>* {
+        flex: 1 1 110px;
     }
     
 }
