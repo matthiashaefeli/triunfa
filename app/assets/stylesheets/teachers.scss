@@ -1,6 +1,4 @@
-// Place all the styles related to the Teachers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 
 #teacher-table {
@@ -13,7 +11,7 @@
 
 #new-teacher:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 #new-teacher-hidden {
@@ -35,7 +33,7 @@
 
 .teacher-show-text:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 .teacher-admin-show {

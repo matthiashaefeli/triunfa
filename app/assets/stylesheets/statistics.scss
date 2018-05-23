@@ -1,6 +1,4 @@
-// Place all the styles related to the statistics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 .stat-show-child {
     display: none;
@@ -8,7 +6,7 @@
 
 .stat-show:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 .stat-show {

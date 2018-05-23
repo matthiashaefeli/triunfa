@@ -1,6 +1,4 @@
-// Place all the styles related to the Courses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 .under-nav {
     margin-top: 60px;
@@ -16,7 +14,7 @@
 
 #new-course:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 #new-course-hidden {
@@ -29,7 +27,7 @@
 
 #edit-course:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 #edit-course-hidden {

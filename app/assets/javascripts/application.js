@@ -33,7 +33,6 @@ $( document ).on('turbolinks:load', function() {
 
     $('.folders').on("click", function() {     
         let paperNew = $(this);
-        // debugger;
         paperNew.parent().parent().next().children().children().toggle();
     })
 
@@ -96,10 +95,10 @@ $( document ).on('turbolinks:load', function() {
             datatype: 'html'
 
         })
-        .done(function(response){
-            let id = "#conv"+$id
-            // $(id).remove()   
-        });
+        // .done(function(response){
+        //     // let id = "#conv"+$id
+        //     // $(id).remove()   
+        // });
     })
 
   })

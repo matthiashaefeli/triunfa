@@ -1,6 +1,4 @@
-// Place all the styles related to the conversations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 
 .text-conversation {
@@ -9,7 +7,7 @@
 }
 
 .conversation-border {
-    background-color: #d9f4fd;
+    background-color: $chat-table-odd;
     width: 150px;
 }
 

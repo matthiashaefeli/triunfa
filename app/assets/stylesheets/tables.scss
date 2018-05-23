@@ -1,9 +1,8 @@
-// Place all the styles related to the tables controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
 
 .conv-title {
-    background-color: #eaf9fe;
+    background-color: $chat-table-even;
     display: flex;
     justify-content: space-between;
 }

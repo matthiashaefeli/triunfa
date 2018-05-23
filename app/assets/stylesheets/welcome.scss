@@ -1,5 +1,6 @@
-// welcome page without current user
+@import "application";
 
+// welcome page without current user
 #index-home {
     width: 100vw;
     height: 100vh;
@@ -17,8 +18,8 @@
 .icon-color {
     background-color: black;
 }
-// nav
 
+// nav
 nav a {
     color: black;
 }
@@ -28,7 +29,7 @@ nav a {
 }
 
 .bg-color {
-    background-color: #D0D0D0;
+    background-color: $index-color;
 }
 
 // text in homepage within a colored spot
@@ -58,8 +59,7 @@ nav a {
 
 #courses {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-flow: row wrap;
     margin-bottom: 60px;
 }
 
@@ -111,7 +111,7 @@ nav a {
 }
 
 .ressources-links {
-    background-color: #D0D0D0;
+    background-color: $index-color;
 }
 
 .ressourcen-imag:hover { 
@@ -191,7 +191,7 @@ nav a {
 
 #who-is:hover {
     cursor: pointer;
-    color: #00A7E1;
+    color: $links-hover;
 }
 
 
@@ -213,6 +213,7 @@ nav a {
 
 @media only screen and (max-width: 767px) {
     .flex-container {
+        margin-top: 40px;
         flex-direction: column;
     }
 
@@ -265,6 +266,10 @@ nav a {
 
     .currentuser-item-size-three {
         display: none;
+    }
+
+    #courses>* {
+        flex: 1 1 110px;
     }
     
 }

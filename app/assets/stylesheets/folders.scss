@@ -1,13 +1,4 @@
-// Place all the styles related to the folders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-// .folder-index {
-//     display: flex;
-//     width: 100%;
-//     justify-content: space-between;
-
-// }
+@import "application";
 
 .create-new-folder {
     display: none;
@@ -19,7 +10,7 @@
 
 .create-new-folder-text:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 .add-papper {
@@ -29,7 +20,7 @@
 
 .folders:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 .folders-table {

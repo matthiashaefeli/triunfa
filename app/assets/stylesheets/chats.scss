@@ -1,19 +1,17 @@
-// Place all the styles related to the chats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 
 .chats:nth-of-type(even) {
-    background: #eaf9fe;
+    background: $chat-table-even;
 }
 
 .chats:nth-of-type(odd) {
-    background: #d9f4fd;
+    background: $chat-table-odd;
 }
 
 #chat-table {
 }
 
 .forum-title {
-    background: #eaf9fe;
+    background: $chat-table-even;
 }
