@@ -1,6 +1,4 @@
-// Place all the styles related to the admins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 
 .admin-show-all {
@@ -13,7 +11,7 @@
 
 .admin-show-text:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 #new-admin-hidden {
@@ -22,7 +20,7 @@
 
 #new-admin:hover {
     cursor: pointer;
-    color: #4FC3F7;
+    color: $links-hover;
 }
 
 @media screen and (max-width:900px) {

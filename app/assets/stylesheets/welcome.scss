@@ -1,5 +1,6 @@
-// welcome page without current user
+@import "application";
 
+// welcome page without current user
 #index-home {
     width: 100vw;
     height: 100vh;
@@ -28,7 +29,7 @@ nav a {
 }
 
 .bg-color {
-    background-color: #D0D0D0;
+    background-color: $index-color;
 }
 
 // text in homepage within a colored spot
@@ -110,7 +111,7 @@ nav a {
 }
 
 .ressources-links {
-    background-color: #D0D0D0;
+    background-color: $index-color;
 }
 
 .ressourcen-imag:hover { 
@@ -190,7 +191,7 @@ nav a {
 
 #who-is:hover {
     cursor: pointer;
-    color: #00A7E1;
+    color: $links-hover;
 }
 
 

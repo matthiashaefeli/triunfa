@@ -15,8 +15,32 @@
  *= require_self
  */
 
-@import font-awesome
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
+
+// Font Variables
+
+$sans-condensed: 'Bookman', serif;
+
+// Styles
+body {
+  font-family: $sans-condensed;
+  font-weight: normal;
+}
+
+// color variables
+$links-hover: #00A7E1;
+$chat-table-even: #eaf9fe;
+$chat-table-odd: #d9f4fd;
+$index-color: #D0D0D0;
  
+a {
+    color: black;
+}
+
+a:hover {
+    color: $links-hover;
+    text-decoration: none;
+}
