@@ -2,7 +2,7 @@
     <h2>Mis Grupos</h2>
     <% @teacher_rooms.each do |r| %>
         <% if r.group.activ %>
-            <h4><%=  r.group.name %> <%=  r.group.key %>:</h4> <p><%= link_to "Ver el Grupo", group_path(r.group.id) %><br><%= link_to "Ir al Foro", room_path(r.id) %><br><%= link_to "Ir a la Tarea", tasks_path(group: r.group) %></p>
+            <h4><strong><%=  r.group.name %> <%=  r.group.key %>:</strong></h4> <p><%= link_to "Ver el Grupo", group_path(r.group.id) %><br><%= link_to "Ir al Foro", room_path(r.id) %><br><%= link_to "Ir a la Tarea", tasks_path(group: r.group) %></p>
         <% end %>
     <% end %>
 </div>
