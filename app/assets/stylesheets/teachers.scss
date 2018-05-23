@@ -38,11 +38,15 @@
     color: #4FC3F7;
 }
 
+.teacher-admin-show {
+    margin: 0 40px 0 40px;
+}
+
 @media screen and (max-width: 900px) {
     #teacher-table td:nth-child(1), 
     #teacher-table th:nth-child(1),
-    #teacher-table td:nth-child(2), 
-    #teacher-table th:nth-child(2),
+    #teacher-table td:nth-child(3), 
+    #teacher-table th:nth-child(3),
     #teacher-table td:nth-child(5), 
     #teacher-table th:nth-child(5),
     #teacher-table td:nth-child(6), 
@@ -60,6 +64,10 @@
 @media screen and (max-width: 700px) {
     .teacher_show {
         flex-direction: column;
+    }
+
+    .teacher-admin-show {
+        margin: 0;
     }
 }
 

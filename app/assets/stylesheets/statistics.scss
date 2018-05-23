@@ -14,3 +14,12 @@
 .stat-show {
     display: inline-block;
 }
+
+@media only screen and (max-width: 900px) {
+    #estatistic-table td:nth-child(1),
+    #estatistic-table th:nth-child(1),
+    #estatistic-table td:nth-child(8),
+    #estatistic-table th:nth-child(8) {
+        display: none;
+    }
+}

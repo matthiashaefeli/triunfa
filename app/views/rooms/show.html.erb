@@ -1,10 +1,13 @@
 <div class="under-nav flyer_forum">
   <div class="forums">
     <% @searched_user = check_user(current_user) %>
-    <% if @searched_user == Teacher  %>
+    <% if @searched_user == Teacher %>
       <p><%= link_to "Regresar", rooms_path %></p>
+    <% elsif @searched_user == Admin %>
+      <%= link_to "Regresar", groups_path %>
     <% else %>
       <%= link_to "Regresar", root_path %>
+
     <% end %>
     <div class="forum-title">
       <h3>Foro del Grupo <%= @room.group.name %></h3>
@@ -27,7 +30,7 @@
     </div>
     <p><%= link_to "Ver mas Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
   </div>
-  <div>
+  <div class="flyers-index">
       <%= render "flyers/index", locals: { searched_user: @searched_user } %>
   </div>
 </div>

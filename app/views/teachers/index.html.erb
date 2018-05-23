@@ -1,13 +1,15 @@
-<div class="under-nav container">
-    <%= render "layouts/errors" %>
-    <% if check_user(current_user) == Admin %>
-    <p class="teacher-show-text">Click aqui para ver los Instructores</p>
-    <div class="teacher-show-all">
-        <%= render "teachers_all" %>
-    </div>
-    <p class="admin-show-text">Click aqui para ver los Admins</p>
-    <div class="admin-show-all">
-        <%= render "admins/admin_all" %>
+<div class="under-nav">
+    <div class="teacher-admin-show">
+        <%= render "layouts/errors" %>
+        <% if check_user(current_user) == Admin %>
+        <p class="teacher-show-text"><i class="fas fa-angle-double-down"></i> Click aqui para ver los Instructores</p>
+        <div class="teacher-show-all">
+            <%= render "teachers_all" %>
+        </div>
+        <p class="admin-show-text"><i class="fas fa-angle-double-down"></i> Click aqui para ver los Admins</p>
+        <div class="admin-show-all">
+            <%= render "admins/admin_all" %>
+        </div>
     </div>
     <% end %>
     <div>

@@ -1,5 +1,10 @@
 <div class="assignment-show container">
-    <p><%= link_to 'Regresar', rooms_path %></p>
+<% searched_user = check_user(current_user) %>
+    <% if searched_user == Teacher %>
+        <p><%= link_to 'Regresar', rooms_path %></p>
+    <% else %>
+        <p><%= link_to 'Regresar', groups_path %></p>
+    <% end %>
     <h3>Assignacion: <%= @assignment.name %></h3>
     <h4>Estudiantes:</h4>
     <%= form_for :finishedAssignment, url: finished_assignments_path do |f| %>
