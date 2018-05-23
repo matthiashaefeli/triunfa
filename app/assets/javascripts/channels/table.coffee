@@ -6,8 +6,8 @@ App.table = App.cable.subscriptions.create "TableChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+
     id = '#my_conversation_id'+data.seconduser
-    # $(id).prepend '<p><a href="/">Click aqui para ver el mensaje privado</a></p>'
-    # $(id).append data.table
-    $(id).prepend '<li><a href="/"><i class="fas fa-envelope-open"></i></a></li>'
+    if $("#new-message").length isnt 1 then $(id).prepend '<li><a href="/" id="new-message"><i class="fas fa-envelope-open"></i></a></li>'
+
+    
