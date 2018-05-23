@@ -2,14 +2,14 @@
     <% searched_user = check_user(current_user) %>
     <div class="task-assignments">
         <% if searched_user == Admin || searched_user == Teacher %>
-            <h4>Todas las actividades:</h4>
+            <h4>Todas las Tareas:</h4>
             <% for assignment in @group.course.assignments %>
                 <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
                     <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
                 <% end %>
             <% end %>
         <% else %>
-            <h4>Mis Actividades Terminadas:</h4>
+            <h4>Mis Tareas Terminadas:</h4>
             <% total_points_done = 0 %>
             <% finished_ass(current_user, @group.id).each do |f| %>
                 <% if f.assignment.course == @group.course %>
