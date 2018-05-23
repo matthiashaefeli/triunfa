@@ -21,3 +21,13 @@
 #assignment-table-users {
     width: 40%;
 }
+
+@media only screen and (max-width: 767px) {
+    #assignment-table {
+        width: 100%;
+    }
+
+    #assignment-table-users {
+        width: 100%;
+    }
+}

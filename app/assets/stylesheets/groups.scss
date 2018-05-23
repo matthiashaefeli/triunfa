@@ -46,7 +46,9 @@
     #groupTableTable td:nth-child(7),
     #groupTableTable th:nth-child(7),
     #groupTableTable td:nth-child(8),
-    #groupTableTable th:nth-child(8) {
+    #groupTableTable th:nth-child(8),
+    #groupTableTable th:nth-child(9),
+    #groupTableTable td:nth-child(9) {
         display: none;
     }
 
@@ -78,6 +80,12 @@
     #igroup-table-show th:nth-child(9)  {
         display: none;
     }
-
+    #group-table-show {
+        width: 100%;
+    }
+    
+    #igroup-table-show {
+        width: 100%;
+    }
 
 }
