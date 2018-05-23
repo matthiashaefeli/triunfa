@@ -18,7 +18,7 @@ RSpec.describe FinishedAssignmentsHelper, type: :helper do
 
     describe "finished_ass" do 
         it "returns array with FinishedAssignments" do 
-            expect(finished_ass(@userthree, @group).length).to eq 1
+            expect(finished_ass(@userthree, @group.id).length).to eq 1
         end
     end
 
