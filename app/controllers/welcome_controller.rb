@@ -32,6 +32,9 @@ class WelcomeController < ApplicationController
             end
         else
             user = User.find(params[:id])
+            user.name = userupdate_params[:name]
+            user.lastname = userupdate_params[:lastname]
+            user.email = userupdate_params[:email]
             user.street = userupdate_params[:street]
             user.cp = userupdate_params[:cp]
             user.tel = userupdate_params[:tel]
@@ -81,7 +84,7 @@ class WelcomeController < ApplicationController
     end
 
     def userupdate_params
-        params.require(:user).permit(:street, :city, :cp, :tel, :state, :avatar)
+        params.require(:user).permit(:street, :city, :cp, :tel, :state, :avatar, :name, :lastname, :email)
     end
 
 end

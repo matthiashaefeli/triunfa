@@ -2,8 +2,8 @@ module FinishedAssignmentsHelper
 
     def finished_ass(user, group)
         # group = Group.find(params[:group]) this was before i did the rspec test delete if everything works
-        group = Group.find(group.id)
-        return FinishedAssignment.where(user: user, group: group)
+        searched_group = Group.find(group)
+        return FinishedAssignment.where(user: user, group: searched_group)
     end
 
     def user_groups_array
