@@ -14,9 +14,12 @@
                 <td><%= assignment.name %></td>
                 <td><%= assignment.points %></td>
                 <td>
+                    <% if !FinishedAssignment.exists?(assignment: assignment) %>
+
                     <%= link_to assignment_path(assignment.id), :method => "delete" do %>
                         <i class="fas fa-trash-alt"></i>
                         <% end %>
+                    <% end %>
                 </td>
             </tr>
             <% end %>
