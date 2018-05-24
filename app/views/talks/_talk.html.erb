@@ -16,6 +16,11 @@
         <div class="chat-fin">
         <small>el <%= l t.created_at, format: :short %></small>
         </div>
-        <hr>
     </div>
+    <%= render "comments/all", locals: { forum: "talk", chat: t }  %>
+    <div class="comment">
+        <div class="show-comments"><i class="fa fa-comment-o" aria-hidden="true"> Comentar</i></div>
+        <%= render "comments/new", locals: { talk: t } %>
+    </div>
+    <hr>
 <% end %>

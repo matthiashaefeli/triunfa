@@ -56,6 +56,12 @@
               <i class="fas fa-book"></i> biblioteca
               <% end %>
             </li>
+            <li><%= link_to edituser_path(current_user.id) do %>
+              <i class="fas fa-user"></i>
+              <% end %>
+            </li>
+
+
 
             <!-- nav for teachers -->
           <% elsif searched_user == Teacher %>

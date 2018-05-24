@@ -7,6 +7,7 @@ class TeachersController < ApplicationController
         else
             @talks_limit = 5
         end
+        @comments = Comment.order(created_at: :desc)
         @talks = Talk.order(created_at: :desc).limit(@talks_limit)
         @teachers = Teacher.all
         @admins = Admin.all

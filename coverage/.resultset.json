@@ -553,6 +553,9 @@
         null,
         null,
         1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -617,6 +620,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -642,6 +646,7 @@
         1,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -688,6 +693,10 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/chats_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/comments_helper.rb": [
         1,
         null
       ],
@@ -1095,6 +1104,31 @@
         1,
         null,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/comments_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/comments_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
         null,
         null,
         null
@@ -1901,6 +1935,7 @@
         2,
         2,
         2,
+        2,
         null,
         null,
         1,
@@ -2047,6 +2082,7 @@
         2,
         2,
         2,
+        2,
         1,
         null,
         null,
@@ -2159,6 +2195,23 @@
         null,
         null,
         null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/comments_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/conversations_helper_spec.rb": [
@@ -2583,7 +2636,21 @@
         1,
         null,
         1,
+        1,
         null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/comment.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/conversation_spec.rb": [
@@ -2863,6 +2930,7 @@
         null,
         1,
         1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/paper_spec.rb": [
@@ -3051,6 +3119,7 @@
         1,
         null,
         1,
+        1,
         null,
         null
       ],
@@ -3182,6 +3251,6 @@
         null
       ]
     },
-    "timestamp": 1527107692
+    "timestamp": 1527179268
   }
 }

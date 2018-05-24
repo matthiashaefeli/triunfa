@@ -23,8 +23,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
+        
     else if data.content != ""
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
@@ -36,14 +37,15 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
 
 $(document).on 'turbolinks:load', ->
   submit_message()
   submit_chat()
   submit_talk()
   submit_conversation()
+  submit_comment()
 
 submit_message = () ->
   $('#wellcome-chat-body').on 'keydown', (event) ->
@@ -76,3 +78,14 @@ submit_conversation = () ->
       $('.submit_conversation').click()
       event.target.value = ""
       event.preventDefault()
+
+submit_comment = () ->
+  $('.comment-text').on 'keydown', (event) ->
+    if event.keyCode is 13
+      $that = this.siblings('.button-submit')
+      $that.find('.comment-text-submit').click()
+      event.target.value = ""
+      event.preventDefault()
+      
+      
+

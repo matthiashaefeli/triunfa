@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :comment do
+    
+  end
   factory :flyer do
     
   end

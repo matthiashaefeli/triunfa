@@ -2,21 +2,26 @@
 <% @messages.each do |m| %>
     <div class="chats">
         <div class="message-user">
-        <%= m.user.name %> <%=m.user.lastname %> dijo:
+            <%= m.user.name %> <%=m.user.lastname %> dijo:
         </div>
         <div class="message-body">
-        <%=m.body %>
+            <%=m.body %>
         </div>
         <div class="message-image">
-        <% if  m.avatar_file_name != nil %>
-        <br>
-        <%= image_tag m.avatar.url(:medium) %>
-        <br>
-        <% end %>
+            <% if  m.avatar_file_name != nil %>
+                <br>
+                <%= image_tag m.avatar.url(:medium) %>
+                <br>
+            <% end %>
         </div>
         <div class="message-fin">
-        <small>el <%= l m.created_at, format: :short %></small>
+            <small>el <%= l m.created_at, format: :short %></small>
         </div>
-        <hr>
     </div>
+    <%= render "comments/all", locals: { forum: "message", chat: m }  %>
+    <div class="comment">
+        <div class="show-comments"><i class="fa fa-comment-o" aria-hidden="true"> Comentar</i></div>
+        <%= render "comments/new", locals: { message: m } %>
+    </div>
+    <hr>
 <% end %>
