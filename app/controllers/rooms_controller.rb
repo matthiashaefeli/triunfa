@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
         @flyers = Flyer.all
         @room = Room.find(params[:id])
         @messages = Message.where(room: @room).order(created_at: :desc).limit(@room_limit)
+        @comments = Comment.order(created_at: :desc)
     end
 
     def logged_in

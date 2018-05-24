@@ -1,5 +1,5 @@
 <% @chats.each do |c| %>
-    <div class="chats">
+    <div class="chats" id="chat<%= c.id %>">
         <div class="chat-user">
         <%= c.user.name %> <%=c.user.lastname %> dijo:
         </div>
@@ -16,6 +16,11 @@
         <div class="chat-fin">
         <small>el <%= l c.created_at, format: :short %></small>
         </div>
+    </div>
+    <%= render "comments/all", locals: { chat: c } %>
+    <div class="comment">
+        <div class="show-comments"><i class="fa fa-comment-o" aria-hidden="true"> Comentar</i></div>
+            <%= render "comments/new", locals: { chat: c } %>
     </div>
     <hr>
 <% end %>

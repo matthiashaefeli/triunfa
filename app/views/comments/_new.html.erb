@@ -1,0 +1,17 @@
+<div class="comments">
+    <%= form_for :comment, url: comments_path do |f| %>
+        <p>
+            <%= f.text_field :text, :class => "comment-text", :placeholder => "Escribe aqui..." %>
+            <%= f.submit "Guardar" %>
+        </p>
+        <% if locals[:chat] %>
+            <%= hidden_field_tag "chat", locals[:chat].id %>
+        <% elsif locals[:talk] %>
+            <%= hidden_field_tag "talk", locals[:talk].id %>
+        <% elsif locals[:message] %>
+            <%= hidden_field_tag "message", locals[:message] %>
+        <% end %>
+    <% end %>
+</div>
+
+

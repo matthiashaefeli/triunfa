@@ -85,6 +85,11 @@ $( document ).on('turbolinks:load', function() {
         $("#new-admin-hidden").toggle();
     });
 
+    $(".show-comments").click(function(){
+        let comment = $(this)
+        comment.siblings().toggle();
+    });
+
     $(".conv-x").click(function(event){
         event.preventDefault()
         let $that = $(this);
