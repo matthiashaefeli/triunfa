@@ -24,7 +24,7 @@
         <div class="items-courses">
             <div>
                 <%= link_to new_user_session_path do %>
-                    <%= image_tag(course.avatar.url(:medium), :class => "course-img") %>
+                    <%= image_tag(course.avatar.url, :class => "course-img") %>
                 <% end %>
             </div>
             <div class="course-text-desc">
