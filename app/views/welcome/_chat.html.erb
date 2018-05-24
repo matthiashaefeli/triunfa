@@ -15,9 +15,9 @@
     
     </div>
     <br>
-    
+    <hr>
     <div id="chat-table">
-        <hr>
+        
         <%= render "chats/chats" %>
     </div> 
         <p><%= link_to "Ver mas Mensajes", root_path(limit: (@chat_limit.to_i + 5)) %></p>

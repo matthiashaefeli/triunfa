@@ -23,8 +23,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
+        
     else if data.content != ""
       $('#chat-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
@@ -36,8 +37,8 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
 
 $(document).on 'turbolinks:load', ->
   submit_message()

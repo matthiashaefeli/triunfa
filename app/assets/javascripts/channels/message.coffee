@@ -24,8 +24,8 @@ App.message = App.cable.subscriptions.create "MessageChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
     else if data.content != ""
       $(id).prepend '<div class="chats">' +
         '<div class="chat-user">' +
@@ -37,7 +37,7 @@ App.message = App.cable.subscriptions.create "MessageChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
 
 

@@ -25,8 +25,8 @@ App.talk = App.cable.subscriptions.create "TalkChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
     else if data.content != ""
       $('#talk-table').prepend '<div class="chats">' +
         '<div class="chat-user">' +
@@ -38,5 +38,5 @@ App.talk = App.cable.subscriptions.create "TalkChannel",
         '<div class="chat-fin">' +
         '<small>' + data.created + '</small>' +
         '</div>' +
-        '<hr>' +
-        '</div>'
+        '</div>' +
+        '<hr>'
