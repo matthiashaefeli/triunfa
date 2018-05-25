@@ -82,8 +82,8 @@ submit_conversation = () ->
 submit_comment = () ->
   $('.comment-text').on 'keydown', (event) ->
     if event.keyCode is 13
-      $that = this.siblings('.button-submit')
-      $that.find('.comment-text-submit').click()
+      that = this.siblings('.button-submit')
+      that.find('.comment-text-submit').click()
       event.target.value = ""
       event.preventDefault()
       

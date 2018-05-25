@@ -3,35 +3,35 @@
     <%= form_for :user, url: updateuser_path do |f| %>
         <p>
             <%= f.label :nombre %>
-            <%= f.text_field :name %>
+            <%= f.text_field :name, :autocomplete => 'name' %>
         </p>
         <p>
             <%= f.label :apellido %>
-            <%= f.text_field :lastname %>
+            <%= f.text_field :lastname, :autocomplete => 'family-name' %>
         </p>
         <p>
             <%= f.label :email %>
-            <%= f.text_field :email %>
+            <%= f.text_field :email, :autocomplete => 'email' %>
         </p>
         <p>
             <%= f.label :calle %>
-            <%= f.text_field :street %>
+            <%= f.text_field :street, :autocomplete => 'address-level1' %>
         </p>
         <p>
             <%= f.label :codigo_postal %>
-            <%= f.number_field :cp %>
+            <%= f.number_field :cp, :autocomplete => 'postal-code' %>
         </p>
         <p>
             <%= f.label :ciudad %>
-            <%= f.text_field :city %>
+            <%= f.text_field :city, :autocomplete => 'address-level1' %>
         </p>
         <p>
             <%= f.label :estado %>
-            <%= f.text_field :state %>
+            <%= f.text_field :state, :autocomplete => 'address-level1' %>
         </p>
         <p>
             <%= f.label :telefono %>
-            <%= f.number_field :tel %>
+            <%= f.number_field :tel, :autocomplete => 'tel' %>
         </p>
         <% if @user.avatar_file_name != nil %>
             <p>

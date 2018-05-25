@@ -556,6 +556,9 @@
         null,
         null,
         1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -621,6 +624,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -646,6 +650,7 @@
         1,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -1125,10 +1130,20 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
         null,
         0,
         0,
+        null,
         0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -1630,6 +1645,40 @@
         1,
         1,
         1,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/likes_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/likes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/services/service_like.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null
@@ -2637,6 +2686,7 @@
         null,
         1,
         1,
+        1,
         null,
         null
       ],
@@ -2883,6 +2933,19 @@
         null,
         null
       ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/like_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/like.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/message_spec.rb": [
         1,
         null,
@@ -2928,6 +2991,7 @@
         null,
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -3120,6 +3184,7 @@
         null,
         1,
         1,
+        1,
         null,
         null
       ],
@@ -3251,6 +3316,6 @@
         null
       ]
     },
-    "timestamp": 1527179268
+    "timestamp": 1527283178
   }
 }

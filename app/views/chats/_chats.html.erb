@@ -1,26 +1,46 @@
 <% @chats.each do |c| %>
+<div>
     <div class="chats">
-        <div class="chat-user">
-        <%= c.user.name %> <%=c.user.lastname %> dijo:
-        </div>
-        <div class="chat-body">
-        <%=c.body %>
-        </div>
-        <div class="chat-image">
-        <% if  c.avatar_file_name != nil %>
-        <br>
-        <%= image_tag c.avatar.url(:medium) %>
-        <br>
-        <% end %>
-        </div>
-        <div class="chat-fin">
-        <small>el <%= l c.created_at, format: :short %></small>
+        <div>
+            <div class="chat-user">
+                <div class="like">
+                    <% if c.likes.count > 0 %>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= c.likes.count %></span>  
+                    <% end %>
+                </div>
+                <div class="user-name">
+                    <%= c.user.name %> <%=c.user.lastname %> dijo:
+                </div>
+            </div>
+            <div class="chat-body">
+            <%=c.body %>
+            </div>
+            <div class="chat-image">
+            <% if  c.avatar_file_name != nil %>
+            <br>
+            <%= image_tag c.avatar.url(:medium) %>
+            <br>
+            <% end %>
+            </div>
+            <div class="chat-fin">
+            <small>el <%= l c.created_at, format: :short %></small>
+            </div>
         </div>
     </div>
     <%= render "comments/all", locals: { forum: "chat", chat: c } %>
     <div class="comment">
-        <div class="show-comments"><i class="fa fa-comment-o" aria-hidden="true"> Comentar</i></div>
-            <%= render "comments/new", locals: { chat: c } %>
+        <div class="add-like">
+            <% if c.likes.where(user_id: current_user).count == 0 %>
+                <%= link_to likes_path(model: Chat, id: c.id), :class => "likeable", remote: true do %>
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="show-comments">
+            <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+        </div>
+        <%= render "comments/new", locals: { chat: c } %>
     </div>
+</div>
     <hr>
 <% end %>
