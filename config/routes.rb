@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   resources :assignments, only: [:create, :destroy, :show]
   resources :finished_assignments, only: [:index, :create, :destroy]
   resources :flyers, only: [:create, :destroy]
-  resources :comments
+  resources :comments, only: [:create]
+  resources :likes
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
