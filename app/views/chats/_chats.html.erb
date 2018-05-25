@@ -3,12 +3,14 @@
     <div class="chats">
         <div>
             <div class="chat-user">
-            <div class="like">
-            <% if c.likes.count > 0 %>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= c.likes.count %></span>  
-            <% end %>
-            </div>
-            <div class="user-name"><%= c.user.name %> <%=c.user.lastname %> dijo:</div>
+                <div class="like">
+                    <% if c.likes.count > 0 %>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= c.likes.count %></span>  
+                    <% end %>
+                </div>
+                <div class="user-name">
+                    <%= c.user.name %> <%=c.user.lastname %> dijo:
+                </div>
             </div>
             <div class="chat-body">
             <%=c.body %>
@@ -32,7 +34,6 @@
                 <%= link_to likes_path(model: Chat, id: c.id), :class => "likeable", remote: true do %>
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
                 <% end %>
-                <p class="just-info">Chat,<%= c.id %>,<%= current_user.id %></p>
             <% end %>
         </div>
         <div class="show-comments">
