@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-24T11:27:48-05:00">2018-05-24T11:27:48-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-24T16:31:09-05:00">2018-05-24T16:31:09-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.35%</span></span>
+    (<span class="covered_percent"><span class="green">92.15%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.33
+         1.32
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>139</b> files in total.
-    <b>1360</b> relevant lines. 
+    <b>1363</b> relevant lines. 
     <span class="green"><b>1256</b> lines covered</span> and
-    <span class="red"><b>104</b> lines missed </span>
+    <span class="red"><b>107</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,12 +92,12 @@
       
       <tr>
         <td class="strong"><a href="#219e85c671b10bab497d6e800f6ce8c63e9449e5" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
-        <td class="red strong">18.18 %</td>
-        <td>16</td>
-        <td>11</td>
+        <td class="red strong">14.29 %</td>
+        <td>26</td>
+        <td>14</td>
         <td>2</td>
-        <td>9</td>
-        <td>0.2</td>
+        <td>12</td>
+        <td>0.1</td>
       </tr>
       
       <tr>
@@ -2237,11 +2237,11 @@
         <div class="source_table" id="219e85c671b10bab497d6e800f6ce8c63e9449e5">
   <div class="header">
     <h3>app/controllers/comments_controller.rb</h3>
-    <h4><span class="red">18.18 %</span> covered</h4>
+    <h4><span class="red">14.29 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
+      <b>14</b> relevant lines. 
       <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>9</b> lines missed.</span>
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -2281,64 +2281,124 @@
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
-          <code class="ruby">        elsif params[:message]</code>
+          <code class="ruby">            id = &quot;#chat#{message.id}&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">            message = Message.find(params[:message])</code>
+          <code class="ruby">        elsif params[:message]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">        elsif params[:talk]</code>
+          <code class="ruby">            message = Message.find(params[:message])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">            message = Talk.find(params[:talk])</code>
+          <code class="ruby">            id = &quot;#message#{message.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">        elsif params[:talk]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">        co = Comment.create(text: params[:comment][:text],user: current_user)</code>
+          <code class="ruby">            message = Talk.find(params[:talk])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
+          <code class="ruby">            id = &quot;#talk#{message.id}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">        co = Comment.create(text: params[:comment][:text],user: current_user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
           <code class="ruby">        co.update_attribute(:commentable, message)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">        redirect_to root_path</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">        ActionCable.server.broadcast &#39;talk_channel&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">                                        chatcontent:  co.text,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">                                        user: current_user.name,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">                                        place: id,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">                                        image: &quot;&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">                                        content: &quot;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">                                        </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
