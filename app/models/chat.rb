@@ -1,6 +1,5 @@
 class Chat < ApplicationRecord
 
-
     has_attached_file :avatar,
                         :storage => :fog,
                         :fog_credentials => {

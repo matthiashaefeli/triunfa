@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        <% for teacher in @teachers %>
+        <% @teachers.each do |teacher| %>
         <tr>
             <% if teacher.user.avatar_file_name != nil %>
                 <td><%= image_tag teacher.user.avatar.url(:thumb), :class => "user-avatar" %></td>

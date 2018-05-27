@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-
+    include ServiceUser
     before_action :logged_in
     
     def create
@@ -19,14 +19,6 @@ class MessagesController < ApplicationController
                                                 image: imageUrl,
                                                 room: room.id
             end
-    end
-
-    private
-
-    def logged_in
-        if !current_user
-            redirect_to root_path
-        end
     end
 end
 

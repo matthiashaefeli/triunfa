@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        <% for admin in @admins %>
+        <% @admins.each do |admin| %>
         <tr>
             <td><%= admin.user.name %></td>
             <td><%= admin.user.lastname %></td>

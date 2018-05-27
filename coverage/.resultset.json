@@ -809,22 +809,10 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/students_helper.rb": [
         1,
-        null,
-        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/tables_helper.rb": [
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/talks_helper.rb": [
@@ -988,6 +976,10 @@
         null,
         null,
         null,
+        1,
+        4,
+        null,
+        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/assignments_controller_spec.rb": [
@@ -1078,7 +1070,7 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/chats_controller.rb": [
         1,
-        null,
+        1,
         1,
         null,
         1,
@@ -1102,12 +1094,6 @@
         1,
         1,
         1,
-        null,
-        null,
-        1,
-        2,
-        1,
-        null,
         null,
         null,
         null,
@@ -1715,7 +1701,7 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/messages_controller.rb": [
         1,
-        null,
+        1,
         1,
         null,
         1,
@@ -1734,14 +1720,6 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
-        1,
         null,
         null,
         null,
@@ -2669,7 +2647,6 @@
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/chat.rb": [
         1,
         null,
-        null,
         1,
         null,
         null,
@@ -3316,6 +3293,6 @@
         null
       ]
     },
-    "timestamp": 1527283178
+    "timestamp": 1527458283
   }
 }

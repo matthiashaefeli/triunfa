@@ -8,7 +8,7 @@ module FinishedAssignmentsHelper
 
     def user_groups_array
         groups = []
-        for finishedassignment in FinishedAssignment.where(user: current_user)
+        FinishedAssignment.where(user: current_user).each do |finishedassignment|
             if groups.exclude?(finishedassignment.group.id)
                 groups.push(finishedassignment.group.id)
             end
@@ -18,7 +18,7 @@ module FinishedAssignmentsHelper
 
     def points_per_course
         graduate = []
-        for id in user_groups_array
+        user_groups_array.each do |id|
             group = Group.find(id)
             finished_assignments = FinishedAssignment.where(user: current_user, group: group)
             points_array = 0

@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <% for assignment in @course.assignments %>
+            <% @course.assignments.each do |assignment| %>
             <tr>
                 <td><%= assignment.name %></td>
                 <td><%= assignment.points %></td>
