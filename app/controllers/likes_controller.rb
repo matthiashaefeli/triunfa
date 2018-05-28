@@ -6,7 +6,6 @@ class LikesController < ApplicationController
             likeable = get_model(params[:model]).find(params[:id])
             like = Like.create(user: current_user)
             like.update_attribute(:likeable, likeable)
-            
         end
     end
 end

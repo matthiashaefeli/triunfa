@@ -7,7 +7,7 @@ describe Chat, type: :model do
     let(:group){Group.new(name: "houston", key: "h20", teacher: teacher, course: course)}
     let(:usertwo){User.new(name: "Teo", lastname: "dora", email: "dora@test.com", password: "1234")}
     let(:student){Student.new(user: usertwo, group: group)}
-    let(:chat){Chat.new(body: "hello", user: usertwo,)}
+    let(:chat){Chat.new(body: "hello", user: usertwo)}
 
     it "belongs to a user" do
         expect(chat.user.name).to eq "Teo"
