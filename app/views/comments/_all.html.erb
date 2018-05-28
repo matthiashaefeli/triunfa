@@ -1,5 +1,5 @@
 <div class="comments-all" id="<%= locals[:forum]%><%= locals[:chat].id %>">
-    <% for comment in @comments.where(commentable: locals[:chat]) %>
+    <% @comments.where(commentable: locals[:chat]).each do |comment| %>
         <p><%= comment.user.name %> dijo: <%= comment.text %></p>
     <% end %>
 </div>

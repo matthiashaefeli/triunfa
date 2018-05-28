@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-        <% for course in @courses %>
+        <% @courses.each do |course| %>
             <tr>
             <% if course.avatar_file_name == nil %>
                 <th></th>

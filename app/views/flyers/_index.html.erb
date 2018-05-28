@@ -1,6 +1,6 @@
 <div>
     <div class="flyers">
-        <% for flyer in @flyers %>
+        <% @flyers.each do |flyer| %>
             <div>
                 <% if flyer.link != nil %>
                     <%= link_to flyer.link, target: "_blank" do %>

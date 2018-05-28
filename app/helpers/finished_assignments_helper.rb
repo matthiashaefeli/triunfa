@@ -8,26 +8,22 @@ module FinishedAssignmentsHelper
 
     def user_groups_array
         groups = []
-        for finishedassignment in FinishedAssignment.where(user: current_user)
-            if groups.exclude?(finishedassignment.group.id)
-                groups.push(finishedassignment.group.id)
-            end
+        FinishedAssignment.where(user: current_user).each do |finishedassignment|
+            groups.push(finishedassignment.group.id) if groups.exclude?(finishedassignment.group.id)
         end
         return groups
     end
 
     def points_per_course
         graduate = []
-        for id in user_groups_array
+        user_groups_array.each do |id|
             group = Group.find(id)
             finished_assignments = FinishedAssignment.where(user: current_user, group: group)
             points_array = 0
-            for finished in finished_assignments
+            finished_assignments.each do |finished|
                 points_array += finished.assignment.points
             end
-            if points_array > 32
-                graduate.push(group)
-            end
+            graduate.push(group) if points_array > 32
         end
         return graduate
     end

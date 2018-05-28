@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+    include ServiceUser
     
     before_action :logged_in
 
@@ -17,11 +18,4 @@ class RoomsController < ApplicationController
         @messages = Message.where(room: @room).order(created_at: :desc).limit(@room_limit)
         @comments = Comment.order(created_at: :desc)
     end
-
-    def logged_in
-        if !current_user
-            redirect_to root_path
-        end
-    end
-
 end

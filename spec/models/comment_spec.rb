@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user){User.create(name: "teacher", lastname: "bosa", email: "bosa@test.com", password: "1234")}
+  let(:chat){Chat.create(body: "hello", user: user)}
+  let(:comment){Comment.create(text: "test",user: user,commentable: chat)}
+
+  it "belongs to a user" do 
+    expect(comment.user.name).to eq "teacher"
+  end
+
+  it "comment belongs to chat" do 
+    expect(comment.commentable.body).to eq "hello"
+  end
 end

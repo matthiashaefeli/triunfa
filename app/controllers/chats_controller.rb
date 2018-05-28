@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-
+    include ServiceUser
     before_action :logged_in
 
     def create
@@ -23,12 +23,6 @@ class ChatsController < ApplicationController
     private
     def chat_params
         params.require(:chat).permit(:body, :avatar)
-    end
-
-    def logged_in
-        if !current_user
-            redirect_to root_path
-        end
     end
 
 end

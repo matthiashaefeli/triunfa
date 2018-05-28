@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            <% for s in @users %>
+            <% @users.each do |s| %>
                 <% searched_user = check_user(s) %>
                 <% if searched_user == Student || searched_user == "new_user" %>
                     <tr>

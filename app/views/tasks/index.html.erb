@@ -3,7 +3,7 @@
     <div class="task-assignments">
         <% if searched_user == Admin || searched_user == Teacher %>
             <h4>Todas las Tareas:</h4>
-            <% for assignment in @group.course.assignments %>
+            <% @group.course.assignments.each do |assignment| %>
                 <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
                     <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
                 <% end %>
