@@ -44,7 +44,6 @@ class WelcomeController < ApplicationController
             user.avatar = userupdate_params[:avatar]
             user.save
             redirect_to root_path
-
         end
         
     end

@@ -1,8 +1,8 @@
 class StatisticsController < ApplicationController
     include ServiceUser
+    before_action :is_admin
 
     def index
-        who_is
         @statistics = Statistic.order(created_at: :desc)
         @teachers = Teacher.all
         @students = Student.all
@@ -14,7 +14,6 @@ class StatisticsController < ApplicationController
     end
 
     def create
-        who_is
         statistic = Statistic.create(teachers: Teacher.all.count,
                                     students: Student.all.count,
                                     groups: Group.where(activ: true).count,
@@ -25,7 +24,6 @@ class StatisticsController < ApplicationController
     end
 
     def destroy
-        who_is
         Statistic.find(params[:id]).delete
         redirect_to statistics_path
     end

@@ -23,18 +23,26 @@ RSpec.describe WelcomeController, type: :controller do
     end
 
     it "updates the password of an user" do
-        put :updateuser, params: {id: user.id, user: { password: "123"}}
-        expect(response.status).to eq(302)
+        create_admin(user)
+        sign_in(user)
+        create_user
+        put :updateuser, params: {id: User.last.id, user: { password: "1234"}}
+        expect(User.last.updated_at).to be > User.last.created_at
     end
 
     it "cant updated the password of an user with letters" do
-        put :updateuser, params: {id: user.id, user: { password: "abc"}}
-        expect user.errors.full_messages
+        create_admin(user)
+        sign_in(user)
+        create_user
+        put :updateuser, params: {id: User.last.id, user: { password: "abc"}}
+        expect(User.last.updated_at).to eq User.last.created_at
     end
 
     it "updates other data of an user" do
-        put :updateuser, params: {id: user.id, user: { street: "street", cp: "12345", tel: "123456789", state: "TX", city: "Houston"}}
-        expect(response.status).to eq(302)
+        u = create_user
+        sign_in(u)
+        put :updateuser, params: {id: User.last.id, user: { street: "street", cp: "12345", tel: "123456789", state: "TX", city: "Houston"}}
+        expect(User.last.state).to eq "street"
     end
 
     it "updatets password from other user" do 
@@ -43,10 +51,14 @@ RSpec.describe WelcomeController, type: :controller do
     end
 
     it "redirect if user admin online status is changed after logout" do 
-        create_admin(user)
+        create_user
+        create_admin(create_user)
+        admin = create_admin(user)
+        admin.online = true
+        admin.save
         sign_in(user)
-        get :destroy, params: {id: user.id}
-        expect(response.status).to eq(302) 
+        get :destroy, params: {id: User.last.id}
+        expect(Admin.last.online).to eq false
     end
 
     it "redirect if user student online status is changed after logout" do 
@@ -57,10 +69,12 @@ RSpec.describe WelcomeController, type: :controller do
     end
 
     it "redirect if user teacher online status is changed after logout" do 
-        create_teacher(user)
+        teacher = create_teacher(user)
+        teacher.online = true
+        teacher.save
         sign_in(user)
         get :destroy, params: {id: user.id}
-        expect(response.status).to eq(302) 
+        expect(Teacher.last.online).to eq false
     end
 
     it "redirect if user is new_user" do 

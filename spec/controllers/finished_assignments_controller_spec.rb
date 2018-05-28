@@ -22,15 +22,19 @@ RSpec.describe FinishedAssignmentsController, type: :controller do
     end
 
     it "create a finished assignment" do 
+        create_admin(user)
         sign_in(user)
         post :create, params: {group: group.id, assignment: assignment.id, finishedAssignment: {userthree.id => "1"}}
-        expect(response.status).to eq (302)
+        expect(FinishedAssignment.all.count).to eq 1
     end
 
     it "deletes a group" do 
+        create_admin(user)
         sign_in(user)
-        get :destroy, params: {id: finished.id, group: group.id}
-        expect(response.status).to eq (302)
+        create_group(teacher, course)
+        create_finished_assignment(user, assignment, group)
+        get :destroy, params: {id: FinishedAssignment.last.id, group: Group.last.id}
+        expect(FinishedAssignment.count).to eq 0
     end
 
 

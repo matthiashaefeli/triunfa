@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
     include ServiceUser
+    before_action :is_admin, except: [:index]
     
     def index
         if params[:limit] != nil
@@ -17,7 +18,6 @@ class TeachersController < ApplicationController
     end
     
     def create
-        who_is
         new_user = User.create(teacher_params)
         if new_user.save
             teacher = Teacher.create(user: new_user)
@@ -29,7 +29,6 @@ class TeachersController < ApplicationController
     end
 
     def show
-        who_is
         @teacher = Teacher.find(params[:id])
     end
 
@@ -46,7 +45,6 @@ class TeachersController < ApplicationController
     end
 
     def destroy
-        who_is
         teacher = Teacher.find(params[:id])
         if teacher.activ == true
             teacher.activ = false
@@ -56,9 +54,6 @@ class TeachersController < ApplicationController
         teacher.save
         redirect_to teachers_path
     end
-
-
-
 
     private
     def teacher_params

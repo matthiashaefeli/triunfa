@@ -1,11 +1,11 @@
 
 class GroupsController < ApplicationController
     include ServiceUser
+    before_action :is_admin, except: [:show]
     helper_method :sort_column, :sort_direction
 
 
     def index
-        who_is
         @groups = Group.order(sort_column + " " + sort_direction)
     end
 
@@ -13,7 +13,6 @@ class GroupsController < ApplicationController
     end
 
     def create
-        who_is
         teacher = Teacher.find(group_params[:teacher])
         course = Course.find(group_params[:course])
         group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, startdate: group_params[:startdate], enddate: group_params[:enddate])
@@ -31,12 +30,10 @@ class GroupsController < ApplicationController
     end
 
     def edit
-        who_is
         @group = Group.find(params[:id])
     end
 
     def update
-        who_is
         group = Group.find(params[:id])
         teacher = Teacher.find(group_params[:teacher])
         course = Course.find(group_params[:course])
@@ -50,7 +47,6 @@ class GroupsController < ApplicationController
             end
             room = Room.find_by(group: group)
             room.messages.delete_all
-
         end
         group.update_attributes(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, activ: params[:group][:activ].to_i)
         group.save

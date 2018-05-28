@@ -7,8 +7,6 @@ RSpec.describe TalksController, type: :controller do
     it "creates a new talk" do 
         sign_in(user)
         post :create, params: {talk: {body: "hello"}}
-        expect(response.status).to eq (204)
+        expect(Talk.count).to eq 1
     end
-
-
 end

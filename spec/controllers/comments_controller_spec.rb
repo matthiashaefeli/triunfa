@@ -17,19 +17,19 @@ RSpec.describe CommentsController, type: :controller do
   it "return response status after creating a comment with param chat" do 
     sign_in(user)
     post :create, params: {chat: chat.id, comment: {text: "hello"}}
-    expect(response.status).to eq (204)
+    expect(Chat.count).to eq 1
   end
 
   it "return response status after creating a comment with param message" do 
     sign_in(user)
     post :create, params: {message: message.id, comment: {text: "hello"}}
-    expect(response.status).to eq (204)
+    expect(Message.count).to eq 1
   end
 
   it "return response status after creating a comment with param talk" do 
     sign_in(user)
     post :create, params: {talk: talk.id, comment: {text: "hello"}}
-    expect(response.status).to eq (204)
+    expect(Talk.count).to eq 1
   end
 
 end
