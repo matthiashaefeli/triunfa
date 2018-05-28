@@ -15,14 +15,14 @@ RSpec.describe TablesController, type: :controller do
         sign_in(user)
         create_table(user, usertwo)
         post :create, params: {format: usertwo.id}
-        expect(response.status).to eq (302)
+        expect(Table.count).to eq 1
     end
 
     it "not create a new table if a table exists" do 
         sign_in(user)
         create_table(usertwo, user)
         post :create, params: {format: usertwo.id}
-        expect(response.status).to eq (302)
+        expect(Table.count).to eq 1
     end
 
 end

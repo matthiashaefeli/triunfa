@@ -11,20 +11,27 @@ RSpec.describe ConversationsController, type: :controller do
     it "create a conversation" do
         sign_in(user)
         post :create, params: {table: table, conversation: {body: "hello"}}
-        expect(response.status).to eq (204)
+        expect(Conversation.count).to eq 1
     end
 
     it "create a conversation" do
         sign_in(user)
         post :create, params: {table: tabletwo, conversation: {body: "hello"}}
-        expect(response.status).to eq (204)
+        expect(Conversation.count).to eq 1
     end
 
     it "delete a conversation" do 
         sign_in(user)
         create_conver(user, table, "hello")
-        get :destroy, params: {id: table.id}
-        expect(response.status).to eq (302)
+        get :destroy, params: {id: Table.last.id}
+        expect(Conversation.count).to eq 0
+    end
+
+    it "delete a conversation with other user" do 
+        sign_in(usertwo)
+        create_conver(user, table, "hello")
+        get :destroy, xhr: true, params: {id: Table.last.id}
+        expect(Conversation.count).to eq 0
     end
 
 

@@ -12,6 +12,10 @@ module UserLogin
     Student.create(user: user, group: group)
   end
 
+  def create_user
+    User.create(name: "held", lastname: "bull", email: "emai@email", password: "1111")
+  end
+
   def create_teacher(user)
     Teacher.create(user: user)
   end
@@ -22,5 +26,37 @@ module UserLogin
 
   def create_conver(user, table, body)
     Conversation.create(user: user, table: table, body: body)
+  end
+
+  def create_room(group)
+    Room.create(group: group)
+  end
+
+  def create_task(user, group)
+    Task.create(body: "hello", user: user, group: group, end: "01-01-2018")
+  end
+
+  def create_assignment(course)
+    Assignment.create(name: "test", points: "10", course: course)
+  end
+
+  def create_course
+    Course.create(name: "test")
+  end
+
+  def create_finished_assignment(user, assignment, group)
+    FinishedAssignment.create(user: user, assignment: assignment, group: group)
+  end
+
+  def create_group(teacher, course)
+    Group.create(name: "hello", key: "key", teacher: teacher, course: course)
+  end
+  
+  def create_folder
+    Folder.create(name: "folder")
+  end
+
+  def create_paper(folder)
+    Paper.create(folder: folder, name: "paper", link: "link")
   end
 end 

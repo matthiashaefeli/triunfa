@@ -1,7 +1,8 @@
 class AdminsController < ApplicationController
     include ServiceUser
+    before_action :is_admin
+
     def create
-        who_is
         new_user = User.create(admin_params)
         if new_user.save
             admin = Admin.create(user: new_user)
@@ -21,7 +22,6 @@ class AdminsController < ApplicationController
         admin.destroy
         redirect_to teachers_path
         end
-        
     end
 
     private

@@ -7,22 +7,34 @@ RSpec.describe AdminsController, type: :controller do
     let(:admin){Admin.create(user: user, super: false)}
     let(:admintwo){Admin.create(user: useradmin, super: false)}
 
-    # it "create a admin" do 
-    #     sign_in(user)
-    #     post :create, params: {admin: {name: "hello", lastname: "world", email: "j@j.com", password: "1234", super: "1"}}
-    #     expect(response.status).to eq (302)
-    # end
+    it "create a admin" do 
+        create_admin(useradmin)
+        sign_in(useradmin)
+        post :create, params: {admin: {name: "hello", lastname: "world", email: "j@j.com", password: "1234", super: "1"}}
+        expect(Admin.count).to eq 2
+    end
+
+    it "cant create a admin" do 
+        create_admin(user)
+        sign_in(user)
+        post :create, params: {admin: {name: "hello", lastname: "world", email: "j@j.com", password: "1234", super: "1"}}
+        expect(Admin.count).to eq 1
+    end
 
     it "delete admin" do 
-        sign_in(user)
-        get :destroy, params: {id: admin.id}
-        expect(response.status).to eq (302)
+        create_admin(useradmin)
+        create_admin(user)
+        sign_in(useradmin)
+        get :destroy, params: {id: Admin.last.id}
+        expect(Admin.count).to eq 1
     end
 
     it "cant delete admin" do 
+        create_admin(user)
+        create_admin(useradmin)
         sign_in(user)
-        get :destroy, params: {id: admintwo.id}
-        expect(response.status).to eq (302)
+        get :destroy, params: {id: Admin.last.id}
+        expect(Admin.count).to eq 2
     end
 
 
