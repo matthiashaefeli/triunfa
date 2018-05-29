@@ -18,7 +18,7 @@
 
             <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
                 <p>
-                    <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Escribe aqui..." %>
+                    <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Escribe aquí..." %>
                 </p>
                 <%= hidden_field_tag "table", t.id  %>
                 <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>

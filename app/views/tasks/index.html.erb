@@ -28,7 +28,7 @@
                 <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
                 <%= form_for :task, url: tasks_path  do |f| %>  
                     <p>
-                        <%= f.text_area :body, :class => "text-area", :placeholder => "Escribe aqui..." %>
+                        <%= f.text_area :body, :class => "text-area", :placeholder => "Escribe aquí..." %>
                     </p>
                     <p>
                         <%= f.label :Terminar_antes_de %>

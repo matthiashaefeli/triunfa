@@ -1,44 +1,44 @@
 <div class="under-nav container">
-    <h1>Cursos</h1>
-    <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
-    <br>
-    <table class="table table-hover table-bordered" id="course-table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Nombre</th>
-                <!-- <th>Fecha inicio</th>
-                <th>Fecha final</th> -->
-                <th>Link</th>
-                <th>Activo</th>
-            </tr>
-        </thead>
-        <tbody>
-        <% @courses.each do |course| %>
-            <tr>
-            <% if course.avatar_file_name == nil %>
-                <th></th>
-            <% else %>
-                <th><%= image_tag course.avatar.url(:thumb), :class => "user-avatar" %></th>
-            <% end %>
-            <td><%= link_to course.name, course_path(course.id) %></td>
-            <!-- <td><%= course.startdate %></td>
-            <td><%= course.enddate%></td> -->
-            <td><%= link_to course.link, target: "_blank" do %>
-                <%= course.link %>
-                <% end %>
-            </td>
-            <td><%= course.activ ? "Si" : "NO" %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
-    <div>
-        <%= render "layouts/errors" %>
-        <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>
-        <div id="new-course-hidden">
-            <%= render "new.html.erb" %>
-        </div>
-    </div>
-    <p><%= link_to "Pagina de Inicio", root_path %></p>
+  <h1>Cursos</h1>
+  <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
+  <br>
+  <table class="table table-hover table-bordered" id="course-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <!-- <th>Fecha inicio</th>
+        <th>Fecha final</th> -->
+        <th>Link</th>
+        <th>Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+        <% if course.avatar_file_name == nil %>
+          <th></th>
+        <% else %>
+          <th><%= image_tag course.avatar.url(:thumb), :class => "user-avatar" %></th>
+        <% end %>
+        <td><%= link_to course.name, course_path(course.id) %></td>
+        <!-- <td><%= course.startdate %></td>
+        <td><%= course.enddate%></td> -->
+        <td><%= link_to course.link, target: "_blank" do %>
+          <%= course.link %>
+        <% end %>
+        </td>
+        <td><%= course.activ ? "Si" : "NO" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+      <%= render "layouts/errors" %>
+      <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>
+      <div id="new-course-hidden">
+          <%= render "new.html.erb" %>
+      </div>
+  </div>
+  <p><%= link_to "Página de Inicio", root_path %></p>
 </div>
