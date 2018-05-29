@@ -1,37 +1,36 @@
 @import "application";
 
 .comment {
-    display: flex;
+  display: flex;
 }
 
 .comments {
-    display: none;
+  display: none;
 }
 
 .comment:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .comment-text {
-    width: 10em;
-    height: auto;
+  width: 10em;
+  height: auto;
 }
 
 .comments-all {
-    color: grey;
-    border-top: 1px solid grey;
-    text-align: left;
-
+  color: grey;
+  border-top: 1px solid grey;
+  text-align: left;
 }
 
 .comments-all:nth-of-type(odd) {
-    background: $chat-table-even;
+  background: $chat-table-even;
 }
 
 .comments-all:nth-of-type(even) {
-    background: $chat-table-odd;
+  background: $chat-table-odd;
 }
 
 .button-submit {
-    display: none;
+  display: none;
 }

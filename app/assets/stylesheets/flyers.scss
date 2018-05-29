@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .flyers {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 900px) {
-    .flyers-index {
-        display: none;
-    }
+  .flyers-index {
+    display: none;
+  }
 }

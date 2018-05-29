@@ -3,31 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .assignment-points-field {
-    width: 40px;
+  width: 40px;
 }
 
 .assignment-text-field {
-    width: 200px;
+  width: 200px;
 }
 
 #assignment-table {
-    width: 40%;
+  width: 40%;
 }
 
 .assignment-show {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 #assignment-table-users {
-    width: 40%;
+  width: 40%;
 }
 
 @media only screen and (max-width: 767px) {
-    #assignment-table {
-        width: 100%;
-    }
+  #assignment-table {
+    width: 100%;
+  }
 
-    #assignment-table-users {
-        width: 100%;
-    }
+  #assignment-table-users {
+    width: 100%;
+  }
 }

@@ -3,20 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .task-index {
-    display: flex;
+  display: flex;
 }
 
 .task-assignments {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .task-tasks {
-    text-align: center;
-    flex-grow: 3;
+  text-align: center;
+  flex-grow: 3;
 }
 
 @media only screen and (max-width: 900px) {
-    .task-index {
-        flex-direction: column;
-    }
+  .task-index {
+      flex-direction: column;
+  }
 }

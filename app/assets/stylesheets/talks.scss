@@ -3,24 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .forums {
-    margin: auto;
-    width: 50%;
-    text-align: center;
+  margin: auto;
+  width: 50%;
+  text-align: center;
 }
 
 .forums-two {
-    width: 80%;
-    text-align: center;
+  width: 80%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px) {
-    .forums-two {
-        width: 100%;
-    }
+  .forums-two {
+    width: 100%;
+  }
 
-    .forums {
-        width: 100%;
-    }
+  .forums {
+    width: 100%;
+  }
 }
 
 

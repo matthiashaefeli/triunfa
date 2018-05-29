@@ -1,11 +1,10 @@
 @import "application";
 
-
 .papers-all {
-    display: none;
+  display: none;
 }
 
 .papers-text:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }

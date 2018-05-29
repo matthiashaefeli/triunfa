@@ -1,29 +1,28 @@
 @import "application";
 
-
 .text-conversation {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 .conversation-border {
-    background-color: $chat-table-odd;
-    width: 150px;
+  background-color: $chat-table-odd;
+  width: 150px;
 }
 
 .submit_conversation {
-    display: none;
+  display: none;
 }
 
 .first_user {
-    color: #4d94ff;
+  color: #4d94ff;
 }
 
 .second_user {
-    color: green;
+  color: green;
 }
 
 .table-scroll {
-    height: 150px;
-    overflow: scroll;
+  height: 150px;
+  overflow: scroll;
 }

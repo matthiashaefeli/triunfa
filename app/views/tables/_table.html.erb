@@ -28,15 +28,15 @@
                 <% t.conversations.order(created_at: :desc).each do |conv| %>
                     <% if t.user == current_user %>
                         <% if conv.user != current_user %>
-                            <p class="second_user"><%= conv.body %></p>
+                            <p class="second_user body-conver"><%= conv.body %></p>
                         <% else %>
-                            <p class="first_user"><%= conv.body %></p>
+                            <p class="first_user body-conver"><%= conv.body %></p>
                         <% end %>
                     <% else %>
                         <% if conv.user == current_user %>
-                            <p class="second_user"><%= conv.body %></p>
+                            <p class="second_user body-conver"><%= conv.body %></p>
                         <% else %>
-                            <p class="first_user"><%= conv.body %></p>
+                            <p class="first_user body-conver"><%= conv.body %></p>
                         <% end %>
                     <% end %>
 

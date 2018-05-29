@@ -1,45 +1,44 @@
 @import "application";
 
 .create-new-folder {
-    display: none;
+  display: none;
 }
 
 .create-new-folder-text {
-    display: inline-block;
+  display: inline-block;
 }
 
 .create-new-folder-text:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 .add-papper {
-    // flex-grow: 1;
-    display: none;
+  display: none;
 }
 
 .folders:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 .folders-table {
-    width: 40%;
+  width: 40%;
 }
 
 .folders-table tr td:nth-child(1)
 .folders-table tr td:nth-child(2)
 .folders-table tr td:nth-child(4)
 .folders-table tr td:nth-child(5) {
-    width: 10%;
+  width: 10%;
 }
 
 .folders-table tr td:nth-child(3) {
-    width: 70%;
+  width: 70%;
 }
 
 @media screen and (max-width: 767px) {
-    .folders-table {
-        width: 90%;
-    }
+  .folders-table {
+    width: 90%;
+  }
 }
