@@ -9,7 +9,9 @@ end
 
 def clear(forum)
     oldest_posts = forum.where("created_at < ?", 15.days.ago)
-    for post in oldest_posts
+    oldest_posts.each do |post|
+        post.comments.delete_all
+        post.likes.delete_all
         post.delete
     end
 end
