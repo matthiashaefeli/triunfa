@@ -40,7 +40,7 @@ RSpec.describe WelcomeController, type: :controller do
 
   it "updates other data of an user" do
     u = create_user
-    sign_in(u)
+    sign_in(user)
     put :updateuser, params: {id: User.last.id, user: { street: "street",
                                                        cp: "12345", 
                                                        tel: "123456789", 
