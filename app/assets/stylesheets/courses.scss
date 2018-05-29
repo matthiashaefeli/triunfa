@@ -1,37 +1,37 @@
 @import "application";
 
 .under-nav {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 #course-table {
-    width: 50%;
+  width: 50%;
 }
 
 #new-course {
-    width: 150px;
+  width: 150px;
 }
 
 #new-course:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #new-course-hidden {
-    display: none;
+  display: none;
 }
 
 #edit-course {
-    width: 150px;
+  width: 150px;
 }
 
 #edit-course:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #edit-course-hidden {
-    display: none;
+  display: none;
 }
 
 

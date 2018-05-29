@@ -1,12 +1,15 @@
 @import "application";
 
-
 .conv-title {
-    background-color: $chat-table-even;
-    display: flex;
-    justify-content: space-between;
+  background-color: $chat-table-even;
+  display: flex;
+  justify-content: space-between;
 }
 
 .conv-x {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.body-conver {
+  padding-right: 10px;
 }

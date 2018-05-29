@@ -1,23 +1,23 @@
 @import "application";
 
 .stat-show-child {
-    display: none;
+  display: none;
 }
 
 .stat-show:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 .stat-show {
-    display: inline-block;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 900px) {
-    #estatistic-table td:nth-child(1),
-    #estatistic-table th:nth-child(1),
-    #estatistic-table td:nth-child(8),
-    #estatistic-table th:nth-child(8) {
-        display: none;
-    }
+  #estatistic-table td:nth-child(1),
+  #estatistic-table th:nth-child(1),
+  #estatistic-table td:nth-child(8),
+  #estatistic-table th:nth-child(8) {
+    display: none;
+  }
 }

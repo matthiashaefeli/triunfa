@@ -1,5 +1,3 @@
 class Library < ApplicationRecord
-
-    has_many :folders
-
+  has_many :folders
 end

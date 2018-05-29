@@ -1,89 +1,88 @@
 @import "application";
 
 #new-group {
-    width: 150px;
+  width: 150px;
 }
 
 #new-group:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #new-group-hidden {
-    display: none;
+  display: none;
 }
 
 #edit-group {
-    width: 150px;
+  width: 150px;
 }
 
 #edit-group:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #edit-group-hidden {
-    display: none;
+  display: none;
 }
 
 #group-table-show {
-    width: 80%;
+  width: 80%;
 }
 
 #igroup-table-show {
-    width: 80%;
+  width: 80%;
 }
 
 @media screen and (max-width: 900px) {
-    #groupTableTable td:nth-child(4),
-    #groupTableTable th:nth-child(4),
-    #groupTableTable td:nth-child(5),
-    #groupTableTable th:nth-child(5),
-    #groupTableTable td:nth-child(6),
-    #groupTableTable th:nth-child(6),
-    #groupTableTable td:nth-child(7),
-    #groupTableTable th:nth-child(7),
-    #groupTableTable td:nth-child(8),
-    #groupTableTable th:nth-child(8),
-    #groupTableTable th:nth-child(9),
-    #groupTableTable td:nth-child(9) {
-        display: none;
-    }
+  #groupTableTable td:nth-child(4),
+  #groupTableTable th:nth-child(4),
+  #groupTableTable td:nth-child(5),
+  #groupTableTable th:nth-child(5),
+  #groupTableTable td:nth-child(6),
+  #groupTableTable th:nth-child(6),
+  #groupTableTable td:nth-child(7),
+  #groupTableTable th:nth-child(7),
+  #groupTableTable td:nth-child(8),
+  #groupTableTable th:nth-child(8),
+  #groupTableTable th:nth-child(9),
+  #groupTableTable td:nth-child(9) {
+    display: none;
+  }
 
-    #group-table-show td:nth-child(1),
-    #group-table-show th:nth-child(1),
-    #group-table-show td:nth-child(5),
-    #group-table-show th:nth-child(5),
-    #group-table-show td:nth-child(6),
-    #group-table-show th:nth-child(6),
-    #group-table-show td:nth-child(7),
-    #group-table-show th:nth-child(7),
-    #group-table-show td:nth-child(8),
-    #group-table-show th:nth-child(8),
-    #group-table-show td:nth-child(9),
-    #group-table-show th:nth-child(9)  {
-        display: none;
-    }
-    #igroup-table-show td:nth-child(4),
-    #igroup-table-show th:nth-child(4),
-    #igroup-table-show td:nth-child(5),
-    #igroup-table-show th:nth-child(5),
-    #igroup-table-show td:nth-child(6),
-    #igroup-table-show th:nth-child(6),
-    #igroup-table-show td:nth-child(7),
-    #igroup-table-show th:nth-child(7),
-    #igroup-table-show td:nth-child(8),
-    #igroup-table-show th:nth-child(8),
-    #igroup-table-show td:nth-child(9),
-    #igroup-table-show th:nth-child(9)  {
-        display: none;
-    }
-    #group-table-show {
-        width: 100%;
-    }
+  #group-table-show td:nth-child(1),
+  #group-table-show th:nth-child(1),
+  #group-table-show td:nth-child(5),
+  #group-table-show th:nth-child(5),
+  #group-table-show td:nth-child(6),
+  #group-table-show th:nth-child(6),
+  #group-table-show td:nth-child(7),
+  #group-table-show th:nth-child(7),
+  #group-table-show td:nth-child(8),
+  #group-table-show th:nth-child(8),
+  #group-table-show td:nth-child(9),
+  #group-table-show th:nth-child(9)  {
+    display: none;
+  }
+  #igroup-table-show td:nth-child(4),
+  #igroup-table-show th:nth-child(4),
+  #igroup-table-show td:nth-child(5),
+  #igroup-table-show th:nth-child(5),
+  #igroup-table-show td:nth-child(6),
+  #igroup-table-show th:nth-child(6),
+  #igroup-table-show td:nth-child(7),
+  #igroup-table-show th:nth-child(7),
+  #igroup-table-show td:nth-child(8),
+  #igroup-table-show th:nth-child(8),
+  #igroup-table-show td:nth-child(9),
+  #igroup-table-show th:nth-child(9)  {
+    display: none;
+  }
+  #group-table-show {
+    width: 100%;
+  }
     
-    #igroup-table-show {
-        width: 100%;
-    }
-
+  #igroup-table-show {
+    width: 100%;
+  }
 }

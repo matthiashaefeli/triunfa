@@ -4,40 +4,39 @@
 
 
 .user-avatar {
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .new-student {
-    text-align: center;
-    margin-top: 100px;
-    font-size: 1.5em;
-    margin-right:35%;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 1.5em;
+  margin-right:35%;
 }
 
 @media screen and (max-width: 995px) {
-    #studentTableTable td:nth-child(2),
-    #studentTableTable th:nth-child(2),
-    #studentTableTable td:nth-child(4),
-    #studentTableTable th:nth-child(4),
-    #studentTableTable td:nth-child(5),
-    #studentTableTable th:nth-child(5),
-    #studentTableTable td:nth-child(6),
-    #studentTableTable th:nth-child(6),
-    #studentTableTable td:nth-child(7),
-    #studentTableTable th:nth-child(7),
-    #studentTableTable td:nth-child(8),
-    #studentTableTable th:nth-child(8),
-    #studentTableTable td:nth-child(10),
-    #studentTableTable th:nth-child(10) {
-        display: none;
-    }
+  #studentTableTable td:nth-child(2),
+  #studentTableTable th:nth-child(2),
+  #studentTableTable td:nth-child(4),
+  #studentTableTable th:nth-child(4),
+  #studentTableTable td:nth-child(5),
+  #studentTableTable th:nth-child(5),
+  #studentTableTable td:nth-child(6),
+  #studentTableTable th:nth-child(6),
+  #studentTableTable td:nth-child(7),
+  #studentTableTable th:nth-child(7),
+  #studentTableTable td:nth-child(8),
+  #studentTableTable th:nth-child(8),
+  #studentTableTable td:nth-child(10),
+  #studentTableTable th:nth-child(10) {
+    display: none;
+  }
 }
 
-
 @media only screen and (max-width: 600px) {
-    .new-student {
-        font-size: 1.2em;
-    }
+  .new-student {
+    font-size: 1.2em;
+  }
 }
 

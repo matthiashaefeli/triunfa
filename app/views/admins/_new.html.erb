@@ -1,27 +1,27 @@
 <%= form_for :admin, url: admins_path do |f| %>
-    <p>
-        <%= f.label :nombre %>
-        <%= f.text_field :name, :autocomplete => 'name'  %>
-    </p>
-    <p>
-        <%= f.label :apellido %>
-        <%= f.text_field :lastname, :autocomplete => 'family-name'  %>
-    </p>
-    <p>
-        <%= f.label :correo %>
-        <%= f.text_field :email, :autocomplete => 'email'  %>
-    </p>
-    <p>
-        <%= f.label :contraseña %>
-        <%= f.text_field :password %>
-    </p>
-    <% if (Admin.find_by(user: current_user).super) %>
-    <p>
-        <%= f.label :super %>
-        <%= f.check_box :super %>
-    </p>
-    <% end %>
-    <p>
-        <%= f.submit "Guardar" %>
-    </p>
+  <p>
+    <%= f.label :nombre %>
+    <%= f.text_field :name, :autocomplete => 'name'  %>
+  </p>
+  <p>
+    <%= f.label :apellido %>
+    <%= f.text_field :lastname, :autocomplete => 'family-name'  %>
+  </p>
+  <p>
+    <%= f.label :correo %>
+    <%= f.text_field :email, :autocomplete => 'email'  %>
+  </p>
+  <p>
+    <%= f.label :contraseña %>
+    <%= f.text_field :password %>
+  </p>
+  <% if (Admin.find_by(user: current_user).super) %>
+  <p>
+    <%= f.label :super %>
+    <%= f.check_box :super %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.submit "Guardar" %>
+  </p>
 <% end %>

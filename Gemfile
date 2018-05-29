@@ -51,20 +51,20 @@ gem 'axlsx_rails'
 gem 'activerecord-session_store'
 gem 'delayed_paperclip'
 
-
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'pry'
-  gem 'rspec-rails', '~> 3.7'
-  gem 'simplecov', require: false, group: :test
-  gem 'faker'
-  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'pry'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false, group: :test
+
+
 end
 
 group :development do

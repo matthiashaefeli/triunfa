@@ -2,70 +2,70 @@
 
 
 #teacher-table {
-    width: 100%;
+  width: 100%;
 }
 
 #new-teacher {
-    width: 150px;
+  width: 150px;
 }
 
 #new-teacher:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #new-teacher-hidden {
-    display: none;
+  display: none;
 }
 
 .teacher_show {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .teacher-show-all {
-    display: none;
+  display: none;
 }
 
 .teacher-show-text {
-    width: 250px;
+  width: 250px;
 }
 
 .teacher-show-text:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 .teacher-admin-show {
-    margin: 0 40px 0 40px;
+  margin: 0 40px 0 40px;
 }
 
 @media screen and (max-width: 900px) {
-    #teacher-table td:nth-child(1), 
-    #teacher-table th:nth-child(1),
-    #teacher-table td:nth-child(3), 
-    #teacher-table th:nth-child(3),
-    #teacher-table td:nth-child(5), 
-    #teacher-table th:nth-child(5),
-    #teacher-table td:nth-child(6), 
-    #teacher-table th:nth-child(6),
-    #teacher-table td:nth-child(7), 
-    #teacher-table th:nth-child(7),
-    #teacher-table td:nth-child(8), 
-    #teacher-table th:nth-child(8),
-    #teacher-table td:nth-child(10), 
-    #teacher-table th:nth-child(10), {
-        display: none;
-    }
+  #teacher-table td:nth-child(1), 
+  #teacher-table th:nth-child(1),
+  #teacher-table td:nth-child(3), 
+  #teacher-table th:nth-child(3),
+  #teacher-table td:nth-child(5), 
+  #teacher-table th:nth-child(5),
+  #teacher-table td:nth-child(6), 
+  #teacher-table th:nth-child(6),
+  #teacher-table td:nth-child(7), 
+  #teacher-table th:nth-child(7),
+  #teacher-table td:nth-child(8), 
+  #teacher-table th:nth-child(8),
+  #teacher-table td:nth-child(10), 
+  #teacher-table th:nth-child(10), {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 700px) {
-    .teacher_show {
-        flex-direction: column;
-    }
+  .teacher_show {
+    flex-direction: column;
+  }
 
-    .teacher-admin-show {
-        margin: 0;
-    }
+  .teacher-admin-show {
+    margin: 0;
+  }
 }
 

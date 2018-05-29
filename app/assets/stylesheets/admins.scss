@@ -2,34 +2,34 @@
 
 
 .admin-show-all {
-    display: none;
+  display: none;
 }
 
 .admin-show-text {
-    width: 250px;
+  width: 250px;
 }
 
 .admin-show-text:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 #new-admin-hidden {
-    display: none;
+  display: none;
 }
 
 #new-admin:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 @media screen and (max-width:900px) {
-    #admin-table td:nth-child(2),
-    #admin-table th:nth-child(2),
-    #admin-table td:nth-child(4),
-    #admin-table th:nth-child(4),   
-    #admin-table td:nth-child(5),
-    #admin-table th:nth-child(5) {
-        display: none;
-    }   
+  #admin-table td:nth-child(2),
+  #admin-table th:nth-child(2),
+  #admin-table td:nth-child(4),
+  #admin-table th:nth-child(4),   
+  #admin-table td:nth-child(5),
+  #admin-table th:nth-child(5) {
+    display: none;
+  }   
 }

@@ -2,36 +2,33 @@
 
 
 .chats:nth-of-type(even) {
-    background: $chat-table-even;
+  background: $chat-table-even;
 }
 
 .chats:nth-of-type(odd) {
-    background: $chat-table-odd;
-}
-
-#chat-table {
+  background: $chat-table-odd;
 }
 
 .forum-title {
-    background: $chat-table-even;
+  background: $chat-table-even;
 }
 
 .chat-user {
-    display: flex;
+  display: flex;
 }
 
 .like {
-    flex: 10%;
+  flex: 10%;
 }
 
 .user-name {
-   flex: 90%;
+  flex: 90%;
 }
 
 .add-like {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .just-info {
-    display: none;
+  display: none;
 }

@@ -198,101 +198,93 @@ nav a {
 // login and registration
 
 .flex-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .item-login {
-    margin: 10%;
+  margin: 10%;
 }
 
 .logo_login {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 // footer barra 
-
 .footer_barra {
-    height: 150px;
-    background-color: #25449C;
-    width: auto;
-    color: white;
+  height: 150px;
+  background-color: #25449C;
+  width: auto;
+  color: white;
 }
 
 .footer_barra p:first-child {
-    padding-top: 40px;
-}
-
-@media only screen and (max-width: 1155px) and (min-width: 767px) {
-
+  padding-top: 40px;
 }
 
 @media only screen and (max-width: 767px) {
-    .flex-container {
-        margin-top: 40px;
-        flex-direction: column;
-    }
+  .flex-container {
+    margin-top: 40px;
+    flex-direction: column;
+  }
 
-    .item-login {
-        margin: 5%;
-    }
+  .item-login {
+    margin: 5%;
+  }
 
-    .program {
-        margin: auto;
-    }
+  .program {
+    margin: auto;
+  }
 
-    .course-img {
-        width: 50px;
-        height: 50px;
-    }
+  .course-img {
+    width: 50px;
+    height: 50px;
+  }
 
-    .logo_login {
-        margin-top: 20px;
-        width: 50%;
-        height: auto;
-    }
+  .logo_login {
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+  }
 
-    .home-currentuser {
-        flex-direction: column;
-    }
-    .course-text-desc {
-        font-size: 30%;
-    }
+  .home-currentuser {
+    flex-direction: column;
+  }
+  .course-text-desc {
+    font-size: 30%;
+  }
 
-    .course-text-desc h3 {
-        font-size: 160%;
-    }
-    
-    .img-nav-margin {
-        margin-top: 0.5%;
-    }
+  .course-text-desc h3 {
+    font-size: 160%;
+  }
+  
+  .img-nav-margin {
+    margin-top: 0.5%;
+  }
 
-    .link-img {
-        height: 40%;
-        width: 40%;
-    }
-    
-    .ressourcen-imag {
-        width: 50%;
-    }
+  .link-img {
+    height: 40%;
+    width: 40%;
+  }
+  
+  .ressourcen-imag {
+    width: 50%;
+  }
 
-    #ressourcen-align {
-        margin: auto;
-    }
+  #ressourcen-align {
+    margin: auto;
+  }
 
-    .currentuser-item-size-three {
-        display: none;
-    }
+  .currentuser-item-size-three {
+    display: none;
+  }
 
-    #courses>* {
-        flex: 1 1 110px;
-    }
-    
+  #courses>* {
+    flex: 1 1 110px;
+  }
 }
-
 
 .alert {
-    color:  red;
+  color:  red;
 }
-
