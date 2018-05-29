@@ -19,6 +19,7 @@
     </div>
     <%= render "layouts/errors" %>
     <% if @searched_user == Admin %>
+        <p>Nuevo anuncio:</p>
         <%= form_for :flyer, url: flyers_path do |f| %>
         <p>
             <%= f.label :nombre %>
