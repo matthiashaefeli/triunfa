@@ -211,6 +211,23 @@ nav a {
     height: auto;
 }
 
+// footer barra 
+
+.footer_barra {
+    height: 150px;
+    background-color: #25449C;
+    width: auto;
+    color: white;
+}
+
+.footer_barra p:first-child {
+    padding-top: 40px;
+}
+
+@media only screen and (max-width: 1155px) and (min-width: 767px) {
+
+}
+
 @media only screen and (max-width: 767px) {
     .flex-container {
         margin-top: 40px;
