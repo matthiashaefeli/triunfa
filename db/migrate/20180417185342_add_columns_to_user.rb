@@ -1,3 +1,4 @@
+# add columns street, city, state, cp and tel to user table
 class AddColumnsToUser < ActiveRecord::Migration[5.1]
   def change
     add_column :users, :street, :string

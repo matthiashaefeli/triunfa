@@ -1,7 +1,7 @@
+# Create Chat table
 class CreateChats < ActiveRecord::Migration[5.1]
   def change
     create_table :chats do |t|
-
       t.text :body
       t.integer :user_id
       t.timestamps
