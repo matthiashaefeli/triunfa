@@ -7,7 +7,7 @@
                 <%= f.file_field :avatar, :class => "file-field" %>
             </p>
             <p>
-                <%= f.text_area :body, :class => "text-area", :id => "talk-text", :placeholder => "Escribe aqui..." %>
+                <%= f.text_area :body, :class => "text-area", :id => "talk-text", :placeholder => "Escribe aquí..." %>
             </p>
 
             <%= f.submit "Enviar Mensaje", :class => "talk_send", :id => "talk-text-submit" %>
@@ -19,6 +19,6 @@
         
         <%= render "talks/talk" %>
     </div> 
-    <p><%= link_to "Ver mas Mensajes", teachers_path(limit: (@talks_limit.to_i + 5)) %></p>
+    <p><%= link_to "Ver más Mensajes", teachers_path(limit: (@talks_limit.to_i + 5)) %></p>
 </div>
 

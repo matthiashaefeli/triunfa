@@ -1,49 +1,51 @@
 <div class="under-nav container">
-    <h1>Grupos activos</h1>
-    <input type="text" class="mySearch" id="groupTableSearch" placeholder="Buscar por Nombre..">
-    <table class="table table-hover table-bordered" id="groupTableTable">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Foro</th>
-                <th scope="col">Tarea</th>
-                <th scope="col">Instructor</th>
-                <th scope="col">Curso</th>
-                <th scope="col">clave</th>
-                <th scope="col">Estudiantes</th>
-                <th scope="col">Fecha Inicio</th>
-                <th scope="col">Fecha Final </th>
-                <th scope="col">Activo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @groups.each do |g| %>
-            <tr>
-                <td><%= link_to g.name, group_path(g.id) %></td>
-                <% if g.activ %>
-                    <td><%= link_to "Foro", room_path(Room.find_by(group: g)) %></td>
-                    <td><%= link_to "Tarea", tasks_path(group: g) %></td>
-                <% else %>
-                    <td></td>
-                    <td></td>
-                <% end %>
-                <td><%= link_to g.teacher.user.name, teacher_path(g.teacher.id) %> <%= g.teacher.user.lastname %></td>
-                <td><%= link_to g.course.name, course_path(g.course.id) %></td>
-                <td><%= g.key %></td>
-                <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
-                <td><%= g.startdate %></td>
-                <td><%= g.enddate %></td>
-                <td><%= g.activ ? "Si" : "No" %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
-    <div>
-        <%= render "layouts/errors" %>
-        <p id="new-group"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Grupo</p>
-        <div id="new-group-hidden">
-            <%= render "new.html.erb" %>
-        </div>
-    </div>
-    <p><%= link_to "Pagina de Inicio", root_path %></p>
+  <h1>Grupos activos</h1>
+  <input type="text" class="mySearch" id="groupTableSearch" placeholder="Buscar por Nombre..">
+  <table class="table table-hover table-bordered" id="groupTableTable">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>Foro</th>
+        <th>Tarea</th>
+        <th>Instructor</th>
+        <th>Curso</th>
+        <th>Clave</th>
+        <th>Estudiantes</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Final </th>
+        <th>Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @groups.each do |g| %>
+      <tr>
+        <td><%= link_to g.name, group_path(g.id) %></td>
+        <td><%= g.city %></td>
+        <% if g.activ %>
+          <td><%= link_to "Foro", room_path(Room.find_by(group: g)) %></td>
+          <td><%= link_to "Tarea", tasks_path(group: g) %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
+        <td><%= link_to g.teacher.user.name, teacher_path(g.teacher.id) %> <%= g.teacher.user.lastname %></td>
+        <td><%= link_to g.course.name, course_path(g.course.id) %></td>
+        <td><%= g.key %></td>
+        <td><%= g.activ ? g.students.count : "Grupo Cerrado" %></td>
+        <td><%= g.startdate %></td>
+        <td><%= g.enddate %></td>
+        <td><%= g.activ ? "Si" : "No" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+      <%= render "layouts/errors" %>
+      <p id="new-group"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Grupo</p>
+      <div id="new-group-hidden">
+          <%= render "new.html.erb" %>
+      </div>
+  </div>
+  <p><%= link_to "Página de Inicio", root_path %></p>
 </div>

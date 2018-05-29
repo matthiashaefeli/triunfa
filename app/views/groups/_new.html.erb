@@ -1,29 +1,33 @@
 <%= form_for :group, url: groups_path do |f| %>
-    <p>
-        <%= f.label :nombre %>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :clave %>
-        <%= f.text_field :key %>
-    </p>
-    <p>
-        <%= f.label :instructor %>
-        <%= f.select(:teacher, teacher_array ) %>
-    </p>
-    <p>
-        <%= f.label :curso %>
-        <%= f.select(:course, course_array) %>
-    </p>
-    <p>
-        <%= f.label :fecha_inicio %>
-        <%= f.date_field :startdate %>
-    </p>
-    <p>
-        <%= f.label :fecha_final %>
-        <%= f.date_field :enddate %>
-    </p>
-    <p>
-        <%= f.submit "Guardar Grupo" %>
-    </p>
+  <p>
+    <%= f.label :ciudad %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :nombre %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :clave %>
+    <%= f.text_field :key %>
+  </p>
+  <p>
+    <%= f.label :instructor %>
+    <%= f.select(:teacher, teacher_array ) %>
+  </p>
+  <p>
+    <%= f.label :curso %>
+    <%= f.select(:course, course_array) %>
+  </p>
+  <p>
+    <%= f.label :fecha_inicio %>
+    <%= f.date_field :startdate %>
+  </p>
+  <p>
+    <%= f.label :fecha_final %>
+    <%= f.date_field :enddate %>
+  </p>
+  <p>
+    <%= f.submit "Guardar Grupo" %>
+  </p>
 <% end %>

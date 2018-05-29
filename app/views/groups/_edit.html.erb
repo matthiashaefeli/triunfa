@@ -1,35 +1,39 @@
 <div>
-    <%= form_for :group, url: group_path(@group.id), method: "put" do |f| %>
-        <p>
-            <%= f.label :nombre %>
-            <%= f.text_field :name %>
-        </p>
-        <p>
-            <%= f.label :clave %>
-            <%= f.text_field :key %>
-        </p>
-        <p>
-            <%= f.label :instructor %>
-            <%= f.select :teacher, options_for_select(teacher_array, selected: actual_teacher(@group.teacher)) %>
-        </p>
-        <p>
-            <%= f.label :cursos %>
-            <%= f.select :course, options_for_select(course_array, selected: [@group.course.name, @group.course.id]) %>
-        </p>
-        <p>
-            <%= f.label :fecha_inicio %>
-            <%= f.date_field :startdate %>
-        </p>
-        <p>
-            <%= f.label :fecha_final %>
-            <%= f.date_field :enddate %>
-        </p>
-        <p>
-            <%= f.label :activo %>
-            <%= f.check_box(:activ) %>
-        </p>
-        <p>
-            <%= f.submit "Guardar Cambios", :onclick => "return confirm('Despues de desactivar el grupo los estudiantes no tienen acceso al portal, el foro y la tarea del grupo se borra')" %>
-        </p>
-    <% end %>
+  <%= form_for :group, url: group_path(@group.id), method: "put" do |f| %>
+  <p>
+    <%= f.label :ciudad %>
+    <%= f.text_field :city %>
+  </p>
+    <p>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :clave %>
+      <%= f.text_field :key %>
+    </p>
+    <p>
+      <%= f.label :instructor %>
+      <%= f.select :teacher, options_for_select(teacher_array, selected: actual_teacher(@group.teacher)) %>
+    </p>
+    <p>
+      <%= f.label :cursos %>
+      <%= f.select :course, options_for_select(course_array, selected: [@group.course.name, @group.course.id]) %>
+    </p>
+    <p>
+      <%= f.label :fecha_inicio %>
+      <%= f.date_field :startdate %>
+    </p>
+    <p>
+      <%= f.label :fecha_final %>
+      <%= f.date_field :enddate %>
+    </p>
+    <p>
+      <%= f.label :activo %>
+      <%= f.check_box(:activ) %>
+    </p>
+    <p>
+      <%= f.submit "Guardar Cambios", :onclick => "return confirm('Despues de desactivar el grupo los estudiantes no tienen acceso al portal, el foro y la tarea del grupo se borra')" %>
+    </p>
+  <% end %>
 </div>

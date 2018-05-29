@@ -14,7 +14,13 @@ class GroupsController < ApplicationController
   def create
     teacher = Teacher.find(group_params[:teacher])
     course = Course.find(group_params[:course])
-    group = Group.new(name: group_params[:name], key: group_params[:key], teacher: teacher, course: course, startdate: group_params[:startdate], enddate: group_params[:enddate])
+    group = Group.new(name: group_params[:name], 
+                      key: group_params[:key], 
+                      teacher: teacher, 
+                      course: course, 
+                      startdate: group_params[:startdate], 
+                      enddate: group_params[:enddate], 
+                      city: group_params[:city])
     if group.save
       room = Room.create(group: group)
       redirect_to groups_path
@@ -47,18 +53,19 @@ class GroupsController < ApplicationController
       room = Room.find_by(group: group)
       room.messages.delete_all
     end
-    group.update_attributes(name: group_params[:name], 
+    group.update_attributes(name: group_params[:name],
+                            city: group_params[:city], 
                             key: group_params[:key], 
                             teacher: teacher, 
                             course: course, 
-                            activ: params[:group][:activ].to_i)
+                            activ: group_params[:activ].to_i)
     group.save
     redirect_to groups_path
   end
 
   private
   def group_params
-    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate)
+    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ)
   end
 
   def sort_column

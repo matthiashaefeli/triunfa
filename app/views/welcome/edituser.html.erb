@@ -1,5 +1,5 @@
 <div class="under-nav text-center">
-    <h3>Completa tu direccion</h3>
+    <h3>Completa tu Dirección</h3>
     <%= form_for :user, url: updateuser_path do |f| %>
         <p>
             <%= f.label :nombre %>
@@ -18,7 +18,7 @@
             <%= f.text_field :street, :autocomplete => 'address-level1' %>
         </p>
         <p>
-            <%= f.label :codigo_postal %>
+            <%= f.label :Código_Postal %>
             <%= f.number_field :cp, :autocomplete => 'postal-code' %>
         </p>
         <p>
@@ -30,7 +30,7 @@
             <%= f.text_field :state, :autocomplete => 'address-level1' %>
         </p>
         <p>
-            <%= f.label :telefono %>
+            <%= f.label :Teléfono %>
             <%= f.number_field :tel, :autocomplete => 'tel' %>
         </p>
         <% if @user.avatar_file_name != nil %>
@@ -39,7 +39,7 @@
             </p>
         <% end %>
         <p>
-            <%= f.label :Foto %>
+            <%= f.label :Imagen %>
             <%= f.file_field :avatar, :class => "file-field" %>
         </p>
 

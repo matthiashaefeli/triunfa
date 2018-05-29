@@ -1,25 +1,25 @@
 <div class="comments">
-    <%= form_for :comment, url: comments_path, remote: "true"   do |f| %>
-        <p>
-            <%= f.text_field :text, :class => "comment-text" , :placeholder => "Escribe aqui..." %>
-        </p>
-        <% if locals[:chat] %>
-            <%= hidden_field_tag "chat", locals[:chat].id %>
-        <p class="button-submit">
-            <%= f.submit "Guardar", :class => "submit-chat-#{locals[:chat].id}" %>
-        </p>
-        <% elsif locals[:talk] %>
-            <%= hidden_field_tag "talk", locals[:talk].id %>
-        <p class="button-submit">
-            <%= f.submit "Guardar", :class => "submit-talk-#{locals[:talk].id}" %>
-        </p>
-        <% elsif locals[:message] %>
-            <%= hidden_field_tag "message", locals[:message].id %>
-        <p class="button-submit">
-            <%= f.submit "Guardar", :class => "submit-message-#{locals[:message].id}" %>
-        </p>
-        <% end %>
+  <%= form_for :comment, url: comments_path, remote: "true"   do |f| %>
+    <p>
+      <%= f.text_field :text, :class => "comment-text" , :placeholder => "Escribe aquí..." %>
+    </p>
+    <% if locals[:chat] %>
+      <%= hidden_field_tag "chat", locals[:chat].id %>
+    <p class="button-submit">
+      <%= f.submit "Guardar", :class => "submit-chat-#{locals[:chat].id}" %>
+    </p>
+    <% elsif locals[:talk] %>
+      <%= hidden_field_tag "talk", locals[:talk].id %>
+    <p class="button-submit">
+      <%= f.submit "Guardar", :class => "submit-talk-#{locals[:talk].id}" %>
+    </p>
+    <% elsif locals[:message] %>
+      <%= hidden_field_tag "message", locals[:message].id %>
+    <p class="button-submit">
+      <%= f.submit "Guardar", :class => "submit-message-#{locals[:message].id}" %>
+    </p>
     <% end %>
+  <% end %>
 </div>
 
 

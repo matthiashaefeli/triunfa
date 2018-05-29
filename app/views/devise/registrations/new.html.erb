@@ -4,18 +4,14 @@
       <%= image_tag "logo.png", :class => "logo_login" %>
   </div>
   <div class="item-login">
-
     <h2>Registrar</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-
       <div class="field">
-
         <%= f.label :clave_del_grupo %><br/>
-        <%= link_to "Donde consigo esta clave?", "../info.pdf", target: "_blank" %> 
+        <%= link_to "¿Donde consigo esta clave?", "../info.pdf", target: "_blank" %> 
         <%= password_field :group, :key %>
       </div>
-
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -35,7 +31,6 @@
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
-
       <div class="field">
         <%= f.label :confirmación_de_contraseña %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
