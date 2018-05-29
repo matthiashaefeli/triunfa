@@ -6,6 +6,7 @@
         <p><%= link_to "Regresar", rooms_path %></p>
     <% end %>
     <p>Nombre de Grupo: <%= @group.name %></p>
+    <p>Ciudad: <%= @group.city %></p>
     <p>Curso:
     <%= link_to @group.course.link, target: "_blank" do %>
         <%= @group.course.name %>
