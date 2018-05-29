@@ -31,5 +31,4 @@ RSpec.describe CommentsController, type: :controller do
     post :create, params: {talk: talk.id, comment: {text: "hello"}}
     expect(Talk.count).to eq 1
   end
-
 end

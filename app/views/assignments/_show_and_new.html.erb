@@ -1,52 +1,48 @@
 <div>
-    <% if @course.assignments.count > 0 %>
-    <table class="table table-hover table-bordered" id="assignment-table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Creditos</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @course.assignments.each do |assignment| %>
-            <tr>
-                <td><%= assignment.name %></td>
-                <td><%= assignment.points %></td>
-                <td>
-                    <% if !FinishedAssignment.exists?(assignment: assignment) %>
-
-                    <%= link_to assignment_path(assignment.id), :method => "delete" do %>
-                        <i class="fas fa-trash-alt"></i>
-                        <% end %>
-                    <% end %>
-                </td>
-            </tr>
+  <% if @course.assignments.count > 0 %>
+  <table class="table table-hover table-bordered" id="assignment-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Creditos</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @course.assignments.each do |assignment| %>
+      <tr>
+        <td><%= assignment.name %></td>
+        <td><%= assignment.points %></td>
+        <td>
+          <% if !FinishedAssignment.exists?(assignment: assignment) %>
+            <%= link_to assignment_path(assignment.id), :method => "delete" do %>
+              <i class="fas fa-trash-alt"></i>
             <% end %>
-            <tr>
-                <td></td>
-                <td><strong><%= total_point(@course.id) %></strong></td>
-                <td></td>
-            </tr>
-        </tbody>
-    
-    
-    </table>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td><strong><%= total_point(@course.id) %></strong></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
+  <div>
+    <h3>Agregar Tarea</h3>
+    <%= form_for :assignment, url: assignments_path do |f| %>
+      <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name, :class => "assignment-text-field" %>
+        <%= f.label :creditos %>
+        <%= f.number_field :points, :class => "assignment-points-field" %>
+        <%= hidden_field_tag "course", @course.id  %>
+      </p>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
     <% end %>
-    <div>
-        <h3>Agregar Tarea</h3>
-        <%= form_for :assignment, url: assignments_path do |f| %>
-            <p>
-                <%= f.label :nombre %>
-                <%= f.text_field :name, :class => "assignment-text-field" %>
-
-                <%= f.label :creditos %>
-                <%= f.number_field :points, :class => "assignment-points-field" %>
-                <%= hidden_field_tag "course", @course.id  %>
-            </p>
-            <p>
-                <%= f.submit "Guardar" %>
-            </p>
-        <% end %>
-    </div>
+  </div>
 </div>
