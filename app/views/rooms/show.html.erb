@@ -25,7 +25,7 @@
       <% end %>
     </div>
     <hr>
-    <div id="message_room<%= @room.id %>">
+    <div id="message_room<%= @room.id %>" class="all-forums">
     <%= render "messages/messages" %>
     </div>
     <p><%= link_to "Ver más Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>

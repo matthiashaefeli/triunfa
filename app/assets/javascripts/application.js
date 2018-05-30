@@ -85,7 +85,7 @@ $( document ).on('turbolinks:load', function() {
         $("#new-admin-hidden").toggle();
     });
 
-    $(".show-comments").click(function(){
+    $(".all-forums").on("click",".show-comments", function(){
         let comment = $(this)
         comment.siblings(".comments").toggle();
     });
@@ -106,7 +106,7 @@ $( document ).on('turbolinks:load', function() {
         // });
     })
 
-    $(".likeable").click(function(event) {
+    $(".all-forums").on("click", ".likeable", function(event) {
         event.preventDefault()
         let path
         let text
