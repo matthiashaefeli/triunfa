@@ -13,11 +13,18 @@ class MessagesController < ApplicationController
         end
         name = "#{message.user.name} #{message.user.lastname}"
         ActionCable.server.broadcast 'message_channel',
-                                    content:  message.body,
+                                    content: render_message(message),
                                     name: name,
                                     created: message.created_at,
                                     image: imageUrl,
                                     room: room.id
     end
   end
+
+  private
+
+  def render_message(message)
+    ApplicationController.render(partial: 'messages/message_comments', locals: { forum: message, message: message.id, m: message})
+  end
+
 end

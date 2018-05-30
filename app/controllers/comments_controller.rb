@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
     end
     co = Comment.create(text: params[:comment][:text],user: current_user)
     co.update_attribute(:commentable, message)
-
     ActionCable.server.broadcast 'talk_channel',
                                   chatcontent:  co.text,
                                   user: current_user.name,

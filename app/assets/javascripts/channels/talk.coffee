@@ -8,7 +8,7 @@ App.talk = App.cable.subscriptions.create "TalkChannel",
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
 
-    if data.place != "" then $('#chat-table').find(data.place).prepend '<p>' + data.user + ' dijo: ' + data.chatcontent + '</p>';
+    if data.place != "" then $('.all-forums').find(data.place).prepend '<p>' + data.user + ' dijo: ' + data.chatcontent + '</p>';
 
     if data.image != "" && data.content != ""
       $('#talk-table').prepend '<div class="chats">' +
