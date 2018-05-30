@@ -1,3 +1,4 @@
+# Add document to Task tabel
 class AddAttachmentDocumentToTasks < ActiveRecord::Migration[5.1]
   def self.up
     change_table :tasks do |t|

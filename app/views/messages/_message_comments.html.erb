@@ -1,0 +1,42 @@
+<div>
+  <div class="chats">
+    <div>
+      <div class="chat-user">
+        <div class="like">
+          <% if m.likes.count > 0 %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= m.likes.count %></span>  
+          <% end %>
+        </div>
+        <div class="user-name">
+          <%= m.user.name %> <%=m.user.lastname %> dijo:
+        </div>
+      </div>
+      <div class="message-body">
+        <%=m.body %>
+      </div>
+      <div class="message-image">
+        <% if  m.avatar_file_name != nil %>
+          <br>
+            <%= image_tag m.avatar.url(:medium) %>
+          <br>
+        <% end %>
+      </div>
+      <div class="message-fin">
+        <small>el <%= l m.created_at, format: :short %></small>
+      </div>
+    </div>
+  </div>
+  <div class="comments-all" id="message<%= m.id %>"></div>
+  <div class="comment">
+      <div class="add-like">
+        <%= link_to likes_path(model: Message, id: m.id), :class => "likeable", remote: true do %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+        <% end %>
+      </div>
+      <div class="show-comments">
+          <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      </div>
+      <%= render "comments/new", locals: { message: m } %>
+  </div>
+</div>
+<hr>

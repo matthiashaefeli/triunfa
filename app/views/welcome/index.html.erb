@@ -1,129 +1,116 @@
 
 <% if !current_user %>
-<div id="index-home">
+  <div id="index-home">
     <div class="program">
-        <div class="program-child">
-            <h4>PROGRAMA EDUCATIVA DE <br>SUPERATE Y TRIUNFA</h4>
-            <p>
-            <strong>Una experiencia de aprendizaje y práctica que enseña 
-                    cursos básicos e intermedios de Microsoft Office y Educación 
-                    Financiera. Contamos con un plan de estudio muy amigable que 
-                    te guiará paso a paso con este aprendizaje....</strong>
-            </p>
-        </div>
+      <div class="program-child">
+        <h4>PROGRAMA EDUCATIVO DE <br>SUPERATE Y TRIUNFA</h4>
+        <p>
+          <strong>Una experiencia de aprendizaje y práctica que enseña 
+                  cursos básicos e intermedios de Microsoft Office y Educación 
+                  Financiera. Contamos con un plan de estudio muy amigable que 
+                  te guiará paso a paso con este aprendizaje....
+          </strong>
+        </p>
+      </div>
     </div>
-</div>
-<div id="courselink"></div>
-<br>
-<div>
+  </div>
+  <div id="courselink"></div>
+  <br>
+  <div>
     <div class="courses-title">
-        <h1>Cursos</h1>
+      <h1>Cursos</h1>
     </div>
     <div id="courses">
-        <% for course in @course %>
+      <% for course in @course %>
         <div class="items-courses">
-            <div>
-                <%= link_to new_user_session_path do %>
-                    <%= image_tag(course.avatar.url, :class => "course-img") %>
-                <% end %>
+          <div>
+              <%= link_to new_user_session_path do %>
+                <%= image_tag(course.avatar.url, :class => "course-img") %>
+              <% end %>
             </div>
             <div class="course-text-desc">
-                <h3><%= course.name %></h3>
-            </div> 
+              <h3><%= course.name %></h3>
+          </div> 
         </div>
-        <% end %>
+      <% end %>
     </div>
-</div>
-<div class="ressources-links" id="ressourcen">
+  </div>
+  <div class="ressources-links" id="ressourcen">
     <div class="ressourcen-title">
-        <h1>Recursos</h1>
+      <h1>Recursos</h1>
     </div>
     <div id="ressourcen-align">
-        <div class=""><%= link_to image_tag("prestamos.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ahorra-en-mexico-desde-estados-unidos-de-manera-segura/", :target => "_blank" %></div>
-        <div class=""><%= link_to image_tag("Bansefi.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ya-puedes-construir-tu-casa-en-mexico-sin-dejar-estados-unidos/", :target => "_blank" %></div>
+      <div class=""><%= link_to image_tag("prestamos.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ahorra-en-mexico-desde-estados-unidos-de-manera-segura/", :target => "_blank" %></div>
+      <div class=""><%= link_to image_tag("Bansefi.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ya-puedes-construir-tu-casa-en-mexico-sin-dejar-estados-unidos/", :target => "_blank" %></div>
     </div>
-</div>
-<div class="links-home" id="linkslink">
+  </div>
+  <div class="links-home" id="linkslink">
     <div class="links-title">
-        <h1>Links</h1>
+      <h1>Links</h1>
     </div>
     <div id="links-align">
-        <div class="item-links integra"><%= link_to image_tag("integra.png", :class => "link-img"), "http://www.integrainstitute.org/", :target => "_blank" %></div>
-        <div class="item-links juntos"><%= link_to image_tag("juntos.png", :class => "link-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
-        <div class="item-links parents"><%= link_to image_tag("parents.png", :class => "link-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
+      <div class="item-links integra"><%= link_to image_tag("integra.png", :class => "link-img"), "http://www.integrainstitute.org/", :target => "_blank" %></div>
+      <div class="item-links juntos"><%= link_to image_tag("juntos.png", :class => "link-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
+      <div class="item-links parents"><%= link_to image_tag("parents.png", :class => "link-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
     </div>
-</div>
-<%= render 'welcome/footer' %>
-<% else %>
-
-
-<div class="home-currentuser under-nav">
-
+  </div>
+  <%= render 'welcome/footer' %>
+  <% else %>
+  <div class="home-currentuser under-nav">
 
     <!-- check if user is Admin Student Teacher -->
     <% @searched_user = check_user(current_user) %>
 
-
     <!-- change online status form current_user -->
     <% if @searched_user != "new_user" && !online.online %>
-        <% update_online(@searched_user) %>
+      <% update_online(@searched_user) %>
     <% end %>
 
-   
     <!-- user has no group -->
     <% if @searched_user == "new_user" %>
-        <%= render "./students/new.html.erb" %>
-
-
+      <%= render "./students/new.html.erb" %> 
 
     <!-- Admin user  -->
     <% elsif @searched_user == Admin %>
-        <%= render "online.html.erb" %>
-        <div class="currentuser-item-size-two">
+      <%= render "online.html.erb" %>
+      <div class="currentuser-item-size-two">
+        <br>
+        <%= render "chat.html.erb" %>
+      </div>
+      <div class="currentuser-item-size-three">
+        <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+      </div>
+          
+      <!-- Teacher user -->
+      <% elsif @searched_user == Teacher %>
+        <% if (Teacher.find_by(user: current_user)).activ %>
+          <%= render "online.html.erb" %>
+          <div class="currentuser-item-size-two">
             <br>
             <%= render "chat.html.erb" %>
-        </div>
-        <div class="currentuser-item-size-three">
+          </div>
+          <div class="currentuser-item-size-three">
             <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-        </div>
-        
-
-    <!-- Teacher user -->
-    <% elsif @searched_user == Teacher %>
-        <% if (Teacher.find_by(user: current_user)).activ %>
-            <%= render "online.html.erb" %>
-            <div class="currentuser-item-size-two">
-                <br>
-                <%= render "chat.html.erb" %>
-            </div>
-            <div class="currentuser-item-size-three">
-                <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-            </div>
+          </div>
         <% else %>
-            <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
+          <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
         <% end %>
 
-
-    <!-- Student user  -->
-    <% elsif @searched_user == Student %>
-    <%= render "online.html.erb" %>
-    <div class="currentuser-item-size-two">
+      <!-- Student user  -->
+      <% elsif @searched_user == Student %>
+      <%= render "online.html.erb" %>
+      <div class="currentuser-item-size-two">
         <div>
-            <%= link_to (@searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
-            <% image_tag (@searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
-            <% end %>
+          <%= link_to (@searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
+          <% image_tag (@searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
+          <% end %>
         </div>
         <br>
         <%= render "chat.html.erb" %>
-    </div>
-    <div class="currentuser-item-size-three">
+      </div>
+      <div class="currentuser-item-size-three">
         <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-    </div>
+      </div>
     <% end %>
-</div>
-<% end %>
-
-
-
-
-    
+  </div>
+<% end %> 

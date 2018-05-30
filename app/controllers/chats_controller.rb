@@ -13,16 +13,17 @@ class ChatsController < ApplicationController
       end
       name = "#{chat.user.name} #{chat.user.lastname}"
       ActionCable.server.broadcast 'room_channel',
-                                    content:  chat.body,
-                                    name: name,
-                                    created: chat.created_at,
-                                    image: imageUrl
+                                    content: render_chat(chat)
     end
   end
   
   private
   def chat_params
     params.require(:chat).permit(:body, :avatar)
+  end
+
+  def render_chat(chat)
+    ApplicationController.render(partial: 'chats/chat_comments', locals: { forum: chat, chat: chat.id, c: chat})
   end
 
 end
