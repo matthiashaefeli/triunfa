@@ -1165,7 +1165,6 @@
         null,
         3,
         3,
-        null,
         3,
         null,
         null,
@@ -1863,6 +1862,13 @@
         null,
         null,
         null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/papers_controller_spec.rb": [
@@ -2021,10 +2027,11 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
         1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -3475,6 +3482,6 @@
         null
       ]
     },
-    "timestamp": 1527686889
+    "timestamp": 1527772300
   }
 }

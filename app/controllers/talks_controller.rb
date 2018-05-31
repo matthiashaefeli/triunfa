@@ -10,15 +10,16 @@ class TalksController < ApplicationController
       end
       name = "#{talk.user.name} #{talk.user.lastname}"
       ActionCable.server.broadcast 'talk_channel',
-                                  content:  talk.body,
-                                  name: name,
-                                  created: talk.created_at,
-                                  image: imageUrl
+                                  content: render_talk(talk)
     end
   end
 
   private
   def talk_params
     params.require(:talk).permit(:body, :avatar)
+  end
+
+  def render_talk(talk)
+    ApplicationController.render(partial: 'talks/talk_comments', locals: { forum: talk, chat: talk.id, t: talk})
   end
 end
