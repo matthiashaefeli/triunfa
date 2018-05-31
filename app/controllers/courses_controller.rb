@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   include ServiceUser
-  before_action :is_admin, except: [:download]
+  before_action :is_admin, except: [:download, :index]
 
   def index
     @courses = Course.all
