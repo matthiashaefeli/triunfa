@@ -1,4 +1,3 @@
-<% @talks.each do |t| %>
 <div>
     <div class="chats">
         <div>
@@ -27,14 +26,12 @@
             </div>
         </div>
     </div>
-    <%= render "comments/all", locals: { forum: "talk", chat: t }  %>
+      <div class="comments-all" id="talk<%= t.id %>"></div>
     <div class="comment">
         <div class="add-like">
-            <% if t.likes.where(user_id: current_user).count == 0 %>
-                <%= link_to likes_path(model: Talk, id: t.id), :class => "likeable", remote: true do %>
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
-                <% end %>
-            <% end %>
+          <%= link_to likes_path(model: Talk, id: t.id), :class => "likeable", remote: true do %>
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+          <% end %>
         </div>
         <div class="show-comments">
             <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
@@ -43,4 +40,3 @@
     </div>
 </div>
 <hr>
-<% end %>
