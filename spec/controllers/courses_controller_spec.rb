@@ -16,7 +16,7 @@ RSpec.describe CoursesController, type: :controller do
     expect(response.status).to eq (302)
   end
 
-  it "redirect if user is login but not admin" do
+  it "redirect if user is login but not admin or teacher" do
     sign_in(user)
     get :index
     expect(response.status).to eq (302)

@@ -988,9 +988,12 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/services/service_user.rb": [
         1,
+        1,
+        25,
+        null,
         null,
         1,
-        28,
+        3,
         null,
         null,
         1,
@@ -1370,6 +1373,7 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/courses_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -3482,6 +3486,6 @@
         null
       ]
     },
-    "timestamp": 1527772300
+    "timestamp": 1527858572
   }
 }
