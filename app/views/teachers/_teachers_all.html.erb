@@ -2,52 +2,52 @@
 <h1>Instructores</h1>
 <input type="text" class="mySearch" id="teacherTableSearch" placeholder="Buscar por Nombre..">
 <table class="table table-hover table-bordered" id="teacher-table">
-    <thead>
-        <tr>
-            <th></th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Email </th>
-            <th scope="col">Calle</th>
-            <th scope="col">C.P.</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Tel.</th>
-            <th>Activo</th>
-
-        </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email </th>
+      <th>Calle</th>
+      <th>C.P.</th>
+      <th>Ciudad</th>
+      <th>Estado</th>
+      <th>Tel.</th>
+      <th>Activo</th>
+      <th>Logins</th>
+    </tr>
+  </thead>
     <tbody>
-        <% @teachers.each do |teacher| %>
-        <tr>
-            <% if teacher.user.avatar_file_name != nil %>
-                <td><%= image_tag teacher.user.avatar.url(:thumb), :class => "user-avatar" %></td>
-            <% else %>
-                <td></td>
-            <% end %>
-            <td><%= link_to teacher.user.name, teacher_path(teacher.id) %></td>
-            <td><%= teacher.user.lastname %></td>
-            <td><%= teacher.user.email %></td>
-            <td><%= teacher.user.street %></td>
-            <td><%= teacher.user.cp %></td>
-            <td><%= teacher.user.city %></td>
-            <td><%= teacher.user.state %></td>
-            <td><%= teacher.user.tel %></td>
-            <td>
-                <% if teacher.activ == true %>
-                    <i class="fas fa-thumbs-up"></i>
-                <% else %> 
-                    <i class="fas fa-thumbs-down"></i>
-                <% end %>
-            </td>
-            
-        </tr>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <% if teacher.user.avatar_file_name != nil %>
+          <td><%= image_tag teacher.user.avatar.url(:thumb), :class => "user-avatar" %></td>
+        <% else %>
+          <td></td>
         <% end %>
-    </tbody>
+        <td><%= link_to teacher.user.name, teacher_path(teacher.id) %></td>
+        <td><%= teacher.user.lastname %></td>
+        <td><%= teacher.user.email %></td>
+        <td><%= teacher.user.street %></td>
+        <td><%= teacher.user.cp %></td>
+        <td><%= teacher.user.city %></td>
+        <td><%= teacher.user.state %></td>
+        <td><%= teacher.user.tel %></td>
+        <td>
+          <% if teacher.activ == true %>
+            <i class="fas fa-thumbs-up"></i>
+          <% else %> 
+            <i class="fas fa-thumbs-down"></i>
+          <% end %>
+        </td> 
+        <td><%= teacher.user.login_counts %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <div>
-    <p id="new-teacher"><i class="fa fa-arrow-right" aria-hidden="true"></i> Agregar Instructor</p>
-    <div id="new-teacher-hidden">
-        <%= render "new.html.erb" %>
-    </div>
+  <p id="new-teacher"><i class="fa fa-arrow-right" aria-hidden="true"></i> Agregar Instructor</p>
+  <div id="new-teacher-hidden">
+    <%= render "new.html.erb" %>
+  </div>
 </div>
