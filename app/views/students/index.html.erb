@@ -1,44 +1,44 @@
 <div class="under-nav container">
-    <h1>Estudiantes</h1>
-    <p><%= link_to "Clic aquí para descargar los datos de los estudiantes", students_path(format: :xlsx) %></p>
-    <input type="text" class="mySearch" id="studentTableSearch" placeholder="Buscar por Nombre..">
-    <table class="table table-hover table-bordered" id="studentTableTable">
-        <thead>
+  <h1>Estudiantes</h1>
+  <p><%= link_to "Clic aquí para descargar los datos de los estudiantes", students_path(format: :xlsx) %></p>
+  <input type="text" class="mySearch" id="studentTableSearch" placeholder="Buscar por Nombre..">
+  <table class="table table-hover table-bordered" id="studentTableTable">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Grupo</th>
+        <th>Calle</th>
+        <th>C.P.</th>
+        <th>Ciudad</th>
+        <th>Estado</th>
+        <th>Tel.</th>
+        <th>Login's</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @users.each do |s| %>
+          <% searched_user = check_user(s) %>
+          <% if searched_user == Student || searched_user == "new_user" %>
             <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Grupo</th>
-                <th>Calle</th>
-                <th>C.P.</th>
-                <th>Ciudad</th>
-                <th>Estado</th>
-                <th>Tel.</th>
-                <th>Login's</th>
+              <td><%= link_to s.name, updatepassword_path(s.id) %></td>
+              <td><%= s.lastname %></td>
+              <td><%= s.email %></td>
+              <% if searched_user == Student %>
+                <td><%= (Student.find_by(user: s)).group.name %></td>
+              <% else %>
+                <td></td>
+              <% end %>
+              <td><%= s.street %></td>
+              <td><%= s.cp %></td>
+              <td><%= s.city %></td>
+              <td><%= s.state %></td>
+              <td><%= s.tel %></td>
+              <td><%= s.login_counts %></td>
             </tr>
-        </thead>
-        <tbody>
-            <% @users.each do |s| %>
-                <% searched_user = check_user(s) %>
-                <% if searched_user == Student || searched_user == "new_user" %>
-                    <tr>
-                        <td><%= link_to s.name, updatepassword_path(s.id) %></td>
-                        <td><%= s.lastname %></td>
-                        <td><%= s.email %></td>
-                        <% if searched_user == Student %>
-                            <td><%= (Student.find_by(user: s)).group.name %></td>
-                        <% else %>
-                            <td></td>
-                        <% end %>
-                        <td><%= s.street %></td>
-                        <td><%= s.cp %></td>
-                        <td><%= s.city %></td>
-                        <td><%= s.state %></td>
-                        <td><%= s.tel %></td>
-                        <td><%= s.login_counts %></td>
-                    </tr>
-                <% end %>
-            <% end %>
-        </tbody>
+          <% end %>
+        <% end %>
+      </tbody>
     </table>
 </div>
