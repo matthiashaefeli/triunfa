@@ -32,6 +32,12 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @igroups = Igroup.where(group_id: @group.id)
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="Grupo.xlsx"'
+      }
+    end
   end
 
   def edit
