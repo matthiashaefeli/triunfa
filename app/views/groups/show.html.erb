@@ -5,6 +5,7 @@
     <% elsif searched_user == Teacher  %>
         <p><%= link_to "Regresar", rooms_path %></p>
     <% end %>
+    <%= link_to "Clic aquí para descargar los datos de este Grupo", group_path(@group.id, format: :xlsx) %>
     <p>Nombre de Grupo: <%= @group.name %></p>
     <p>Ciudad: <%= @group.city %></p>
     <p>Curso:
@@ -68,6 +69,7 @@
         </table>
     <% else %>
         <p>Activo: No</p>
+        
         <h3>Estudiantes:</h3>
         <input type="text" class="mySearch" id="studentIgroupsTableSearch" placeholder="Buscar por Nombre..">
         <table class="table table-hover table-bordered" id="igroup-table-show">
