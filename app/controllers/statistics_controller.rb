@@ -11,6 +11,12 @@ class StatisticsController < ApplicationController
     @courses = Course.all
     @users = User.all
     @admins = Admin.all
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="Estadistica.xlsx"'
+      }
+    end
   end
 
   def create
