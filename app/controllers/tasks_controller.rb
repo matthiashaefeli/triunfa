@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  include ServiceUser
+  before_action :logged_in
+  before_action :user_has_direction, only: [:index]
   def index
     @group = Group.find(params[:group])
     @tasks = Task.where(group: @group).order(created_at: :desc)

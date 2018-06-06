@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  include ServiceUser
+  before_action :user_has_direction, only: [:index]
   def index
     if params[:limit] != nil
       @chat_limit = params[:limit]
@@ -32,15 +34,7 @@ class WelcomeController < ApplicationController
       end
     else
       user = User.find(params[:id])
-      user.name = userupdate_params[:name]
-      user.lastname = userupdate_params[:lastname]
-      user.email = userupdate_params[:email]
-      user.street = userupdate_params[:street]
-      user.cp = userupdate_params[:cp]
-      user.tel = userupdate_params[:tel]
-      user.state = userupdate_params[:state]
-      user.city = userupdate_params[:city]
-      user.avatar = userupdate_params[:avatar]
+      user.update_attributes(userupdate_params)
       user.save
       redirect_to root_path
     end   
@@ -50,7 +44,6 @@ class WelcomeController < ApplicationController
     @user = User.find(params[:id])
   end
   
-
   def destroy
     if check_user(current_user) != "new_user"
       ActionCable.server.broadcast 'offline_channel',
@@ -67,18 +60,6 @@ class WelcomeController < ApplicationController
     u = user_to_update.find_by(user: current_user)
     u.online = false
     u.save
-  end
-
-  def check_user(user)
-    if Admin.find_by(user: user)
-      return Admin
-    elsif Student.find_by(user: user)
-      return Student
-    elsif Teacher.find_by(user:user)
-      return Teacher
-    else
-      return "new_user"
-    end
   end
 
   def userupdate_params

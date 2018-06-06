@@ -11,4 +11,22 @@ module ServiceUser
     redirect_to root_path unless current_user
   end
 
+  def user_has_direction
+    if current_user && !Admin.exists?(user: current_user)
+      redirect_to edituser_path(current_user.id) unless current_user.street? && current_user.city? && current_user.tel && current_user.state 
+    end
+  end
+
+  def check_user(user)
+    if Admin.find_by(user: user)
+      return Admin
+    elsif Student.find_by(user: user)
+      return Student
+    elsif Teacher.find_by(user:user)
+      return Teacher
+    else
+      return "new_user"
+    end
+  end
+  
 end

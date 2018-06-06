@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WelcomeController, type: :controller do
 
-  let(:user){User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243")}
+  let(:user){User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243", street: "street", city: "city", state: "state", tel: "123")}
 
   describe "Get #index" do 
     it "renders the :index view" do
@@ -41,12 +41,15 @@ RSpec.describe WelcomeController, type: :controller do
   it "updates other data of an user" do
     u = create_user
     sign_in(user)
-    put :updateuser, params: {id: User.last.id, user: { street: "street",
+    put :updateuser, params: {id: User.last.id, user: { name: "jon", 
+                                                       lastname: "do", 
+                                                       email: "j@j.com",     
+                                                       street: "street",
                                                        cp: "12345", 
                                                        tel: "123456789", 
                                                        state: "TX", 
                                                        city: "Houston"}}
-    expect(User.last.state).to eq "street"
+    expect(User.last.state).to eq "TX"
   end
 
   it "updatets password from other user" do 
