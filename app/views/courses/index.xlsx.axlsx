@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Cursos") do |sheet|
+  sheet.add_row ["Nombre", "link", "Activo"]
+  @courses.each do |c|
+    sheet.add_row [c.name, c.link, c.activ ? "Si" : "No"]
+  end
+end
