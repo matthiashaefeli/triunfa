@@ -12,6 +12,12 @@ class TeachersController < ApplicationController
     @talks = Talk.order(created_at: :desc).limit(@talks_limit)
     @teachers = Teacher.all
     @admins = Admin.all
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="instructores.xlsx"'
+      }
+    end
   end
 
   def new
