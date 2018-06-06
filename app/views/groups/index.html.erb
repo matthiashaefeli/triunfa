@@ -1,5 +1,6 @@
 <div class="under-nav container">
-  <h1>Grupos activos</h1>
+  <h1>Grupos</h1>
+  <p><%= link_to "Clic aquí para descargar los datos de todos los Grupos", groups_path(format: :xlsx) %></p>
   <input type="text" class="mySearch" id="groupTableSearch" placeholder="Buscar por Nombre..">
   <table class="table table-hover table-bordered" id="groupTableTable">
     <thead>

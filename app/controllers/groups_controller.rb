@@ -6,6 +6,12 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.order(sort_column + " " + sort_direction)
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="Grupos.xlsx"'
+      }
+    end
   end
 
   def new
@@ -64,7 +70,9 @@ class GroupsController < ApplicationController
                             key: group_params[:key], 
                             teacher: teacher, 
                             course: course, 
-                            activ: group_params[:activ].to_i)
+                            activ: group_params[:activ].to_i,
+                            startdate: group_params[:startdate],
+                            enddate: group_params[:enddate])
     group.save
     redirect_to groups_path
   end
