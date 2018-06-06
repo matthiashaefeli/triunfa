@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
   include ServiceUser
   before_action :is_admin, except: [:index]
-  
+  before_action :user_has_direction, only: [:index]
   def index
     if params[:limit] != nil
       @talks_limit = params[:limit]

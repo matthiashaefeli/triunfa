@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe TeachersController, type: :controller do
-    let(:user){User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243")}
+    let(:user){User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243", 
+                          street: "street", city: "city", state: "state", tel: "123")}
     let(:usertwo){User.create(name: "jon", lastname: "do", email: "jk@j.com", password: "1243")}
     let(:teacher){Teacher.create(user: usertwo)}
 
@@ -9,6 +10,12 @@ RSpec.describe TeachersController, type: :controller do
         sign_in(user)
         get :index
         expect(subject).to render_template(:index)
+    end
+
+    it "cant render index if user has no direction" do 
+      sign_in(usertwo)
+      get :index
+      expect(response.status).to eq (302)
     end
 
     it "render index with more messages" do 
