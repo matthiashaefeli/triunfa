@@ -1,42 +1,44 @@
 <div class="under-nav container">
-    <h1>Estadística</h1>
-    <hr>
-    <p><strong>Cursos: </strong><%= @courses.count %></p>
-    <p><strong>Grupos Activos: </strong><%= @agroups.count %></p>
-    <p><strong>Grupos Inactivos: </strong><%= @igroups.count %></p>
-    <p><strong>Instructores: </strong><%= @teachers.count %></p>
-    <p><strong>Estudiantes en Grupos: </strong><%= @students.count %></p>
-    <p><strong>Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
-    <hr>
-    <p class="stat-show"><i class="fas fa-angle-double-down"></i> Ver Estadísticas pasadas</p>
-    <div class="stat-show-child">
-        <p><%= link_to "Crear nueva Estadística", statistics_path, :method => "Post" %></p>
-        <table class="table table-hover table-bordered" id="estatistic-table">
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Cursos</th>
-                    <th>Grupos A</th>
-                    <th>Grupos I</th>
-                    <th>Instructores</th>
-                    <th>Estudiantes</th>
-                    <th>E No</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @statistics.each do |e| %>
-                <tr>
-                    <td><%= l e.created_at, format: :short %></td>
-                    <td><%= e.courses %></td>
-                    <td><%= e.groups %></td>
-                    <td><%= e.igroups %></td>
-                    <td><%= e.teachers %></td>
-                    <td><%= e.students %></td>
-                    <td><%= e.nostudents %></td>
-                    <td><%= link_to "Borrar Estadística", statistic_path(e.id), :method => "delete", :onclick => "return confirm('Quiere borrar la estadística?')" %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
+  <h1>Estadística</h1>
+  <hr>
+  <p><strong>Cursos: </strong><%= @courses.count %></p>
+  <p><strong>Grupos Activos: </strong><%= @agroups.count %></p>
+  <p><strong>Grupos Inactivos: </strong><%= @igroups.count %></p>
+  <p><strong>Instructores: </strong><%= @teachers.count %></p>
+  <p><strong>Estudiantes en Grupos: </strong><%= @students.count %></p>
+  <p><strong>Estudiantes registrados pero no estan en un Grupo: </strong><%= @users.count - @students.count - @teachers.count - @admins.count%></p>
+  <hr>
+  <p><%= link_to "Clic aquí para descargar las Estadisticas", statistics_path(format: :xlsx) %></p>
+  <p class="stat-show"><i class="fas fa-angle-double-down"></i> Ver Estadísticas pasadas</p>
+  <div class="stat-show-child">
+
+    <p><%= link_to "Crear nueva Estadística", statistics_path, :method => "Post" %></p>
+    <table class="table table-hover table-bordered" id="estatistic-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Cursos</th>
+          <th>Grupos A</th>
+          <th>Grupos I</th>
+          <th>Instructores</th>
+          <th>Estudiantes</th>
+          <th>E No</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @statistics.each do |e| %>
+        <tr>
+          <td><%= l e.created_at, format: :short %></td>
+          <td><%= e.courses %></td>
+          <td><%= e.groups %></td>
+          <td><%= e.igroups %></td>
+          <td><%= e.teachers %></td>
+          <td><%= e.students %></td>
+          <td><%= e.nostudents %></td>
+          <td><%= link_to "Borrar Estadística", statistic_path(e.id), :method => "delete", :onclick => "return confirm('Quiere borrar la estadística?')" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
