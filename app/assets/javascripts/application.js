@@ -16,7 +16,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
 $( document ).on('turbolinks:load', function() {
   $(".mySearch").on("keyup", function() {
     let tableId = $(this).siblings("table")[0].id
@@ -27,7 +26,6 @@ $( document ).on('turbolinks:load', function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
-
 
   $('.folders').on("click", function() {     
     let paperNew = $(this);
@@ -96,7 +94,6 @@ $( document ).on('turbolinks:load', function() {
         type: 'DELETE',
         url: $that.attr('href'),
         datatype: 'html'
-
     })
     // .done(function(response){
     //     // let id = "#conv"+$id
@@ -132,8 +129,24 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
-  $(".all-forums").on("keydown", ".comment-text", function(event){
-    if (event.keyCode == 13) {
-    }
+  $('.chat_send').on("click", function() {
+    $that = $(this);
+    setTimeout(function() {
+      $that.closest('form').get(0).reset()
+    }, 1000)
+  })
+
+  $('#room-message-text-submit').on("click", function() {
+    $that = $(this);
+    setTimeout(function() {
+      $that.closest('form').get(0).reset()
+    }, 1000)
+  })
+
+  $('#talk-text-submit').on("click", function() {
+    $that = $(this);
+    setTimeout(function() {
+      $that.closest('form').get(0).reset()
+    }, 1000)
   })
 })
