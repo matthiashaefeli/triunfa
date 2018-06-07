@@ -10,32 +10,32 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     $('#chat-table').prepend data.content
         
 $(document).on 'turbolinks:load', ->
-  submit_message()
-  submit_chat()
-  submit_talk()
+  # submit_message()
+  # submit_chat()
+  # submit_talk()
   submit_conversation()
 
 
-submit_message = () ->
-  $('#wellcome-chat-body').on 'keydown', (event) ->
-    if event.keyCode is 13
-      $('.chat_send').click()
-      event.target.value = ""
-      event.preventDefault()
+# submit_message = () ->
+#   $('#wellcome-chat-body').on 'keydown', (event) ->
+#     if event.keyCode is 13
+#       $('.chat_send').click()
+#       event.target.value = ""
+#       event.preventDefault()
 
-submit_chat = () ->
-  $('#room-message-text').on 'keydown', (event) ->
-    if event.keyCode is 13
-      $('#room-message-text-submit').click()
-      event.target.value = ""
-      event.preventDefault()
+# submit_chat = () ->
+#   $('#room-message-text').on 'keydown', (event) ->
+#     if event.keyCode is 13
+#       $('#room-message-text-submit').click()
+#       event.target.value = ""
+#       event.preventDefault()
 
-submit_talk = () ->
-  $('#talk-text').on 'keydown', (event) ->
-    if event.keyCode is 13
-      $('#talk-text-submit').click()
-      event.target.value = ""
-      event.preventDefault()
+# submit_talk = () ->
+#   $('#talk-text').on 'keydown', (event) ->
+#     if event.keyCode is 13
+#       $('#talk-text-submit').click()
+#       event.target.value = ""
+#       event.preventDefault()
 
 submit_conversation = () ->
   $('.conversation_content').on 'keydown', (event) ->
