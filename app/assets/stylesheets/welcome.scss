@@ -158,8 +158,6 @@ nav a {
     transform: scale(1.1);
 }
 
-
-
 // home whit login 
 .home-currentuser {
     display: flex;
@@ -183,7 +181,6 @@ nav a {
     flex-grow: 1;
 }
 
-
 // on home with login who is online 
 #who-is-online {
     display: none;
@@ -194,9 +191,7 @@ nav a {
     color: $links-hover;
 }
 
-
 // login and registration
-
 .flex-container {
   display: flex;
   justify-content: center;
@@ -209,6 +204,12 @@ nav a {
 .logo_login {
   width: 100%;
   height: auto;
+}
+
+// edit user
+.edit-user {
+  display: flex;
+  justify-content: space-around;
 }
 
 // footer barra 
