@@ -101,13 +101,19 @@ nav a {
     text-align: center;
     display: flex;
     justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.all-res-images {
+  width: 200px;
+  height: 200px;
+  margin-top: 80px;
+  margin-bottom: 120px;
 }
 
 .ressourcen-imag {
-    width: 200px;
-    height: auto;
-    margin-top: 80px;
-    margin-bottom: 120px;
+  width: 80%;
+  max-height: 80%;
 }
 
 .ressources-links {
@@ -252,6 +258,7 @@ nav a {
   .home-currentuser {
     flex-direction: column;
   }
+
   .course-text-desc {
     font-size: 30%;
   }
@@ -269,8 +276,9 @@ nav a {
     width: 40%;
   }
   
-  .ressourcen-imag {
-    width: 50%;
+  .all-res-images {
+    width: 100px;
+    height: 100px;
   }
 
   #ressourcen-align {

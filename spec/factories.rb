@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :resource do
+    
+  end
   factory :like do
     
   end

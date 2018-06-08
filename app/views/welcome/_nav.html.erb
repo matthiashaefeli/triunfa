@@ -29,7 +29,6 @@
         <% else %>
           <% searched_user = check_user(current_user) %>
 
-          
           <!-- nav for admin -->
           <% if searched_user == Admin %>
             <li><%= link_to courses_path do %>
@@ -56,12 +55,14 @@
               <i class="fas fa-book"></i> Biblioteca
               <% end %>                   
             </li>
+            <li><%= link_to resources_path do %>
+              <i class="fas fa-warehouse"></i> Recurso
+              <% end %>                   
+            </li>
             <li><%= link_to edituser_path(current_user.id) do %>
               <i class="fas fa-user"></i>
               <% end %>
             </li>
-
-
 
             <!-- nav for teachers -->
           <% elsif searched_user == Teacher %>

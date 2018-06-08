@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     else
       @chat_limit = 5
     end
+    @resources = Resource.all
     @comments = Comment.order(created_at: :desc)
     @course = Course.where(activ: true)
     @flyers = Flyer.all

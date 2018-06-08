@@ -35,15 +35,7 @@
       <% end %>
     </div>
   </div>
-  <div class="ressources-links" id="ressourcen">
-    <div class="ressourcen-title">
-      <h1>Recursos</h1>
-    </div>
-    <div id="ressourcen-align">
-      <div class=""><%= link_to image_tag("prestamos.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ahorra-en-mexico-desde-estados-unidos-de-manera-segura/", :target => "_blank" %></div>
-      <div class=""><%= link_to image_tag("Bansefi.png", :class => "ressourcen-imag"), "http://juntospodemos.org/ya-puedes-construir-tu-casa-en-mexico-sin-dejar-estados-unidos/", :target => "_blank" %></div>
-    </div>
-  </div>
+  <%= render 'welcome/resources', locals: { resources: @resources} %>
   <div class="links-home" id="linkslink">
     <div class="links-title">
       <h1>Links</h1>

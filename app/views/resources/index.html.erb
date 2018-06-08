@@ -1,0 +1,19 @@
+<div class="under-nav">
+  <div class="form-resource">
+    <h3>Nuevo Recurso</h3>
+    <%= form_for :resource, url: resources_path do |f| %>
+      <p>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </p>
+      <p>
+        <%= f.label :imagen %>
+        <%= f.file_field :avatar, :class => "file-field" %>
+      </p>
+      <p>
+        <%= f.submit "Guardar Recurso" %>
+      </p>
+    <% end %>
+  </div>
+  <%= render 'welcome/resources', locals: { resources: @resources } %>
+</div>
