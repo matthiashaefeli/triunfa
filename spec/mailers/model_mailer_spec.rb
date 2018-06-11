@@ -5,9 +5,9 @@ RSpec.describe ModelMailer, type: :mailer do
   let(:user){User.create(name: "teacher", lastname: "bosa", email: "bosa@test.com", password: "1234")}
   let(:teacher){Teacher.create(user: user)}
   let(:group){Group.create(name: "houston", key: "h20", teacher: teacher, course: course)}
-  # let(:mail){ModelMailer.new_record_notification(user, group)}
-
-  #   it "renders the headers" do
-  #     expect(mail.to).to eq (["bosa@test.com"])
-  #   end
+  let(:mail){ModelMailer.new_record_notification(user, group)}
+ 
+    it "renders the headers" do
+      expect(mail.content).to eq ""
+    end
 end
