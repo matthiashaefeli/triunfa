@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    binding.pry
     teacher = Teacher.find(group_params[:teacher])
     course = Course.find(group_params[:course])
     group = Group.new(name: group_params[:name], 
@@ -79,7 +80,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ)
+    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ, :days)
   end
 
   def sort_column
