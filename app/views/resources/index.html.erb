@@ -3,6 +3,10 @@
     <h3>Nuevo Recurso</h3>
     <%= form_for :resource, url: resources_path do |f| %>
       <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
         <%= f.label :link %>
         <%= f.text_field :link %>
       </p>
