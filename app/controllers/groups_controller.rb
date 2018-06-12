@@ -26,7 +26,8 @@ class GroupsController < ApplicationController
                       course: course, 
                       startdate: group_params[:startdate], 
                       enddate: group_params[:enddate], 
-                      city: group_params[:city])
+                      city: group_params[:city],
+                      days: group_params[:days])
     if group.save
       room = Room.create(group: group)
       redirect_to groups_path
@@ -72,14 +73,15 @@ class GroupsController < ApplicationController
                             course: course, 
                             activ: group_params[:activ].to_i,
                             startdate: group_params[:startdate],
-                            enddate: group_params[:enddate])
+                            enddate: group_params[:enddate],
+                            days: group_params[:days])
     group.save
     redirect_to groups_path
   end
 
   private
   def group_params
-    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ)
+    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ, :days => [])
   end
 
   def sort_column

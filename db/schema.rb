@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180608182903) do
+ActiveRecord::Schema.define(version: 20180611123935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20180608182903) do
     t.date "startdate"
     t.date "enddate"
     t.string "city"
+    t.text "days", default: [], array: true
   end
 
   create_table "igroups", force: :cascade do |t|

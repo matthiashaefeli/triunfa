@@ -1,9 +1,9 @@
 <div>
   <%= form_for :group, url: group_path(@group.id), method: "put" do |f| %>
-  <p>
-    <%= f.label :ciudad %>
-    <%= f.text_field :city %>
-  </p>
+    <p>
+      <%= f.label :ciudad %>
+      <%= f.text_field :city %>
+    </p>
     <p>
       <%= f.label :nombre %>
       <%= f.text_field :name %>
@@ -19,6 +19,34 @@
     <p>
       <%= f.label :cursos %>
       <%= f.select :course, options_for_select(course_array, selected: [@group.course.name, @group.course.id]) %>
+    </p>
+    <p>
+      <%= f.label :lunes %>
+      <%= f.check_box :days, {multiple: true}, "Lunes", nil %>
+    </p>
+    <p>
+      <%= f.label :martes %>
+      <%= f.check_box :days, {multiple: true}, "Martes", nil %>
+    </p>
+    <p>
+      <%= f.label :miercoles %>
+      <%= f.check_box :days, {multiple: true}, "Miercoles", nil %>
+    </p> 
+    <p>
+      <%= f.label :jueves %>
+      <%= f.check_box :days, {multiple: true}, "Jueves", nil %>
+    </p> 
+    <p>
+      <%= f.label :viernes %>
+      <%= f.check_box :days, {multiple: true}, "Viernes", nil %>
+    </p>
+    <p>
+      <%= f.label :sabado %>
+      <%= f.check_box :days, {multiple: true}, "Sabado", nil %>
+    </p> 
+    <p>
+      <%= f.label :domingo %>
+      <%= f.check_box :days, {multiple: true}, "Domingo", nil %>
     </p>
     <p>
       <%= f.label :fecha_inicio %>

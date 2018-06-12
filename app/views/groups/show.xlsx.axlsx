@@ -6,6 +6,7 @@ wb.add_worksheet(name: "Grupo") do |sheet|
   sheet.add_row ["Instructor", @group.teacher.user.name]
   sheet.add_row ["Fecha Inicio", @group.startdate]
   sheet.add_row ["Fecha Final", @group.enddate]
+  sheet.add_row ["Dias", @group.days.join(",")]
 end
 wb.add_worksheet(name: "Estudiantes") do |sheet|
   sheet.add_row ["Estudiantes"]
