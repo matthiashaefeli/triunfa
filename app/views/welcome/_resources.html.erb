@@ -5,7 +5,7 @@
   <div id="ressourcen-align">
     <% @resources.each do |r| %>
       <div>
-      <div class="res-text"><%= r.name %></div>
+      <div class="res-text"><p><%= r.name %></p></div>
         <div class="all-res-images">
           <%= link_to r.link, :target => "_blank" do %>
               <%= image_tag r.avatar.url(:medium), :class => "ressourcen-imag" %>
