@@ -21,15 +21,15 @@
       <h1>Cursos</h1>
     </div>
     <div id="courses">
-      <% for course in @course %>
+      <% @course.each do |course| %>
         <div class="items-courses">
+        <div><p><%= course.name %></p></div>
           <div>
               <%= link_to new_user_session_path do %>
                 <%= image_tag(course.avatar.url, :class => "course-img") %>
               <% end %>
             </div>
             <div class="course-text-desc">
-              <h3><%= course.name %></h3>
           </div> 
         </div>
       <% end %>
