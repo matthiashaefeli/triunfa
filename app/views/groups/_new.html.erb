@@ -28,41 +28,32 @@
     <%= f.date_field :enddate %>
   </p>
   <p>
-  <p>
     <%= f.label :lunes %>
-    <%= f.check_box :days, {multiple: true}, "lunes", nil %>
-    <%= f.label :hora %>
-    <%= f.number_field :time, name: "lunes[]", in: 0...24 %> 
+    <%= f.check_box :days, {multiple: true}, "Lunes", nil %>
   </p>
   <p>
     <%= f.label :martes %>
-    <%= f.check_box :days, {multiple: true}, "martes", nil %>
-    <%= f.number_field :time, name: "martes[]", in: 0...24 %> 
+    <%= f.check_box :days, {multiple: true}, "Martes", nil %>
   </p>
   <p>
     <%= f.label :miercoles %>
-    <%= f.check_box :days, {multiple: true}, "miercoles", nil %>
- 
+    <%= f.check_box :days, {multiple: true}, "Miercoles", nil %>
   </p> 
   <p>
-    <%= f.label :miercoles %>
-    <%= f.check_box :days, {multiple: true}, "miercoles", nil %>
- 
+    <%= f.label :jueves %>
+    <%= f.check_box :days, {multiple: true}, "Jueves", nil %>
   </p> 
   <p>
     <%= f.label :viernes %>
-    <%= f.check_box :days, {multiple: true}, "viernes", nil %>
-
+    <%= f.check_box :days, {multiple: true}, "Viernes", nil %>
   </p>
   <p>
     <%= f.label :sabado %>
-    <%= f.check_box :days, {multiple: true}, "sabado", nil %>
- 
+    <%= f.check_box :days, {multiple: true}, "Sabado", nil %>
   </p> 
   <p>
     <%= f.label :domingo %>
-    <%= f.check_box :days, {multiple: true}, "domingo", nil %>
- 
+    <%= f.check_box :days, {multiple: true}, "Domingo", nil %>
   </p>
     <%= f.submit "Guardar Grupo" %>
   </p>

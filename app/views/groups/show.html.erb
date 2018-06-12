@@ -23,6 +23,11 @@
     <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
     <p>Fecha Inicio: <%= @group.startdate %></p>
     <p>Fecha Final: <%= @group.enddate %></p>
+    <p>Dias: 
+    <% @group.days.each do |day| %>
+      <%= day %>
+    <% end %>
+    </p>
     <% if @group.activ == true %>
         <p>Activo: Si</p>
         <% if searched_user == Admin %>
