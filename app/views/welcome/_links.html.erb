@@ -1,0 +1,21 @@
+<div class="links-home" id="linkslink">
+  <div class="ressourcen-links-title">
+    <h1>Links</h1>
+  </div>
+  <div class="ressourcen-links-align">
+    <% @links.each do |l| %>
+      <div class="res-text">
+        <div class="all-res-images">
+          <%= link_to l.link, :target => "_blank" do %>
+              <%= image_tag l.avatar.url(:medium), :class => "ressourcen-imag" %>
+          <% end %>
+        </div>
+        <% if current_user %>
+          <%= link_to link_path(l), :method => "delete" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %> 
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -20,4 +20,25 @@
     <% end %>
   </div>
   <%= render 'welcome/resources', locals: { resources: @resources } %>
+  <div class="form-links">
+    <h3>Nuevo Link</h3>
+    <%= form_for :link, url: links_path do |f| %>
+      <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </p>
+      <p>
+        <%= f.label :imagen %>
+        <%= f.file_field :avatar, :class => "file-field" %>
+      </p>
+      <p>
+        <%= f.submit "Guardar Link" %>
+      </p>
+    <% end %>
+  </div>
+  <%= render 'welcome/links', locals: { links: @links} %>
 </div>

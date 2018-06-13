@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   resources :likes
   resources :resources, only: [:index, :create, :destroy]
+  resources :links, only: [:create, :destroy]
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
