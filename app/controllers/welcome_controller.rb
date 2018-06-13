@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     else
       @chat_limit = 5
     end
+    @sentence = Sentence.first
     @links = Link.all
     @resources = Resource.all
     @comments = Comment.order(created_at: :desc)

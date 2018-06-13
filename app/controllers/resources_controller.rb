@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   include ServiceUser
   before_action :is_admin
   def index
+    @sentence = Sentence.first
     @links = Link.all
     @resources = Resource.all 
   end
