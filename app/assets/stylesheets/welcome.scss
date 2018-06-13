@@ -2,107 +2,100 @@
 
 // welcome page without current user
 #index-home {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 150px;
-    text-align: center;
-    background: url("port2.jpg") no-repeat top center scroll;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center bottom;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 150px;
+  text-align: center;
+  background: url("port2.jpg") no-repeat top center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 .icon-color {
-    background-color: black;
+  background-color: black;
 }
 
 // nav
 nav a {
-    color: black;
+  color: black;
 }
 
 .img-nav-margin {
-    margin-top: 4%;
+  margin-top: 4%;
 }
 
 .bg-color {
-    background-color: $index-color;
+  background-color: $index-color;
 }
 
 // text in homepage within a colored spot
 .program {
-    width: 20em;
-    height: 15em;
-    background-color:rgba(208,208,208,0.5);
-    margin-left: 17%;
-    display: table;  
+  width: 20em;
+  height: 15em;
+  background-color:rgba(208,208,208,0.5);
+  margin-left: 17%;
+  display: table;  
 }
 
 .program p {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .program-child {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 
 // courses on home without login
 .courses-title {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 }
 
 #courses {
-    display: flex;
-    flex-flow: row wrap;
-    margin-bottom: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 60px;
 }
 
 #courses>* {
-    flex: 1 1 300px;
+  flex: 1 1 300px;
 }
 
 .items-courses {
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 120px;
-    display: flex;
-    flex-direction: column;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
 }
 
 .course-img {
-    width: 200px;
-    height: auto;
-    transition: all .2s ease-in-out;
-}
-
-.link-img {
-    height: 100px;
-    width: auto;
-    transition: all .2s ease-in-out;
+  width: 200px;
+  height: auto;
+  transition: all .2s ease-in-out;
 }
 
 .course-img:hover { 
-    transform: scale(1.1); 
+  transform: scale(1.1); 
 }
 
-
-// recursos links
-.ressourcen-title {
-    text-align: center;
-    padding-top: 40px;
+// ressources and links
+.ressourcen-links-title {
+  text-align: center;
+  padding-top: 40px;
 }
 
-#ressourcen-align {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
+.ressourcen-links-align {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
 }
 
 .res-text {
@@ -122,84 +115,44 @@ nav a {
 }
 
 .ressources-links {
-    background-color: $index-color;
+  background-color: $index-color;
 }
 
 .ressourcen-imag:hover { 
-    transform: scale(1.1); 
-}
-
-// links on home without login
-.links-title {
-    text-align: center;
-    padding-top: 40px;
-}
-
-#links-align {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 60px;
-}
-
-.border-border {
-    border: 1px solid red;
-}
-
-.item-links {
-    min-width: 100px;
-    height: auto;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 120px;
-}
-
-.integra {
-    flex-grow: 1;
-}
-
-.juntos {
-    flex-grow: 1;
-}
-
-.parents {
-    flex-grow: 1;
-}
-
-.link-img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1); 
 }
 
 // home whit login 
 .home-currentuser {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .currentuser-item-size-one {
-    margin-left: 20px;
-    flex-grow: 1;
+  margin-left: 20px;
+  flex-grow: 1;
 }
 
 .currentuser-item-size-two {
-    flex-grow: 5;
+  flex-grow: 5;
 }
 
 .currentuser-item-size-one p {
-    width: 150px;
+  width: 150px;
 }
 
 .currentuser-item-size-three {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 // on home with login who is online 
 #who-is-online {
-    display: none;
+  display: none;
 }
 
 #who-is:hover {
-    cursor: pointer;
-    color: $links-hover;
+  cursor: pointer;
+  color: $links-hover;
 }
 
 // login and registration
@@ -275,18 +228,13 @@ nav a {
   .img-nav-margin {
     margin-top: 0.5%;
   }
-
-  .link-img {
-    height: 40%;
-    width: 40%;
-  }
   
   .all-res-images {
     width: 100px;
     height: 100px;
   }
 
-  #ressourcen-align {
+  .ressourcen-links-align {
     margin: auto;
   }
 

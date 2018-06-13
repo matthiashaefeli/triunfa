@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :link do
+    
+  end
   factory :resource do
     
   end

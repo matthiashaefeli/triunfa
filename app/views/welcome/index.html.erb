@@ -36,16 +36,7 @@
     </div>
   </div>
   <%= render 'welcome/resources', locals: { resources: @resources} %>
-  <div class="links-home" id="linkslink">
-    <div class="links-title">
-      <h1>Links</h1>
-    </div>
-    <div id="links-align">
-      <div class="item-links integra"><%= link_to image_tag("integra.png", :class => "link-img"), "http://www.integrainstitute.org/", :target => "_blank" %></div>
-      <div class="item-links juntos"><%= link_to image_tag("juntos.png", :class => "link-img"), "http://www.juntospodemos.org/", :target => "_blank" %></div>
-      <div class="item-links parents"><%= link_to image_tag("parents.png", :class => "link-img"), "https://www.parentsalliance.org/", :target => "_blank"  %></div>
-    </div>
-  </div>
+  <%= render 'welcome/links', locals: { links: @links} %>
   <%= render 'welcome/footer' %>
   <% else %>
   <div class="home-currentuser under-nav">
