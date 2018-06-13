@@ -1,4 +1,37 @@
 <div class="under-nav">
+  <div class="edit-text-start">
+    <h3>Texto de la pagina de inicio</h3>
+    <% if @sentence != nil %>
+      <%= form_for :sentence, url: sentence_path(@sentence.id), method: "put" do |f| %>
+        <p>
+          <%= f.label :titulo %>
+          <%= f.text_area :title %>
+        </p>
+        <p>
+          <%= f.label :texto %>
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= f.submit "Guardar texto" %>
+        </p>
+      <% end %>
+    <% else %>
+      <%= form_for :sentence, url: sentences_path do |f| %>
+        <p>
+          <%= f.label :titulo %>
+          <%= f.text_area :title %>
+        </p>
+        <p>
+          <%= f.label :texto %>
+          <%= f.text_area :body %>
+        </p>
+        <p>
+          <%= f.submit "Guardar texto" %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render 'welcome/sentence', locals: {text: @sentence} %>
   <div class="form-resource">
     <h3>Nuevo Recurso</h3>
     <%= form_for :resource, url: resources_path do |f| %>

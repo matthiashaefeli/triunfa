@@ -1,19 +1,6 @@
 
 <% if !current_user %>
-  <div id="index-home">
-    <div class="program">
-      <div class="program-child">
-        <h4>PROGRAMA EDUCATIVO DE <br>SUPERATE Y TRIUNFA</h4>
-        <p>
-          <strong>Una experiencia de aprendizaje y práctica que enseña 
-                  cursos básicos e intermedios de Microsoft Office y Educación 
-                  Financiera. Contamos con un plan de estudio muy amigable que 
-                  te guiará paso a paso con este aprendizaje....
-          </strong>
-        </p>
-      </div>
-    </div>
-  </div>
+  <%= render 'welcome/sentence', locals: {text: @sentence} %>
   <div id="courselink"></div>
   <br>
   <div>
