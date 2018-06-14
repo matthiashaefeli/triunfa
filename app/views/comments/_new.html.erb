@@ -18,6 +18,11 @@
     <p class="button-submit">
       <%= f.submit "Guardar", :class => "submit-message-#{locals[:message].id}" %>
     </p>
+    <% elsif locals[:publication] %>
+      <%= hidden_field_tag "publication", locals[:publication].id %>
+    <p class="button-submit">
+      <%= f.submit "Guardar", :class => "submit-message-#{locals[:publication].id}" %>
+    </p>
     <% end %>
   <% end %>
 </div>

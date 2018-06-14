@@ -9,6 +9,9 @@ class CommentsController < ApplicationController
     elsif params[:talk]
       message = Talk.find(params[:talk])
       id = "#talk#{message.id}"
+    elsif params[:publication]
+      message = Publication.find(params[:publication])
+      id = "#publication#{message.id}"
     end
     co = Comment.create(text: params[:comment][:text],user: current_user)
     co.update_attribute(:commentable, message)

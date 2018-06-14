@@ -149,4 +149,11 @@ $( document ).on('turbolinks:load', function() {
       $that.closest('form').get(0).reset()
     }, 1000)
   })
+
+  $('#publication-text-submit').on("click", function() {
+    $that = $(this);
+    setTimeout(function() {
+      $that.closest('form').get(0).reset()
+    }, 1000)
+  })
 })

@@ -1,0 +1,46 @@
+<% @publications.each do |p| %>
+  <div>
+    <div class="chats">
+      <div>
+        <div class="chat-user">
+          <div class="like">
+            <% if p.likes.count > 0 %>
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= p.likes.count %></span>  
+            <% end %>
+          </div>
+          <div class="user-name">
+            <%= p.user.name %> <%= p.user.lastname %> dijo:
+          </div>
+        </div>
+        <div class="chat-body">
+          <%= p.body %>
+        </div>
+        <div class="chat-image">
+          <% if p.avatar_file_name != nil %>
+            <br>
+              <%= image_tag p.avatar.url(:medium) %>
+            <br>
+          <% end %>
+        </div>
+        <div class="chat-fin">
+          <small>el <%= l p.created_at, format: :short %></small>
+        </div>
+      </div>
+    </div>
+    <%= render "comments/all", locals: { forum: "publication", chat: p }  %>
+    <div class="comment">
+      <div class="add-like">
+        <% if p.likes.where(user_id: current_user).count == 0 %>
+          <%= link_to likes_path(model: Publication, id: p.id), :class => "likeable", remote: true do %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="show-comments">
+        <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      </div>
+      <%= render "comments/new", locals: { publication: p } %>
+    </div>
+  </div>
+  <hr>
+<% end %>

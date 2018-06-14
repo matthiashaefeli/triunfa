@@ -1,6 +1,6 @@
-class CreateTalks < ActiveRecord::Migration[5.1]
+class CreatePublications < ActiveRecord::Migration[5.1]
   def change
-    create_table :talks do |t|
+    create_table :publications do |t|
       t.text :body
       t.integer :user_id
       t.timestamps

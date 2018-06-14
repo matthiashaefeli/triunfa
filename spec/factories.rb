@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :publication do
+    
+  end
   factory :sentence do
     
   end
