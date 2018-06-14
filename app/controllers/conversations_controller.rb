@@ -14,7 +14,6 @@ class ConversationsController < ApplicationController
       message_id = other_user.id
       user_writer = User.find(table.seconduser)
     end
-    
     ActionCable.server.broadcast 'conversation_channel',
                                         content:  conver.body,
                                         table: table.id,

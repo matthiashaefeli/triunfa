@@ -1,0 +1,23 @@
+<div class="under-nav">
+  <div class="forums">
+    <div class="forum-title">
+    <h2>Comunidad Superate y Triunfa</h2>
+      <%= form_for :publication, url: publications_path, remote: "true"  do |f| %>  
+        <p>
+          <%= f.label :adjuntar_imagen %>
+          <%= f.file_field :avatar, :class => "file-field" %>
+        </p>
+        <p>
+          <%= f.text_area :body, :class => "text-area", :id => "publication-text", :placeholder => "Escribe aquí..." %>
+        </p>
+        <%= f.submit "Enviar Mensaje", :class => "publication_send", :id => "publication-text-submit" %>
+      <% end %>
+    </div>
+    <br>
+    <hr>
+    <div id="publication-table" class="all-forums">
+      <%= render "publications/publications" %>
+    </div> 
+    <p><%= link_to "Ver más Mensajes", publications_path(limit: (@publications_limit.to_i + 5)) %></p>
+  </div>
+</div>

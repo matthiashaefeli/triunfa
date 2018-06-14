@@ -6,6 +6,8 @@ module ServiceLike
             return Message
         elsif model_string == "Talk"
             return Talk
+        elsif model_string == "Publication"
+          return Publication
         end
     end
 end
