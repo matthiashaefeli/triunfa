@@ -19,15 +19,10 @@ class PublicationsController < ApplicationController
       else
         imageUrl = publication.avatar.url(:medium)
       end
-
       ActionCable.server.broadcast 'publication_channel',
                                   content: render_publication(publication)
     end
   end
-
-
-
-
 
   private
 

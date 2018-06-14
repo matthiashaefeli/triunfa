@@ -6,7 +6,6 @@ class TablesController < ApplicationController
       ActionCable.server.broadcast 'table_channel',
                                 seconduser: u2,
                                 user: current_user.id
-
       redirect_to root_path                             
     else
       redirect_to root_path

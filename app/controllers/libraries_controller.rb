@@ -6,5 +6,4 @@ class LibrariesController < ApplicationController
     @folders = Folder.all
     @papers = Paper.all
   end
-
 end
