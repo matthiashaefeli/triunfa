@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-
 RSpec.describe ResourcesController, type: :controller do
   let(:user){User.create(name: "john", lastname: "do", email: "j@j.com", password: "1234")}
-
 
   it "has access to index if login and admin" do 
     create_admin(user)
@@ -50,6 +48,4 @@ RSpec.describe ResourcesController, type: :controller do
     get :destroy, params: { id: Resource.last.id }
     expect(Resource.count).to eq 0
   end
-
-
 end

@@ -31,7 +31,7 @@
     <!-- check if user is Admin Student Teacher -->
     <% @searched_user = check_user(current_user) %>
 
-    <!-- change online status form current_user -->
+    <!-- change online status of current_user -->
     <% if @searched_user != "new_user" && !online.online %>
       <% update_online(@searched_user) %>
     <% end %>

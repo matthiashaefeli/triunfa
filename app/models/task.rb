@@ -1,7 +1,4 @@
 class Task < ApplicationRecord
-  # has_attached_file :document
-  # validates_attachment_file_name :document, matches: [/\.xls?$/, /\.xlsx?$/, /\.csv?$/, /\.pdf?$/]
-
   has_attached_file :document,
                     :storage => :fog,
                     :fog_credentials => {

@@ -41,7 +41,7 @@ module UserLogin
   end
 
   def create_course
-    Course.create(name: "test")
+    Course.create(name: "test", document: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png'))
   end
 
   def create_finished_assignment(user, assignment, group)
@@ -57,6 +57,6 @@ module UserLogin
   end
 
   def create_paper(folder)
-    Paper.create(folder: folder, name: "paper", link: "link")
+    Paper.create(folder: folder, name: "paper", link: "link", document: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png'))
   end
 end 
