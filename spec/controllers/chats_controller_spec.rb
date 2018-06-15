@@ -12,7 +12,8 @@ RSpec.describe ChatsController, type: :controller do
 
   it 'create chat with image' do
     sign_in(user)
-    post :create, params: {chat:{body: "hello", avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
+    post :create, params: {chat:{body: "hello", 
+                                avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
     expect(Chat.count).to eq 1
   end
 
@@ -28,9 +29,9 @@ RSpec.describe ChatsController, type: :controller do
   #   expect(response.status).to eq (204)
   # end
 
-  it 'not create a chat without text' do 
-    sign_in(user)
-    post :create, params: {chat:{body: nil}}
-    expect(Chat.count).to eq 0
-  end
+  # it 'not create a chat without text' do 
+  #   sign_in(user)
+  #   post :create, params: {chat:{body: nil}}
+  #   expect(Chat.count).to eq 0
+  # end
 end

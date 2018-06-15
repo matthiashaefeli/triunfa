@@ -2,16 +2,9 @@ class TalksController < ApplicationController
   def create
     talk = Talk.new(talk_params)
     talk.user = current_user 
-    if talk.save
-      if talk.avatar_file_name == nil
-        imageUrl = ""
-      else
-        imageUrl = talk.avatar.url(:medium)
-      end
-      name = "#{talk.user.name} #{talk.user.lastname}"
-      ActionCable.server.broadcast 'talk_channel',
-                                  content: render_talk(talk)
-    end
+    talk.save
+    ActionCable.server.broadcast 'talk_channel',
+                                content: render_talk(talk)
   end
 
   def destroy
