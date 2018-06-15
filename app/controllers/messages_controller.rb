@@ -21,6 +21,16 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    message = Message.find(params[:id])
+    message.comments.delete_all
+    message.likes.delete_all
+    id = '#message-to-delete-id'+message.id.to_s
+    message.delete
+    ActionCable.server.broadcast 'room_channel',
+                                delete: id
+  end
+
   private
 
   def render_message(message)
