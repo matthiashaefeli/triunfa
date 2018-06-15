@@ -24,7 +24,7 @@ class PublicationsController < ApplicationController
   private
 
   def publication_params
-    params.require(:publication).permit(:body, :avatar)
+    params.require(:publication).permit(:body, :avatar, :link)
   end
 
   def render_publication(publication)

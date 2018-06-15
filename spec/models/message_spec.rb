@@ -8,7 +8,7 @@ describe Message, type: :model do
   let(:usertwo){User.new(name: 'Teo', lastname: 'dora', email: 'dora@test.com', password: '1234')}
   let(:student){Student.new(user: usertwo, group: group)}
   let(:room){Room.new(group: group)}
-  let(:message){Message.new(body: 'hello', user: usertwo,room: room)}
+  let(:message){Message.new(body: 'hello', user: usertwo,room: room, link: 'link')}
   let(:messagetwo){Message.new(body: nil, user: usertwo,room: room)}
 
   it 'belongs to a user' do
@@ -25,6 +25,10 @@ describe Message, type: :model do
 
   it 'is not valid without a body' do 
     expect(messagetwo).to_not be_valid
+  end
+
+  it 'has a link' do 
+    expect(message.link).to eq 'link'
   end
 
 end
