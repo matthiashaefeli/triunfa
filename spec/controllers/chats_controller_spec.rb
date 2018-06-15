@@ -4,20 +4,33 @@ RSpec.describe ChatsController, type: :controller do
  
   let(:user){User.create(name: 'jon', lastname: 'do', email: 'j@j.com', password: '1243')}
 
-  it 'returns 204 No Content after creating post without image' do
+  it 'create a chat without image' do
     sign_in(user)
     post :create, params: {chat:{body: 'hello'}}
-    expect(response.status).to eq (204)
+    expect(Chat.count).to eq 1
   end
 
-  it 'return 200 after creating post' do
+  it 'create chat with image' do
     sign_in(user)
     post :create, params: {chat:{body: "hello", avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
-    expect(response.status).to eq (204)
+    expect(Chat.count).to eq 1
   end
 
   it 'redirect user if not login' do 
     post :create, params: {chat:{body: 'hello'}}
     expect(response.status).to eq (302)
+  end
+
+  # it 'delete a chat' do 
+  #   sign_in(user)
+  #   post :create, params: {chat:{body: 'hello'}}
+  #   get :destroy, params: {id: Chat.last.id}
+  #   expect(response.status).to eq (204)
+  # end
+
+  it 'not create a chat without text' do 
+    sign_in(user)
+    post :create, params: {chat:{body: nil}}
+    expect(Chat.count).to eq 0
   end
 end
