@@ -12,10 +12,13 @@
         </div>
       </div>
       <div class="chat-body">
-      <%=t.body %>
+        <%= t.body %>
+        <% if t.link != nil %>
+          <%= link_to t.link, t.link, :target => '_blank' %>
+        <% end %> 
       </div>
       <div class="chat-image">
-      <% if  t.avatar_file_name != nil %>
+      <% if t.avatar_file_name != nil %>
       <br>
       <%= image_tag t.avatar.url(:medium) %>
       <br>
