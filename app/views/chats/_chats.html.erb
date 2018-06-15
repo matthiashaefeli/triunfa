@@ -1,5 +1,5 @@
 <% @chats.each do |c| %>
-<div>
+<div id="chat-to-delete-id<%= c.id %>">
   <div class="chats">
     <div>
       <div class="chat-user">
@@ -11,6 +11,13 @@
         <div class="user-name">
           <%= c.user.name %> <%=c.user.lastname %> dijo:
         </div>
+        <% if c.user == current_user %>
+          <div>
+            <%= link_to chat_path(c.id), :method => "delete" do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <div class="chat-body">
         <%=c.body %>

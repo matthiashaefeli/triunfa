@@ -7,6 +7,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    if data.delete then $(data.delete).siblings('hr').first().remove() && $(data.delete).remove() 
     $('#chat-table').prepend data.content
         
 $(document).on 'turbolinks:load', ->

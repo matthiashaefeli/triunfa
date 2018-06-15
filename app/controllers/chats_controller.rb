@@ -16,6 +16,16 @@ class ChatsController < ApplicationController
                                     content: render_chat(chat)
     end
   end
+
+  def destroy
+    chat = Chat.find(params[:id])
+    chat.comments.delete_all
+    chat.likes.delete_all
+    id = '#chat-to-delete-id'+chat.id.to_s
+    chat.delete
+    ActionCable.server.broadcast 'room_channel',
+                                delete: id
+  end
   
   private
   def chat_params
