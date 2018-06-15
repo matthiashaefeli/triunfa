@@ -13,6 +13,9 @@
       </div>
       <div class="chat-body">
         <%= c.body %>
+        <% if c.link != nil %>
+          <%= link_to c.link, c.link, :target => '_blank' %>
+        <% end %> 
       </div>
       <div class="chat-image">
       <% if c.avatar_file_name != nil %>

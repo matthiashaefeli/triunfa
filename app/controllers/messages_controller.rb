@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     message = Message.new(room: room, 
                           body: params[:message][:body], 
                           user: current_user, 
-                          avatar: params[:message][:avatar])
+                          avatar: params[:message][:avatar],
+                          link: params[:message][:link])
     message.save
     ActionCable.server.broadcast 'message_channel',
                                 content: render_message(message),

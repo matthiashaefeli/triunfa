@@ -13,11 +13,11 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <% if current_user %>
+      <% if current_user %>
       <ul class="nav navbar-nav navbar-right" id="my_conversation_id<%= current_user.id %>">
-    <% else %>
+      <% else %>
       <ul class="nav navbar-nav navbar-right">
-    <% end %>
+      <% end %>
         <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
 
           <!-- nav for all -->
@@ -30,112 +30,110 @@
           <% searched_user = check_user(current_user) %>
 
           <!-- nav for admin -->
-          <% if searched_user == Admin %>
+        <% if searched_user == Admin %>
+          <li><%= link_to courses_path do %>
+            <i class="fas fa-box-open"></i> Cursos
+            <% end %>
+          </li>
+          <li><%= link_to teachers_path do %>
+            <i class="fas fa-user-circle"></i> Instr./Admin 
+            <% end %>
+          </li>
+          <li><%= link_to groups_path do %>
+            <i class="fas fa-users"></i> Grupos
+            <% end %>
+          </li>
+          <li><%= link_to students_path do %>
+            <i class="fas fa-user-circle"></i> Estud.
+            <% end %>
+          </li>
+          <li><%= link_to statistics_path do %>
+            <i class="fas fa-chart-line"></i> Estad.
+            <% end %>
+          </li>
+          <li><%= link_to libraries_path do %>
+            <i class="fas fa-book"></i> Bibl.
+            <% end %>                   
+          </li>
+          <li><%= link_to resources_path do %>
+            <i class="fas fa-warehouse"></i> Editar Pag.
+            <% end %>                   
+          </li>
+          <li><%= link_to edituser_path(current_user.id) do %>
+            <i class="fas fa-user"></i>Yo
+            <% end %>
+          </li>
+          <!-- <li><%= link_to publications_path do %>
+            <i class="fas fa-child"></i> Comunidad
+            <% end %>
+          </li> -->
+
+          <!-- nav for teachers -->
+        <% elsif searched_user == Teacher %>
+          <% if (Teacher.find_by(user: current_user)).activ %>
+            <li><%= link_to libraries_path do %>
+              <i class="fas fa-book"></i> biblioteca
+              <% end %>
+            </li>
             <li><%= link_to courses_path do %>
               <i class="fas fa-box-open"></i> Cursos
               <% end %>
             </li>
             <li><%= link_to teachers_path do %>
-              <i class="fas fa-user-circle"></i> Instr./Admin 
+              <i class="fas fa-user-circle"></i> Foro Instructores
               <% end %>
             </li>
-            <li><%= link_to groups_path do %>
+            <li><%= link_to rooms_path do %>
               <i class="fas fa-users"></i> Grupos
               <% end %>
             </li>
-            <li><%= link_to students_path do %>
-              <i class="fas fa-user-circle"></i> Estud.
-              <% end %>
-            </li>
-            <li><%= link_to statistics_path do %>
-              <i class="fas fa-chart-line"></i> Estad.
-              <% end %>
-            </li>
-            <li><%= link_to libraries_path do %>
-              <i class="fas fa-book"></i> Bibl.
-              <% end %>                   
-            </li>
-            <li><%= link_to resources_path do %>
-              <i class="fas fa-warehouse"></i> Editar Pag.
-              <% end %>                   
-            </li>
-            <li><%= link_to edituser_path(current_user.id) do %>
-              <i class="fas fa-user"></i>Yo
-              <% end %>
-            </li>
-            <li><%= link_to publications_path do %>
-              <i class="fas fa-child"></i> Comunidad
-              <% end %>
-            </li>
-
-            <!-- nav for teachers -->
-          <% elsif searched_user == Teacher %>
-            <% if (Teacher.find_by(user: current_user)).activ %>
-              <li><%= link_to libraries_path do %>
-                <i class="fas fa-book"></i> biblioteca
-                <% end %>
-              </li>
-              <li><%= link_to courses_path do %>
-                <i class="fas fa-box-open"></i> Cursos
-                <% end %>
-              </li>
-              <li><%= link_to teachers_path do %>
-                <i class="fas fa-user-circle"></i> Foro Instructores
-                <% end %>
-              </li>
-              <li><%= link_to rooms_path do %>
-                <i class="fas fa-users"></i> Grupos
-                <% end %>
-              </li>
-              <% if current_user.avatar_file_name == nil %>
-                <li><%= link_to edituser_path(current_user.id) do %>
-                  <i class="fas fa-user"></i>
-                  <%= current_user.name %>
-                  <% end %>
-                </li>
-              <% else %>
-                <li><%= link_to edituser_path(current_user.id) do %>
-                  <i class="fas fa-user"></i> <%= image_tag current_user.avatar.url(:thumb), :class => "user-avatar" %>
-                  <% end %>
-                </li>
-              <% end %>
-            <% end %>
-
-            <!-- nav for students -->
-            <% elsif searched_user == Student %>
-              <% if current_user.avatar_file_name == nil %>
-                <li><%= link_to edituser_path(current_user.id) do %>
-                  <i class="fas fa-user"></i>
-                  <%= current_user.name %>
-                  <% end %>
-                </li>
-              <% else %>
-                <li><%= link_to edituser_path(current_user.id) do %>
-                  <i class="fas fa-user"></i> <%= image_tag current_user.avatar.url(:thumb), :class => "user-avatar" %>
-                  <% end %>
-                </li>
-              <% end %>
-              <li><%= link_to tasks_path(group: Student.find_by(user: current_user).group) do %>
-                <i class="fas fa-briefcase"></i> Tareas
-                <% end %>
-              </li>
-              <li><%= link_to finished_assignments_path do %>
-                <i class="fas fa-trophy"></i> Logros
-                <% end %>
-              </li>
-              <li><%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) do %>
-                <i class="fas fa-comments"></i> Foro
+            <% if current_user.avatar_file_name == nil %>
+              <li><%= link_to edituser_path(current_user.id) do %>
+                <i class="fas fa-user"></i>
+                <%= current_user.name %>
                 <% end %>
               </li>
             <% else %>
+              <li><%= link_to edituser_path(current_user.id) do %>
+                <i class="fas fa-user"></i> <%= image_tag current_user.avatar.url(:thumb), :class => "user-avatar" %>
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
-
-          <!-- logout for all -->
-          <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
-            <i class="fas fa-sign-out-alt"></i> Salida
+          
+          <!-- nav for students -->
+        <% elsif searched_user == Student %>
+          <% if current_user.avatar_file_name == nil %>
+            <li><%= link_to edituser_path(current_user.id) do %>
+              <i class="fas fa-user"></i>
+              <%= current_user.name %>
+              <% end %>
+            </li>
+          <% else %>
+            <li><%= link_to edituser_path(current_user.id) do %>
+              <i class="fas fa-user"></i> <%= image_tag current_user.avatar.url(:thumb), :class => "user-avatar" %>
+              <% end %>
+            </li>
+          <% end %>
+          <li><%= link_to tasks_path(group: Student.find_by(user: current_user).group) do %>
+            <i class="fas fa-briefcase"></i> Tareas
+            <% end %>
+          </li>
+          <li><%= link_to finished_assignments_path do %>
+            <i class="fas fa-trophy"></i> Logros
+            <% end %>
+          </li>
+          <li><%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) do %>
+            <i class="fas fa-comments"></i> Foro
             <% end %>
           </li>
         <% end %>
+          <!-- logout for all -->
+        <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
+          <i class="fas fa-sign-out-alt"></i> Salida
+          <% end %>
+        </li>
+            <% end %>
       </ul>
     </div>
   </div>

@@ -7,6 +7,10 @@
         <%= f.file_field :avatar, :class => "file-field"  %>
       </p>
       <p>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </p>
+      <p>
         <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body", :placeholder => "Escribe aquí..." %>
       </p>
       <%= f.submit "Enviar Mensaje", :class => "chat_send"%>
