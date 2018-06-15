@@ -1,42 +1,42 @@
-<div>
-    <div class="chats">
-        <div>
-            <div class="chat-user">
-                <div class="like">
-                    <% if t.likes.count > 0 %>
-                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= t.likes.count %></span>  
-                    <% end %>
-                </div>
-                <div class="user-name">
-                    <%= t.user.name %> <%=t.user.lastname %> dijo:
-                </div>
-            </div>
-            <div class="chat-body">
-            <%=t.body %>
-            </div>
-            <div class="chat-image">
-            <% if  t.avatar_file_name != nil %>
-            <br>
-            <%= image_tag t.avatar.url(:medium) %>
-            <br>
-            <% end %>
-            </div>
-            <div class="chat-fin">
-            <small>el <%= l t.created_at, format: :short %></small>
-            </div>
-        </div>
-    </div>
-      <div class="comments-all" id="talk<%= t.id %>"></div>
-    <div class="comment">
-        <div class="add-like">
-          <%= link_to likes_path(model: Talk, id: t.id), :class => "likeable", remote: true do %>
-              <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+<div id="talk-to-delete-id<%= t.id %>">
+  <div class="chats">
+    <div>
+      <div class="chat-user">
+        <div class="like">
+          <% if t.likes.count > 0 %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="like-count"> <%= t.likes.count %></span>  
           <% end %>
         </div>
-        <div class="show-comments">
-            <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+        <div class="user-name">
+          <%= t.user.name %> <%=t.user.lastname %> dijo:
         </div>
-        <%= render "comments/new", locals: { talk: t } %>
+      </div>
+      <div class="chat-body">
+      <%=t.body %>
+      </div>
+      <div class="chat-image">
+      <% if  t.avatar_file_name != nil %>
+      <br>
+      <%= image_tag t.avatar.url(:medium) %>
+      <br>
+      <% end %>
+      </div>
+      <div class="chat-fin">
+      <small>el <%= l t.created_at, format: :short %></small>
+      </div>
     </div>
+  </div>
+    <div class="comments-all" id="talk<%= t.id %>"></div>
+  <div class="comment">
+      <div class="add-like">
+        <%= link_to likes_path(model: Talk, id: t.id), :class => "likeable", remote: true do %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+        <% end %>
+      </div>
+      <div class="show-comments">
+          <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      </div>
+      <%= render "comments/new", locals: { talk: t } %>
+  </div>
 </div>
 <hr>

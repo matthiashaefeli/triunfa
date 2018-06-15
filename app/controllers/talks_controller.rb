@@ -14,6 +14,16 @@ class TalksController < ApplicationController
     end
   end
 
+  def destroy
+    talk = Talk.find(params[:id])
+    talk.comments.delete_all
+    talk.likes.delete_all
+    id = '#talk-to-delete-id'+talk.id.to_s
+    talk.delete
+    ActionCable.server.broadcast 'room_channel',
+                                delete: id
+  end
+
   private
   def talk_params
     params.require(:talk).permit(:body, :avatar)
