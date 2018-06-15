@@ -1,7 +1,7 @@
 class PublicationsController < ApplicationController
   include ServiceUser
   before_action :logged_in
-  
+
   def index
     if params[:limit] != nil
       @publications_limit = params[:limit]
@@ -16,15 +16,9 @@ class PublicationsController < ApplicationController
   def create
     publication = Publication.new(publication_params)
     publication.user = current_user 
-    if publication.save
-      if publication.avatar_file_name == nil
-        imageUrl = ""
-      else
-        imageUrl = publication.avatar.url(:medium)
-      end
-      ActionCable.server.broadcast 'publication_channel',
-                                  content: render_publication(publication)
-    end
+    publication.save
+    ActionCable.server.broadcast 'publication_channel',
+                                content: render_publication(publication)
   end
 
   private

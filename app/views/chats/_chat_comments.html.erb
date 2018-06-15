@@ -8,14 +8,17 @@
           <% end %>
         </div>
         <div class="user-name">
-          <%= c.user.name %> <%=c.user.lastname %> dijo:
+          <%= c.user.name %> <%= c.user.lastname %> dijo:
         </div>
       </div>
       <div class="chat-body">
-        <%=c.body %>
+        <%= c.body %>
+        <% if c.link != nil %>
+          <%= link_to c.link, c.link, :target => '_blank' %>
+        <% end %> 
       </div>
       <div class="chat-image">
-      <% if  c.avatar_file_name != nil %>
+      <% if c.avatar_file_name != nil %>
         <br>
           <%= image_tag c.avatar.url(:medium) %>
         <br>

@@ -1,4 +1,4 @@
-<div>
+<div id="message-to-delete-id<%= m.id %>">
   <div class="chats">
     <div>
       <div class="chat-user">
@@ -12,10 +12,13 @@
         </div>
       </div>
       <div class="message-body">
-        <%=m.body %>
+        <%= m.body %>
+        <% if m.link != nil %>
+          <%= link_to m.link, m.link, :target => '_blank' %>
+        <% end %> 
       </div>
       <div class="message-image">
-        <% if  m.avatar_file_name != nil %>
+        <% if m.avatar_file_name != nil %>
           <br>
             <%= image_tag m.avatar.url(:medium) %>
           <br>
