@@ -1,18 +1,18 @@
 <div class="add-papper">
-        <%= form_for :paper, url: papers_path  do |f| %>  
-        <p>
-            <%= f.label :nombre %>
-            <%= f.text_field :name %>
-            <%= hidden_field_tag "folder", @folder.id  %>
-        </p>
-        <p>
-            <%= f.label :link %>
-            <%= f.text_field :link %>
-        </p>
-        <p>
-            <%= f.label :adjuntar_archivo %>
-            <%= f.file_field :document %>
-        </p>
-        <%= f.submit "Adjuntar Archivo" %>
-    <% end %>       
-</div>
+  <%= form_for :paper, url: papers_path  do |f| %>  
+    <p>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+      <%= hidden_field_tag "folder", @folder.id  %>
+    </p>
+    <p>
+      <%= f.label :link %>
+      <%= f.text_field :link %>
+    </p>
+    <p>
+      <%= f.label :adjuntar_archivo %>
+      <%= f.file_field :document %>
+    </p>
+    <%= f.submit "Adjuntar Archivo" %>
+  <% end %>       
+</div>  

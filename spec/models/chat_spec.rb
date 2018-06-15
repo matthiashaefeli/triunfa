@@ -7,7 +7,7 @@ describe Chat, type: :model do
     let(:group){Group.new(name: 'houston', key: 'h20', teacher: teacher, course: course)}
     let(:usertwo){User.new(name: 'Teo', lastname: 'dora', email: 'dora@test.com', password: '1234')}
     let(:student){Student.new(user: usertwo, group: group)}
-    let(:chat){Chat.new(body: 'hello', user: usertwo)}
+    let(:chat){Chat.new(body: 'hello', user: usertwo, link: 'link')}
     let(:chattwo){Chat.new(body: nil, user: usertwo)}
 
     it 'belongs to a user' do
@@ -20,5 +20,9 @@ describe Chat, type: :model do
 
     it 'is not valid without a body' do 
       expect(chattwo).to_not be_valid
+    end
+
+    it 'has a link' do 
+      expect(chat.link).to eq 'link'
     end
 end

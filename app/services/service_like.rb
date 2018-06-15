@@ -8,6 +8,8 @@ module ServiceLike
             return Talk
         elsif model_string == "Publication"
           return Publication
+        elsif model_string == "Task"
+          return Task
         end
     end
 end

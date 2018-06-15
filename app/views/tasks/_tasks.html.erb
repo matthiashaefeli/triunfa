@@ -7,7 +7,7 @@
         <p>Link: <%= link_to task.link, task.link, :target => "_blank" %></p>
       <% end %>
       <% if task.document_file_name != nil %>
-        <p>Descargar el archivo: <%= link_to task.document_file_name, download_path(task.id) %></p>
+        <p>Descargar el archivo: <%= link_to task.document_file_name, download_path(task.id, Task) %></p>
       <% end %>
       <hr>
     </div>
