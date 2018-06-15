@@ -15,13 +15,13 @@ RSpec.describe MessagesController, type: :controller do
 
   it 'redirect after creates a message' do
     sign_in(user)
-    post :create, params: {room: room.id, message: {body: "hello"}}
+    post :create, params: {room: room.id, message: {body: 'hello'}}
     expect(response.status).to eq (204)
   end
 
   it 'creates a new message with an avatar' do 
     sign_in(user)
-    post :create, params: {room: room.id, message: {body: "hello", avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
+    post :create, params: {room: room.id, message: {body: 'hello', avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
     expect(Message.count).to eq 1
   end
 

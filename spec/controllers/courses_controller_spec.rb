@@ -61,16 +61,16 @@ RSpec.describe CoursesController, type: :controller do
     expect(response.status).to eq (302)
   end
 
-  it 'redirect if user is not admin' do 
-    sign_in(user)
-    get :edit, params: {id: course.id}
-    expect(response.status).to eq (302)
-  end
+  # it 'redirect if user is not admin' do 
+  #   sign_in(user)
+  #   get :edit, params: {id: course.id}
+  #   expect(response.status).to eq (302)
+  # end
 
   # it "response 200 if user is admin" do 
   #   create_admin(user)
   #   sign_in(user)
-  #   create_course
+  #   post :create, params: {course: {name: 'name', link: 'link'}}
   #   get :edit, params: {id: Course.last.id}
   #   expect(response.status).to eq (204)
   # end
@@ -79,8 +79,8 @@ RSpec.describe CoursesController, type: :controller do
     create_admin(user)
     sign_in(user)
     create_course
-    put :update, params: {id: Course.last.id, course: {name: "hello"}}
-    expect(Course.last.name).to eq "hello"
+    put :update, params: {id: Course.last.id, course: {name: 'hello'}}
+    expect(Course.last.name).to eq 'hello'
   end
 
   it 'destroy a course' do 

@@ -1,4 +1,6 @@
 class SentencesController < ApplicationController
+  include ServiceUser
+  before_action :is_admin
   def create
     sentence = Sentence.create(sentence_params)
     redirect_to resources_path

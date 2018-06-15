@@ -29,9 +29,9 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
   end
 
-  def edit
-    @course = Course.find(params[:id])
-  end
+  # def edit
+  #   @course = Course.find(params[:id])
+  # end
 
   def update
     course = Course.find(params[:id])

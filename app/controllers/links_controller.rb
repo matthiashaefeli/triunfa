@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  include ServiceUser
+  before_action :is_admin
   def create
     link = Link.create(links_params)
     redirect_to resources_path
