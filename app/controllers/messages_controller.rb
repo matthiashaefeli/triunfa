@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
                           body: params[:message][:body], 
                           user: current_user, 
                           avatar: params[:message][:avatar],
-                          link: params[:message][:link])
+                          link: params[:message][:link],
+                          document: params[:message][:document])
     message.save
     ActionCable.server.broadcast 'message_channel',
                                 content: render_message(message),
