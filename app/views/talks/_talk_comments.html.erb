@@ -15,7 +15,10 @@
         <%= t.body %>
         <% if t.link != nil %>
           <%= link_to t.link, t.link, :target => '_blank' %>
-        <% end %> 
+        <% end %>
+        <% if t.document_file_name != nil %>
+         <p>Descargar el archivo: <%= link_to t.document_file_name, download_path(t.id, Talk) %></p>
+        <% end %>  
       </div>
       <div class="chat-image">
       <% if t.avatar_file_name != nil %>
