@@ -1,3 +1,4 @@
+# add activ to teacher
 class AddColumnActivToTeacher < ActiveRecord::Migration[5.1]
   def change
     add_column :teachers, :activ, :boolean, default: true
