@@ -1,7 +1,6 @@
 class StatisticsController < ApplicationController
   include ServiceUser
   before_action :is_admin
-
   def index
     @statistics = Statistic.order(created_at: :desc)
     @teachers = Teacher.all

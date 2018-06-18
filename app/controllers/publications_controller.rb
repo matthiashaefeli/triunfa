@@ -1,7 +1,6 @@
 class PublicationsController < ApplicationController
   include ServiceUser
   before_action :logged_in
-
   def index
     if params[:limit] != nil
       @publications_limit = params[:limit]
@@ -41,5 +40,4 @@ class PublicationsController < ApplicationController
     ApplicationController.render(partial: 'publications/publication_comments', 
                                 locals: { forum: publication, chat: publication.id, p: publication})
   end
-
 end

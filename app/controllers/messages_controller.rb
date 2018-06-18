@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   include ServiceUser
   before_action :logged_in
-  
   def create
     room = Room.find(params[:room])
     message = Message.new(room: room, 
@@ -31,5 +30,4 @@ class MessagesController < ApplicationController
   def render_message(message)
     ApplicationController.render(partial: 'messages/message_comments', locals: { forum: message, message: message.id, m: message})
   end
-
 end

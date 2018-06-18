@@ -23,5 +23,4 @@ class ResourcesController < ApplicationController
   def resources_params
     params.require(:resource).permit(:link, :avatar, :name)
   end
-
 end
