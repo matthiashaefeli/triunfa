@@ -1,5 +1,5 @@
 <% @publications.each do |p| %>
-  <div>
+  <div id="publication-to-delete-id<%= p.id %>">
     <div class="chats">
       <div>
         <div class="chat-user">
@@ -11,6 +11,13 @@
           <div class="user-name">
             <%= p.user.name %> <%= p.user.lastname %> dijo:
           </div>
+          <% if p.user == current_user %>
+            <div>
+              <%= link_to publication_path(p.id), :method => "delete" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="chat-body">
           <%= p.body %>
