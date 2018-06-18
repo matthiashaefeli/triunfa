@@ -22,16 +22,11 @@ RSpec.describe ChatsController, type: :controller do
     expect(response.status).to eq (302)
   end
 
-  # it 'delete a chat' do 
-  #   sign_in(user)
-  #   post :create, params: {chat:{body: 'hello'}}
-  #   get :destroy, params: {id: Chat.last.id}
-  #   expect(response.status).to eq (204)
-  # end
+  it 'delete a chat' do 
+    sign_in(user)
+    post :create, params: {chat:{body: 'hello'}}
+    delete :destroy, params: {id: Chat.last.id}
+    expect(response.status).to eq (204)
+  end
 
-  # it 'not create a chat without text' do 
-  #   sign_in(user)
-  #   post :create, params: {chat:{body: nil}}
-  #   expect(Chat.count).to eq 0
-  # end
 end

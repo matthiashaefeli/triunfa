@@ -1,3 +1,4 @@
+# add avatar to teacher
 class AddAvatarColumnsToTeachers < ActiveRecord::Migration[5.1]
   def up
     add_attachment :teachers, :avatar
@@ -6,5 +7,4 @@ class AddAvatarColumnsToTeachers < ActiveRecord::Migration[5.1]
   def down
     remove_attachment :teachers, :avatar
   end
-
 end

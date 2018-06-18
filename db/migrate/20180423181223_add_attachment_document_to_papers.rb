@@ -1,3 +1,4 @@
+# Add document to papers
 class AddAttachmentDocumentToPapers < ActiveRecord::Migration[5.1]
   def self.up
     change_table :papers do |t|

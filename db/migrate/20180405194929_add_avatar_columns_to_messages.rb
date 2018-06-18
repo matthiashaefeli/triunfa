@@ -1,3 +1,4 @@
+# add avatar to messages
 class AddAvatarColumnsToMessages < ActiveRecord::Migration[5.1]
   def up
     add_attachment :messages, :avatar
@@ -6,5 +7,4 @@ class AddAvatarColumnsToMessages < ActiveRecord::Migration[5.1]
   def down
     remove_attachment :messages, :avatar
   end
-
 end

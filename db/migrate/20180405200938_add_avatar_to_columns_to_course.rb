@@ -1,3 +1,4 @@
+# add avatar to course
 class AddAvatarToColumnsToCourse < ActiveRecord::Migration[5.1]
   def up
     add_attachment :courses, :avatar

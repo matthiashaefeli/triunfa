@@ -1,3 +1,4 @@
+# change integer limit
 class ChangeIntegerLimitInUserModel < ActiveRecord::Migration[5.1]
   def change
     change_column :users, :tel, :integer, limit: 8
