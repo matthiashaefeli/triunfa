@@ -23,6 +23,9 @@
           <%= p.body %>
           <% if p.link != nil %>
             <%= link_to p.link, p.link, :target => '_blank' %>
+          <% end %>
+          <% if p.document_file_name != nil %>
+            <p>Descargar el archivo: <%= link_to p.document_file_name, download_path(p.id, Publication) %></p>
           <% end %> 
         </div>
         <div class="chat-image">
