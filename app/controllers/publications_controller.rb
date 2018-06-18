@@ -21,6 +21,16 @@ class PublicationsController < ApplicationController
                                 content: render_publication(publication)
   end
 
+  def destroy
+    publication = Publication.find(params[:id])
+    publication.comments.delete_all
+    publication.likes.delete_all
+    id = '#publication-to-delete-id'+publication.id.to_s
+    publication.delete
+    ActionCable.server.broadcast 'room_channel',
+                                delete: id
+  end
+
   private
 
   def publication_params
