@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
   include ServiceLike
-
   def create
     if request.xhr?
       likeable = get_model(params[:model]).find(params[:id])

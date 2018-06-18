@@ -19,7 +19,7 @@ class TalksController < ApplicationController
 
   private
   def talk_params
-    params.require(:talk).permit(:body, :avatar, :link)
+    params.require(:talk).permit(:body, :avatar, :link, :document)
   end
 
   def render_talk(talk)

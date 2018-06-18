@@ -18,5 +18,4 @@ class SentencesController < ApplicationController
   def sentence_params
     params.require(:sentence).permit(:title, :body)
   end
-
 end

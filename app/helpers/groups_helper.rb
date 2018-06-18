@@ -21,5 +21,4 @@ module GroupsHelper
   def actual_teacher(teacher)
     return ["#{teacher.user.name} #{teacher.user.lastname}", teacher.id]    
   end
-
 end

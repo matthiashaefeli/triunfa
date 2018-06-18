@@ -29,5 +29,4 @@ class PapersController < ApplicationController
   def papers_params
     params.require(:paper).permit(:name, :document, :link)
   end
-    
-end
+    end
