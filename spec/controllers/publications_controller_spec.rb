@@ -32,4 +32,11 @@ RSpec.describe PublicationsController, type: :controller do
     expect(response).to render_template :index
   end
 
+  # it 'delete a publication' do 
+  #   sign_in(user)
+  #   post :create, params: {publication:{body: 'hello'}}
+  #   get :destroy, params: {id: Publication.last.id}
+  #   expect(response).to have_http_status(:no_content)
+  # end
+
 end

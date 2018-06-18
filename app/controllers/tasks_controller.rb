@@ -20,7 +20,6 @@ class TasksController < ApplicationController
   end
 
   def download
-     
     task = get_model(params[:format]).find(params[:id])
     file_data = open(task.document.url)
     send_data file_data.read, filename: task.document_file_name, type: task.document.content_type, disposition: 'attachment'
