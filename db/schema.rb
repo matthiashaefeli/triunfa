@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180615213158) do
+ActiveRecord::Schema.define(version: 20180618124841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20180615213158) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string "link"
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "comments", force: :cascade do |t|

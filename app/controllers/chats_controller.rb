@@ -22,7 +22,7 @@ class ChatsController < ApplicationController
   
   private
   def chat_params
-    params.require(:chat).permit(:body, :avatar, :link)
+    params.require(:chat).permit(:body, :avatar, :link, :document)
   end
 
   def render_chat(chat)
