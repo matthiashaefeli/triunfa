@@ -61,6 +61,7 @@ group :development, :test do
   gem 'pry'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.7'
+  gem 'rubocop-rails'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
 

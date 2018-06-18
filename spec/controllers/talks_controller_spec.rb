@@ -14,4 +14,12 @@ RSpec.describe TalksController, type: :controller do
     post :create, params: {talk: {body: 'hello', avatar: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png')}}
     expect(Talk.count).to eq 1
   end
+
+  it 'delete a talk' do 
+    sign_in(user)
+    post :create, params: {talk: {body: 'hello'}}
+    delete :destroy, params: {id: Talk.last.id}
+    expect(response.status).to eq (204)
+  end
+
 end
