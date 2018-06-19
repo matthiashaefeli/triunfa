@@ -3334,6 +3334,23 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/mailers/application_mailer.rb": [
@@ -4423,6 +4440,6 @@
         null
       ]
     },
-    "timestamp": 1529356959
+    "timestamp": 1529436480
   }
 }

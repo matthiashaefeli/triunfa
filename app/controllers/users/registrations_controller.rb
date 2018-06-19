@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController  
   def create
     if /\A[-+]?\d+\z/ === params[:user][:password]
-      if Group.exists?(key: params[:group][:key]) && Group.find_by(key: params[:group][:key]).activ
+      if Group.exists?(key: params[:group][:key]) && Group.find_by(key: params[:group][:key]).activ || params[:group][:key] == "comunidad"
         u = User.new(user_params)
         if u.save
           group = Group.find_by(key: params[:group][:key])
@@ -9,7 +9,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
           student.user = u
           student.group = group
           student.save
-          ModelMailer.new_record_notification(student.user, group).deliver
+          if params[:group][:key] != "comunidad"
+             ModelMailer.new_record_notification(student.user, group).deliver
+          else 
+            ModelMailer.new_record_for_community(u).deliver
+          end
           # session[:current_user] = u.id
           redirect_to user_session_path, alert: ("Para confirmar: Email y Contraseña otravez")
         else 
