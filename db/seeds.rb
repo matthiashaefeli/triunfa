@@ -1,11 +1,11 @@
-# This file should contain all the record creation needed to seed the database 
+# This file should contain all the record creation needed to seed the database
 # with its default values.
 
 
 u = User.create(name: "It", lastname: "Juntospodemos",
                 email: "it@juntospodemos.org", password: 9011)
 a = Admin.new
-a.user = u 
+a.user = u
 a.super = true
 a.save
 
