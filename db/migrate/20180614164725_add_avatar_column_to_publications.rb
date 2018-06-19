@@ -7,5 +7,4 @@ class AddAvatarColumnToPublications < ActiveRecord::Migration[5.1]
   def down
     remove_attachment :publications, :avatar
   end
-
 end
