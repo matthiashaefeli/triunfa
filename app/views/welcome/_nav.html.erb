@@ -99,6 +99,10 @@
                 <% end %>
               </li>
             <% end %>
+            <li><%= link_to publications_path do %>
+              <i class="fas fa-child"></i> Comunidad
+              <% end %>
+            </li>
           <% end %>
           
           <!-- nav for students -->
@@ -127,7 +131,12 @@
             <i class="fas fa-comments"></i> Foro
             <% end %>
           </li>
+          <li><%= link_to publications_path do %>
+            <i class="fas fa-child"></i> Comunidad
+            <% end %>
+          </li>
         <% end %>
+
           <!-- logout for all -->
         <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
           <i class="fas fa-sign-out-alt"></i> Salida
