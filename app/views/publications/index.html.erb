@@ -1,5 +1,14 @@
-<div class="under-nav">
-  <div class="forums">
+
+<div class="under-nav community-index">
+  <div class="list">
+    <ul>
+      <li>Calendario</li>
+      <li>Lista de quehaceres</li>
+      <li>Lista de compras</li>
+      <li>otro</li>
+    </ul>
+  </div>
+  <div class="forums community-forum">
     <div class="forum-title">
     <h2>Comunidad Superate y Triunfa</h2>
       <%= form_for :publication, url: publications_path, remote: "true"  do |f| %>  
@@ -27,5 +36,8 @@
       <%= render "publications/publications" %>
     </div> 
     <p><%= link_to "Ver más Mensajes", publications_path(limit: (@publications_limit.to_i + 5)) %></p>
+  </div>
+  <div class="community-flyers">
+    <%= render "flyers/index", locals: { searched_user: @searched_user } %>
   </div>
 </div>
