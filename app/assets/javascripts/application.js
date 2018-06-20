@@ -156,4 +156,30 @@ $( document ).on('turbolinks:load', function() {
       $that.closest('form').get(0).reset()
     }, 1000)
   })
+
+  $(".todo-done").on("click", function() {
+    $done = $(this)
+    id = $done.closest(".todo-each")[0].id.match(/\d+/g)
+
+    $.ajax({
+      type: "PUT",
+      url: "/todos/"+id,
+      datatype: "Html" 
+    }).done(function() {
+      $done.closest(".todo-each").children(".todo-name").addClass("text-design")
+    })
+  })
+
+  $(".todo-delete").on("click", function() {
+    $done = $(this)
+    id = $done.closest(".todo-each")[0].id.match(/\d+/g)
+
+    $.ajax({
+      type: "DELETE",
+      url: "/todos/"+id,
+      datatype: "Html" 
+    }).done(function() {
+      $done.closest(".todo-each").remove()
+    })
+  })
 })

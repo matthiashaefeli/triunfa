@@ -1,0 +1,26 @@
+<div class="under-nav todo-index">
+  <h1>Lista de quehaceres</h1>
+  <h3>Tengo que hacer:</h3>
+  <div>
+    <%= form_for :todo, url: todos_path, method: "post" do |f| %>
+      <p>
+        <%= f.text_field :name, class: "text-todo" %>
+      </p>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
+    <% end %>
+  </div>
+  <% @todos.each do |todo| %>
+    <div class="todo-each" id="todo<%= todo.id %>">
+      <% if todo.done %>
+        <h3 class="todo-name"><%= todo.name %></h3>
+      <% else %>
+        <h3 class="todo-name text-design"><%= todo.name %></h3>
+      <% end %>
+        <p class="todo-done">Hecho</p>
+        <p>/</p>
+        <p class="todo-delete">Borrar</p>
+    </div>
+  <% end %>
+</div>
