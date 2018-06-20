@@ -182,4 +182,30 @@ $( document ).on('turbolinks:load', function() {
       $done.closest(".todo-each").remove()
     })
   })
+
+  $(".grosery-done").on("click", function() {
+    $done = $(this)
+    id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
+
+    $.ajax({
+      type: "PUT",
+      url: "/groseries/"+id,
+      datatype: "Html" 
+    }).done(function() {
+      $done.closest(".grosery-each").children(".grosery-name").addClass("text-design")
+    })
+  })
+
+  $(".grosery-delete").on("click", function() {
+    $done = $(this)
+    id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
+
+    $.ajax({
+      type: "DELETE",
+      url: "/groseries/"+id,
+      datatype: "Html" 
+    }).done(function() {
+      $done.closest(".grosery-each").remove()
+    })
+  })
 })

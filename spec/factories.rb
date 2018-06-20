@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :groseries, class: 'Grosery' do
+    
+  end
   factory :todo do
     
   end
