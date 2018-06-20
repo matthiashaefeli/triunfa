@@ -7,6 +7,7 @@ class PublicationsController < ApplicationController
     else
       @publications_limit = 5
     end
+    @flyers = Flyer.all
     @comments = Comment.order(created_at: :desc)
     @links = Link.all
     @publications = Publication.order(created_at: :desc).limit(@publications_limit)
