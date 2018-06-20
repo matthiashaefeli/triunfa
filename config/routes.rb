@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :links, only: [:create, :destroy]
   resources :sentences, only: [:create, :update]
   resources :publications, only: [:index, :create, :destroy]
+  resources :todos
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'

@@ -1,0 +1,34 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
+.todo-index {
+  margin-left: 20px;
+}
+
+.text-todo {
+  width: 300px;
+}
+
+.text-design {
+  text-decoration: line-through;
+}
+
+.todo-each {
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-each p {
+  align-self: flex-end;
+}
+
+.todo-done {
+  margin-left: 20px;
+}
+
+.todo-each p:hover {
+  cursor: pointer;
+  color: $links-hover;
+}

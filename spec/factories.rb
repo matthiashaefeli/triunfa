@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :todo do
+    
+  end
   factory :publication do
     
   end

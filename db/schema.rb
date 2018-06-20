@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618130201) do
+ActiveRecord::Schema.define(version: 20180620175253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -300,6 +300,13 @@ ActiveRecord::Schema.define(version: 20180618130201) do
     t.datetime "avatar_updated_at"
     t.boolean "online", default: false
     t.boolean "activ", default: true
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.string "name"
+    t.boolean "done", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
