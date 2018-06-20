@@ -1,0 +1,34 @@
+// Place all the styles related to the groseries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
+.grosery-index {
+  margin-left: 20px;
+}
+
+.text-grosery {
+  width: 300px;
+}
+
+.text-design {
+  text-decoration: line-through;
+}
+
+.grosery-each {
+  display: flex;
+  flex-direction: row;
+}
+
+.grosery-each p {
+  align-self: flex-end;
+}
+
+.grosery-done {
+  margin-left: 20px;
+}
+
+.grosery-each p:hover {
+  cursor: pointer;
+  color: $links-hover;
+}

@@ -1,0 +1,2 @@
+class Grosery < ApplicationRecord
+end
