@@ -701,6 +701,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         null,
@@ -1854,6 +1856,8 @@
         1,
         3,
         3,
+        3,
+        3,
         null,
         null,
         1,
@@ -2981,6 +2985,8 @@
         1,
         3,
         3,
+        3,
+        3,
         null,
         null,
         1,
@@ -4048,6 +4054,7 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/grosery.rb": [
         1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/group_spec.rb": [
@@ -4764,6 +4771,7 @@
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/todo.rb": [
         1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/user_spec.rb": [
@@ -4818,6 +4826,6 @@
         null
       ]
     },
-    "timestamp": 1529594456
+    "timestamp": 1529595261
   }
 }

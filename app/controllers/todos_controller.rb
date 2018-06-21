@@ -2,11 +2,13 @@ class TodosController < ApplicationController
   include ServiceUser
   before_action :logged_in
   def index
-    @todos = Todo.all
+    @todos = Todo.where(user: current_user)
   end
 
   def create
     todo = Todo.create(todo_params)
+    todo.user = current_user
+    todo.save
     redirect_to todos_path
   end
 
