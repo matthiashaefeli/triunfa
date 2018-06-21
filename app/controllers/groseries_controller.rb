@@ -1,10 +1,14 @@
 class GroseriesController < ApplicationController
+  include ServiceUser
+  before_action :logged_in
   def index
-    @groseries = Grosery.all
+    @groseries = Grosery.where(user: current_user)
   end
 
   def create
     grosery = Grosery.create(grosery_params)
+    grosery.user = current_user
+    grosery.save
     redirect_to groseries_index_path
   end
 

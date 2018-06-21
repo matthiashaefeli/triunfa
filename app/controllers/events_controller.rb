@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include ServiceUser
+  before_action :logged_in
   def create
     event = Event.create(event_params)
     event.user = current_user
