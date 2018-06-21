@@ -1,0 +1,9 @@
+<div class="under-nav container">
+  <p><%= link_to "Regresar a la comunidad", publications_path %></p>
+  <h1>El clima de hoy</h1>
+  <%= image_tag @iconurl, class: "image-weather" %>
+  <h3>Temp: <%= @main["temp"] %></h3>
+  <h3>Temp max: <%= @main["temp_max"] %></h3>
+  <h3>Temp min: <%= @main["temp_min"] %></h3>
+  <h3>Humedad: <%= @main["humidity"] %></h3>
+</div>
