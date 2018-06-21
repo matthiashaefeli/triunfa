@@ -1,4 +1,6 @@
 class GroseriesController < ApplicationController
+  include ServiceUser
+  before_action :logged_in
   def index
     @groseries = Grosery.all
   end

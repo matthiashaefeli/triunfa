@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  include ServiceUser
+  before_action :logged_in
   def index
     @todos = Todo.all
   end
