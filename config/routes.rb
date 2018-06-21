@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   resources :todos
   resources :groseries
   resources :calendars, only: [:index]
+  resources :events
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
