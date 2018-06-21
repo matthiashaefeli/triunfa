@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def create
     event = Event.create(event_params)
+    event.user = current_user
+    event.save
     redirect_to calendars_path
   end
 

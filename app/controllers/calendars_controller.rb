@@ -1,5 +1,5 @@
 class CalendarsController < ApplicationController
   def index
-    @meetings = Event.all
+    @meetings = Event.where(user: current_user)
   end
 end
