@@ -64,6 +64,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
+  gem "simple_calendar", "~> 2.0"
 
 
 end

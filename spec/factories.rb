@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :event do
+    
+  end
   factory :groseries, class: 'Grosery' do
     
   end
