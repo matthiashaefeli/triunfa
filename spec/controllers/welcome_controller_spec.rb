@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe WelcomeController, type: :controller do
 
-  let(:user){User.create(name: 'jon', lastname: 'do', email: 'j@j.com', password: '1243', street: 'street', city: 'city', state: 'state', tel: '123')}
+  let(:user){User.create(name: 'jon', lastname: 'do', 
+                        email: 'j@j.com', password: '1243', 
+                        street: 'street', city: 'city', 
+                        state: 'state', tel: '123', cp: '123')}
 
   describe 'Get #index' do 
     it 'renders the :index view' do

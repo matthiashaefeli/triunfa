@@ -13,7 +13,11 @@ module ServiceUser
 
   def user_has_direction
     if current_user && !Admin.exists?(user: current_user)
-      redirect_to edituser_path(current_user.id) unless current_user.street? && current_user.city? && current_user.tel && current_user.state 
+      redirect_to edituser_path(current_user.id) unless current_user.street? && 
+                                                        current_user.city? && 
+                                                        current_user.tel && 
+                                                        current_user.state && 
+                                                        current_user.cp
     end
   end
 

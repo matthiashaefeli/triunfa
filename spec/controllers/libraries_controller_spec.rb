@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe LibrariesController, type: :controller do
   let(:user){User.create(name: 'jon', lastname: 'do', email: 'j@j.com', password: '1243', 
-                        street: 'street', city: 'city', state: 'state', tel: '123')}
+                        street: 'street', city: 'city', state: 'state', tel: '123', cp: '123')}
   let(:usertwo){User.create(name: 'jon', lastname: 'do', email: 'j@jj.com', password: '1243', 
-                        street: '', city: 'city', state: 'state', tel: '123')}
+                        street: '', city: 'city', state: 'state', tel: '123', cp: '123')}
   let(:folder){Folder.create(name: 'testfolder')}
   let(:paper){Paper.create(name: 'testpaper', link: 'testlink')}
 
