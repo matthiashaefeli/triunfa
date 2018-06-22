@@ -208,4 +208,24 @@ $( document ).on('turbolinks:load', function() {
       $done.closest(".grosery-each").remove()
     })
   })
+
+  $(".translate-button").on("click", function() { 
+    let language
+    if(document.getElementById("es-en").checked){
+      language = "es-en"
+    }else {
+      language = "en-es"
+    }
+    let text = document.getElementById("text-to-translate").innerText.replace(/\r?\n|\r/g, "")
+    $.ajax({
+      type: "GET",
+      url: "/translate",
+      data: {language: language, text: text}
+
+    }).done(function(response) {
+      document.getElementById("text-translated").innerText = ""
+      document.getElementById("text-translated").append(response.text.join(" "))
+    })
+  })
+
 })

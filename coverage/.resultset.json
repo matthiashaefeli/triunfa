@@ -665,6 +665,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -890,6 +891,10 @@
         1,
         null
       ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/translate_helper.rb": [
+        1,
+        null
+      ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/weather_helper.rb": [
         1,
         null
@@ -1050,6 +1055,7 @@
         null,
         1,
         0,
+        null,
         0,
         0,
         null,
@@ -1066,12 +1072,14 @@
         null,
         null,
         1,
-        51,
+        53,
         null,
         null,
         1,
         11,
         9,
+        null,
+        null,
         null,
         null,
         null,
@@ -1644,6 +1652,7 @@
         null,
         4,
         null,
+        null,
         3,
         2,
         3,
@@ -2061,6 +2070,7 @@
         null,
         1,
         2,
+        null,
         null,
         2,
         null,
@@ -2732,6 +2742,7 @@
         4,
         null,
         null,
+        null,
         4,
         4,
         4,
@@ -2803,6 +2814,7 @@
         null,
         1,
         9,
+        null,
         null,
         6,
         1,
@@ -3019,6 +3031,45 @@
         null,
         null
       ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/translate_controller_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/translate_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/weather_controller_spec.rb": [
         1,
         null,
@@ -3060,6 +3111,7 @@
         1,
         null,
         11,
+        null,
         null,
         null,
         null,
@@ -3222,6 +3274,8 @@
         null,
         1,
         1,
+        null,
+        null,
         null,
         null,
         null
@@ -3617,6 +3671,22 @@
         null,
         1,
         null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/translate_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/weather_helper_spec.rb": [
@@ -4910,6 +4980,6 @@
         null
       ]
     },
-    "timestamp": 1529609249
+    "timestamp": 1529699749
   }
 }

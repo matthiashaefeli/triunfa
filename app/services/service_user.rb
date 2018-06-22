@@ -17,7 +17,9 @@ module ServiceUser
                                                         current_user.city? && 
                                                         current_user.tel && 
                                                         current_user.state && 
-                                                        current_user.cp
+                                                        current_user.cp &&
+                                                        current_user.birthdate &&
+                                                        current_user.nationality
     end
   end
 

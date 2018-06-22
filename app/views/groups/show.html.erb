@@ -1,111 +1,110 @@
 <div class="under-nav container">
-    <% searched_user = check_user(current_user) %>
-    <% if searched_user == Admin %>
-        <p><%= link_to "Regresar", groups_path %></p>
-        <p><%= link_to "Clic aquí para descargar los datos de este Grupo", group_path(@group.id, format: :xlsx) %></p>
-    <% elsif searched_user == Teacher  %>
-        <p><%= link_to "Regresar", rooms_path %></p>
-    <% end %>
-    <p>Nombre de Grupo: <%= @group.name %></p>
-    <p>Ciudad: <%= @group.city %></p>
-    <p>Curso:
+  <% searched_user = check_user(current_user) %>
+  <% if searched_user == Admin %>
+    <p><%= link_to "Regresar", groups_path %></p>
+    <p><%= link_to "Clic aquí para descargar los datos de este Grupo", group_path(@group.id, format: :xlsx) %></p>
+  <% elsif searched_user == Teacher  %>
+    <p><%= link_to "Regresar", rooms_path %></p>
+  <% end %>
+  <p>Nombre de Grupo: <%= @group.name %></p>
+  <p>Ciudad: <%= @group.city %></p>
+  <p>Curso:
     <%= link_to @group.course.link, target: "_blank" do %>
-        <%= @group.course.name %>
-        <% end %>
-    </p>
-    <% if @group.course.document_file_name != nil %>
-        <%= link_to coursedownload_path(@group.course.id) do %>
-            <p><i class="fas fa-file"> Clic aquí para descargar Curso</i></p>
-        <% end %>
+      <%= @group.course.name %>
     <% end %>
-    <p>Clave: <%= @group.key %></p>
-    <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
-    <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
-    <p>Fecha Inicio: <%= @group.startdate %></p>
-    <p>Fecha Final: <%= @group.enddate %></p>
-    <p>Dias: 
-    <% @group.days.each do |day| %>
-      <%= day %>
+  </p>
+  <% if @group.course.document_file_name != nil %>
+    <%= link_to coursedownload_path(@group.course.id) do %>
+      <p><i class="fas fa-file"> Clic aquí para descargar Curso</i></p>
     <% end %>
-    </p>
-    <% if @group.activ == true %>
-        <p>Activo: Si</p>
-        <% if searched_user == Admin %>
-            <p id="edit-group">Editar Grupo</p>
-            <div id="edit-group-hidden">
-                <%= render "edit.html.erb" %>
-            </div>
+  <% end %>
+  <p>Clave: <%= @group.key %></p>
+  <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
+  <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
+  <p>Fecha Inicio: <%= @group.startdate %></p>
+  <p>Fecha Final: <%= @group.enddate %></p>
+  <p>Dias: 
+  <% @group.days.each do |day| %>
+    <%= day %>
+  <% end %>
+  </p>
+  <% if @group.activ == true %>
+      <p>Activo: Si</p>
+      <% if searched_user == Admin %>
+          <p id="edit-group">Editar Grupo</p>
+          <div id="edit-group-hidden">
+              <%= render "edit.html.erb" %>
+          </div>
+      <% end %>
+      <h3>Estudiantes:</h3>
+      <input type="text" class="mySearch" id="studentGroupsTableSearch" placeholder="Buscar por Nombre..">
+      <table class="table table-hover table-bordered" id="group-table-show">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Calle</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">C.P.</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @group.students.each do |student| %>
+            <tr>
+              <% if student.user.avatar_file_name != nil %>
+                <td><%= image_tag student.user.avatar.url(:thumb), :class => "user-avatar" %></td>
+              <% else %>
+                <td></td>
+              <% end %>
+              <td><%= link_to student.user.name, student_path(student.user.id) %></td>
+              <td><%= student.user.lastname %></td>
+              <td><%= student.user.email %></td>
+              <td><%= student.user.street %></td>
+              <td><%= student.user.city %></td>
+              <td><%= student.user.cp %></td>
+              <td><%= student.user.state %></td>
+              <td><%= student.user.tel %></td>
+            </tr>    
+          <% end %>
+        </tbody>
+      </table>
+  <% else %>
+    <p>Activo: No</p>
+    <h3>Estudiantes:</h3>
+    <input type="text" class="mySearch" id="studentIgroupsTableSearch" placeholder="Buscar por Nombre..">
+    <table class="table table-hover table-bordered" id="igroup-table-show">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">Calle</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">C.P.</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Telefono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @igroups.each do |group| %>
+          <tr>
+            <td><%= group.user.name %></td>
+            <td><%= group.user.lastname %></td>
+            <td><%= group.user.email %></td>
+            <td><%= group.user.street %></td>
+            <td><%= group.user.city %></td>
+            <td><%= group.user.cp %></td>
+            <td><%= group.user.state %></td>
+            <td><%= group.user.tel %></td>
+          </tr>    
         <% end %>
-        <h3>Estudiantes:</h3>
-        <input type="text" class="mySearch" id="studentGroupsTableSearch" placeholder="Buscar por Nombre..">
-        <table class="table table-hover table-bordered" id="group-table-show">
-            <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Calle</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">C.P.</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Telefono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @group.students.each do |student| %>
-                <tr>
-                    <% if student.user.avatar_file_name != nil %>
-                        <td><%= image_tag student.user.avatar.url(:thumb), :class => "user-avatar" %></td>
-                    <% else %>
-                        <td></td>
-                    <% end %>
-                    <td><%= link_to student.user.name, updatepassword_path(student.user.id) %></td>
-                    <td><%= student.user.lastname %></td>
-                    <td><%= student.user.email %></td>
-                    <td><%= student.user.street %></td>
-                    <td><%= student.user.city %></td>
-                    <td><%= student.user.cp %></td>
-                    <td><%= student.user.state %></td>
-                    <td><%= student.user.tel %></td>
-                </tr>    
-                <% end %>
-            </tbody>
-        </table>
-    <% else %>
-        <p>Activo: No</p>
-        <h3>Estudiantes:</h3>
-        <input type="text" class="mySearch" id="studentIgroupsTableSearch" placeholder="Buscar por Nombre..">
-        <table class="table table-hover table-bordered" id="igroup-table-show">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Calle</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">C.P.</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Telefono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @igroups.each do |group| %>
-                <tr>
-                    <td><%= group.user.name %></td>
-                    <td><%= group.user.lastname %></td>
-                    <td><%= group.user.email %></td>
-                    <td><%= group.user.street %></td>
-                    <td><%= group.user.city %></td>
-                    <td><%= group.user.cp %></td>
-                    <td><%= group.user.state %></td>
-                    <td><%= group.user.tel %></td>
-                </tr>    
-                <% end %>
-            </tbody>
-        </table>
-
-    <% end %> 
+      </tbody>
+    </table>
+  <% end %> 
 </div>
 
 

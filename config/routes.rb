@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :calendars, only: [:index]
   resources :events
   resources :weather, only: [:index]
+  resources :translate, only: [:index]
   get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
   post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
   get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
