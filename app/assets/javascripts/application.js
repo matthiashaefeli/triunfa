@@ -216,12 +216,16 @@ $( document ).on('turbolinks:load', function() {
     }else {
       language = "en-es"
     }
-    let text = document.getElementById("text-to-translate").innerText
-    let key = "trnsl.1.1.20180621T203147Z.8164cf6a3861cf8b.b9853839b7381d066cd4ab6afe804f913ae7958e"
-    let url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&lang=" + language + "&text=" + text
-    $.getJSON( url, function(data) {
+    let text = document.getElementById("text-to-translate").innerText.replace(/\r?\n|\r/g, "")
+    $.ajax({
+      type: "GET",
+      url: "/translate",
+      data: {language: language, text: text}
+
+    }).done(function(response) {
       document.getElementById("text-translated").innerText = ""
-      document.getElementById("text-translated").append(data.text)
+      document.getElementById("text-translated").append(response.text.join(" "))
     })
   })
+
 })
