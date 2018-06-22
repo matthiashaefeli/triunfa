@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe FinishedAssignmentsController, type: :controller do
 
   let(:user){User.create(name: 'jon', lastname: 'do', email: 'j@j.com', password: '1243', 
-                        street: 'street', city: 'city', state: 'state', tel: '123', cp: '123', birthdate: '01-01-2018')}
+                        street: 'street', city: 'city', state: 'state', 
+                        tel: '123', cp: '123', birthdate: '01-01-2018', nationality: 'mx')}
   let(:usertwo){User.create(name: 'jon', lastname: 'do', email: 'jj@jj.com', password: '1243')}
   let(:userthree){User.create(name: 'jon', lastname: 'do', email: 'jkk@j.com', password: '1243')}
   let (:teacher){Teacher.create(user: usertwo)}
