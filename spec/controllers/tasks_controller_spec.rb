@@ -4,7 +4,7 @@ RSpec.describe TasksController, type: :controller do
   let(:user){User.create(name: 'jon', lastname: 'do', email: 'j@j.com', password: '1243')}
   let(:usertwo){User.create(name: 'jon', lastname: 'do', email: 'j@j.com',
                             password: '1243', street: 'street', tel: '123', 
-                            city: 'city', cp: '23423', state: 'tx')}
+                            city: 'city', cp: '23423', state: 'tx', birthdate: '01-01-2018')}
   let (:teacher){Teacher.create(user: usertwo)}
   let (:course){Course.create(name: 'test')}
   let (:group){Group.create(name: 'group', key: 'key12', teacher: teacher, course: course)}

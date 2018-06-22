@@ -22,6 +22,10 @@
         <%= f.text_field :email, :autocomplete => 'email' %>
       </p>
       <p>
+        <%= f.label :fecha_de_nacimiento %>
+        <%= f.date_field :birthdate, :autocomplete => 'email' %>
+      </p>
+      <p>
         <%= f.label :calle %>
         <%= f.text_field :street, :autocomplete => 'address-level1' %>
       </p>

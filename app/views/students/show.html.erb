@@ -1,0 +1,32 @@
+<div class="under-nav container">
+  <div class="teacher_show">
+    <div>
+      <% unless @user.avatar_file_name.nil? %>
+        <%= image_tag @user.avatar.url(:medium) %> 
+      <% end %>
+    </div>
+    <div>
+      <p><%= link_to "Cambiar contraseña", updatepassword_path(@user.id) %></p>
+      <p><strong>Nombre: </strong><%= @user.name %></p>
+      <p><strong>Apellido: </strong><%= @user.lastname %></p>
+      <p><strong>Email : </strong><%= @user.email %></p>
+      <p><strong>Fecha de nacimiento: </strong><%= @user.birthdate %></p>
+      <p><strong>Logins: </strong><%= @user.login_counts %></p>
+    </div>
+    <div>
+      <p><strong>Calle: </strong><%= @user.street %></p>
+      <p><strong>Ciudad: </strong><%= @user.city %></p>
+      <p><strong>C.P.: </strong><%= @user.cp %></p>
+      <p><strong>Estado: </strong><%= @user.state %></p>
+      <p><strong>Tel.: </strong><%= @user.tel %></p>
+    </div>
+    <div>
+      <p><strong>Grupo que pertenece:</strong>
+        <% if Student.exists?(user: @user) %>
+          <%= Student.find_by(user: @user).group.name %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <p><%= link_to "Regresar", students_path %></p>
+</div>

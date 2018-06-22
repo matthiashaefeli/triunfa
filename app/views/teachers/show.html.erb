@@ -1,11 +1,13 @@
 <div class="under-nav container">
   <div class="teacher_show">
     <div>
-      <%= image_tag @teacher.user.avatar.url(:medium) %> 
+      <% unless @teacher.user.avatar_file_name.nil? %>
+        <%= image_tag @teacher.user.avatar.url(:medium) %> 
+      <% end %>
     </div>
     <div>
       <p><strong>Activo?&nbsp&nbsp</strong>
-      <% if @teacher.activ == true %>
+      <% if @teacher.activ? %>
         <%= link_to teacher_path(@teacher.id), :method => "delete" do %>
           <i class="fas fa-thumbs-up"></i></p>
         <% end %>
@@ -18,6 +20,9 @@
       <p><strong>Nombre: </strong><%= @teacher.user.name %></p>
       <p><strong>Apellido: </strong><%= @teacher.user.lastname %></p>
       <p><strong>Email : </strong><%= @teacher.user.email %></p>
+      <p><strong>Fecha de nacimiento: </strong><%= @teacher.user.birthdate %></p>
+      <p><strong>Logins: </strong><%= @teacher.user.login_counts %></p>
+      <td><strong>Ultimo Login: </strong><%= @teacher.user.updated_at.to_date %></td>
     </div>
     <div>
       <p><strong>Calle: </strong><%= @teacher.user.street %></p>

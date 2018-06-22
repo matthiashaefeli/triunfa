@@ -10,7 +10,6 @@
         <th>Email</th>
         <th>Grupo</th>
         <th>Calle</th>
-        <th>C.P.</th>
         <th>Ciudad</th>
         <th>Estado</th>
         <th>Tel.</th>
@@ -22,7 +21,7 @@
           <% searched_user = check_user(s) %>
           <% if searched_user == Student || searched_user == "new_user" %>
             <tr>
-              <td><%= link_to s.name, updatepassword_path(s.id) %></td>
+              <td><%= link_to s.name, student_path(s.id) %></td>
               <td><%= s.lastname %></td>
               <td><%= s.email %></td>
               <% if searched_user == Student %>
@@ -31,7 +30,6 @@
                 <td></td>
               <% end %>
               <td><%= s.street %></td>
-              <td><%= s.cp %></td>
               <td><%= s.city %></td>
               <td><%= s.state %></td>
               <td><%= s.tel %></td>
