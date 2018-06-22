@@ -208,4 +208,20 @@ $( document ).on('turbolinks:load', function() {
       $done.closest(".grosery-each").remove()
     })
   })
+
+  $(".translate-button").on("click", function() { 
+    let language
+    if(document.getElementById("es-en").checked){
+      language = "es-en"
+    }else {
+      language = "en-es"
+    }
+    let toAppend = $(this).parents().siblings(".text-translated")
+    let text = $(this).parents().siblings(".text-to-translate")[0].innerText
+    let key = "trnsl.1.1.20180621T203147Z.8164cf6a3861cf8b.b9853839b7381d066cd4ab6afe804f913ae7958e"
+    let url = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&lang=" + language + "&text=" + text
+    $.getJSON( url, function(data) {
+      toAppend.append(data.text)
+    })
+  })
 })
