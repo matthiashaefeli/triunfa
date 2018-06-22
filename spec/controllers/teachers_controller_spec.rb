@@ -13,9 +13,9 @@ RSpec.describe TeachersController, type: :controller do
   end
 
   it 'cant render index if user has no direction' do 
-  sign_in(usertwo)
-  get :index
-  expect(response.status).to eq (302)
+    sign_in(usertwo)
+    get :index
+    expect(response.status).to eq (302)
   end
 
   it 'render index with more messages' do 

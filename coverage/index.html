@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-21T14:27:29-05:00">2018-06-21T14:27:29-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-22T12:16:46-05:00">2018-06-22T12:16:46-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.76%</span></span>
+    (<span class="covered_percent"><span class="green">98.77%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>195</b> files in total.
-    <b>2339</b> relevant lines. 
-    <span class="green"><b>2310</b> lines covered</span> and
+    <b>199</b> files in total.
+    <b>2365</b> relevant lines. 
+    <span class="green"><b>2336</b> lines covered</span> and
     <span class="red"><b>29</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -318,6 +318,16 @@
         <td>21</td>
         <td>0</td>
         <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#074084a92b2c3d80950dcb366c62572d86146c06" class="src_link" title="app/controllers/translate_controller.rb">app/controllers/translate_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>12</td>
+        <td>12</td>
+        <td>0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -622,6 +632,16 @@
       
       <tr>
         <td class="strong"><a href="#1f5090aaea4a99f0a242514d348d02f17b524d69" class="src_link" title="app/helpers/todos_helper.rb">app/helpers/todos_helper.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#62ff15c439f3f1e4c8f202d9373174b0f7f0b612" class="src_link" title="app/helpers/translate_helper.rb">app/helpers/translate_helper.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>2</td>
         <td>1</td>
@@ -997,7 +1017,7 @@
         <td>18</td>
         <td>18</td>
         <td>0</td>
-        <td>8.1</td>
+        <td>8.2</td>
       </tr>
       
       <tr>
@@ -1143,9 +1163,9 @@
       <tr>
         <td class="strong"><a href="#a0b3f00608c765c8b8ab04c7f2c06144820824c4" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>46</td>
-        <td>41</td>
-        <td>41</td>
+        <td>47</td>
+        <td>42</td>
+        <td>42</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1411,6 +1431,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#ed173cd9440f97f2e9bacffab13258176338337b" class="src_link" title="spec/controllers/translate_controller_spec.rb">spec/controllers/translate_controller_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>10</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.1</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#d377b1a70e08dce06484e5368e8167132ba27a0e" class="src_link" title="spec/controllers/weather_controller_spec.rb">spec/controllers/weather_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>16</td>
@@ -1644,6 +1674,16 @@
         <td class="strong"><a href="#9e2e45b1ee0f4ab683fe0ad80db86e9b881cd8b0" class="src_link" title="spec/helpers/todos_helper_spec.rb">spec/helpers/todos_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>15</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#86bcb7516af4c00e7ea852e313d95bfd3ef4a188" class="src_link" title="spec/helpers/translate_helper_spec.rb">spec/helpers/translate_helper_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>14</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
@@ -7635,6 +7675,139 @@
 </div>
 
       
+        <div class="source_table" id="074084a92b2c3d80950dcb366c62572d86146c06">
+  <div class="header">
+    <h3>app/controllers/translate_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class TranslateController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  require &#39;net/http&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  include ServiceUser</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_action :logged_in</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def index </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if request.xhr?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      text = params[:text].chop</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      url = URI.parse(&quot;https://translate.yandex.net/api/v1.5/tr.json/translate?key=&quot; + </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">                      ENV[&quot;traductor_api&quot;] + &quot;&amp;lang=&quot; + params[:language] + &quot;&amp;text=&quot; + text)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      response = Net::HTTP.get(url)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      data = JSON.parse(response)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      respond_to do |format|</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        format.json {render :json =&gt; data}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="c3804b7b6a1ac6e991bf00a0058e216583bb9ea6">
   <div class="header">
     <h3>app/controllers/weather_controller.rb</h3>
@@ -9423,6 +9596,37 @@
           <span class="hits">1</span>
           
           <code class="ruby">module TodosHelper</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="62ff15c439f3f1e4c8f202d9373174b0f7f0b612">
+  <div class="header">
+    <h3>app/helpers/translate_helper.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>1</b> relevant lines. 
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module TranslateHelper</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -13392,8 +13596,8 @@
           <code class="ruby">  def logged_in</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="11">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="53" data-linenumber="11">
+          <span class="hits">53</span>
           
           <code class="ruby">    redirect_to root_path unless current_user</code>
         </li>
@@ -16380,8 +16584,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>41</b> relevant lines. 
-      <span class="green"><b>41</b> lines covered</span> and
+      <b>42</b> relevant lines. 
+      <span class="green"><b>42</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -16608,58 +16812,64 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;edituser/:id&#39;, to: &#39;welcome#edituser&#39;, as: &#39;edituser&#39;</code>
+          <code class="ruby">  resources :translate, only: [:index]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">  post &#39;updateuser/:id&#39;, to: &#39;welcome#updateuser&#39;, as: &#39;updateuser&#39;</code>
+          <code class="ruby">  get &#39;edituser/:id&#39;, to: &#39;welcome#edituser&#39;, as: &#39;edituser&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;updatepassword/:id&#39;, to: &#39;welcome#updatepassword&#39;, as: &#39;updatepassword&#39;</code>
+          <code class="ruby">  post &#39;updateuser/:id&#39;, to: &#39;welcome#updateuser&#39;, as: &#39;updateuser&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;tasks/download/:id&#39;, to: &#39;tasks#download&#39;, as: &#39;download&#39;</code>
+          <code class="ruby">  get &#39;updatepassword/:id&#39;, to: &#39;welcome#updatepassword&#39;, as: &#39;updatepassword&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;papers/download/:id&#39;, to: &#39;papers#download&#39;, as:&#39;paperdownload&#39;</code>
+          <code class="ruby">  get &#39;tasks/download/:id&#39;, to: &#39;tasks#download&#39;, as: &#39;download&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;courses/download/:id&#39;, to: &#39;courses#download&#39;, as:&#39;coursedownload&#39;</code>
+          <code class="ruby">  get &#39;papers/download/:id&#39;, to: &#39;papers#download&#39;, as:&#39;paperdownload&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">  root &quot;welcome#index&quot;</code>
+          <code class="ruby">  get &#39;courses/download/:id&#39;, to: &#39;courses#download&#39;, as:&#39;coursedownload&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  root &quot;welcome#index&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
@@ -22831,19 +23041,19 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  sign_in(usertwo)</code>
+          <code class="ruby">    sign_in(usertwo)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  get :index</code>
+          <code class="ruby">    get :index</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  expect(response.status).to eq (302)</code>
+          <code class="ruby">    expect(response.status).to eq (302)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -23418,6 +23628,121 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="ed173cd9440f97f2e9bacffab13258176338337b">
+  <div class="header">
+    <h3>spec/controllers/translate_controller_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe TranslateController, type: :controller do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  let(:user){User.create(name: &quot;jon&quot;, lastname: &quot;do&quot;, email: &quot;jk@j.com&quot;, password: &quot;1243&quot;, cp: &quot;77354&quot;)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;redirect if user is not login&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    get :index</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(response.status).to eq (302)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;render index if user is login&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in(user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    get :index, xhr: true, params: {text: &quot;hello&quot;, language: &quot;en-es&quot;}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(response.status).to eq (200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -27024,6 +27349,109 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="86bcb7516af4c00e7ea852e313d95bfd3ef4a188">
+  <div class="header">
+    <h3>spec/helpers/translate_helper_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"># Specs in this file have access to a helper object that includes</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"># the TranslateHelper. For example:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">#</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"># describe TranslateHelper do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">#   describe &quot;string concat&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">#     it &quot;concats two strings with spaces&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">#       expect(helper.concat_strings(&quot;this&quot;,&quot;that&quot;)).to eq(&quot;this that&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">#     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">#   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"># end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe TranslateHelper, type: :helper do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
