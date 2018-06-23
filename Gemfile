@@ -50,6 +50,7 @@ gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
 gem 'axlsx_rails'
 gem 'activerecord-session_store'
 gem 'delayed_paperclip'
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -64,7 +65,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
-  gem "simple_calendar", "~> 2.0"
+
 
 
 end
