@@ -27,4 +27,10 @@ RSpec.describe EventsController, type: :controller do
     expect(subject).to render_template(:show)
   end
 
+  it "delete an event" do 
+    sign_in(user)
+    post :create, params: {event: {name: "event", start_time: "2018-06-22T06:00", description: "comment"}}
+    delete :destroy, params: {id: Event.last.id}
+    expect(Event.count).to eq 0
+  end
 end
