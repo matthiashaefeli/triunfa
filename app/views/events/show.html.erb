@@ -3,4 +3,5 @@
   <h3><%= @event.name %></h3>
   <h3><%= @event.start_time %></h3>
   <h3><%= @event.description %></h3>
+  <p><%= link_to "borrar evento", event_path(@event.id), method: 'delete' %></p>
 </div>

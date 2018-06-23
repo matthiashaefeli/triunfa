@@ -12,6 +12,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def destroy
+    Event.find(params[:id]).delete
+    redirect_to calendars_path
+  end
+
   private 
 
   def event_params
