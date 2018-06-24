@@ -15,11 +15,11 @@ module ServiceUser
     if current_user && !Admin.exists?(user: current_user)
       redirect_to edituser_path(current_user.id) unless current_user.street? && 
                                                         current_user.city? && 
-                                                        current_user.tel && 
-                                                        current_user.state && 
-                                                        current_user.cp &&
-                                                        current_user.birthdate &&
-                                                        current_user.nationality
+                                                        current_user.tel? && 
+                                                        current_user.state? && 
+                                                        current_user.cp? &&
+                                                        current_user.birthdate? &&
+                                                        current_user.nationality?
     end
   end
 
