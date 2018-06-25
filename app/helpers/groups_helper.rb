@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GroupsHelper
   def teacher_array
     teachers = Teacher.where(activ: true)
@@ -19,6 +21,6 @@ module GroupsHelper
   end
 
   def actual_teacher(teacher)
-    return ["#{teacher.user.name} #{teacher.user.lastname}", teacher.id]    
+    ["#{teacher.user.name} #{teacher.user.lastname}", teacher.id]
   end
 end

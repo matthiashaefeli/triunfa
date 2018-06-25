@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   include ServiceUser
   before_action :logged_in
@@ -17,10 +19,9 @@ class EventsController < ApplicationController
     redirect_to calendars_path
   end
 
-  private 
+  private
 
-  def event_params
-    params.require(:event).permit(:name, :start_time, :description)
-  end
-
+    def event_params
+      params.require(:event).permit(:name, :start_time, :description)
+    end
 end

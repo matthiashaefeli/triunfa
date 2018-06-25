@@ -1,4 +1,6 @@
-require 'rest-client'
+# frozen_string_literal: true
+
+require "rest-client"
 class StudentsController < ApplicationController
   include ServiceUser
   before_action :is_admin, only: [:index]
@@ -7,7 +9,7 @@ class StudentsController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="estudiantes.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="estudiantes.xlsx"'
       }
     end
   end
@@ -19,12 +21,12 @@ class StudentsController < ApplicationController
       student.user = current_user
       student.group = group
       student.save
-        ModelMailer.new_record_notification(student.user, group).deliver
-        redirect_to root_path
+      ModelMailer.new_record_notification(student.user, group).deliver
+      redirect_to root_path
     else
-        @error = "El Grupo no existe"
-        render "welcome/index"
-      end
+      @error = "El Grupo no existe"
+      render "welcome/index"
+    end
   end
 
   def show

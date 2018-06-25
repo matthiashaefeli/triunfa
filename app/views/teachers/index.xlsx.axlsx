@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Instructores") do |sheet|
-  sheet.add_row ["Nombre", "Apellido", "Email", "Fecha de nacimiento", 
-                "Nacionalidad", "Calle", "C.P.", "Ciudad", 
+  sheet.add_row ["Nombre", "Apellido", "Email", "Fecha de nacimiento",
+                "Nacionalidad", "Calle", "C.P.", "Ciudad",
                 "Estado", "Tel.", "Logins"]
   @teachers.each do |t|
-  sheet.add_row [t.user.name, t.user.lastname, 
-                t.user.email, t.user.birthdate, t.user.nationality, t.user.street, 
-                t.user.cp, t.user.city, t.user.state, 
-                t.user.tel, t.user.login_counts]
+    sheet.add_row [t.user.name, t.user.lastname,
+                  t.user.email, t.user.birthdate, t.user.nationality, t.user.street,
+                  t.user.cp, t.user.city, t.user.state,
+                  t.user.tel, t.user.login_counts]
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TodosController < ApplicationController
   include ServiceUser
   before_action :logged_in
@@ -27,8 +29,7 @@ class TodosController < ApplicationController
 
   private
 
-  def todo_params
-    params.require(:todo).permit(:name)
-  end
-
+    def todo_params
+      params.require(:todo).permit(:name)
+    end
 end

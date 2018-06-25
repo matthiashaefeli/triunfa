@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StatisticsController < ApplicationController
   include ServiceUser
   before_action :is_admin
@@ -13,7 +15,7 @@ class StatisticsController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="Estadistica.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="Estadistica.xlsx"'
       }
     end
   end

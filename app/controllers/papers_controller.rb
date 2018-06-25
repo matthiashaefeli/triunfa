@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PapersController < ApplicationController
   def create
     folder = Folder.find(params[:folder])
@@ -16,17 +18,17 @@ class PapersController < ApplicationController
   end
 
   def download
-      paper = Paper.find(params[:id])
-      file_data = open(paper.document.url)
-      send_data file_data.read, 
-                filename: paper.document_file_name, 
-                type: paper.document.content_type, 
-                disposition: 'attachment'
+    paper = Paper.find(params[:id])
+    file_data = open(paper.document.url)
+    send_data file_data.read,
+              filename: paper.document_file_name,
+              type: paper.document.content_type,
+              disposition: "attachment"
   end
 
   private
 
-  def papers_params
-    params.require(:paper).permit(:name, :document, :link)
-  end
+    def papers_params
+      params.require(:paper).permit(:name, :document, :link)
     end
+end

@@ -1,5 +1,6 @@
-module UserLogin      
+# frozen_string_literal: true
 
+module UserLogin
   def create_admin(user)
     Admin.create(user: user)
   end
@@ -41,7 +42,7 @@ module UserLogin
   end
 
   def create_course
-    Course.create(name: "test", document: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png'))
+    Course.create(name: "test", document: Rack::Test::UploadedFile.new(Rails.root + "app/assets/images/logo.png"))
   end
 
   def create_finished_assignment(user, assignment, group)
@@ -51,12 +52,12 @@ module UserLogin
   def create_group(teacher, course)
     Group.create(name: "hello", key: "key", teacher: teacher, course: course)
   end
-  
+
   def create_folder
     Folder.create(name: "folder")
   end
 
   def create_paper(folder)
-    Paper.create(folder: folder, name: "paper", link: "link", document: Rack::Test::UploadedFile.new(Rails.root + 'app/assets/images/logo.png'))
+    Paper.create(folder: folder, name: "paper", link: "link", document: Rack::Test::UploadedFile.new(Rails.root + "app/assets/images/logo.png"))
   end
-end 
+end

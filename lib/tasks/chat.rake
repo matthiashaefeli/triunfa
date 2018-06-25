@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :chat do
   task clear_history: :environment do
     puts "Starting to clear chat and talk history (posts older than 15 days)."

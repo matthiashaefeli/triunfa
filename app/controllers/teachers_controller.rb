@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TeachersController < ApplicationController
   include ServiceUser
   before_action :is_admin, except: [:index]
@@ -15,23 +17,23 @@ class TeachersController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="instructores.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="instructores.xlsx"'
       }
     end
   end
 
   def new
   end
-  
+
   def create
     new_user = User.create(teacher_params)
     if new_user.save
       teacher = Teacher.create(user: new_user)
       teacher.save
       redirect_to teachers_path
-    else 
+    else
       redirect_to teachers_path, alert: new_user.errors.full_messages
-    end  
+    end
   end
 
   def show
@@ -54,7 +56,7 @@ class TeachersController < ApplicationController
     teacher = Teacher.find(params[:id])
     if teacher.activ == true
       teacher.activ = false
-    else 
+    else
       teacher.activ = true
     end
     teacher.save
@@ -62,7 +64,7 @@ class TeachersController < ApplicationController
   end
 
   private
-  def teacher_params
-    params.require(:teacher).permit(:name, :lastname, :email, :password)
-  end
+    def teacher_params
+      params.require(:teacher).permit(:name, :lastname, :email, :password)
+    end
 end

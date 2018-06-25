@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
   include ServiceUser
   include ServiceLike
@@ -22,11 +24,11 @@ class TasksController < ApplicationController
   def download
     task = get_model(params[:format]).find(params[:id])
     file_data = open(task.document.url)
-    send_data file_data.read, filename: task.document_file_name, type: task.document.content_type, disposition: 'attachment'
+    send_data file_data.read, filename: task.document_file_name, type: task.document.content_type, disposition: "attachment"
   end
 
   private
-  def task_params
-    params.require(:task).permit(:body, :end, :link)
-  end
+    def task_params
+      params.require(:task).permit(:body, :end, :link)
+    end
 end

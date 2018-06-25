@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WelcomeHelper
   def online
     @u = check_user(current_user).find_by(user: current_user)
@@ -9,8 +11,8 @@ module WelcomeHelper
     current_user.login_counts += 1
     current_user.save
     u.save
-    name = "#{current_user.name} #{current_user.lastname}" 
-    ActionCable.server.broadcast 'online_channel',
+    name = "#{current_user.name} #{current_user.lastname}"
+    ActionCable.server.broadcast "online_channel",
                                     name:  name,
                                     id: current_user.id
   end
@@ -31,14 +33,13 @@ module WelcomeHelper
 
   def check_user(user)
     if Admin.find_by(user: user)
-      return Admin
+      Admin
     elsif Student.find_by(user: user)
-      return Student
-    elsif Teacher.find_by(user:user)
-      return Teacher
+      Student
+    elsif Teacher.find_by(user: user)
+      Teacher
     else
-      return "new_user"
+      "new_user"
     end
   end
-
 end

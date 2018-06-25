@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class RoomsController < ApplicationController
   include ServiceUser
   before_action :logged_in
   before_action :user_has_direction, only: [:show, :index]
   def index
-      @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true)) 
+    @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true))
   end
 
   def show

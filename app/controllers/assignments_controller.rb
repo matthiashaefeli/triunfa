@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AssignmentsController < ApplicationController
   def create
     course = Course.find(params[:course])
@@ -21,8 +23,7 @@ class AssignmentsController < ApplicationController
 
   private
 
-  def assignment_params
-    params.require(:assignment).permit(:name, :points, :course)
-  end
-
+    def assignment_params
+      params.require(:assignment).permit(:name, :points, :course)
+    end
 end

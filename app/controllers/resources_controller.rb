@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class ResourcesController < ApplicationController
   include ServiceUser
   before_action :is_admin
   def index
     @sentence = Sentence.first
     @links = Link.all
-    @resources = Resource.all 
+    @resources = Resource.all
   end
 
   def create
@@ -20,7 +22,7 @@ class ResourcesController < ApplicationController
 
   private
 
-  def resources_params
-    params.require(:resource).permit(:link, :avatar, :name)
-  end
+    def resources_params
+      params.require(:resource).permit(:link, :avatar, :name)
+    end
 end
