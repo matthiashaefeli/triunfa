@@ -17,6 +17,8 @@
 //= require_tree .
 
 $( document ).on('turbolinks:load', function() {
+
+  // creates new table for conversation
   $(".mySearch").on("keyup", function() {
     let tableId = $(this).siblings("table")[0].id
     let table = document.getElementById(tableId);
@@ -27,65 +29,80 @@ $( document ).on('turbolinks:load', function() {
     });
   });
 
+  // show folders list
   $('.folders').on("click", function() {     
     let paperNew = $(this);
     paperNew.parent().parent().next().children().children().toggle();
   })
 
+  // show paper list
   $(".papers-text").click(function(){
     let paperShow = $(this);
     paperShow.closest(".folder-names").siblings(".papers-all").toggle();
   });
 
+  // shos list off all users online
   $("#who-is").click(function(){
     $("#who-is-online").toggle();
   });
 
+  // show course create form
   $("#new-course").click(function(){
     $("#new-course-hidden").toggle();
   });
 
+  // show course edit form
   $("#edit-course").click(function(){
     $("#edit-course-hidden").toggle();
   });
 
+  // show group create form
   $("#new-group").click(function(){
     $("#new-group-hidden").toggle();
   });
 
+  // show group edit form
   $("#edit-group").click(function(){
     $("#edit-group-hidden").toggle();
   });
 
+  // show create new teacher form
   $("#new-teacher").click(function(){
     $("#new-teacher-hidden").toggle();
   });
 
+  // show statistic list
   $(".stat-show").click(function(){
     $(".stat-show-child").toggle();
   });
 
+  // show teacher list
   $(".teacher-show-text").click(function(){
     $(".teacher-show-all").toggle();
   });
 
+  // show admin list
   $(".admin-show-text").click(function(){
     $(".admin-show-all").toggle();
   });
 
+  // show create new folder
   $(".create-new-folder-text").click(function(){
     $(".create-new-folder").toggle();
   });
 
+  // show create admin form
   $("#new-admin").click(function(){
     $("#new-admin-hidden").toggle();
   });
 
+  // show comment form on all chats
   $(".all-forums").on("click",".show-comments", function(){
     let comment = $(this)
     comment.siblings(".comments").toggle();
   });
 
+  // send delete conversation data to controller
   $(".conv-x").click(function(event){
     event.preventDefault()
     let $that = $(this);
@@ -95,12 +112,9 @@ $( document ).on('turbolinks:load', function() {
         url: $that.attr('href'),
         datatype: 'html'
     })
-    // .done(function(response){
-    //     // let id = "#conv"+$id
-    //     // $(id).remove()   
-    // });
   })
 
+  // submit like to controller
   $(".all-forums").on("click", ".likeable", function(event) {
     event.preventDefault()
     let path
@@ -129,6 +143,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // reset chat form after submit
   $('.chat_send').on("click", function() {
     $that = $(this);
     setTimeout(function() {
@@ -136,6 +151,7 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
+  // reset message form after submit
   $('#room-message-text-submit').on("click", function() {
     $that = $(this);
     setTimeout(function() {
@@ -143,6 +159,7 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
+  // reset talk form after submit
   $('#talk-text-submit').on("click", function() {
     $that = $(this);
     setTimeout(function() {
@@ -150,6 +167,7 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
+  // reset publication form after submit
   $('#publication-text-submit').on("click", function() {
     $that = $(this);
     setTimeout(function() {
@@ -157,6 +175,7 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
+  // send create data to controller
   $(".todo-done").on("click", function() {
     $done = $(this)
     id = $done.closest(".todo-each")[0].id.match(/\d+/g)
@@ -170,6 +189,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // send delete data to controller
   $(".todo-delete").on("click", function() {
     $done = $(this)
     id = $done.closest(".todo-each")[0].id.match(/\d+/g)
@@ -183,6 +203,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // send create grocery data to controller
   $(".grosery-done").on("click", function() {
     $done = $(this)
     id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
@@ -196,6 +217,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // send delete data to controller
   $(".grosery-delete").on("click", function() {
     $done = $(this)
     id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
@@ -209,6 +231,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // send data to controller
   $(".translate-button").on("click", function() { 
     let language
     if(document.getElementById("es-en").checked){
@@ -228,4 +251,13 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
+  // clear comment form after submit
+  $(".comment-text").on("keydown", function() {
+    let text = $(this);
+    if(event.keyCode === 13) {
+      setTimeout(function() {
+        text[0].value = ""
+      },1000)
+    }
+  })
 })
