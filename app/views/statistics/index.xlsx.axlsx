@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Estadistica") do |sheet|
-    sheet.add_row ["Fecha", "Cursos", "Grupos Activas", "Grupos Inactivas", "Instructores", "Estudiantes"]
-    @statistics.each do |stat|
+  sheet.add_row ["Fecha", "Cursos", "Grupos Activas", "Grupos Inactivas", "Instructores", "Estudiantes"]
+  @statistics.each do |stat|
     sheet.add_row [stat.created_at.to_date, stat.courses, stat.groups, stat.igroups, stat.teachers, stat.students]
-    end
+  end
 end

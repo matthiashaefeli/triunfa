@@ -1,48 +1,44 @@
 <div id="new-conversation"></div>
 <div id="table-conversation">
-    <% @tables.each do |t| %>
-        <div class="conversation-border" id="conv<%= t.id %>">
-            <div class="conv-title">
-                <div class="conv-name">
-                    <% if t.user == current_user %>
-                        <%= User.find(t.seconduser).name %>
-                    <% else %>
-                        <%= t.user.name %>
-                    <% end %>
-                </div>
-
-                <div>
-                    <%= link_to "X", conversation_path(t.id), :class => "conv-x", :method => "DELETE", :remote => "true" %>
-                </div>
-            </div>
-
-            <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
-                <p>
-                    <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Escribe aquí..." %>
-                </p>
-                <%= hidden_field_tag "table", t.id  %>
-                <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>
-            <% end %>
-
-            <div id="conv-table<%= t.id %>" class="table-scroll">
-                <% t.conversations.order(created_at: :desc).each do |conv| %>
-                    <% if t.user == current_user %>
-                        <% if conv.user != current_user %>
-                            <p class="second_user body-conver"><%= conv.body %></p>
-                        <% else %>
-                            <p class="first_user body-conver"><%= conv.body %></p>
-                        <% end %>
-                    <% else %>
-                        <% if conv.user == current_user %>
-                            <p class="second_user body-conver"><%= conv.body %></p>
-                        <% else %>
-                            <p class="first_user body-conver"><%= conv.body %></p>
-                        <% end %>
-                    <% end %>
-
-                <% end %>
-            </div>
+  <% @tables.each do |t| %>
+    <div class="conversation-border" id="conv<%= t.id %>">
+      <div class="conv-title">
+        <div class="conv-name">
+          <% if t.user == current_user %>
+            <%= User.find(t.seconduser).name %>
+          <% else %>
+            <%= t.user.name %>
+          <% end %>
         </div>
-        <br>
-    <% end %>
+        <div>
+          <%= link_to "X", conversation_path(t.id), :class => "conv-x", :method => "DELETE", :remote => "true" %>
+        </div>
+      </div>
+      <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
+        <p>
+          <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Escribe aquí..." %>
+        </p>
+        <%= hidden_field_tag "table", t.id  %>
+        <%= f.submit "Enviar Mensaje", :class => "submit_conversation"%>
+      <% end %>
+      <div id="conv-table<%= t.id %>" class="table-scroll">
+        <% t.conversations.order(created_at: :desc).each do |conv| %>
+          <% if t.user == current_user %>
+            <% if conv.user != current_user %>
+              <p class="second_user body-conver"><%= conv.body %></p>
+            <% else %>
+              <p class="first_user body-conver"><%= conv.body %></p>
+            <% end %>
+          <% else %>
+            <% if conv.user == current_user %>
+              <p class="second_user body-conver"><%= conv.body %></p>
+            <% else %>
+              <p class="first_user body-conver"><%= conv.body %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <br>
+  <% end %>
 </div>

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
 
-  mount ActionCable.server => '/cable'
+  mount ActionCable.server => "/cable"
 
   devise_for :users, controllers: { registrations: "users/registrations" }
   resources :welcome, only: [:index, :destroy]
@@ -35,12 +37,12 @@ Rails.application.routes.draw do
   resources :events
   resources :weather, only: [:index]
   resources :translate, only: [:index]
-  get 'edituser/:id', to: 'welcome#edituser', as: 'edituser'
-  post 'updateuser/:id', to: 'welcome#updateuser', as: 'updateuser'
-  get 'updatepassword/:id', to: 'welcome#updatepassword', as: 'updatepassword'
-  get 'tasks/download/:id', to: 'tasks#download', as: 'download'
-  get 'papers/download/:id', to: 'papers#download', as:'paperdownload'
-  get 'courses/download/:id', to: 'courses#download', as:'coursedownload'
+  get "edituser/:id", to: "welcome#edituser", as: "edituser"
+  post "updateuser/:id", to: "welcome#updateuser", as: "updateuser"
+  get "updatepassword/:id", to: "welcome#updatepassword", as: "updatepassword"
+  get "tasks/download/:id", to: "tasks#download", as: "download"
+  get "papers/download/:id", to: "papers#download", as: "paperdownload"
+  get "courses/download/:id", to: "courses#download", as: "coursedownload"
   root "welcome#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

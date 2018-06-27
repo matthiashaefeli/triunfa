@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdminsController < ApplicationController
   include ServiceUser
   before_action :is_admin
@@ -26,8 +28,7 @@ class AdminsController < ApplicationController
 
   private
 
-  def admin_params
-    params.require(:admin).permit(:name, :lastname, :email, :password)
-  end
-
+    def admin_params
+      params.require(:admin).permit(:name, :lastname, :email, :password)
+    end
 end

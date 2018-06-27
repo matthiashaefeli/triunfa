@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CoursesController < ApplicationController
   include ServiceUser
   before_action :is_admin, except: [:download, :index]
@@ -8,11 +10,11 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="Cursos.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="Cursos.xlsx"'
       }
     end
   end
-  
+
   def new
   end
 
@@ -51,14 +53,14 @@ class CoursesController < ApplicationController
   def download
     course = Course.find(params[:id])
     file_data = open(course.document.url)
-    send_data file_data.read, 
-              filename: course.document_file_name, 
-              type: course.document.content_type, 
-              disposition: 'attachment'
+    send_data file_data.read,
+              filename: course.document_file_name,
+              type: course.document.content_type,
+              disposition: "attachment"
   end
 
   private
-  def course_params
-    params.require(:course).permit(:name, :avatar, :document, :link, :activ)
-  end
+    def course_params
+      params.require(:course).permit(:name, :avatar, :document, :link, :activ)
+    end
 end

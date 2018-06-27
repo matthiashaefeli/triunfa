@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class GroupsController < ApplicationController
   include ServiceUser
@@ -9,7 +10,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="Grupos.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="Grupos.xlsx"'
       }
     end
   end
@@ -20,12 +21,12 @@ class GroupsController < ApplicationController
   def create
     teacher = Teacher.find(group_params[:teacher])
     course = Course.find(group_params[:course])
-    group = Group.new(name: group_params[:name], 
-                      key: group_params[:key], 
-                      teacher: teacher, 
-                      course: course, 
-                      startdate: group_params[:startdate], 
-                      enddate: group_params[:enddate], 
+    group = Group.new(name: group_params[:name],
+                      key: group_params[:key],
+                      teacher: teacher,
+                      course: course,
+                      startdate: group_params[:startdate],
+                      enddate: group_params[:enddate],
                       city: group_params[:city],
                       days: group_params[:days])
     if group.save
@@ -42,7 +43,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="Grupo.xlsx"'
+        response.headers["Content-Disposition"] = 'attachment; filename="Grupo.xlsx"'
       }
     end
   end
@@ -67,10 +68,10 @@ class GroupsController < ApplicationController
       room.messages.delete_all
     end
     group.update_attributes(name: group_params[:name],
-                            city: group_params[:city], 
-                            key: group_params[:key], 
-                            teacher: teacher, 
-                            course: course, 
+                            city: group_params[:city],
+                            key: group_params[:key],
+                            teacher: teacher,
+                            course: course,
                             activ: group_params[:activ].to_i,
                             startdate: group_params[:startdate],
                             enddate: group_params[:enddate],
@@ -80,16 +81,15 @@ class GroupsController < ApplicationController
   end
 
   private
-  def group_params
-    params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ, :days => [])
-  end
+    def group_params
+      params.require(:group).permit(:name, :key, :teacher, :course, :startdate, :enddate, :city, :activ, days: [])
+    end
 
-  def sort_column
-    Group.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
-    
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+    def sort_column
+      Group.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
 
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end

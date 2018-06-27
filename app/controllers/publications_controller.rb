@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PublicationsController < ApplicationController
   include ServiceUser
   before_action :logged_in
@@ -15,9 +17,9 @@ class PublicationsController < ApplicationController
 
   def create
     publication = Publication.new(publication_params)
-    publication.user = current_user 
+    publication.user = current_user
     publication.save
-    ActionCable.server.broadcast 'publication_channel',
+    ActionCable.server.broadcast "publication_channel",
                                 content: render_publication(publication)
   end
 
@@ -25,20 +27,20 @@ class PublicationsController < ApplicationController
     publication = Publication.find(params[:id])
     publication.comments.delete_all
     publication.likes.delete_all
-    id = '#publication-to-delete-id'+publication.id.to_s
+    id = "#publication-to-delete-id" + publication.id.to_s
     publication.delete
-    ActionCable.server.broadcast 'room_channel',
+    ActionCable.server.broadcast "room_channel",
                                 delete: id
   end
 
   private
 
-  def publication_params
-    params.require(:publication).permit(:body, :avatar, :link, :document)
-  end
+    def publication_params
+      params.require(:publication).permit(:body, :avatar, :link, :document)
+    end
 
-  def render_publication(publication)
-    ApplicationController.render(partial: 'publications/publication_comments', 
-                                locals: { forum: publication, chat: publication.id, p: publication})
-  end
+    def render_publication(publication)
+      ApplicationController.render(partial: "publications/publication_comments",
+                                  locals: { forum: publication, chat: publication.id, p: publication })
+    end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GroseriesController < ApplicationController
   include ServiceUser
   before_action :logged_in
@@ -27,8 +29,7 @@ class GroseriesController < ApplicationController
 
   private
 
-  def grosery_params
-    params.require(:grosery).permit(:name)
-  end
-
+    def grosery_params
+      params.require(:grosery).permit(:name)
+    end
 end

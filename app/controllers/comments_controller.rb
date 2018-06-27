@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  def create 
+  def create
     if params[:chat]
       message = Chat.find(params[:chat])
       id = "#chat#{message.id}"
@@ -13,14 +15,13 @@ class CommentsController < ApplicationController
       message = Publication.find(params[:publication])
       id = "#publication#{message.id}"
     end
-    co = Comment.create(text: params[:comment][:text],user: current_user)
+    co = Comment.create(text: params[:comment][:text], user: current_user)
     co.update_attribute(:commentable, message)
-    ActionCable.server.broadcast 'talk_channel',
+    ActionCable.server.broadcast "talk_channel",
                                   chatcontent:  co.text,
                                   user: current_user.name,
                                   place: id,
                                   image: "",
                                   content: ""
-                                      
   end
 end

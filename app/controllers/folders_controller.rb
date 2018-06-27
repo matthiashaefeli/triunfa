@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FoldersController < ApplicationController
   def create
     folder = Folder.new(name: params[:folder][:name])
@@ -11,5 +13,5 @@ class FoldersController < ApplicationController
   def destroy
     Folder.find(params[:id]).destroy
     redirect_to libraries_path
-  end   
+  end
 end

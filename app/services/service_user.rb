@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ServiceUser
   def is_admin
     redirect_to root_path unless Admin.exists?(user: current_user)
@@ -13,10 +15,10 @@ module ServiceUser
 
   def user_has_direction
     if current_user && !Admin.exists?(user: current_user)
-      redirect_to edituser_path(current_user.id) unless current_user.street? && 
-                                                        current_user.city? && 
-                                                        current_user.tel? && 
-                                                        current_user.state? && 
+      redirect_to edituser_path(current_user.id) unless current_user.street? &&
+                                                        current_user.city? &&
+                                                        current_user.tel? &&
+                                                        current_user.state? &&
                                                         current_user.cp? &&
                                                         current_user.birthdate? &&
                                                         current_user.nationality?
@@ -25,14 +27,13 @@ module ServiceUser
 
   def check_user(user)
     if Admin.find_by(user: user)
-      return Admin
+      Admin
     elsif Student.find_by(user: user)
-      return Student
-    elsif Teacher.find_by(user:user)
-      return Teacher
+      Student
+    elsif Teacher.find_by(user: user)
+      Teacher
     else
-      return "new_user"
+      "new_user"
     end
   end
-  
 end

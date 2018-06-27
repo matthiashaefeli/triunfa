@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Table < ApplicationRecord
-	has_many :conversations
+  has_many :conversations
   belongs_to :user
-  
+
   validates :user, presence: true
   validates :seconduser, presence: true
 end

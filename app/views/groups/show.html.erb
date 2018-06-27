@@ -1,4 +1,5 @@
-<div class="under-nav container">
+<div  class="under-nav group-index">
+  <div class="under-nav group-inner">
   <% searched_user = check_user(current_user) %>
   <% if searched_user == Admin %>
     <p><%= link_to "Regresar", groups_path %></p>
@@ -105,6 +106,7 @@
       </tbody>
     </table>
   <% end %> 
+</div>
 </div>
 
 

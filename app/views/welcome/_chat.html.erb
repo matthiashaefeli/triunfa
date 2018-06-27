@@ -1,29 +1,37 @@
-<div class="forums-two">
-  <div class="forum-title">
+<div class="currentuser-item-size-two">
+  <% if @searched_user == Student %>
+    <div class="course-image-student">
+      <%= link_to (@searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
+      <% image_tag (@searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="forums-two">
+    <div class="forum-title">
     <h2>Foro Supérate y Triunfa</h2>
-    <%= form_for :chat, url: chats_path, remote: "true"  do |f| %>  
-      <p>
-        <%= f.label :adjuntar_imagen %>
-        <%= f.file_field :avatar, :class => "file-field"  %>
-      </p>
-      <p>
-        <%= f.label :adjuntar_archivo %>
-        <%= f.file_field :document, :class => "file-field"  %>
-      </p>
-      <p>
-        <%= f.label :link %>
-        <%= f.text_field :link %>
-      </p>
-      <p>
-        <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body", :placeholder => "Escribe aquí..." %>
-      </p>
-      <%= f.submit "Enviar Mensaje", :class => "chat_send"%>
-    <% end %>
+      <%= form_for :chat, url: chats_path, remote: "true"  do |f| %>  
+        <p>
+          <%= f.label :adjuntar_imagen %>
+          <%= f.file_field :avatar, :class => "file-field"  %>
+        </p>
+        <p>
+          <%= f.label :adjuntar_archivo %>
+          <%= f.file_field :document, :class => "file-field"  %>
+        </p>
+        <p>
+          <%= f.label :link %>
+          <%= f.text_field :link %>
+        </p>
+        <p>
+          <%= f.text_area :body, :class => "text-area", :id => "wellcome-chat-body", :placeholder => "Escribe aquí..." %>
+        </p>
+        <%= f.submit "Enviar Mensaje", :class => "chat_send"%>
+      <% end %>
+    </div>
+    <br>
+    <div id="chat-table" class="all-forums">
+      <%= render "chats/chats" %>
+    </div> 
+      <p><%= link_to "Ver más Mensajes", root_path(limit: (@chat_limit.to_i + 5)) %></p>
   </div>
-  <br>
-  <hr>
-  <div id="chat-table" class="all-forums">
-    <%= render "chats/chats" %>
-  </div> 
-    <p><%= link_to "Ver más Mensajes", root_path(limit: (@chat_limit.to_i + 5)) %></p>
 </div>

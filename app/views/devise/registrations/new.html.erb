@@ -1,5 +1,7 @@
+<div class="under-nav">
+  <%= render "layouts/errors" %>
+</div>
 <div class="text-center flex-container">
- 
   <div class="item-login">
       <%= image_tag "logo.png", :class => "logo_login" %>
   </div>
@@ -42,8 +44,5 @@
     <% end %>
     <br>
     <%= render "devise/shared/links" %>
-  </div>
-  <div class="item-login">
-    <%= render "layouts/errors" %>
   </div>
 </div> 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CalendarsController < ApplicationController
   include ServiceUser
   before_action :logged_in

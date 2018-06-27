@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Grupos") do |sheet|
-  sheet.add_row ["Nombre", "Ciudad", "Instructor", 
-                "Curso", "Clave", "Estudiantes", 
+  sheet.add_row ["Nombre", "Ciudad", "Instructor",
+                "Curso", "Clave", "Estudiantes",
                 "Fecha Inicio", "Fecha Final", "Dias", "Activo"]
   @groups.each do |g|
-  sheet.add_row [g.name, g.city, g.teacher.user.name, 
-                g.course.name, g.key, g.students.count, 
-                g.startdate, g.enddate, g.days, g.activ ? "Si" : "No"]
+    sheet.add_row [g.name, g.city, g.teacher.user.name,
+                  g.course.name, g.key, g.students.count,
+                  g.startdate, g.enddate, g.days, g.activ ? "Si" : "No"]
   end
 end

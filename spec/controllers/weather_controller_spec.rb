@@ -1,7 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe WeatherController, type: :controller do
-  let(:user){User.create(name: "jon", lastname: "do", email: "jk@j.com", password: "1243", cp: "77354")}
+  let(:user) { User.create(name: "jon", lastname: "do", email: "jk@j.com", password: "1243", cp: "77354") }
 
   it "redirect if user is not login" do
     get :index
@@ -12,5 +14,5 @@ RSpec.describe WeatherController, type: :controller do
     sign_in(user)
     get :index
     expect(subject).to render_template(:index)
-  end 
+  end
 end

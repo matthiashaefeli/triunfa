@@ -1,10 +1,24 @@
 // Place all the styles related to the flyers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 .flyers {
   display: flex;
   flex-direction: column;
+}
+
+.flyers-inner {
+  margin: 0 10% 0 10%;
+  width: 80%;
+}
+
+.flyer-imag {
+  border-radius: $border-radius;
+}
+
+.flyers-index {
+  padding-right: 5%;
 }
 
 @media only screen and (max-width: 900px) {

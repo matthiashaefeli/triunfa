@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FlyersController < ApplicationController
   def create
     flyer = Flyer.new(flyer_params)
@@ -15,8 +17,7 @@ class FlyersController < ApplicationController
 
   private
 
-  def flyer_params
-    params.require(:flyer).permit(:name, :avatar, :link)
-  end
+    def flyer_params
+      params.require(:flyer).permit(:name, :avatar, :link)
+    end
 end
-

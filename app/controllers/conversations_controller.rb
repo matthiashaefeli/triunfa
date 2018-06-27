@@ -1,6 +1,7 @@
+# frozen_string_literal: true
 
 class ConversationsController < ApplicationController
-  def create 
+  def create
     table = Table.find(params[:table])
     conver = Conversation.create(user: current_user, table: table, body: params[:conversation][:body])
     if table.user == current_user
@@ -14,7 +15,7 @@ class ConversationsController < ApplicationController
       message_id = other_user.id
       user_writer = User.find(table.seconduser)
     end
-    ActionCable.server.broadcast 'conversation_channel',
+    ActionCable.server.broadcast "conversation_channel",
                                         content:  conver.body,
                                         table: table.id,
                                         content_class: content_class,
@@ -26,7 +27,7 @@ class ConversationsController < ApplicationController
     table = Table.find(params[:id])
     if table.user == current_user
       user_writer = User.find(table.user.id)
-    else 
+    else
       user_writer = User.find(table.seconduser)
     end
     id = table.id
@@ -39,7 +40,7 @@ class ConversationsController < ApplicationController
         format.html {}
         format.json {}
       end
-      ActionCable.server.broadcast 'conversation_channel',
+      ActionCable.server.broadcast "conversation_channel",
                                     remove: id,
                                     writer: user_writer.id
     else

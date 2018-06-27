@@ -1,7 +1,16 @@
-// Place all the styles related to the libraries controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 .all-folders {
   width: 100vw;
+}
+
+.library-index {
+  background: $background-all;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.library-innert {
+  width: 70%;
+  margin: auto;
 }

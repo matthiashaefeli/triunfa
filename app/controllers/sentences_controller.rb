@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SentencesController < ApplicationController
   include ServiceUser
   before_action :is_admin
@@ -13,9 +15,9 @@ class SentencesController < ApplicationController
     redirect_to resources_path
   end
 
-  private 
+  private
 
-  def sentence_params
-    params.require(:sentence).permit(:title, :body)
-  end
+    def sentence_params
+      params.require(:sentence).permit(:title, :body)
+    end
 end

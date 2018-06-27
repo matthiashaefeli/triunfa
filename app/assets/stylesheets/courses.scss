@@ -1,11 +1,7 @@
 @import "application";
 
 .under-nav {
-  margin-top: 60px;
-}
-
-#course-table {
-  width: 80%;
+  padding-top: 60px;
 }
 
 #new-course {
@@ -32,6 +28,17 @@
 
 #edit-course-hidden {
   display: none;
+}
+
+.course-index {
+  background: $background-all;
+  min-height: 100vh;
+  height: 100%; 
+}
+
+.course-inner {
+  width: 80%;
+  margin: auto;
 }
 
 

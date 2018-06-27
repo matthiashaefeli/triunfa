@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WelcomeController < ApplicationController
   include ServiceUser
   before_action :user_has_direction, only: [:index]
@@ -15,7 +17,7 @@ class WelcomeController < ApplicationController
     @flyers = Flyer.all
     @rooms = Room.where(group: Group.where(activ: true))
     @chats = Chat.order(created_at: :desc).limit(@chat_limit)
-    @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true)) 
+    @teacher_rooms = Room.where(group: Group.where(teacher: Teacher.find_by(user: current_user))).where(group: Group.where(activ: true))
     if current_user
       @tables = Table.where(user: current_user).or(Table.where(seconduser: current_user.id))
     end
@@ -40,16 +42,16 @@ class WelcomeController < ApplicationController
       user.update_attributes(userupdate_params)
       user.save
       redirect_to root_path
-    end   
+    end
   end
 
   def updatepassword
     @user = User.find(params[:id])
   end
-  
+
   def destroy
     if check_user(current_user) != "new_user"
-      ActionCable.server.broadcast 'offline_channel',
+      ActionCable.server.broadcast "offline_channel",
                                       delete_id:  current_user.id
 
       update_offline(check_user(current_user))
@@ -59,16 +61,15 @@ class WelcomeController < ApplicationController
 
   private
 
-  def update_offline(user_to_update)
-    u = user_to_update.find_by(user: current_user)
-    u.online = false
-    u.save
-  end
+    def update_offline(user_to_update)
+      u = user_to_update.find_by(user: current_user)
+      u.online = false
+      u.save
+    end
 
-  def userupdate_params
-    params.require(:user).permit(:street, :city, :cp, :tel, 
-                                  :state, :avatar, :name, :lastname, 
-                                  :email, :birthdate, :nationality)
-  end
-
+    def userupdate_params
+      params.require(:user).permit(:street, :city, :cp, :tel,
+                                    :state, :avatar, :name, :lastname,
+                                    :email, :birthdate, :nationality)
+    end
 end

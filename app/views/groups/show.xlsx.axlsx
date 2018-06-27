@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Grupo") do |sheet|
   sheet.add_row ["Nombre de Grupo", @group.name]
@@ -12,15 +14,15 @@ wb.add_worksheet(name: "Estudiantes") do |sheet|
   sheet.add_row ["Estudiantes"]
   sheet.add_row ["Nombre", "Apellido", "Email", "Calle", "Ciudad", "C.P.", "Estado", "Telefono"]
   @igroups.each do |igroup|
-  sheet.add_row [igroup.user.name, igroup.user.lastname, igroup.user.email, igroup.user.street, 
-                  igroup.user.city, igroup.user.cp, igroup.user.state, igroup.user.tel]
+    sheet.add_row [igroup.user.name, igroup.user.lastname, igroup.user.email, igroup.user.street,
+                    igroup.user.city, igroup.user.cp, igroup.user.state, igroup.user.tel]
   end
 end
 wb.add_worksheet(name: "Estudiantes activos") do |sheet|
   sheet.add_row ["Estudiantes"]
   sheet.add_row ["Nombre", "Apellido", "Email", "Calle", "Ciudad", "C.P.", "Estado", "Telefono"]
   @group.students.each do |student|
-  sheet.add_row [student.user.name, student.user.lastname, student.user.email, student.user.street, 
-                  student.user.city, student.user.cp, student.user.state, student.user.tel]
+    sheet.add_row [student.user.name, student.user.lastname, student.user.email, student.user.street,
+                    student.user.city, student.user.cp, student.user.state, student.user.tel]
   end
-end  
+end

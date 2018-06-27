@@ -1,41 +1,43 @@
-<div>
-  <div class="flyers">
-    <% @flyers.each do |flyer| %>
-      <div>
-        <% if flyer.link != nil %>
-          <%= link_to flyer.link, target: "_blank" do %>
-            <%= image_tag flyer.avatar.url(:medium) %>
-          <% end %>
-        <% else %>
-          <%= image_tag flyer.avatar.url(:medium) %>
-        <% end %>
-        <% if @searched_user == Admin %>
+<div class="currentuser-item-size-three">
+  <div class="flyers-inner">
+    <div class="flyers">
+      <% @flyers.each do |flyer| %>
         <div>
-          <%= link_to flyer_path(flyer.id), :method => "delete" do %>
-          <i class="fas fa-trash-alt"></i>
+          <% if flyer.link != nil %>
+            <%= link_to flyer.link, target: "_blank" do %>
+              <%= image_tag flyer.avatar.url(:medium), class: "flyer-imag" %>
+            <% end %>
+          <% else %>
+            <%= image_tag flyer.avatar.url(:medium), class: "flyer-imag" %>
           <% end %>
-          </div> 
-        <% end %>
-      </div><br>
+          <% if @searched_user == Admin %>
+          <div>
+            <%= link_to flyer_path(flyer.id), :method => "delete" do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>
+            </div> 
+          <% end %>
+        </div><br>
+      <% end %>
+    </div>
+    <%= render "layouts/errors" %>
+    <% if @searched_user == Admin %>
+      <p>Nuevo anuncio:</p>
+      <%= form_for :flyer, url: flyers_path do |f| %>
+      <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name %>
+      </p> 
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      <p>
+        <%= f.label :adjuntar_imagen %>
+        <%= f.file_field :avatar %>
+      </p>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
+      <% end %>
     <% end %>
   </div>
-  <%= render "layouts/errors" %>
-  <% if @searched_user == Admin %>
-    <p>Nuevo anuncio:</p>
-    <%= form_for :flyer, url: flyers_path do |f| %>
-    <p>
-      <%= f.label :nombre %>
-      <%= f.text_field :name %>
-    </p> 
-      <%= f.label :link %>
-      <%= f.text_field :link %>
-    <p>
-      <%= f.label :adjuntar_imagen %>
-      <%= f.file_field :avatar %>
-    </p>
-    <p>
-      <%= f.submit "Guardar" %>
-    </p>
-    <% end %>
-  <% end %>
 </div>
