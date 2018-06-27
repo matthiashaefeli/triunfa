@@ -1,4 +1,5 @@
-<div class="under-nav container">
+<div class="under-nav group-index">
+  <div class="group-inner">
   <h1>Estudiantes</h1>
   <p><%= link_to "Clic aquí para descargar los datos de los estudiantes", students_path(format: :xlsx) %></p>
   <input type="text" class="mySearch" id="studentTableSearch" placeholder="Buscar por Nombre..">
@@ -39,4 +40,5 @@
         <% end %>
       </tbody>
     </table>
+  </div>
 </div>

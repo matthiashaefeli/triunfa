@@ -1,54 +1,56 @@
 <% searched_user = check_user(current_user) %>
-<div class="under-nav container">
-  <h1>Cursos</h1>
-  <p><%= link_to "Clic aquí para descargar los datos de todos los Cursos", courses_path(format: :xlsx) %></p>
-  <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
-  <br>
-  <table class="table table-hover table-bordered" id="course-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Nombre</th>
-        <!-- <th>Fecha inicio</th>
-        <th>Fecha final</th> -->
-        <th>Link</th>
-        <% if searched_user == Admin %>
-          <th>Activo</th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <% @courses.each do |course| %>
+<div class="under-nav course-index">
+  <div class="course-inner">
+    <h1>Cursos</h1>
+    <p><%= link_to "Clic aquí para descargar los datos de todos los Cursos", courses_path(format: :xlsx) %></p>
+    <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
+    <br>
+    <table class="table table-hover table-bordered" id="course-table">
+      <thead>
         <tr>
-        <% if course.avatar_file_name == nil %>
           <th></th>
-        <% else %>
-          <th><%= image_tag course.avatar.url(:thumb), :class => "user-avatar" %></th>
-        <% end %>
-        <td><%= link_to course.name, course_path(course.id) %></td>
-        <!-- <td><%= course.startdate %></td>
-        <td><%= course.enddate%></td> -->
-        <td><%= link_to course.link, target: "_blank" do %>
-          <%= course.link %>
-        <% end %>
-        </td>
-        <% if searched_user == Admin %>
-          <td>
-            <%= course.activ ? "Si" : "NO" %>
-          </td>
-        <% end %>
+          <th>Nombre</th>
+          <!-- <th>Fecha inicio</th>
+          <th>Fecha final</th> -->
+          <th>Link</th>
+          <% if searched_user == Admin %>
+            <th>Activo</th>
+          <% end %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <% if searched_user == Admin %>
-    <div>
-        <%= render "layouts/errors" %>
-        <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>
-        <div id="new-course-hidden">
-            <%= render "new.html.erb" %>
-        </div>
-    </div>
-    <p><%= link_to "Página de Inicio", root_path %></p>
-  <% end %>
+      </thead>
+      <tbody>
+        <% @courses.each do |course| %>
+          <tr>
+          <% if course.avatar_file_name == nil %>
+            <th></th>
+          <% else %>
+            <th><%= image_tag course.avatar.url(:thumb), :class => "user-avatar" %></th>
+          <% end %>
+          <td><%= link_to course.name, course_path(course.id) %></td>
+          <!-- <td><%= course.startdate %></td>
+          <td><%= course.enddate%></td> -->
+          <td><%= link_to course.link, target: "_blank" do %>
+            <%= course.link %>
+          <% end %>
+          </td>
+          <% if searched_user == Admin %>
+            <td>
+              <%= course.activ ? "Si" : "NO" %>
+            </td>
+          <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% if searched_user == Admin %>
+      <div>
+          <%= render "layouts/errors" %>
+          <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>
+          <div id="new-course-hidden">
+              <%= render "new.html.erb" %>
+          </div>
+      </div>
+      <p><%= link_to "Página de Inicio", root_path %></p>
+    <% end %>
+  </div>
 </div>

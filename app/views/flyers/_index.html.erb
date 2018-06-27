@@ -1,14 +1,14 @@
-<div class="currentuser-item-size-three border">
+<div class="currentuser-item-size-three">
   <div class="flyers-inner">
     <div class="flyers">
       <% @flyers.each do |flyer| %>
         <div>
           <% if flyer.link != nil %>
             <%= link_to flyer.link, target: "_blank" do %>
-              <%= image_tag flyer.avatar.url(:medium) %>
+              <%= image_tag flyer.avatar.url(:medium), class: "flyer-imag" %>
             <% end %>
           <% else %>
-            <%= image_tag flyer.avatar.url(:medium) %>
+            <%= image_tag flyer.avatar.url(:medium), class: "flyer-imag" %>
           <% end %>
           <% if @searched_user == Admin %>
           <div>

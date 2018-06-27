@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.chats {
+  border-radius: $border-radius;
+}
+
 .chats:nth-of-type(even) {
   background: $chat-table-even;
 }
@@ -14,6 +18,7 @@
 
 .forum-title {
   background: $chat-table-even;
+  border-radius: $border-radius;
 }
 
 .chat-user {

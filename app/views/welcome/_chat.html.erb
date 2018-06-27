@@ -1,4 +1,4 @@
-<div class="currentuser-item-size-two border">
+<div class="currentuser-item-size-two">
   <% if @searched_user == Student %>
     <div class="course-image-student">
       <%= link_to (@searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
@@ -28,7 +28,7 @@
         <%= f.submit "Enviar Mensaje", :class => "chat_send"%>
       <% end %>
     </div>
-    <hr>
+    <br>
     <div id="chat-table" class="all-forums">
       <%= render "chats/chats" %>
     </div> 

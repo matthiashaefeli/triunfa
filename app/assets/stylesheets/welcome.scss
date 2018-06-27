@@ -123,7 +123,6 @@ nav a {
 }
 
 // home whit login 
-
 .com-student {
   margin-top: 15%;
   width: 100%;
@@ -139,6 +138,7 @@ nav a {
 .home-currentuser {
   display: flex;
   justify-content: center;
+  background: $background-all;
 }
 
 .currentuser-item-size-one {
@@ -147,10 +147,6 @@ nav a {
 
 .currentuser-item-size-two {
   flex: 3
-}
-
-.currentuser-item-size-one p {
-  // width: 150px;
 }
 
 .currentuser-item-size-three {
@@ -170,7 +166,6 @@ nav a {
 // login and registration
 .flex-container {
   display: flex;
-  justify-content: center;
 }
 
 .item-login {
@@ -186,12 +181,14 @@ nav a {
 .edit-user {
   display: flex;
   justify-content: space-around;
+  background: $background-all;
+  min-height: 100vh;
 }
 
 // footer barra 
 .footer_barra {
   height: 150px;
-  background-color: #25449C;
+  background-color: $index-color;
   width: auto;
   color: white;
 }
@@ -261,6 +258,7 @@ nav a {
 
 .alert {
   color:  red;
+  margin-top: 50px;
 }
 
 .border {
