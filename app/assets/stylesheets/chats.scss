@@ -1,5 +1,8 @@
 @import "application";
 
+.course-image-student {
+  text-align: center;
+}
 
 .chats:nth-of-type(even) {
   background: $chat-table-even;

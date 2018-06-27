@@ -1,13 +1,12 @@
 @import "application";
 
 .text-conversation {
-  width: 150px;
+  width: 100%;
   height: auto;
 }
 
 .conversation-border {
   background-color: $chat-table-odd;
-  width: 150px;
 }
 
 .submit_conversation {

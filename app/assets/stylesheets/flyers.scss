@@ -7,6 +7,11 @@
   flex-direction: column;
 }
 
+.flyers-inner {
+  margin: 0 10% 0 10%;
+  width: 80%;
+}
+
 @media only screen and (max-width: 900px) {
   .flyers-index {
     display: none;

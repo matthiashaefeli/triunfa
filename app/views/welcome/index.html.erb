@@ -1,30 +1,11 @@
 
 <% if !current_user %>
   <%= render 'welcome/sentence', locals: {text: @sentence} %>
-  <div id="courselink"></div>
-  <br>
-  <div>
-    <div class="courses-title">
-      <h1>Cursos</h1>
-    </div>
-    <div id="courses">
-      <% @course.each do |course| %>
-        <div class="items-courses">
-        <div><p><%= course.name %></p></div>
-          <div>
-            <%= link_to new_user_session_path do %>
-              <%= image_tag(course.avatar.url, :class => "course-img") %>
-            <% end %>
-          </div>
-          <div class="course-text-desc"></div> 
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'welcome/courses' %>
   <%= render 'welcome/resources', locals: { resources: @resources} %>
   <%= render 'welcome/links', locals: { links: @links} %>
   <%= render 'welcome/footer' %>
-  <% else %>
+<% else %>
   <div class="home-currentuser under-nav">
 
     <!-- check if user is Admin Student Teacher -->
@@ -42,44 +23,24 @@
     <!-- Admin user  -->
     <% elsif @searched_user == Admin %>
       <%= render "online.html.erb" %>
-      <div class="currentuser-item-size-two">
-        <br>
-        <%= render "chat.html.erb" %>
-      </div>
-      <div class="currentuser-item-size-three">
-        <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-      </div>
+      <%= render "chat.html.erb" %>
+      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
           
       <!-- Teacher user -->
-      <% elsif @searched_user == Teacher %>
-        <% if (Teacher.find_by(user: current_user)).activ %>
-          <%= render "online.html.erb" %>
-          <div class="currentuser-item-size-two">
-            <br>
-            <%= render "chat.html.erb" %>
-          </div>
-          <div class="currentuser-item-size-three">
-            <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-          </div>
-        <% else %>
-          <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
-        <% end %>
+    <% elsif @searched_user == Teacher %>
+      <% if (Teacher.find_by(user: current_user)).activ %>
+        <%= render "online.html.erb" %>
+        <%= render "chat.html.erb" %>
+        <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+      <% else %>
+        <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
+      <% end %>
 
       <!-- Student user  -->
-      <% elsif @searched_user == Student %>
+    <% elsif @searched_user == Student %>
       <%= render "online.html.erb" %>
-      <div class="currentuser-item-size-two">
-        <div>
-          <%= link_to (@searched_user).find_by(user: current_user).group.course.link, target: "_blank" do%>
-          <% image_tag (@searched_user).find_by(user: current_user).group.course.avatar.url(:medium) %>
-          <% end %>
-        </div>
-        <br>
-        <%= render "chat.html.erb" %>
-      </div>
-      <div class="currentuser-item-size-three">
-        <%= render "flyers/index", locals: { searched_user: @searched_user } %>
-      </div>
+      <%= render "chat.html.erb" %>
+      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
     <% end %>
   </div>
 <% end %> 

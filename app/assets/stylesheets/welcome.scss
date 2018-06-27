@@ -142,20 +142,19 @@ nav a {
 }
 
 .currentuser-item-size-one {
-  margin-left: 20px;
-  flex-grow: 1;
+  flex: 1
 }
 
 .currentuser-item-size-two {
-  flex-grow: 5;
+  flex: 3
 }
 
 .currentuser-item-size-one p {
-  width: 150px;
+  // width: 150px;
 }
 
 .currentuser-item-size-three {
-  flex-grow: 1;
+  flex: 2
 }
 
 // on home with login who is online 
@@ -262,4 +261,8 @@ nav a {
 
 .alert {
   color:  red;
+}
+
+.border {
+  border: 1px solid red;
 }
