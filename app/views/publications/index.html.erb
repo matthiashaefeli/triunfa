@@ -1,44 +1,44 @@
-
-<div class="under-nav community-index">
-  <div class="list">
-    <ul>
-      <li><%= link_to "Calendario", calendars_path %></li>
-      <li><%= link_to "Lista de quehaceres", todos_path %></li>
-      <li><%= link_to "Lista de compras", groseries_index_path %></li>
-      <li><%= link_to "El Tiempo", weather_index_path %></li>
-      <li><%= link_to "Traductor", translate_index_path %></li>
-    </ul>
-  </div>
-  <div class="forums community-forum">
-    <div class="forum-title">
-    <h2>Comunidad Superate y Triunfa</h2>
-      <%= form_for :publication, url: publications_path, remote: "true"  do |f| %>  
-        <p>
-          <%= f.label :adjuntar_imagen %>
-          <%= f.file_field :avatar, :class => "file-field" %>
-        </p>
-        <p>
-          <%= f.label :adjuntar_archivo %>
-          <%= f.file_field :document, :class => "file-field"  %>
-        </p>
-        <p>
-          <%= f.label :link %>
-          <%= f.text_field :link %>
-        </p>
-        <p>
-          <%= f.text_area :body, :class => "text-area", :id => "publication-text", :placeholder => "Escribe aquí..." %>
-        </p>
-        <%= f.submit "Enviar Mensaje", :class => "publication_send", :id => "publication-text-submit" %>
-      <% end %>
+<div class="under-nav group-index">
+  <div class="community-index">
+    <div class="list">
+      <ul>
+        <li><%= link_to "Calendario", calendars_path %></li>
+        <li><%= link_to "Lista de quehaceres", todos_path %></li>
+        <li><%= link_to "Lista de compras", groseries_index_path %></li>
+        <li><%= link_to "El Tiempo", weather_index_path %></li>
+        <li><%= link_to "Traductor", translate_index_path %></li>
+      </ul>
     </div>
-    <br>
-    <hr>
-    <div id="publication-table" class="all-forums">
-      <%= render "publications/publications" %>
-    </div> 
-    <p><%= link_to "Ver más Mensajes", publications_path(limit: (@publications_limit.to_i + 5)) %></p>
-  </div>
-  <div class="community-flyers">
-    <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+    <div class="community-forum">
+      <div class="forum-title">
+      <h2>Comunidad Superate y Triunfa</h2>
+        <%= form_for :publication, url: publications_path, remote: "true"  do |f| %>  
+          <p>
+            <%= f.label :adjuntar_imagen %>
+            <%= f.file_field :avatar, :class => "file-field" %>
+          </p>
+          <p>
+            <%= f.label :adjuntar_archivo %>
+            <%= f.file_field :document, :class => "file-field"  %>
+          </p>
+          <p>
+            <%= f.label :link %>
+            <%= f.text_field :link %>
+          </p>
+          <p>
+            <%= f.text_area :body, :class => "text-area", :id => "publication-text", :placeholder => "Escribe aquí..." %>
+          </p>
+          <%= f.submit "Enviar Mensaje", :class => "publication_send", :id => "publication-text-submit" %>
+        <% end %>
+      </div>
+      <br>
+      <div id="publication-table" class="all-forums">
+        <%= render "publications/publications" %>
+      </div> 
+      <p><%= link_to "Ver más Mensajes", publications_path(limit: (@publications_limit.to_i + 5)) %></p>
+    </div>
+    <div class="community-flyers">
+      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+    </div>
   </div>
 </div>

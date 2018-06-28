@@ -7,9 +7,9 @@
   <% elsif searched_user == Teacher  %>
     <p><%= link_to "Regresar", rooms_path %></p>
   <% end %>
-  <p>Nombre de Grupo: <%= @group.name %></p>
-  <p>Ciudad: <%= @group.city %></p>
-  <p>Curso:
+  <p><strong>Nombre de Grupo: </strong><%= @group.name %></p>
+  <p><strong>Ciudad: </strong><%= @group.city %></p>
+  <p><strong>Curso: </strong>
     <%= link_to @group.course.link, target: "_blank" do %>
       <%= @group.course.name %>
     <% end %>
@@ -19,18 +19,20 @@
       <p><i class="fas fa-file"> Clic aquí para descargar Curso</i></p>
     <% end %>
   <% end %>
-  <p>Clave: <%= @group.key %></p>
+  <p><strong>Clave: </strong><%= @group.key %></p>
   <% full_name = "#{@group.teacher.user.name} #{@group.teacher.user.lastname}" %>
-  <p>Instructor: <%= link_to full_name, teacher_path(@group.teacher.id) %></p>
-  <p>Fecha Inicio: <%= @group.startdate %></p>
-  <p>Fecha Final: <%= @group.enddate %></p>
-  <p>Dias: 
+  <p><strong>Instructor: </strong><%= link_to full_name, teacher_path(@group.teacher.id) %></p>
+  <p><strong>Fecha Inicio: </strong><%= @group.startdate %></p>
+  <p><strong>Fecha Final: </strong><%= @group.enddate %></p>
+  <p><strong>Dias: </strong> 
   <% @group.days.each do |day| %>
     <%= day %>
   <% end %>
   </p>
   <% if @group.activ == true %>
-      <p>Activo: Si</p>
+      <p><strong>Activo: </strong>Si</p>
+      <p><strong><%= link_to "Foro", room_path(Room.find_by(group: @group)) %></strong></p>
+      <p><strong><%= link_to "Tarea", tasks_path(group: @group) %></strong></p>
       <% if searched_user == Admin %>
           <p id="edit-group">Editar Grupo</p>
           <div id="edit-group-hidden">

@@ -6,7 +6,7 @@
   height: 100vh;
   padding-top: 150px;
   text-align: center;
-  background: url("port2.jpg") no-repeat top center scroll;
+  background: url("port2.jpg") no-repeat top center fixed;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -57,6 +57,12 @@ nav a {
   text-align: center;
 }
 
+.courses-title p {
+  width: 60%;
+  margin: auto;
+  font-family: $sans-raleway;
+}
+
 #courses {
   display: flex;
   flex-flow: row wrap;
@@ -75,10 +81,17 @@ nav a {
   flex-direction: column;
 }
 
+.items-courses p {
+  font-family: $sans-raleway;
+}
+
 .course-img {
   width: 200px;
   height: auto;
   transition: all .2s ease-in-out;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
 }
 
 .course-img:hover { 
@@ -108,14 +121,26 @@ nav a {
   margin-bottom: 120px;
 }
 
+.text-ressourcen {
+  width: 50%;
+  margin: auto;
+  font-family: $sans-raleway;
+}
+
 .ressourcen-imag {
   width: 80%;
   max-height: 80%;
   transition: all .2s ease-in-out;
 }
 
+.links-imag {
+  width: 80%;
+  max-height: 80%;
+  transition: all .2s ease-in-out;
+}
+
 .ressources-links {
-  background-color: $index-color;
+  background-color: $background-all;
 }
 
 .ressourcen-imag:hover { 
@@ -139,6 +164,7 @@ nav a {
   display: flex;
   justify-content: center;
   background: $background-all;
+  min-height: 100vh;
 }
 
 .currentuser-item-size-one {

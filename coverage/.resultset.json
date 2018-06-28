@@ -4510,6 +4510,7 @@
         null,
         1,
         1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/group_spec.rb": [
@@ -5304,6 +5305,7 @@
         null,
         1,
         1,
+        1,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/user_spec.rb": [
@@ -5361,6 +5363,6 @@
         null
       ]
     },
-    "timestamp": 1530134639
+    "timestamp": 1530215023
   }
 }

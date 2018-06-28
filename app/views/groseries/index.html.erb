@@ -1,27 +1,29 @@
-<div class="under-nav todo-index container">
-  <p><%= link_to "Regresar a la comunidad", publications_path %></p>
-  <h1>Lista de compras</h1>
-  <h3>Me falta en la casa:</h3>
-  <div>
-    <%= form_for :grosery, url: groseries_index_path, method: "post" do |f| %>
-      <p>
-        <%= f.text_field :name, class: "text-todo" %>
-      </p>
-      <p>
-        <%= f.submit "Guardar" %>
-      </p>
+<div class="under-nav group-index">
+  <div class="group-inner">
+    <p><%= link_to "Regresar a la comunidad", publications_path %></p>
+    <h1>Lista de compras</h1>
+    <h3>Me falta en la casa:</h3>
+    <div>
+      <%= form_for :grosery, url: groseries_index_path, method: "post" do |f| %>
+        <p>
+          <%= f.text_field :name, class: "text-todo" %>
+        </p>
+        <p>
+          <%= f.submit "Guardar" %>
+        </p>
+      <% end %>
+    </div>
+    <% @groseries.each do |grosery| %>
+      <div class="grosery-each" id="grosery<%= grosery.id %>">
+        <% if grosery.done %>
+          <h3 class="grosery-name"><%= grosery.name %></h3>
+        <% else %>
+          <h3 class="grosery-name text-design"><%= grosery.name %></h3>
+        <% end %>
+          <p class="grosery-done">Hecho</p>
+          <p>/</p>
+          <p class="grosery-delete">Borrar</p>
+      </div>
     <% end %>
   </div>
-  <% @groseries.each do |grosery| %>
-    <div class="grosery-each" id="grosery<%= grosery.id %>">
-      <% if grosery.done %>
-        <h3 class="grosery-name"><%= grosery.name %></h3>
-      <% else %>
-        <h3 class="grosery-name text-design"><%= grosery.name %></h3>
-      <% end %>
-        <p class="grosery-done">Hecho</p>
-        <p>/</p>
-        <p class="grosery-delete">Borrar</p>
-    </div>
-  <% end %>
 </div>
