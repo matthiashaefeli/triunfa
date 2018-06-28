@@ -5,10 +5,13 @@
 .community-index {
   display: flex;
   justify-content: space-around;
+  width: 90%;
+  margin: auto;
 }
 
 .community-forum {
   flex-grow: 3;
+  text-align: center;
 }
 
 .list {
@@ -22,5 +25,5 @@
 
 .community-flyers {
   margin-top: 10px;
-  flex-grow: 1;
+  flex-grow: 2;
 }

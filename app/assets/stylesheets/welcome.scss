@@ -164,6 +164,7 @@ nav a {
   display: flex;
   justify-content: center;
   background: $background-all;
+  min-height: 100vh;
 }
 
 .currentuser-item-size-one {

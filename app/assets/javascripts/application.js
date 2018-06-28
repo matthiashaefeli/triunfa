@@ -260,4 +260,22 @@ $( document ).on('turbolinks:load', function() {
       },1000)
     }
   })
+
+  // change value c and f
+  $(".unit").on("click", function() {
+    let newValue
+    let value = document.getElementsByClassName("value")[0].innerText;
+    let type = document.getElementsByClassName("type")[0].innerText;
+    if(type === "°C"){
+      newValue = ((parseFloat(value)*1.8)+32).toFixed(2);
+      document.getElementsByClassName("value")[0].innerText = newValue;
+      document.getElementsByClassName("type")[0].innerText = "°F ";
+      document.getElementsByClassName("unit")[0].innerText = "Cambiar a °C";
+    }else {
+      newValue = ((parseFloat(value)-32)*0.556).toFixed(2);
+      document.getElementsByClassName("value")[0].innerText = newValue;
+      document.getElementsByClassName("type")[0].innerText = "°C ";
+      document.getElementsByClassName("unit")[0].innerText = "Cambiar a °F";
+    };
+  });
 })

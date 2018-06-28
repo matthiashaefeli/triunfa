@@ -63,10 +63,10 @@
             <i class="fas fa-user"></i>Yo
             <% end %>
           </li>
-          <!-- <li><%= link_to publications_path do %>
-            <i class="fas fa-child"></i> Comunidad
+          <li><%= link_to publications_path do %>
+            <i class="fas fa-child"></i> Com.
             <% end %>
-          </li> -->
+          </li>
 
           <!-- nav for teachers -->
         <% elsif searched_user == Teacher %>
@@ -99,10 +99,10 @@
                 <% end %>
               </li>
             <% end %>
-            <!-- <li><%= link_to publications_path do %>
+            <li><%= link_to publications_path do %>
               <i class="fas fa-child"></i> Comunidad
               <% end %>
-            </li> -->
+            </li>
           <% end %>
           
           <!-- nav for students -->
@@ -131,10 +131,10 @@
             <i class="fas fa-comments"></i> Foro <%= Student.find_by(user: current_user).group.name %>
             <% end %>
           </li>
-          <!-- <li><%= link_to publications_path do %>
+          <li><%= link_to publications_path do %>
             <i class="fas fa-child"></i> Comunidad
             <% end %>
-          </li> -->
+          </li>
         <% end %>
 
           <!-- logout for all -->

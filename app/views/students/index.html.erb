@@ -24,9 +24,10 @@
             <tr>
               <td><%= link_to s.name, student_path(s.id) %></td>
               <td><%= s.lastname %></td>
-              <td><%= s.email %></td>
+              <td><%= mail_to s.email %></td>
               <% if searched_user == Student %>
-                <td><%= (Student.find_by(user: s)).group.name %></td>
+                <% group = Student.find_by(user: s).group %>
+                <td><%= link_to group.name, group_path(group.id)  %></td>
               <% else %>
                 <td></td>
               <% end %>

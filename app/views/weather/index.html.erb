@@ -1,9 +1,14 @@
-<div class="under-nav container">
-  <p><%= link_to "Regresar a la comunidad", publications_path %></p>
-  <h1>El clima de hoy</h1>
-  <%= image_tag @iconurl, class: "image-weather" %>
-  <h3>Temp: <%= @main["temp"] %></h3>
-  <h3>Temp max: <%= @main["temp_max"] %></h3>
-  <h3>Temp min: <%= @main["temp_min"] %></h3>
-  <h3>Humedad: <%= @main["humidity"] %></h3>
+<div class="group-index under-nav">
+  <div class="group-inner">
+    <p><%= link_to "Regresar a la comunidad", publications_path %></p>
+    <h1>El clima de hoy en <%= current_user.city %></h1>
+    <%= image_tag @iconurl, class: "image-weather" %>
+    <div class="temp">
+      <h3>Temperatura:&nbsp</h3>
+      <h3 class="value"><%= @main["temp"] %></h3>&nbsp
+      <h3 class="type">°C</h3>&nbsp
+      <h3 class="unit"> Cambiar a °F</h3>
+    </div>
+    <h3>Humedad: <%= @main["humidity"] %> %</h3>
+  </div>
 </div>

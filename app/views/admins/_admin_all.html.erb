@@ -21,7 +21,7 @@
     <tr>
       <td><%= admin.user.name %></td>
       <td><%= admin.user.lastname %></td>
-      <td><%= admin.user.email %></td>
+      <td><%= mail_to admin.user.email %></td>
       <td><%= admin.super ? "Si" : "No" %></td>
       <% if super_status %>
         <td>

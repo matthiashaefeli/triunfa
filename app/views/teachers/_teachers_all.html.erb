@@ -28,7 +28,7 @@
         <% end %>
         <td><%= link_to teacher.user.name, teacher_path(teacher.id) %></td>
         <td><%= teacher.user.lastname %></td>
-        <td><%= teacher.user.email %></td>
+        <td><%= mail_to teacher.user.email %></td>
         <td><%= teacher.user.street %></td>
         <td><%= teacher.user.city %></td>
         <td><%= teacher.user.state %></td>

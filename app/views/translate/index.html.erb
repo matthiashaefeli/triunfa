@@ -1,21 +1,23 @@
-<div class="under-nav container">
-  <p><%= link_to "Regresar a la comunidad", publications_path %></p>
-  <h1>Traductor:</h1>
-  <div>
+<div class="under-nav group-index">
+  <div class="group-inner">
+    <p><%= link_to "Regresar a la comunidad", publications_path %></p>
+    <h1>Traductor:</h1>
     <div>
-      <input type="radio" id="en-es" name="drone" checked />
-      <label for="es-en">Ingles -> Espanol</label>
+      <div>
+        <input type="radio" id="en-es" name="drone" checked />
+        <label for="es-en">Ingles -> Espanol</label>
+      </div>
+      <div>
+        <input type="radio" id="es-en" name="drone" />
+        <label for="en-es">Espanol -> Ingles</label>
+      </div>
+      <div id="text-to-translate">
+        <textarea rows="4" cols="50"></textarea>
+      </div>
+      <div class="button-div">
+        <button type="button" class="translate-button">Traducir</button>
+      </div>
+      <div id="text-translated"></div>
     </div>
-    <div>
-      <input type="radio" id="es-en" name="drone" />
-      <label for="en-es">Espanol -> Ingles</label>
-    </div>
-    <div id="text-to-translate">
-      <textarea rows="4" cols="50"></textarea>
-    </div>
-    <div class="button-div">
-      <button type="button" class="translate-button">Traducir</button>
-    </div>
-    <div id="text-translated"></div>
   </div>
 </div>
