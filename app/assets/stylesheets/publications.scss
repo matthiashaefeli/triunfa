@@ -27,3 +27,9 @@
   margin-top: 10px;
   flex-grow: 2;
 }
+
+@media only screen and (max-width: 767px) {
+  .community-index {
+    flex-direction: column;
+  }
+}

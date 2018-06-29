@@ -280,6 +280,10 @@ nav a {
   #courses>* {
     flex: 1 1 110px;
   }
+
+  .edit-user {
+    flex-direction: column;
+  }
 }
 
 .alert {

@@ -10,7 +10,7 @@
 
 .new-student {
   text-align: center;
-  margin-top: 100px;
+  padding-top: 100px;
   font-size: 1.5em;
   margin-right:35%;
 }
@@ -28,6 +28,8 @@
   #studentTableTable th:nth-child(7),
   #studentTableTable td:nth-child(8),
   #studentTableTable th:nth-child(8),
+  #studentTableTable td:nth-child(9),
+  #studentTableTable th:nth-child(9),
   #studentTableTable td:nth-child(10),
   #studentTableTable th:nth-child(10) {
     display: none;
