@@ -23,7 +23,7 @@
     </div>
     <div>
       <%= month_calendar events: @meetings do |date, meetings| %>
-        <%= date %>
+        <%= l date, format: :short %>
         <% meetings.each do |meeting| %>
           <div>
             <%= link_to meeting.name, event_path(meeting.id) %>

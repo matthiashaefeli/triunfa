@@ -1,20 +1,22 @@
-<div class="new-student">
-  <% if @error %>
-    <h1><%= @error %></h1>
+<div class="group-index">
+  <div class="new-student group-inner">
+    <% if @error %>
+      <h1><%= @error %></h1>
+      <br>
+    <% end %>
+    <h3>Bienvenido <%= current_user.name %> <%= current_user.lastname %></h3>
+    <p>Tienes que pertenecer a un grupo para seguir</p>
+    <p>Pide al Instructor que escriba la clave del grupo</p>
     <br>
-  <% end %>
-  <h3>Bienvenido <%= current_user.name %> <%= current_user.lastname %></h3>
-  <p>Tienes que pertenecer a un grupo para seguir</p>
-  <p>Pide al Instructor que escriba la clave del grupo</p>
-  <br>
-  <%= form_for :student, url: students_path do |f| %>
-    <p>
-      <%= f.label :clave %>
-      <%= f.password_field :key %>
-    </p>
-    <br>
-    <p>
-      <%= f.submit "Guardar" %>
-    </p>
-  <% end %>
+    <%= form_for :student, url: students_path do |f| %>
+      <p>
+        <%= f.label :clave %>
+        <%= f.password_field :key %>
+      </p>
+      <br>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
+    <% end %>
+  </div>
 </div>

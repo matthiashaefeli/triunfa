@@ -45,14 +45,14 @@
         <thead>
           <tr>
             <th>Foto</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Email</th>
-            <th scope="col">Calle</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">C.P.</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Telefono</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Calle</th>
+            <th>Ciudad</th>
+            <th>C.P.</th>
+            <th>Estado</th>
+            <th>Telefono</th>
           </tr>
         </thead>
         <tbody>
@@ -65,7 +65,7 @@
               <% end %>
               <td><%= link_to student.user.name, student_path(student.user.id) %></td>
               <td><%= student.user.lastname %></td>
-              <td><%= student.user.email %></td>
+              <td><%= mail_to student.user.email %></td>
               <td><%= student.user.street %></td>
               <td><%= student.user.city %></td>
               <td><%= student.user.cp %></td>
@@ -82,14 +82,14 @@
     <table class="table table-hover table-bordered" id="igroup-table-show">
       <thead>
         <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Email</th>
-          <th scope="col">Calle</th>
-          <th scope="col">Ciudad</th>
-          <th scope="col">C.P.</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Telefono</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Calle</th>
+          <th>Ciudad</th>
+          <th>C.P.</th>
+          <th>Estado</th>
+          <th>Telefono</th>
         </tr>
       </thead>
       <tbody>
@@ -97,7 +97,7 @@
           <tr>
             <td><%= group.user.name %></td>
             <td><%= group.user.lastname %></td>
-            <td><%= group.user.email %></td>
+            <td><%= mail_to group.user.email %></td>
             <td><%= group.user.street %></td>
             <td><%= group.user.city %></td>
             <td><%= group.user.cp %></td>

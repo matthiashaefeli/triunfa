@@ -32,3 +32,13 @@
   cursor: pointer;
   color: $links-hover;
 }
+
+@media only screen and (max-width: 767px) {
+  .grosery-each h3 {
+    font-size: 100%;
+  }
+
+  .grosery-each p {
+    font-size: 80%;
+  }
+}

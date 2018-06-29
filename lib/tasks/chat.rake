@@ -5,6 +5,7 @@ namespace :chat do
     puts "Starting to clear chat and talk history (posts older than 15 days)."
     clear(Chat)
     clear(Talk)
+    clear(Publication)
     puts "Finished"
   end
 end

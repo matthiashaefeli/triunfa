@@ -1,6 +1,7 @@
 <div class="under-nav group-index">
   <div class="group-inner">
     <h1><%= @course.name %></h1>
+    <p><%= link_to "Link al curso", @course.link, target: "_blank" %></p>
     <!-- <p>Fecha Inicio: <%= @course.startdate %></p>
     <p>Fecha Final: <%= @course.enddate %></p> -->
     <% if @course.avatar_file_name != nil %>
