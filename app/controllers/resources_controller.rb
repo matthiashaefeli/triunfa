@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ResourcesController < ApplicationController
-  include ServiceUser
   before_action :is_admin
   def index
     @sentence = Sentence.first

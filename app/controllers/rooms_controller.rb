@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class RoomsController < ApplicationController
-  include ServiceUser
+class RoomsController < ApplicationController  
   before_action :logged_in
   before_action :user_has_direction, only: [:show, :index]
   def index

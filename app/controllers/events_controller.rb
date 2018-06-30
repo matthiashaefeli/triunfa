@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
-  include ServiceUser
   before_action :logged_in
   def create
     event = Event.create(event_params)

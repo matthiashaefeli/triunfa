@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class TodosController < ApplicationController
-  include ServiceUser
   before_action :logged_in
   def index
     @todos = Todo.where(user: current_user)

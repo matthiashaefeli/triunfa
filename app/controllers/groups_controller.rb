@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class GroupsController < ApplicationController
-  include ServiceUser
   before_action :is_admin, except: [:show]
   helper_method :sort_column, :sort_direction
 

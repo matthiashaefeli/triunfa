@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class LinksController < ApplicationController
-  include ServiceUser
   before_action :is_admin
   def create
     link = Link.create(links_params)

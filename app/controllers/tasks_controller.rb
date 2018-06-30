@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  include ServiceUser
   include ServiceLike
   before_action :logged_in
   before_action :user_has_direction, only: [:index]

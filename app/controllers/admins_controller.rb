@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AdminsController < ApplicationController
-  include ServiceUser
+
   before_action :is_admin
 
   def create

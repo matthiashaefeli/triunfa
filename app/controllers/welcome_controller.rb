@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
-  include ServiceUser
   before_action :user_has_direction, only: [:index]
   def index
     if params[:limit] != nil
