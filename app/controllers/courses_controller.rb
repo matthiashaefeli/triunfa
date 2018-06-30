@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CoursesController < ApplicationController
-  include ServiceUser
   before_action :is_admin, except: [:download, :index]
   before_action :is_teacher_or_admin, only: [:index]
   before_action :user_has_direction, only: [:index]

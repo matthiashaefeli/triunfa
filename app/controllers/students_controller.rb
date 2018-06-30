@@ -2,7 +2,6 @@
 
 require "rest-client"
 class StudentsController < ApplicationController
-  include ServiceUser
   before_action :is_admin, only: [:index]
   def index
     @users = User.all

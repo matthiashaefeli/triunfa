@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class SentencesController < ApplicationController
-  include ServiceUser
   before_action :is_admin
   def create
     sentence = Sentence.create(sentence_params)

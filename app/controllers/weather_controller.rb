@@ -2,7 +2,6 @@
 
 class WeatherController < ApplicationController
   require "net/http"
-  include ServiceUser
   before_action :logged_in
   def index
     url = URI.parse("https://api.openweathermap.org/data/2.5/weather?zip=" +

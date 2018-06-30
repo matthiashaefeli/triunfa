@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class GroseriesController < ApplicationController
-  include ServiceUser
   before_action :logged_in
   def index
     @groseries = Grosery.where(user: current_user)

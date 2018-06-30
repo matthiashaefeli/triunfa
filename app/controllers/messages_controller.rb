@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class MessagesController < ApplicationController
-  include ServiceUser
   before_action :logged_in
   def create
     room = Room.find(params[:room])

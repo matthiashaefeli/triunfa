@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class PublicationsController < ApplicationController
-  include ServiceUser
   before_action :logged_in
   def index
     if params[:limit] != nil

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class TranslateController < ApplicationController
-  require "net/http"
-  include ServiceUser
+  require "net/http"  
   before_action :logged_in
 
   def index
