@@ -28,6 +28,11 @@
   flex-grow: 2;
 }
 
+.comunidad-index {
+  width: 70%;
+  margin: auto;
+}
+
 @media only screen and (max-width: 767px) {
   .community-index {
     flex-direction: column;
