@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe PublicationsController, type: :controller do
-  let(:user) { User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243") }
+  let(:user) { User.create(name: "jon", lastname: "do", email: "j@j.com", password: "1243", expired: "2019/12/12") }
 
   it "returns 204 No Content after creating post without image" do
     sign_in(user)

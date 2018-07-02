@@ -2,6 +2,7 @@
 
 class PublicationsController < ApplicationController
   before_action :logged_in
+  before_action :expired
   def index
     if params[:limit] != nil
       @publications_limit = params[:limit]

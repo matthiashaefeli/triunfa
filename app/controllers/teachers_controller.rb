@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TeachersController < ApplicationController  
+class TeachersController < ApplicationController
   before_action :is_admin, except: [:index]
   before_action :user_has_direction, only: [:index]
   def index

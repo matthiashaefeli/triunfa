@@ -36,6 +36,12 @@ class WelcomeController < ApplicationController
       else
         redirect_to updatepassword_path(user.id), alert: (["La Contraseña no puede tener letras!"])
       end
+    elsif
+      params[:user][:expired] != nil
+      user = User.find(params[:id])
+      user.expired = params[:user][:expired]
+      user.save
+      redirect_to students_path
     else
       user = User.find(params[:id])
       user.update_attributes(userupdate_params)
