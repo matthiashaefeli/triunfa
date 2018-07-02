@@ -13,6 +13,10 @@ module ServiceUser
     redirect_to root_path unless current_user
   end
 
+  def expired
+    render template: "publications/expired.html.erb" unless current_user.expired > Time.now || check_user(current_user) != "new_user"
+  end
+
   def user_has_direction
     if current_user && !Admin.exists?(user: current_user)
       redirect_to edituser_path(current_user.id) unless current_user.street? &&

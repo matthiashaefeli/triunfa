@@ -1,0 +1,11 @@
+<div class="group-index">
+  <div class="new-student group-inner">
+    <% if @error %>
+      <h1><%= @error %></h1>
+      <br>
+    <% end %>
+    <h3>Bienvenido <%= current_user.name %> <%= current_user.lastname %></h3>
+    <br>
+    <p>Para entrar a la comunidad favor de contactar Superate y Triunfa!</p>
+  </div>
+</div>
