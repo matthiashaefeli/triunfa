@@ -278,4 +278,23 @@ $( document ).on('turbolinks:load', function() {
       document.getElementsByClassName("unit")[0].innerText = "Cambiar a °F";
     };
   });
+
+  $(".grammar-button").on("click", function() {
+    let text = document.getElementById("text-grammar").innerText.replace(/\r?\n|\r/g, "")
+    $.ajax({
+      type: "GET",
+      url: "/grammar",
+      data: {text: text}
+    }).done(function(response) {
+      document.getElementById("errors").innerHTML = ""
+      for (let i = 0; i < response.matches.length; i++) {
+        let word = text.substr(response.matches[i].context.offset, response.matches[i].context.length)
+        if(response.matches[i].replacements.length > 0) {
+          text = text.replace(word, response.matches[i].replacements[0].value)
+        }
+        document.getElementById("errors").append(response.matches[i].message + ",")
+      }
+      document.getElementById("text-checked").innerHTML = text
+    });
+  });
 })

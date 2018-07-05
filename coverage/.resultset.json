@@ -700,6 +700,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -857,6 +858,12 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/folders_helper.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/grammar_helper.rb": [
         null,
         null,
         1,
@@ -1971,6 +1978,36 @@
         1,
         1,
         1,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/grammar_controller_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/grammar_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         null
       ],
@@ -3683,6 +3720,25 @@
         null,
         null
       ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/grammar_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/groseries_helper_spec.rb": [
         null,
         null,
@@ -5356,6 +5412,6 @@
         null
       ]
     },
-    "timestamp": 1530548671
+    "timestamp": 1530811317
   }
 }
