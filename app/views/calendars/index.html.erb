@@ -1,6 +1,6 @@
 <div class="under-nav group-index">
   <div class="group-inner">
-    <p><%= link_to "Regresar a la comunidad", publications_path %></p>
+    <p><%= link_to "Regresar a la comunidad", publications_path, class: "btn btn-sm back-button" %></p>
     <div>
     <h3>Nuevo evento</h3>
     <%= form_for :event, url: events_path do |f| %>
