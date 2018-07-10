@@ -231,7 +231,7 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
-  // send data to controller
+  // send data to controller translate api
   $(".translate-button").on("click", function() { 
     let language
     if(document.getElementById("es-en").checked){
@@ -239,7 +239,8 @@ $( document ).on('turbolinks:load', function() {
     }else {
       language = "en-es"
     }
-    let text = document.getElementById("text-to-translate").innerText.replace(/\r?\n|\r/g, "")
+    // let text = document.getElementById("text-to-translate").innerText.replace(/\r?\n|\r/g, "")
+    let text = $(this).closest('.button-div').siblings('#text-to-translate').children(".textarea")[0].value
     $.ajax({
       type: "GET",
       url: "/translate",
@@ -279,6 +280,7 @@ $( document ).on('turbolinks:load', function() {
     };
   });
 
+  // send data to controller grammar api
   $(".grammar-button").on("click", function() {
     let text = document.getElementById("text-grammar").innerText.replace(/\r?\n|\r/g, "")
     $.ajax({
