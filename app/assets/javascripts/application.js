@@ -282,7 +282,8 @@ $( document ).on('turbolinks:load', function() {
 
   // send data to controller grammar api
   $(".grammar-button").on("click", function() {
-    let text = document.getElementById("text-grammar").innerText.replace(/\r?\n|\r/g, "")
+    let text = $(this).closest('.button-div').siblings('#text-grammar').children(".textarea")[0].value
+    // let text = document.getElementById("text-grammar").innerText.replace(/\r?\n|\r/g, "")
     $.ajax({
       type: "GET",
       url: "/grammar",

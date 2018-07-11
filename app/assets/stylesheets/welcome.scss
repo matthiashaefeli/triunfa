@@ -1,23 +1,166 @@
 @import "application";
 
 // welcome page without current user
-#index-home {
+
+// image on top
+.top-image {
   width: 100vw;
-  height: 100vh;
-  padding-top: 150px;
-  text-align: center;
-  background: url("port2.jpg") no-repeat top center fixed;
-  background-color: black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center bottom;
+  height: auto;
 }
+
+// #index-home {
+//   width: 100vw;
+//   height: 100vh;
+//   padding-top: 150px;
+//   text-align: center;
+//   background: url("port2.jpg") no-repeat top center fixed;
+//   background-color: black;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   background-position: center bottom;
+// }
+
+// title welcome
+.welcome-title {
+  font-family: $title !important;
+  letter-spacing: 0.10em;
+  text-align: center;
+  background-color: $background-index;
+  padding: 2px;
+}
+
+.welcome-title :first-child {
+  color: white;
+}
+
+.welcome-title :nth-child(2) {
+  color: $index-color;
+}
+
+// text with images
+.welcome-text {
+  background-color: #E8F3FD;
+  padding: 40px 0 40px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text-welcome {
+  text-align: center;
+  max-width: 33%;
+  font-family: $title !important;
+}
+
+.text-welcome span {
+  color: $background-index;
+}
+
+.image-welcome {
+  max-width: 33%;
+}
+
+.image-grad-book {
+  width: 220px;
+  height: auto;
+}
+
+.text-welcome2 {
+  text-align: center;
+  max-width: 60%;
+  font-family: $title !important;
+}
+
+.text-welcome2 span {
+  color: $background-index;
+}
+
+.button {
+  border-top: 1px solid #ccdde8;
+  background: $index-color;
+
+  padding: 18px 36px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #0e23ad;
+  font-size: 30px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+  }
+.button:hover {
+  border-top-color: $background-index;
+  background: $background-index;
+  color: white;
+  }
 
 .icon-color {
   background-color: black;
 }
+
+// cursos on home page
+.title-course-one {
+  width: 100vw;
+  height: 30px;
+}
+
+.title-course-two {
+  background-color: white;
+  box-shadow: 5px 5px 5px;
+  max-height: 40px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  font-family: $title !important;
+  letter-spacing: 0.10em;
+  padding-bottom: 10px;
+}
+
+.course-general {
+  background-color: $index-color;
+}
+
+.course-images {
+  padding: 50px 0 50px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.image-text-course {
+  color: white;
+  display: flex;
+  font-family: $title !important;
+}
+
+.text-text-course {
+  text-align: center;
+}
+
+.text-text-course p {
+  width: 150px;
+  padding: 30% 0 0 0;
+}
+
+.link-button-course {
+  color: white;
+  background-color: $background-index;
+  margin: 2px;
+  width: 110px;
+  border-radius: 20px;
+}
+
+.course-line {
+  min-width: 2px;
+  min-height: 100%;
+  background-color: white;
+}
+
 
 // nav
 nav a {
@@ -29,7 +172,20 @@ nav a {
 }
 
 .bg-color {
-  background-color: $index-color;
+  background-color: white;
+}
+
+.navbar-nav {
+  width: 100% !important;
+  text-align: center !important;
+  > li {
+    float: none !important;
+    display: inline-block !important;
+  }
+}
+
+.navbar {
+  margin-bottom: 0 !important;
 }
 
 // text in homepage within a colored spot
@@ -99,49 +255,82 @@ nav a {
 }
 
 // ressources and links
-.ressourcen-links-title {
+
+.ressourse-title {
+  width: 100vw;
+  height: 60px;
+  background-color: $background-index;
+  font-family: $title !important;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 1px;
 }
 
-.ressourcen-links-align {
-  text-align: center;
+.image-text-ressource {
+  color: $background-index;
   display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
+  font-family: $title !important;
 }
 
-.res-text {
-  margin-top: 80px;
-}
-
-.all-res-images {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 120px;
-}
-
-.text-ressourcen {
-  width: 50%;
-  margin: auto;
-  font-family: $sans-raleway;
-}
-
-.ressourcen-imag {
-  width: 80%;
-  max-height: 80%;
-  transition: all .2s ease-in-out;
+// links home 
+.links-title {
+  width: 100vw;
+  height: 60px;
+  background-color: $index-color;
+  font-family: $title !important;
+  text-align: center;
+  padding-top: 1px;
 }
 
 .links-imag {
-  width: 80%;
-  max-height: 80%;
-  transition: all .2s ease-in-out;
+  width: 100px;
+  height: auto;
+
 }
 
-.ressources-links {
-  background-color: $background-all;
-}
+
+// .ressourcen-links-title {
+//   text-align: center;
+//   padding-top: 40px;
+// }
+
+// .ressourcen-links-align {
+//   text-align: center;
+//   display: flex;
+//   justify-content: space-around;
+//   flex-flow: row wrap;
+// }
+
+// .res-text {
+//   margin-top: 80px;
+// }
+
+// .all-res-images {
+//   width: 200px;
+//   height: 200px;
+//   margin-bottom: 120px;
+// }
+
+// .text-ressourcen {
+//   width: 50%;
+//   margin: auto;
+//   font-family: $sans-raleway;
+// }
+
+// .ressourcen-imag {
+//   width: 80%;
+//   max-height: 80%;
+//   transition: all .2s ease-in-out;
+// }
+
+// .links-imag {
+//   width: 80%;
+//   max-height: 80%;
+//   transition: all .2s ease-in-out;
+// }
+
+// .ressources-links {
+//   background-color: $background-all;
+// }
 
 .ressourcen-imag:hover { 
   transform: scale(1.1); 
@@ -225,7 +414,6 @@ nav a {
 
 @media only screen and (max-width: 767px) {
   .flex-container {
-    margin-top: 40px;
     flex-direction: column;
   }
 
@@ -289,6 +477,10 @@ nav a {
 .alert {
   color:  red;
   margin-top: 50px;
+}
+
+.alert-login {
+  color: red;
 }
 
 .border {

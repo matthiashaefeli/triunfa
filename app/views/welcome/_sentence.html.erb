@@ -1,4 +1,4 @@
-<div id="index-home">
+<!-- <div id="index-home">
   <div class="program">
     <div class="program-child">
       <h4><%= @sentence.title %></h4>
@@ -6,5 +6,37 @@
         <strong><%= @sentence.body %></strong>
       </p>
     </div>
+  </div>
+</div> -->
+
+<div class='welcome-title'>
+  <h3>BIENVENIDO AL PORTAL EDUCATIVO</h3>
+  <h3>DE SUPERATE Y TRIUNFA</h3>
+</div>
+<div class='welcome-text'>
+  <div class='text-welcome'>
+    <p>
+      Atrevete a vivir una experiencia que te permitirá aprender y practicar dentro de nuestro red con
+      diferentes<span> cursos básicas e intermedios de Micrsosoft Office y educación financiera de
+      manera activa y participativa</span>. Nuestro sistema esta diseñado para que puedas navegar fácilmente
+      , además contamos con un plan de estudio que te guiara paso a paso durante tu proceso de aprendizaje.
+    </p>
+  </div>
+  <div class='image-welcome'>
+     <%= image_tag('otherbooks.png', class: 'image-grad-book') %>
+  </div>
+  <div class='image-welcome'>
+    <%= image_tag('book_grad.png', class: 'image-grad-book') %>
+  </div>
+</div>
+<div class='welcome-text'>
+  <div class='text-welcome2'>
+    <p>En <span>Superate y Triunfa</span> tenemos para ti la mejor herramienta educativa en donde
+podrás disponer de un servicio de atención personalizada para resolver todas tus dudas
+y conocer los recursos con los que puedes contar para involucrarte en la educación de tus hijos, adaptarte
+a los nuevos métodos de aprendizaje digital e informate con artículos de tu interés</p>
+  </div>
+  <div>
+    <%= link_to "!Bienvenidos!", new_user_session_path, class: "button" %>
   </div>
 </div>

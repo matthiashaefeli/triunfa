@@ -1,4 +1,7 @@
-<nav class="navbar navbar-fixed-top text-uppercase bg-color">
+<% if !current_user %>
+  <%= image_tag('elearning.jpg', class: 'top-image') %>
+<% end %>
+<nav class="navbar text-uppercase bg-color">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,15 +11,15 @@
         <span class="icon-bar icon-color"></span>
         <span class="icon-bar icon-color"></span>
       </button>
-      <%= image_tag("logo2.jpg", size: "75x45", alt: "BWTX", :class => "d-inline-block img-nav img-nav-mo img-nav-margin")%>
+    <!-- <%= image_tag("logo2.jpg", size: "75x45", alt: "BWTX", :class => "d-inline-block img-nav img-nav-mo img-nav-margin")%> -->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if current_user %>
-      <ul class="nav navbar-nav navbar-right" id="my_conversation_id<%= current_user.id %>">
+      <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
       <% else %>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
       <% end %>
         <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
 
@@ -67,10 +70,10 @@
             <i class="fas fa-book"></i> Bibl.
             <% end %>                   
           </li>
-          <li><%= link_to resources_path do %>
+          <!-- <li><%= link_to resources_path do %>
             <i class="fas fa-warehouse"></i> Editar Pag.
             <% end %>                   
-          </li>
+          </li> -->
           <li><%= link_to publications_path do %>
             <i class="fas fa-child"></i> Com.
             <% end %>

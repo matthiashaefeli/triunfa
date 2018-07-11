@@ -1,6 +1,7 @@
 // Place all the styles related to the publications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
 
 .community-index {
   display: flex;
@@ -31,6 +32,30 @@
 .comunidad-index {
   width: 70%;
   margin: auto;
+}
+
+.link-button {
+  background-color: $index-color;
+  margin: 2px;
+  width: 110px;
+  border-radius: 20px;
+}
+
+.link-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.back-button {
+  background-color: $index-color;
+  margin: 2px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  background-color: white;
 }
 
 @media only screen and (max-width: 767px) {
