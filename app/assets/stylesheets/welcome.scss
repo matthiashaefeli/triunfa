@@ -189,22 +189,22 @@ nav a {
 }
 
 // text in homepage within a colored spot
-.program {
-  width: 20em;
-  height: 15em;
-  background-color:rgba(208,208,208,0.5);
-  margin-left: 17%;
-  display: table;  
-}
+// .program {
+//   width: 20em;
+//   height: 15em;
+//   background-color:rgba(208,208,208,0.5);
+//   margin-left: 17%;
+//   display: table;  
+// }
 
-.program p {
-  font-size: 1em;
-}
+// .program p {
+//   font-size: 1em;
+// }
 
-.program-child {
-  display: table-cell;
-  vertical-align: middle;
-}
+// .program-child {
+//   display: table-cell;
+//   vertical-align: middle;
+// }
 
 
 // courses on home without login
@@ -413,6 +413,77 @@ nav a {
 }
 
 @media only screen and (max-width: 767px) {
+
+  // welcome text on home without login
+  .welcome-text {
+    padding-top: 0;
+    flex-direction: column;
+  }
+
+  .text-welcome {
+    display: none;
+  }
+
+  .image-welcome {
+    display: none;
+  }
+
+  .hide-button {
+    display: none;
+  }
+
+  .text-welcome2 {
+    min-width: 100%;
+  }
+
+  // course index without login
+  .title-course-two {
+    width: 80%;
+  }
+
+  .course-images {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .course-line {
+    min-width: 100px;
+    min-height: 2px;
+    background-color: white;
+  }
+
+  .image-text-course {
+    margin-top: 20px;
+  }
+
+  // ressourse home page without login
+  .image-text-ressource {
+    margin: 20px auto;
+  }
+
+  .responsive-image {
+    width: 100px;
+    height: auto;
+  }
+  
+  // links home page without login
+
+  .links-responsive {
+    margin: 20px auto;
+  }
+
+  // nav
+  .navbar-nav {
+    width: 100% !important;
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+
   .flex-container {
     flex-direction: column;
   }
@@ -421,9 +492,9 @@ nav a {
     margin: 5%;
   }
 
-  .program {
-    margin: auto;
-  }
+  // .program {
+  //   margin: auto;
+  // }
 
   .course-img {
     width: 50px;
