@@ -3,6 +3,16 @@
 // welcome page without current user
 
 // image on top
+.logo {
+  background-color: #F2F2F2;
+  text-align: center;
+}
+
+.logo-home {
+  height: 50px;
+  width: auto;
+}
+
 .top-image {
   width: 100vw;
   height: auto;
@@ -97,6 +107,7 @@
 }
 
 .title-course-two {
+  color: $background-index;
   background-color: white;
   box-shadow: 5px 5px 5px;
   max-height: 40px;
@@ -210,6 +221,7 @@ nav a {
 
 // ressources and links
 .ressourse-title {
+  color: white;
   width: 100vw;
   height: 60px;
   background-color: $background-index;
@@ -226,6 +238,7 @@ nav a {
 
 // links home 
 .links-title {
+  color: white;
   width: 100vw;
   height: 60px;
   background-color: $index-color;
