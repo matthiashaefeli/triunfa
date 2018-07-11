@@ -124,9 +124,14 @@
 }
 
 .course-images {
-  padding: 50px 0 50px 0;
   display: flex;
   justify-content: space-around;
+}
+
+.link-images {
+    padding: 50px 0 50px 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .image-text-course {
