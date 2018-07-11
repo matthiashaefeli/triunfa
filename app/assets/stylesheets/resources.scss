@@ -5,3 +5,20 @@
 .form-resource {
   text-align: center;
 }
+
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 100vw; 
+    height: 240px; 
+    // padding: 10px; 
+    // box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    // top: 0px; 
+    left: 10px; 
+    right: 10px; 
+    // bottom: 10%;
+}
