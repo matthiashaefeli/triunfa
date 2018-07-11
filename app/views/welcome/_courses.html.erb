@@ -1,5 +1,27 @@
-<div id="courselink"></div>
-<br>
+<div id='courselink' class='title-course-one'></div>
+<div class='course-general'>
+  <div class='title-course-two'>
+    <h1>CURSOS</h1>
+  </div>
+  <div class='course-images'>
+    <div class='image-text-course'>
+      <div><%= image_tag('course-inline.png', class: 'image-grad-book') %></div>
+      <div class='text-text-course'>
+        <p>Curso-Basico</p>
+        <%= link_to "Leer más", root_path, class: "btn btn-sm link-button-course" %>
+      </div>
+    </div>
+    <div class='course-line'></div>
+    <div class='image-text-course'>
+      <div><%= image_tag('curso-online.png', class: 'image-grad-book') %></div>
+      <div class='text-text-course'>
+        <p>Word-Intermedia</p>
+        <%= link_to "Leer más", root_path, class: "btn btn-sm link-button-course" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <br>
 <div>
   <div class="courses-title">
     <h1>Cursos</h1>
@@ -22,4 +44,4 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> -->
