@@ -14,7 +14,7 @@
 }
 
 .top-image {
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
@@ -102,7 +102,7 @@
 
 // cursos on home page
 .title-course-one {
-  width: 100vw;
+  width: 100%;
   height: 30px;
 }
 
@@ -124,6 +124,12 @@
 }
 
 .course-images {
+  padding: 50px 0 50px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.res-images {
   display: flex;
   justify-content: space-around;
 }
@@ -227,7 +233,7 @@ nav a {
 // ressources and links
 .ressourse-title {
   color: white;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: $background-index;
   font-family: $title !important;
@@ -244,7 +250,7 @@ nav a {
 // links home 
 .links-title {
   color: white;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: $index-color;
   font-family: $title !important;
@@ -365,6 +371,19 @@ nav a {
 
   .course-images {
     display: flex;
+    flex-direction: column;
+  }
+
+  .res-images {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #slideshow {
+    margin-bottom: 100px;
+  }
+
+  .link-images {
     flex-direction: column;
   }
 
