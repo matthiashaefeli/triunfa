@@ -8,20 +8,6 @@
   height: auto;
 }
 
-// #index-home {
-//   width: 100vw;
-//   height: 100vh;
-//   padding-top: 150px;
-//   text-align: center;
-//   background: url("port2.jpg") no-repeat top center fixed;
-//   background-color: black;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   background-position: center bottom;
-// }
-
 // title welcome
 .welcome-title {
   font-family: $title !important;
@@ -188,25 +174,6 @@ nav a {
   margin-bottom: 0 !important;
 }
 
-// text in homepage within a colored spot
-// .program {
-//   width: 20em;
-//   height: 15em;
-//   background-color:rgba(208,208,208,0.5);
-//   margin-left: 17%;
-//   display: table;  
-// }
-
-// .program p {
-//   font-size: 1em;
-// }
-
-// .program-child {
-//   display: table-cell;
-//   vertical-align: middle;
-// }
-
-
 // courses on home without login
 .courses-title {
   margin-top: 40px;
@@ -241,21 +208,7 @@ nav a {
   font-family: $sans-raleway;
 }
 
-.course-img {
-  width: 200px;
-  height: auto;
-  transition: all .2s ease-in-out;
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px #888888;
-}
-
-.course-img:hover { 
-  transform: scale(1.1); 
-}
-
 // ressources and links
-
 .ressourse-title {
   width: 100vw;
   height: 60px;
@@ -287,56 +240,7 @@ nav a {
 
 }
 
-
-// .ressourcen-links-title {
-//   text-align: center;
-//   padding-top: 40px;
-// }
-
-// .ressourcen-links-align {
-//   text-align: center;
-//   display: flex;
-//   justify-content: space-around;
-//   flex-flow: row wrap;
-// }
-
-// .res-text {
-//   margin-top: 80px;
-// }
-
-// .all-res-images {
-//   width: 200px;
-//   height: 200px;
-//   margin-bottom: 120px;
-// }
-
-// .text-ressourcen {
-//   width: 50%;
-//   margin: auto;
-//   font-family: $sans-raleway;
-// }
-
-// .ressourcen-imag {
-//   width: 80%;
-//   max-height: 80%;
-//   transition: all .2s ease-in-out;
-// }
-
-// .links-imag {
-//   width: 80%;
-//   max-height: 80%;
-//   transition: all .2s ease-in-out;
-// }
-
-// .ressources-links {
-//   background-color: $background-all;
-// }
-
-.ressourcen-imag:hover { 
-  transform: scale(1.1); 
-}
-
-// home whit login 
+// home with login 
 .com-student {
   margin-top: 15%;
   width: 100%;
@@ -480,10 +384,11 @@ nav a {
     flex-direction: column;
   }
 
+  .img-nav-margin {
+    margin-top: 0.5%;
+  }
 
-
-
-
+  // login and registration
   .flex-container {
     flex-direction: column;
   }
@@ -492,44 +397,15 @@ nav a {
     margin: 5%;
   }
 
-  // .program {
-  //   margin: auto;
-  // }
-
-  .course-img {
-    width: 50px;
-    height: 50px;
-  }
-
   .logo_login {
     margin-top: 20px;
     width: 50%;
     height: auto;
   }
 
+  // home with login
   .home-currentuser {
     flex-direction: column;
-  }
-
-  .course-text-desc {
-    font-size: 30%;
-  }
-
-  .course-text-desc h3 {
-    font-size: 160%;
-  }
-  
-  .img-nav-margin {
-    margin-top: 0.5%;
-  }
-
-  .all-res-images {
-    width: 100px;
-    height: 100px;
-  }
-
-  .ressourcen-links-align {
-    margin: auto;
   }
 
   .currentuser-item-size-three {
