@@ -15,31 +15,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="ressources-links" id="ressourcen">
-  <div class="ressourcen-links-title">
-    <h1>Recursos</h1>
-    <p class="text-ressourcen">
-    Aquí encuentras temas o artículos que te ayudan 
-    en la vida diaria. ¿Quieres saber más? 
-    haz clic en la foto y te llevamos al lugar correcto. 
-    </p>
-  </div>
-  <div class="ressourcen-links-align">
-    <% @resources.each do |r| %>
-      <div class="res-text">
-        <div><p><%= r.name %></p></div>
-        <div class="all-res-images">
-          <%= link_to r.link, :target => "_blank" do %>
-              <%= image_tag r.avatar.url(:medium), :class => "ressourcen-imag" %>
-          <% end %>
-        </div>
-        <% if current_user %>
-          <%= link_to resource_path(r), :method => "delete" do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %> 
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div> -->
