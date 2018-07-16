@@ -1,0 +1,29 @@
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDathP7IQ65H1iVDU9tE2oiu7hiMnq0Gcc&callback=initMap">
+</script>
+<div class="under-nav group-index">
+  <div class="group-inner">
+    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+    <style> #map { height: 50vh; width: 80vw; } </style>
+      <div> <div id="map"></div> </div>
+      <script>
+      function initMap() {
+          var place = {lat: 29.813632, lng: -95.445604};
+          var map = new google.maps.Map(document.getElementById('map'), {     zoom: 5,     center: place     });
+          var marker = new google.maps.Marker({
+            position: place,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            label: "H"
+          });
+            var marker = new google.maps.Marker({
+            position: {lat: 29.519328, lng: -98.490174},
+            map: map,
+            animation: google.maps.Animation.DROP,
+            label: "SA"
+          });
+      }
+    </script>
+  </div>
+</div>
