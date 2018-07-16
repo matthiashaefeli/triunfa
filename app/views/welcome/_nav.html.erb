@@ -77,7 +77,7 @@
             <i class="fas fa-warehouse"></i> Editar Pag.
             <% end %>                   
           </li> -->
-          <li><%= link_to publications_path do %>
+          <li><%= link_to comunity_index_path do %>
             <i class="fas fa-child"></i> Com.
             <% end %>
           </li>
@@ -101,7 +101,7 @@
               <i class="fas fa-users"></i> Grupos
               <% end %>
             </li>
-            <li><%= link_to publications_path do %>
+            <li><%= link_to comunity_index_path do %>
               <i class="fas fa-child"></i> Comunidad
               <% end %>
             </li>
@@ -122,7 +122,7 @@
             <i class="fas fa-comments"></i> Foro <%= Student.find_by(user: current_user).group.name %>
             <% end %>
           </li>
-          <li><%= link_to publications_path do %>
+          <li><%= link_to comunity_index_path do %>
             <i class="fas fa-child"></i> Comunidad
             <% end %>
           </li>

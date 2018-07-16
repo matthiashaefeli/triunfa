@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :weather, only: [:index]
   resources :translate, only: [:index]
   resources :grammar, only: [:index]
+  resources :comunity, only: [:index]
   get "edituser/:id", to: "welcome#edituser", as: "edituser"
   post "updateuser/:id", to: "welcome#updateuser", as: "updateuser"
   get "updatepassword/:id", to: "welcome#updatepassword", as: "updatepassword"

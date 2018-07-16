@@ -1,6 +1,6 @@
 <div class="group-index under-nav">
   <div class="group-inner">
-    <p><%= link_to "Regresar a la comunidad", publications_path, class: "btn btn-sm back-button" %></p>
+    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
     <h1>El clima de hoy en <%= current_user.city %></h1>
     <%= image_tag @iconurl, class: "image-weather" %>
     <div class="temp">
