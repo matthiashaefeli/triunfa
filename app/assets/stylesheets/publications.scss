@@ -16,7 +16,6 @@
 }
 
 .list {
-  margin-top: 80px;
   flex-grow: 1;
 }
 
@@ -35,9 +34,11 @@
 }
 
 .link-button {
+  color: white;
   background-color: $index-color;
   margin: 2px;
   width: 110px;
+  height: 110px;
   border-radius: 20px;
 }
 
@@ -56,6 +57,11 @@
 .back-button:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.images-link-comunity {
+  height: 70px;
+  width: auto;
 }
 
 @media only screen and (max-width: 767px) {
