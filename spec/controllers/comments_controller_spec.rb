@@ -13,7 +13,8 @@ RSpec.describe CommentsController, type: :controller do
   let (:group) { Group.create(name: "group", key: "key", teacher: teacher, course: course) }
   let (:room) { Room.create(group: group) }
   let(:message) { Message.create(user: user, body: "hello", room: room) }
-  let(:publication) { Publication.create(user: user, body: "hello") }
+  let(:space) { Space.create(name: "test")}
+  let(:publication) { Publication.create(user: user, body: "hello", space: space) }
 
   it "has one chat after creating a comment with param chat" do
     sign_in(user)

@@ -60,4 +60,8 @@ module UserLogin
   def create_paper(folder)
     Paper.create(folder: folder, name: "paper", link: "link", document: Rack::Test::UploadedFile.new(Rails.root + "app/assets/images/logo.png"))
   end
+
+  def create_space
+    Space.create(name: "test")
+  end
 end

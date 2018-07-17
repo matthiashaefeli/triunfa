@@ -2,8 +2,8 @@
   <div class="community-index">
     <div class="community-forum">
       <div class="forum-title">
-      <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
-      <h2>Comunidad Superate y Triunfa</h2>
+      <p><%= link_to "Regresar a los forums", spaces_path, class: "btn btn-sm back-button" %></p>
+      <h2><%= @space.name %></h2>
         <%= form_for :publication, url: publications_path, remote: "true"  do |f| %>  
           <p>
             <%= f.label :adjuntar_imagen %>
@@ -16,6 +16,7 @@
           <p>
             <%= f.label :link %>
             <%= f.text_field :link %>
+             <%= hidden_field_tag "space", @space.id  %> 
           </p>
           <p>
             <%= f.text_area :body, :class => "text-area", :id => "publication-text", :placeholder => "Escribe aquí..." %>

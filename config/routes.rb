@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :grammar, only: [:index]
   resources :comunity, only: [:index]
   resources :map, only: [:index]
+  resources :spaces
   get "edituser/:id", to: "welcome#edituser", as: "edituser"
   post "updateuser/:id", to: "welcome#updateuser", as: "updateuser"
   get "updatepassword/:id", to: "welcome#updatepassword", as: "updatepassword"
