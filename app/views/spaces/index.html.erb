@@ -1,0 +1,30 @@
+<div class="under-nav group-index">
+  <div class="community-index">
+    <div>
+      <h3>Todos los themas:</h3>
+      <% @spaces.each do |space| %>
+        <div>
+          <%= link_to space.name, space_path(space), class: "btn btn-sm space-button" %>
+          <%= link_to space_path(space), :method => "delete" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div>
+    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <p>Abrir Forum nuevo</p>
+        <div>
+          <%= form_for :space, url: spaces_path do |f| %>
+            <p>
+              <%= f.label :thema %>
+              <%= f.text_field :name %>
+            </p>
+            <p>
+              <%= f.submit "Gurardar" %>
+            </p>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

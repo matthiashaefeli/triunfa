@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :space do
+    
+  end
   factory :event do
 
   end

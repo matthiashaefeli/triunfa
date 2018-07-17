@@ -16,8 +16,10 @@ class PublicationsController < ApplicationController
   end
 
   def create
+    space = Space.find(params[:space])
     publication = Publication.new(publication_params)
     publication.user = current_user
+    publication.space = space
     publication.save
     ActionCable.server.broadcast "publication_channel",
                                 content: render_publication(publication)
