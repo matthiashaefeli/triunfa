@@ -5,8 +5,11 @@
       <% @spaces.each do |space| %>
         <div>
           <%= link_to space.name, space_path(space), class: "btn btn-sm space-button" %>
-          <%= link_to space_path(space), :method => "delete" do %>
-            <i class="fas fa-trash-alt"></i>
+          <% searched_user = check_user(current_user) %>
+          <% if searched_user == Admin %>
+            <%= link_to space_path(space), :method => "delete" do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           <% end %>
         </div>
       <% end %>
