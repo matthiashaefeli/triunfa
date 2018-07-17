@@ -4,11 +4,16 @@ require "rails_helper"
 
 RSpec.describe Publication, type: :model do
   let(:user) { User.new(name: "juan", lastname: "bosa", email: "bosa@test.com", password: "1234") }
-  let(:publication) { Publication.new(user: user, body: "hello", link: "link") }
+  let(:space) { Space.create(name: "test")}
+  let(:publication) { Publication.new(user: user, body: "hello", link: "link", space: space) }
   let(:publicationtwo) { Publication.new(user: user, body: nil) }
 
   it "belongs to a user" do
     expect(publication.user).to eq user
+  end
+
+  it "is valid" do
+    expect(publication).to be_valid
   end
 
   it "is not valid without a body" do

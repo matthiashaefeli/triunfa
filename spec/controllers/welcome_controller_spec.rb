@@ -58,6 +58,13 @@ RSpec.describe WelcomeController, type: :controller do
     expect(User.last.state).to eq "TX"
   end
 
+  it "updates other data of an user" do
+    u = create_user
+    sign_in(user)
+    put :updateuser, params: { id: User.last.id, user: { expired: "08-08-2018" } }
+    expect(User.last.expired).to eq('08-08-2018'.to_date)
+  end
+
   it "updatets password from other user" do
     put :updatepassword, params: { id: user.id }
     expect(response.status).to eq(200)
