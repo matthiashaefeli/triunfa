@@ -1,6 +1,6 @@
 <div class="under-nav group-index">
   <div class="text-center">
-  <p><%= link_to 'Regresar', root_path %></p>
+  <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
     <h2>Mis Grupos</h2>
     <% @teacher_rooms.each do |r| %>
       <% if r.group.activ %>

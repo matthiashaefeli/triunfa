@@ -22,17 +22,12 @@
 
     <!-- Admin user  -->
     <% elsif @searched_user == Admin %>
-      <%= render "online.html.erb" %>
-      <%= render "chat.html.erb" %>
-      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+      <%= render "admin_index.html.erb" %>
           
       <!-- Teacher user -->
     <% elsif @searched_user == Teacher %>
       <% if (Teacher.find_by(user: current_user)).activ %>
         <%= render "teacher_index.html.erb" %>
-        <!-- <%= render "online.html.erb" %>
-        <%= render "chat.html.erb" %>
-        <%= render "flyers/index", locals: { searched_user: @searched_user } %>-->
       <% else %>
         <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
       <% end %>
@@ -40,9 +35,6 @@
       <!-- Student user  -->
     <% elsif @searched_user == Student %>
       <%= render "student_index.html.erb" %>
-      <!-- <%= render "online.html.erb" %> -->
-      <!-- <%= render "chat.html.erb" %> -->
-      <!-- <%= render "flyers/index", locals: { searched_user: @searched_user } %> -->
     <% end %>
   </div>
 <% end %> 
