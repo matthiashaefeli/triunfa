@@ -1,5 +1,6 @@
 <div class="edit-user">
   <div class="under-nav text-center">
+    <p><%= link_to 'Regresar', root_path %></p>
    <% if @user.city == "" || @user.street == "" || @user.tel == "" || @user.state == nil %>
       <h3>Para seguir a la plataforma<h3>
       <h3>Favor de llenar los datos faltantes:</h3>

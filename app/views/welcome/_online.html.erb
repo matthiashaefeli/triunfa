@@ -1,6 +1,9 @@
 <div id="online_users" class="currentuser-item-size-one">
   <div class="online-in">
-    <p id="who-is"><i class="fas fa-angle-double-down"></i> ¿Quien esta en linea?</p>
+    <%= link_to 'javascript:;', class: "btn btn-sm student-link-button", id: "who-is" do %>
+      <p>¿Quien esta en linea?</p>
+      <%= image_tag "users.png", class: "images-link-comunity" %> 
+    <% end %>
     <div>
     <%= render "./tables/table.html.erb" %>
     </div>
