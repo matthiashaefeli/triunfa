@@ -10,7 +10,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
+        <p><%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %></p>
         <h4>Mis Tareas Terminadas:</h4>
         <% total_points_done = 0 %>
         <% finished_ass(current_user, @group.id).each do |f| %>
@@ -24,7 +24,7 @@
     </div>
     <div class="task-tasks forums">
       <% if searched_user == Teacher  %>
-        <p><%= link_to "Regresar", rooms_path %></p>
+        <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
         <div class="forum-title">
             <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
             <%= form_for :task, url: tasks_path  do |f| %>  
