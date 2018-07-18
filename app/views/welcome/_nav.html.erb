@@ -92,7 +92,7 @@
         <% elsif searched_user == Teacher %>
           <% if (Teacher.find_by(user: current_user)).activ %>
             <li><%= link_to libraries_path do %>
-              <i class="fas fa-book"></i> biblioteca
+              <i class="fas fa-book"></i> bibl.
               <% end %>
             </li>
             <li><%= link_to courses_path do %>
@@ -100,7 +100,7 @@
               <% end %>
             </li>
             <li><%= link_to teachers_path do %>
-              <i class="fas fa-user-circle"></i> Foro Instructores
+              <i class="fas fa-user-circle"></i> Foro Instr.
               <% end %>
             </li>
             <li><%= link_to rooms_path do %>
