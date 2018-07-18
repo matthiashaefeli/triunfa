@@ -2,11 +2,11 @@
   <div class="forums">
     <% @searched_user = check_user(current_user) %>
     <% if @searched_user == Teacher %>
-      <p><%= link_to "Regresar", rooms_path %></p>
+      <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
     <% elsif @searched_user == Admin %>
-      <%= link_to "Regresar", groups_path %>
+      <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
     <% else %>
-      <%= link_to "Regresar", root_path %>
+      <%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %>
     <% end %>
     <div class="forum-title">
       <h3>Foro del Grupo <%= @room.group.name %></h3>
