@@ -47,6 +47,6 @@
         <p><strong>Grupos Cerrados: </strong><%= @teacher.groups.where(activ: false).count %></p>
       </div>
     </div>
-    <p><%= link_to "Regresar", teachers_path %></p>
+    <p><%= link_to "Regresar", teachers_path, class: "btn btn-sm back-button" %></p>
   </div>
 </div>

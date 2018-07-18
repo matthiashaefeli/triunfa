@@ -2,10 +2,10 @@
   <div class="under-nav group-inner">
   <% searched_user = check_user(current_user) %>
   <% if searched_user == Admin %>
-    <p><%= link_to "Regresar", groups_path %></p>
+    <p><%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %></p>
     <p><%= link_to "Clic aquí para descargar los datos de este Grupo", group_path(@group.id, format: :xlsx) %></p>
   <% elsif searched_user == Teacher  %>
-    <p><%= link_to "Regresar", rooms_path %></p>
+    <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
   <% end %>
   <p><strong>Nombre de Grupo: </strong><%= @group.name %></p>
   <p><strong>Ciudad: </strong><%= @group.city %></p>

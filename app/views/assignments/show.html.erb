@@ -2,9 +2,9 @@
   <div class="group-inner">
   <% searched_user = check_user(current_user) %>
     <% if searched_user == Teacher %>
-        <p><%= link_to 'Regresar', rooms_path %></p>
+        <p><%= link_to 'Regresar', rooms_path, class: "btn btn-sm back-button" %></p>
     <% else %>
-        <p><%= link_to 'Regresar', groups_path %></p>
+        <p><%= link_to 'Regresar', groups_path, class: "btn btn-sm back-button" %></p>
     <% end %>
     <h3>Assignacion: <%= @assignment.name %></h3>
     <h4>Estudiantes:</h4>
