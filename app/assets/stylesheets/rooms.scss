@@ -27,6 +27,15 @@
   min-height: 100vh;
 }
 
+.teacher-group-index {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
 @media only screen and (max-width: 900px) {
   .flyer_forum {
     flex-direction: column;
