@@ -1,8 +1,9 @@
 <div class="finished-assig under-nav">
-    <h4>Todos mis Cursos graduados:</h4>
-    <ul>
-        <% points_per_course.each do |group| %>
-            <li><%= group.course.name %></li>
-        <% end %>
-    </ol>
+  <p><%= link_to 'Regresar', root_path %></p>
+  <h4>Todos mis Cursos graduados:</h4>
+  <ul>
+      <% points_per_course.each do |group| %>
+          <li><%= group.course.name %></li>
+      <% end %>
+  </ol>
 </div>

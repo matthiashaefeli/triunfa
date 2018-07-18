@@ -169,6 +169,50 @@
   background-color: white;
 }
 
+// student index new
+.student-index {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.student-index-title {
+  width: 100%;
+  text-align: center;
+}
+
+.header-student-index {
+  color: white;
+  font-family: $title !important;
+  letter-spacing: 0.10em;
+  background-color: $index-color;
+  padding: 2px;
+}
+
+.text-student-index {
+  padding: 50px;
+}
+
+.text-student-index span {
+  color: $index-color;
+}
+
+.student-link-button {
+  color: white;
+  background-color: $links-hover;
+  margin: 2px;
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.student-link-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
 
 // nav
 nav a {

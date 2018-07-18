@@ -38,9 +38,10 @@
 
       <!-- Student user  -->
     <% elsif @searched_user == Student %>
-      <%= render "online.html.erb" %>
-      <%= render "chat.html.erb" %>
-      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+      <%= render "student_index.html.erb" %>
+      <!-- <%= render "online.html.erb" %> -->
+      <!-- <%= render "chat.html.erb" %> -->
+      <!-- <%= render "flyers/index", locals: { searched_user: @searched_user } %> -->
     <% end %>
   </div>
 <% end %> 

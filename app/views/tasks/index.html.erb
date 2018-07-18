@@ -10,6 +10,7 @@
           <% end %>
         <% end %>
       <% else %>
+        <p><%= link_to 'Regresar', root_path %></p>
         <h4>Mis Tareas Terminadas:</h4>
         <% total_points_done = 0 %>
         <% finished_ass(current_user, @group.id).each do |f| %>

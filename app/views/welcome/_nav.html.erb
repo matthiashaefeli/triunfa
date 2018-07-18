@@ -1,5 +1,11 @@
 <div class='logo'>
-  <%= image_tag('logo.png', class: 'logo-home') %>
+  <% if current_user %>
+    <%= link_to welcome_path(current_user.id), method:"delete" do %>
+      <%= image_tag('logo.png', class: 'logo-home') %>
+    <% end %>
+  <% else %>
+    <%= image_tag('logo.png', class: 'logo-home') %>
+  <% end %>
 </div>
 <% if !current_user %>
   <%= image_tag('elearning.jpg', class: 'top-image') %>
