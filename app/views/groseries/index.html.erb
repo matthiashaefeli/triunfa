@@ -57,7 +57,7 @@
       <h1>Lista de compras</h1>
       <h3>Me falta en la casa:</h3>
       <div>
-        <%= form_for :grosery, url: groseries_index_path, method: "post" do |f| %>
+        <%= form_for :grosery, url: groseries_index_path, html: { class: "grosery-form", remote: true } do |f| %>
           <p>
             <%= f.text_field :name, class: "text-todo" %>
           </p>
@@ -66,18 +66,20 @@
           </p>
         <% end %>
       </div>
-      <% @groseries.each do |grosery| %>
-        <div class="grosery-each" id="grosery<%= grosery.id %>">
-          <% if grosery.done %>
-            <h3 class="grosery-name"><%= grosery.name %></h3>
-          <% else %>
-            <h3 class="grosery-name text-design"><%= grosery.name %></h3>
-          <% end %>
-            <p class="grosery-done">Hecho</p>
-            <p>/</p>
-            <p class="grosery-delete">Borrar</p>
-        </div>
-      <% end %>
+      <div class="grocery-all">
+        <% @groseries.each do |grosery| %>
+          <div class="grosery-each" id="grosery<%= grosery.id %>">
+            <% if grosery.done %>
+              <h3 class="grosery-name"><%= grosery.name %></h3>
+            <% else %>
+              <h3 class="grosery-name text-design"><%= grosery.name %></h3>
+            <% end %>
+              <p class="grosery-done">Hecho</p>
+              <p>/</p>
+              <p class="grosery-delete">Borrar</p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

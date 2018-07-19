@@ -70,13 +70,13 @@
     <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
       <p>Crear thema nueva</p>
         <div>
-          <%= form_for :space, url: spaces_path do |f| %>
+          <%= form_for :space, url: spaces_path, html: {class: "save-chat"} do |f| %>
             <p>
               <%= f.label :thema %>
               <%= f.text_field :name %>
             </p>
             <p>
-              <%= f.submit "Gurardar" %>
+              <%= f.submit "Guardar" %>
             </p>
           <% end %>
         </div>

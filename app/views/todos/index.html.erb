@@ -57,7 +57,7 @@
       <h1>Lista de tareas</h1>
       <h3>Tengo que hacer:</h3>
       <div>
-        <%= form_for :todo, url: todos_path, method: "post" do |f| %>
+        <%= form_for :todo, url: todos_path, html: { class: "todo-form", remote: true } do |f| %>
           <p>
             <%= f.text_field :name, class: "text-todo" %>
           </p>
@@ -66,6 +66,7 @@
           </p>
         <% end %>
       </div>
+      <div class="todos-all">
       <% @todos.each do |todo| %>
         <div class="todo-each" id="todo<%= todo.id %>">
           <% if todo.done %>
@@ -78,6 +79,7 @@
             <p class="todo-delete">Borrar</p>
         </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>

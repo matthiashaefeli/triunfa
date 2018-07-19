@@ -6,9 +6,15 @@ class SpacesController < ApplicationController
   end
 
   def create
-    space = Space.new(space_params)
-    space.save
-    redirect_to spaces_path
+    @space = Space.new(space_params)
+    @space.save
+    if request.xhr?
+      respond_to do |format|
+        format.html {render partial: 'spaces/link', layout:false }
+      end
+    else
+      redirect_to spaces_path
+    end
   end
 
   def show
@@ -21,7 +27,7 @@ class SpacesController < ApplicationController
     @flyers = Flyer.all
     @comments = Comment.order(created_at: :desc)
     @links = Link.all
-    @publications = Publication.where(space_id: @space.id).limit(@publications_limit)
+    @publications = (Publication.where(space_id: @space.id)).order(created_at: :desc).limit(@publications_limit)
   end
 
   def destroy

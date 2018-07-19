@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-18T14:43:53-05:00">2018-07-18T14:43:53-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-19T15:50:37-05:00">2018-07-19T15:50:37-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.15%</span></span>
+    (<span class="covered_percent"><span class="green">97.91%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>217</b> files in total.
-    <b>2480</b> relevant lines. 
-    <span class="green"><b>2434</b> lines covered</span> and
-    <span class="red"><b>46</b> lines missed </span>
+    <b>2489</b> relevant lines. 
+    <span class="green"><b>2437</b> lines covered</span> and
+    <span class="red"><b>52</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -192,12 +192,12 @@
       
       <tr>
         <td class="strong"><a href="#b258aea79c90f1ccaef96fcb91f914d573c2dfa4" class="src_link" title="app/controllers/groseries_controller.rb">app/controllers/groseries_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>20</td>
-        <td>20</td>
-        <td>0</td>
-        <td>1.5</td>
+        <td class="green strong">91.3 %</td>
+        <td>40</td>
+        <td>23</td>
+        <td>21</td>
+        <td>2</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -302,12 +302,12 @@
       
       <tr>
         <td class="strong"><a href="#ce51bfb8460d9b00da9e9e7bedf8d11719560d9e" class="src_link" title="app/controllers/spaces_controller.rb">app/controllers/spaces_controller.rb</a></td>
-        <td class="green strong">92.86 %</td>
-        <td>45</td>
-        <td>28</td>
-        <td>26</td>
-        <td>2</td>
-        <td>1.6</td>
+        <td class="yellow strong">87.1 %</td>
+        <td>51</td>
+        <td>31</td>
+        <td>27</td>
+        <td>4</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -352,12 +352,12 @@
       
       <tr>
         <td class="strong"><a href="#2dc9966521c9cc2e8182a299b053ea6ed09c8c88" class="src_link" title="app/controllers/todos_controller.rb">app/controllers/todos_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>20</td>
-        <td>20</td>
-        <td>0</td>
-        <td>1.5</td>
+        <td class="green strong">91.3 %</td>
+        <td>40</td>
+        <td>23</td>
+        <td>21</td>
+        <td>2</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -4809,11 +4809,11 @@
         <div class="source_table" id="b258aea79c90f1ccaef96fcb91f914d573c2dfa4">
   <div class="header">
     <h3>app/controllers/groseries_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">91.3 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>23</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -4877,148 +4877,184 @@
         <li class="covered" data-hits="3" data-linenumber="10">
           <span class="hits">3</span>
           
-          <code class="ruby">    grosery = Grosery.create(grosery_params)</code>
+          <code class="ruby">    @grosery = Grosery.create(grosery_params)</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="11">
           <span class="hits">3</span>
           
-          <code class="ruby">    grosery.user = current_user</code>
+          <code class="ruby">    @grosery.user = current_user</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="12">
           <span class="hits">3</span>
           
-          <code class="ruby">    grosery.save</code>
+          <code class="ruby">    @grosery.save</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="13">
           <span class="hits">3</span>
           
-          <code class="ruby">    redirect_to groseries_index_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def update</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
           <code class="ruby">    if request.xhr?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
           
-          <code class="ruby">      grosery = Grosery.find(params[:id])</code>
+          
+          <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="15">
           
-          <code class="ruby">      grosery.done = false</code>
+          
+          <code class="ruby">        format.html {render partial: &#39;groseries/grosery&#39;, layout:false }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="16">
           
-          <code class="ruby">      grosery.save</code>
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      redirect_to groseries_index_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if request.xhr?</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  def destroy</code>
+          <code class="ruby">      grosery = Grosery.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    grosery = Grosery.find(params[:id])</code>
+          <code class="ruby">      grosery.done = false</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    grosery.delete</code>
+          <code class="ruby">      grosery.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    def grosery_params</code>
+          <code class="ruby">    grosery = Grosery.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          <code class="ruby">      params.require(:grosery).permit(:name)</code>
+          <code class="ruby">    grosery.delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def grosery_params</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="38">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      params.require(:grosery).permit(:name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
@@ -7046,11 +7082,11 @@
         <div class="source_table" id="ce51bfb8460d9b00da9e9e7bedf8d11719560d9e">
   <div class="header">
     <h3>app/controllers/spaces_controller.rb</h3>
-    <h4><span class="green">92.86 %</span> covered</h4>
+    <h4><span class="yellow">87.1 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>26</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>31</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -7108,199 +7144,199 @@
         <li class="covered" data-hits="4" data-linenumber="9">
           <span class="hits">4</span>
           
-          <code class="ruby">    space = Space.new(space_params)</code>
+          <code class="ruby">    @space = Space.new(space_params)</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="10">
           <span class="hits">4</span>
           
-          <code class="ruby">    space.save</code>
+          <code class="ruby">    @space.save</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="11">
           <span class="hits">4</span>
           
-          <code class="ruby">    redirect_to spaces_path</code>
+          <code class="ruby">    if request.xhr?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        format.html {render partial: &#39;spaces/link&#39;, layout:false }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">  def show</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @space = Space.find(params[:id])</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if params[:limit] != nil</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @publications_limit = params[:limit]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
-          <code class="ruby">      @publications_limit = 5</code>
+          <code class="ruby">      redirect_to spaces_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def show</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    @flyers = Flyer.all</code>
+          <code class="ruby">    @space = Space.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
-          <code class="ruby">    @comments = Comment.order(created_at: :desc)</code>
+          <code class="ruby">    if params[:limit] != nil</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          <code class="ruby">    @links = Link.all</code>
+          <code class="ruby">      @publications_limit = params[:limit]</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="24">
           
-          <code class="ruby">    @publications = Publication.where(space_id: @space.id).limit(@publications_limit)</code>
+          
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      @publications_limit = 5</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    space = Space.find(params[:id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    space.publications.each do |p|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
-          
-          <code class="ruby">      p.comments.delete_all</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
-          
-          <code class="ruby">      p.likes.delete_all</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
-          <code class="ruby">    space.publications.delete_all</code>
+          <code class="ruby">    @flyers = Flyer.all</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
           
-          <code class="ruby">    space.destroy</code>
+          <code class="ruby">    @comments = Comment.order(created_at: :desc)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
           
-          <code class="ruby">    redirect_to spaces_path</code>
+          <code class="ruby">    @links = Link.all</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="2" data-linenumber="30">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @publications = (Publication.where(space_id: @space.id)).order(created_at: :desc).limit(@publications_limit)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    space = Space.find(params[:id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    space.publications.each do |p|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      p.comments.delete_all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">      p.likes.delete_all</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    space.publications.delete_all</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">  def space_params</code>
+          <code class="ruby">    space.destroy</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="41">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
           
-          <code class="ruby">    params.require(:space).permit(:name)</code>
+          <code class="ruby">    redirect_to spaces_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
@@ -7315,13 +7351,49 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def space_params</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="47">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    params.require(:space).permit(:name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">end</code>
@@ -8365,11 +8437,11 @@
         <div class="source_table" id="2dc9966521c9cc2e8182a299b053ea6ed09c8c88">
   <div class="header">
     <h3>app/controllers/todos_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">91.3 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>23</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -8433,148 +8505,184 @@
         <li class="covered" data-hits="3" data-linenumber="10">
           <span class="hits">3</span>
           
-          <code class="ruby">    todo = Todo.create(todo_params)</code>
+          <code class="ruby">    @todo = Todo.create(todo_params)</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="11">
           <span class="hits">3</span>
           
-          <code class="ruby">    todo.user = current_user</code>
+          <code class="ruby">    @todo.user = current_user</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="12">
           <span class="hits">3</span>
           
-          <code class="ruby">    todo.save</code>
+          <code class="ruby">    @todo.save</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="13">
           <span class="hits">3</span>
           
-          <code class="ruby">    redirect_to todos_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def update</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
           <code class="ruby">    if request.xhr?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
           
-          <code class="ruby">      todo = Todo.find(params[:id])</code>
+          
+          <code class="ruby">      respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="15">
           
-          <code class="ruby">      todo.done = false</code>
+          
+          <code class="ruby">        format.html {render partial: &#39;todos/todo&#39;, layout:false }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="16">
           
-          <code class="ruby">      todo.save</code>
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      redirect_to todos_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if request.xhr?</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">  def destroy</code>
+          <code class="ruby">      todo = Todo.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    todo = Todo.find(params[:id])</code>
+          <code class="ruby">      todo.done = false</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    todo.delete</code>
+          <code class="ruby">      todo.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    def todo_params</code>
+          <code class="ruby">    todo = Todo.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          <code class="ruby">      params.require(:todo).permit(:name)</code>
+          <code class="ruby">    todo.delete</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def todo_params</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="38">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      params.require(:todo).permit(:name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
