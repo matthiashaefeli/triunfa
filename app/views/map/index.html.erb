@@ -3,27 +3,81 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDathP7IQ65H1iVDU9tE2oiu7hiMnq0Gcc&callback=initMap">
 </script>
 <div class="under-nav group-index">
-  <div class="group-inner">
-    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
-    <style> #map { height: 50vh; width: 80vw; } </style>
-      <div> <div id="map"></div> </div>
-      <script>
-      function initMap() {
-          var place = {lat: 29.813632, lng: -95.445604};
-          var map = new google.maps.Map(document.getElementById('map'), {     zoom: 5,     center: place     });
-          var marker = new google.maps.Marker({
-            position: place,
-            map: map,
-            animation: google.maps.Animation.DROP,
-            label: "H"
-          });
+  <div class="community-index">
+    <div class="list">
+      <ul class="flex-change">
+        <li>
+          <%= link_to spaces_path, class: "btn btn-sm link-button" do %>
+            <p>Foros</p>
+            <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to calendars_path, class: "btn btn-sm link-button" do %>
+            <p>Calendario</p>
+            <%= image_tag "calendario.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to todos_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de tareas</p>
+            <%= image_tag "task.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to groseries_index_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de compras</p>
+            <%= image_tag "shop.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to weather_index_path, class: "btn btn-sm link-button" do %>
+            <p>El Tiempo</p>
+            <%= image_tag "weather-1.jpg", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to translate_index_path, class: "btn btn-sm link-button" do %>
+            <p>Traductor</p>
+            <%= image_tag "trans.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to grammar_index_path, class: "btn btn-sm link-button" do %>
+            <p>Gramática</p>
+            <%= image_tag "gramm.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to map_index_path, class: "btn btn-sm link-button active" do %>
+            <p>Mapa</p>
+            <%= image_tag "pin.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="calendar-index">
+      <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <style> #map { height: 50vh; width: 60vw; } </style>
+        <div> <div id="map"></div> </div>
+        <script>
+        function initMap() {
+            var place = {lat: 29.813632, lng: -95.445604};
+            var map = new google.maps.Map(document.getElementById('map'), {     zoom: 5,     center: place     });
             var marker = new google.maps.Marker({
-            position: {lat: 29.519328, lng: -98.490174},
-            map: map,
-            animation: google.maps.Animation.DROP,
-            label: "SA"
-          });
-      }
-    </script>
+              position: place,
+              map: map,
+              animation: google.maps.Animation.DROP,
+              label: "H"
+            });
+              var marker = new google.maps.Marker({
+              position: {lat: 29.519328, lng: -98.490174},
+              map: map,
+              animation: google.maps.Animation.DROP,
+              label: "SA"
+            });
+        }
+      </script>
+    </div>
   </div>
 </div>

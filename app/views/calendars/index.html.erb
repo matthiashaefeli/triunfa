@@ -1,35 +1,89 @@
 <div class="under-nav group-index">
-  <div class="group-inner">
-    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
-    <div>
-    <h3>Nuevo evento</h3>
-    <%= form_for :event, url: events_path do |f| %>
-      <p>
-        <%= f.label :nombre %>
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.label :fecha_y_hora %>
-        <%= f.datetime_field :start_time %>
-      </p>
-      <p>
-        <%= f.label :comentarios %>
-        <%= f.text_field :description %>
-      </p>
-      <p>
-        <%= f.submit "Guardar" %>
-      </p>
-    <% end %>
+  <div class="community-index">
+    <div class="list">
+      <ul class="flex-change">
+        <li>
+          <%= link_to spaces_path, class: "btn btn-sm link-button" do %>
+            <p>Foros</p>
+            <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to calendars_path, class: "btn btn-sm link-button active" do %>
+            <p>Calendario</p>
+            <%= image_tag "calendario.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to todos_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de tareas</p>
+            <%= image_tag "task.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to groseries_index_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de compras</p>
+            <%= image_tag "shop.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to weather_index_path, class: "btn btn-sm link-button" do %>
+            <p>El Tiempo</p>
+            <%= image_tag "weather-1.jpg", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to translate_index_path, class: "btn btn-sm link-button" do %>
+            <p>Traductor</p>
+            <%= image_tag "trans.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to grammar_index_path, class: "btn btn-sm link-button" do %>
+            <p>Gramática</p>
+            <%= image_tag "gramm.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to map_index_path, class: "btn btn-sm link-button" do %>
+            <p>Mapa</p>
+            <%= image_tag "pin.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+      </ul>
     </div>
-    <div>
-      <%= month_calendar events: @meetings do |date, meetings| %>
-        <%= l date, format: :short %>
-        <% meetings.each do |meeting| %>
-          <div>
-            <%= link_to meeting.name, event_path(meeting.id) %>
-          </div>
-        <% end %>
+    <div class="calendar-index">
+      <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <div>
+      <h3>Nuevo evento</h3>
+      <%= form_for :event, url: events_path do |f| %>
+        <p>
+          <%= f.label :nombre %>
+          <%= f.text_field :name %>
+        </p>
+        <p>
+          <%= f.label :fecha_y_hora %>
+          <%= f.datetime_field :start_time %>
+        </p>
+        <p>
+          <%= f.label :comentarios %>
+          <%= f.text_field :description %>
+        </p>
+        <p>
+          <%= f.submit "Guardar" %>
+        </p>
       <% end %>
+      </div>
+      <div>
+        <%= month_calendar events: @meetings do |date, meetings| %>
+          <%= l date, format: :short %>
+          <% meetings.each do |meeting| %>
+            <div>
+              <%= link_to meeting.name, event_path(meeting.id) %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

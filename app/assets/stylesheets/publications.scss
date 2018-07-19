@@ -68,4 +68,14 @@
   .community-index {
     flex-direction: column;
   }
+
+  .flex-change {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .calendar-index {
+    margin: auto;
+  }
 }
