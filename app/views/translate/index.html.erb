@@ -1,23 +1,77 @@
 <div class="under-nav group-index">
-  <div class="group-inner">
-    <p><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
-    <h1>Traductor:</h1>
-    <div>
+  <div class="community-index">
+    <div class="list">
+      <ul class="flex-change">
+        <li>
+          <%= link_to spaces_path, class: "btn btn-sm link-button" do %>
+            <p>Foros</p>
+            <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to calendars_path, class: "btn btn-sm link-button" do %>
+            <p>Calendario</p>
+            <%= image_tag "calendario.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to todos_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de tareas</p>
+            <%= image_tag "task.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to groseries_index_path, class: "btn btn-sm link-button" do %>
+            <p>Lista de compras</p>
+            <%= image_tag "shop.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to weather_index_path, class: "btn btn-sm link-button" do %>
+            <p>El Tiempo</p>
+            <%= image_tag "weather-1.jpg", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to translate_index_path, class: "btn btn-sm link-button active" do %>
+            <p>Traductor</p>
+            <%= image_tag "trans.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to grammar_index_path, class: "btn btn-sm link-button" do %>
+            <p>Gramática</p>
+            <%= image_tag "gramm.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+        <li>
+          <%= link_to map_index_path, class: "btn btn-sm link-button" do %>
+            <p>Mapa</p>
+            <%= image_tag "pin.png", class: "images-link-comunity" %> 
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="calendar-index">
+      <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <h1>Traductor:</h1>
       <div>
-        <input type="radio" id="en-es" name="drone" checked />
-        <label for="es-en">Ingles -> Espanol</label>
+        <div>
+          <input type="radio" id="en-es" name="drone" checked />
+          <label for="es-en">Ingles -> Espanol</label>
+        </div>
+        <div>
+          <input type="radio" id="es-en" name="drone" />
+          <label for="en-es">Espanol -> Ingles</label>
+        </div>
+        <div id="text-to-translate">
+          <textarea rows="4" cols="45" class="textarea"></textarea>
+        </div>
+        <div class="button-div">
+          <button type="button" class="translate-button">Traducir</button>
+        </div>
+        <div id="text-translated"></div>
       </div>
-      <div>
-        <input type="radio" id="es-en" name="drone" />
-        <label for="en-es">Espanol -> Ingles</label>
-      </div>
-      <div id="text-to-translate">
-        <textarea rows="4" cols="45" class="textarea"></textarea>
-      </div>
-      <div class="button-div">
-        <button type="button" class="translate-button">Traducir</button>
-      </div>
-      <div id="text-translated"></div>
     </div>
   </div>
 </div>
