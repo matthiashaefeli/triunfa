@@ -1,6 +1,6 @@
 <div class="under-nav group-index">
   <div class="group-inner">
-    <%= link_to "Regresar al calendario", calendars_path %>
+    <p><%= link_to "Regresar al calendario", calendars_path, class: "btn btn-sm back-button" %></p>
     <h3><%= @event.name %></h3>
     <h3><%= @event.start_time %></h3>
     <h3><%= @event.description %></h3>
