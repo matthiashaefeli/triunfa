@@ -11,7 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery_ujs
+
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
@@ -175,8 +176,24 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
-  // send create data to controller
-  $(".todo-done").on("click", function() {
+  // send create todo data to controller and update on page
+  $(".todo-form").on("submit", function(event) {
+    event.preventDefault();
+    let $form = $(this);
+
+    $.ajax({
+      type: $form.attr("method"),
+      url: $form.attr("action"),
+      data: $form.serialize()
+
+    }).done(function(response) {
+      $form.get(0).reset()
+      $(".todos-all").append(response);
+    });
+  })
+
+  // send update todo data to controller and update on page
+  $(".todos-all").on("click", ".todo-done", function() {
     $done = $(this)
     id = $done.closest(".todo-each")[0].id.match(/\d+/g)
 
@@ -189,8 +206,8 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
-  // send delete data to controller
-  $(".todo-delete").on("click", function() {
+  // send delete todo data to controller and update on page
+  $(".todos-all").on("click", ".todo-delete", function() {
     $done = $(this)
     id = $done.closest(".todo-each")[0].id.match(/\d+/g)
 
@@ -203,8 +220,24 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
-  // send create grocery data to controller
-  $(".grosery-done").on("click", function() {
+    // send create grocery data to controller and update on page
+    $(".grosery-form").on("submit", function(event) {
+      event.preventDefault();
+      let $form = $(this);
+  
+      $.ajax({
+        type: $form.attr("method"),
+        url: $form.attr("action"),
+        data: $form.serialize()
+  
+      }).done(function(response) {
+        $form.get(0).reset()
+        $(".grocery-all").append(response);
+      });
+    })
+
+  // send update grocery data to controller and update on page
+  $(".grocery-all").on("click", ".grosery-done", function() {
     $done = $(this)
     id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
 
@@ -217,8 +250,8 @@ $( document ).on('turbolinks:load', function() {
     })
   })
 
-  // send delete data to controller
-  $(".grosery-delete").on("click", function() {
+  // send delete grocery data to controller and updae page
+  $(".grocery-all").on("click", ".grosery-delete", function() {
     $done = $(this)
     id = $done.closest(".grosery-each")[0].id.match(/\d+/g)
 
@@ -301,8 +334,8 @@ $( document ).on('turbolinks:load', function() {
     });
   });
 
-    $("#slideshow > div:gt(0)").hide();
-
+  // slideshow resources index page
+  $("#slideshow > div:gt(0)").hide();
   setInterval(function() { 
     $('#slideshow > div:first')
       .fadeOut(1000)
@@ -311,4 +344,19 @@ $( document ).on('turbolinks:load', function() {
       .end()
       .appendTo('#slideshow');
   },  3000);
+
+  // ajax call create new chat in comunity
+  // $(".save-chat").on("submit",function(event) {
+  //   event.preventDefault();
+  //   let $form = $(this)
+  //   $.ajax({
+  //     type: $form.attr("method"),
+  //     url: $form.attr("action"),
+  //     data: $form.serialize(),
+
+  //   }).done(function(response) {
+  //     $form.get(0).reset()
+  //     $(".publication-themes").append(response)
+  //   })
+  // })
 })

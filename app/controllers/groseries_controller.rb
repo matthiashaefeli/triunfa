@@ -7,10 +7,16 @@ class GroseriesController < ApplicationController
   end
 
   def create
-    grosery = Grosery.create(grosery_params)
-    grosery.user = current_user
-    grosery.save
-    redirect_to groseries_index_path
+    @grosery = Grosery.create(grosery_params)
+    @grosery.user = current_user
+    @grosery.save
+    if request.xhr?
+      respond_to do |format|
+        format.html {render partial: 'groseries/grosery', layout:false }
+      end
+    else
+      redirect_to groseries_index_path
+    end
   end
 
   def update
