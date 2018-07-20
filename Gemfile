@@ -66,8 +66,10 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 3.7"
   gem "rubocop-rails"
-  gem "selenium-webdriver"
+  gem 'selenium-webdriver', '~> 3.13', '>= 3.13.1'
   gem "simplecov", require: false, group: :test
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 
 
 

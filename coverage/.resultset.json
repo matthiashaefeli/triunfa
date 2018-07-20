@@ -1188,10 +1188,10 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
-        0,
-        0,
+        3,
+        3,
         null,
         null
       ],
@@ -3685,6 +3685,27 @@
         null,
         null
       ],
+      "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/features/home_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/admins_helper_spec.rb": [
         null,
         null,
@@ -5651,6 +5672,6 @@
         null
       ]
     },
-    "timestamp": 1532033437
+    "timestamp": 1532110618
   }
 }
