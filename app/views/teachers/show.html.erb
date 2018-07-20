@@ -9,13 +9,13 @@
       <div>
         <p><strong>Activo?&nbsp&nbsp</strong>
         <% if @teacher.activ? %>
-          <%= link_to teacher_path(@teacher.id), :method => "delete" do %>
-            <i class="fas fa-thumbs-up"></i></p>
-          <% end %>
+          <!-- <%= link_to teacher_path(@teacher.id), :method => "delete", class: "thumbs-teacher", remote: true do %> -->
+            <i class="fas fa-thumbs-up thumbs-teacher"><span><%= @teacher.id %></span></i></p>
+          <!-- <% end %> -->
         <% else %>
-          <%= link_to teacher_path(@teacher.id), :method => "delete" do %>
-            <i class="fas fa-thumbs-down"></i></p>
-          <% end %>
+          <!-- <%= link_to teacher_path(@teacher.id), :method => "delete", class: "thumbs-teacher", remote: true do %> -->
+            <i class="fas fa-thumbs-down thumbs-teacher"><span><%= @teacher.id %></span></i></p>
+          <!-- <% end %> -->
         <% end %>
         <p><%= link_to "Cambiar contraseña", updatepassword_path(@teacher.user.id) %></p>
         <p><strong>Nombre: </strong><%= @teacher.user.name %></p>

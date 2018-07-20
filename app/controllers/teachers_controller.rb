@@ -59,7 +59,11 @@ class TeachersController < ApplicationController
       teacher.activ = true
     end
     teacher.save
-    redirect_to teachers_path
+    if request.xhr?
+      render json: { status: teacher.activ }
+    else
+      redirect_to teachers_path
+    end
   end
 
   private
