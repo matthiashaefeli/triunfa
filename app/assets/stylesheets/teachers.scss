@@ -48,6 +48,15 @@
   margin: 0 40px 0 40px;
 }
 
+.thumbs-teacher:hover {
+  cursor: pointer;
+  color: $links-hover;
+}
+
+.thumbs-teacher span {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   #teacher-table td:nth-child(1), 
   #teacher-table th:nth-child(1),

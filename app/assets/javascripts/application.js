@@ -345,7 +345,7 @@ $( document ).on('turbolinks:load', function() {
       .appendTo('#slideshow');
   },  3000);
 
-  // ajax call create new chat in comunity
+  // jquery and ajax create new chat in comunity
   // $(".save-chat").on("submit",function(event) {
   //   event.preventDefault();
   //   let $form = $(this)
@@ -359,4 +359,22 @@ $( document ).on('turbolinks:load', function() {
   //     $(".publication-themes").append(response)
   //   })
   // })
+
+  // change teacher status with jquery and ajax
+  $(".thumbs-teacher").on("click", function() {
+    let $form = $(this);
+    let id = $form.find('span')[0].innerText;
+    let url = '/teachers/'+id;
+    $.ajax({
+      type: "delete",
+      url: url
+    }).done(function(response) {
+      if(response.status === true) {
+        $form.removeClass("fa-thumbs-down").addClass("fa-thumbs-up")
+      }else {
+        $form.removeClass("fa-thumbs-up").addClass("fa-thumbs-down")
+      }
+    });
+  });
+
 })
