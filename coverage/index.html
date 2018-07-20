@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-19T15:50:37-05:00">2018-07-19T15:50:37-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-20T13:16:58-05:00">2018-07-20T13:16:58-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.91%</span></span>
+    (<span class="covered_percent"><span class="green">98.04%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -31,10 +31,10 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>217</b> files in total.
-    <b>2489</b> relevant lines. 
-    <span class="green"><b>2437</b> lines covered</span> and
-    <span class="red"><b>52</b> lines missed </span>
+    <b>218</b> files in total.
+    <b>2500</b> relevant lines. 
+    <span class="green"><b>2451</b> lines covered</span> and
+    <span class="red"><b>49</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#940f9e607f5171bc68b72acaa33fa9bc3af35437" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="red strong">62.5 %</td>
+        <td class="green strong">100.0 %</td>
         <td>19</td>
         <td>8</td>
-        <td>5</td>
-        <td>3</td>
-        <td>0.6</td>
+        <td>8</td>
+        <td>0</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -1601,6 +1601,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#ab0620b4770a9f86d706784fa9f3c4dfccc33190" class="src_link" title="spec/features/home_spec.rb">spec/features/home_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#c267534d563d36922f077d19708fbade0036711e" class="src_link" title="spec/helpers/admins_helper_spec.rb">spec/helpers/admins_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>17</td>
@@ -2456,11 +2466,11 @@
         <div class="source_table" id="940f9e607f5171bc68b72acaa33fa9bc3af35437">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="red">62.5 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>8</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2545,8 +2555,8 @@
           <code class="ruby">    def configure_permitted_parameters</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">      added_attrs = [ :name, :lastname, :email, :password, :password_confirmation,</code>
         </li>
@@ -2557,14 +2567,14 @@
           <code class="ruby">                      :remember_me, :street, :city, :tel, :state, :cp, :avatar, :birthdate, :nationality]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
           <code class="ruby">      devise_parameter_sanitizer.permit :sign_up, keys: added_attrs</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
           
           <code class="ruby">      devise_parameter_sanitizer.permit :account_update, keys: added_attrs</code>
         </li>
@@ -27956,6 +27966,139 @@
           
           
           <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="ab0620b4770a9f86d706784fa9f3c4dfccc33190">
+  <div class="header">
+    <h3>spec/features/home_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &quot;the signin process&quot;, type: :feature do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before :each do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    User.create(name: &quot;jon&quot;, lastname: &quot;do&quot;, email: &quot;j@j.com&quot;, password: &quot;1243&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">            street: &quot;street&quot;, city: &quot;city&quot;, state: &quot;state&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">            tel: &quot;123&quot;, cp: &quot;123&quot;, birthdate: &quot;01-01-2018&quot;, nationality: &quot;mx&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;signs me in&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/users/sign_in&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    within(&quot;#new_user&quot;) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      fill_in &#39;user_email&#39;, with: &#39;j@j.com&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      fill_in &#39;user_password&#39;, with: 1234</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &#39;Entrar&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content &#39;j@j.com&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
