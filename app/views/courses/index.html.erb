@@ -30,7 +30,7 @@
           <td><%= link_to course.name, course_path(course.id) %></td>
           <!-- <td><%= course.startdate %></td>
           <td><%= course.enddate%></td> -->
-          <td><%= link_to course.link, target: "_blank" do %>
+          <td class="break-words"><%= link_to course.link, target: "_blank" do %>
             <%= course.link %>
           <% end %>
           </td>

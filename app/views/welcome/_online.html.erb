@@ -8,11 +8,13 @@
     <%= render "./tables/table.html.erb" %>
     </div>
     <div id="who-is-online">
-        <% all_users.each do |user| %>
-            <% if user.user != current_user %>
-                <p id="online<%= user.user.id %>"><%= link_to "#{user.user.name} #{user.user.lastname}", tables_path(user.user.id), :method => "create" %></p>
-            <% end %>
+      <% all_users.each do |user| %>
+        <% if user.user != current_user %>
+          <p id="online<%= user.user.id %>">
+            <%= link_to "#{user.user.name} #{user.user.lastname}", tables_path(user.user.id), :method => "create", class: "btn btn-sm online-link-button" %>
+          </p>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
