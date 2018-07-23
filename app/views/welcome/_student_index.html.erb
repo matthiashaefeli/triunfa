@@ -21,7 +21,7 @@
   </div>
   <div>
     <%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)), class: "btn btn-sm student-link-button" do %>
-      <p>Forum</p>
+      <p>Foro de grupo</p>
       <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
     <% end %>
   </div>
