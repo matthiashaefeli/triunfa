@@ -11,7 +11,7 @@
                 <%= p.user.name %> <%= p.user.lastname %> dijo:
             </div>
         </div>
-        <div class="chat-body">
+        <div class="chat-body dont-break-out">
           <%= p.body %>
           <% if p.link != nil %>
             <%= link_to p.link, p.link, :target => '_blank' %>

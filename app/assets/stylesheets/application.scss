@@ -57,11 +57,12 @@ a:hover {
   text-decoration: none;
 }
 
-.dont-break-out {
-
-  width: 90vw;
+.cont-index {
+  width: 80vw;
   margin: auto;
+}
 
+.dont-break-out {
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -79,8 +80,19 @@ a:hover {
   hyphens: auto;
 }
 
+.break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 @media only screen and (max-width: 767px) {
-  .dont-break-out {
+  .cont-index {
     width: 100vw;
   }
 }

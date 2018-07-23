@@ -44,7 +44,7 @@
 }
 
 .text-welcome {
-  text-align: center;
+  text-align: left;
   max-width: 33%;
   font-family: $title !important;
 }
@@ -308,6 +308,21 @@ nav a {
 }
 
 // home with login 
+
+.online-link-button {
+  font-size: 80%;
+  background-color: $links-hover;
+  margin-top: 2px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.online-link-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+
 .com-student {
   margin-top: 15%;
   width: 100%;
