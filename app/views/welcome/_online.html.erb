@@ -4,10 +4,10 @@
       <p>¿Quien esta en linea?</p>
       <%= image_tag "users.png", class: "images-link-comunity" %> 
     <% end %>
-    <div>
+    <div class="">
     <%= render "./tables/table.html.erb" %>
     </div>
-    <div id="who-is-online">
+    <div id="who-is-online" class="">
       <% all_users.each do |user| %>
         <% if user.user != current_user %>
           <p id="online<%= user.user.id %>">

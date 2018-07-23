@@ -125,7 +125,7 @@
             <% end %>
           </li>
           <li><%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) do %>
-            <i class="fas fa-comments"></i> Foro <%= Student.find_by(user: current_user).group.name %>
+            <i class="fas fa-comments"></i> Foro de grupo
             <% end %>
           </li>
           <li><%= link_to comunity_index_path do %>
