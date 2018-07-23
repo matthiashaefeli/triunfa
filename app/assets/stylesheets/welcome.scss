@@ -313,7 +313,8 @@ nav a {
   font-size: 80%;
   background-color: $links-hover;
   margin-top: 2px;
-  width: 120px;
+  min-width: 120px;
+  width: auto;
   border-radius: 20px;
 }
 
