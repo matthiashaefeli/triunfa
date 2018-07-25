@@ -7,6 +7,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDathP7IQ65H1iVDU9tE2oiu7h
     <div class="list">
       <ul class="flex-change">
         <li>
+          <%= link_to root_path, class: "btn btn-sm link-button" do %>
+            <p>Inicio</p>
+            <%= image_tag "homeinicio.png", class: "images-link-comunity" %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to spaces_path, class: "btn btn-sm link-button" do %>
             <p>Foros</p>
             <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
