@@ -1,14 +1,14 @@
 <div class="com-student">
   <div>
-    <%= link_to new_student_path do %>
-      <p>Ir a classes</p>
-      <%= image_tag "school.png", class: "image-com-stud" %>
+    <%= link_to new_student_path, class: "btn btn-sm student-link-button" do %>
+      <p>Mi Curso</p>
+      <%= image_tag "curso_student.png", class: "images-link-comunity" %>
     <% end %>
   </div>
   <div>
-    <%= link_to comunity_index_path do %>
-      <p>Ir a la comunidad</p>
-      <%= image_tag "community.png", class: "image-com-stud" %>
+    <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
+      <p>Comunidad</p>
+      <%= image_tag "comunity.png", class: "images-link-comunity" %> 
     <% end %>
   </div>
 </div>
