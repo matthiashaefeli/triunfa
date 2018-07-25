@@ -57,13 +57,25 @@
   display: none;
 }
 
+@media screen and (max-width: 1250px) {
+  #teacher-table td:nth-child(11), 
+  #teacher-table th:nth-child(11) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  #teacher-table td:nth-child(5), 
+  #teacher-table th:nth-child(5) {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 900px) {
   #teacher-table td:nth-child(1), 
   #teacher-table th:nth-child(1),
   #teacher-table td:nth-child(3), 
   #teacher-table th:nth-child(3),
-  #teacher-table td:nth-child(5), 
-  #teacher-table th:nth-child(5),
   #teacher-table td:nth-child(6), 
   #teacher-table th:nth-child(6),
   #teacher-table td:nth-child(7), 
@@ -73,9 +85,7 @@
   #teacher-table td:nth-child(9), 
   #teacher-table th:nth-child(9),
   #teacher-table td:nth-child(10), 
-  #teacher-table th:nth-child(10),
-  #teacher-table td:nth-child(11), 
-  #teacher-table th:nth-child(11) {
+  #teacher-table th:nth-child(10) {
     display: none;
   }
 }
