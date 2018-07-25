@@ -9,5 +9,5 @@ App.online = App.cable.subscriptions.create "OnlineChannel",
   
     # Called when there's incoming data on the websocket for this channel
     $("#who-is-online").append '<p id="online'+data.id+'" >' +
-    '<a href="/tables.'+data.id+'" data-method="create">'+data.name+'</a>' +
+    '<a href="/tables.'+data.id+'" data-method="create" class="btn btn-sm online-link-button">'+data.name+'</a>' +
     '</p>'
