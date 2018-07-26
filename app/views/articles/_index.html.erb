@@ -13,12 +13,12 @@
       <% if article.link === "" || article.link === nil %>
         <%= link_to article.document.url, target: "_blank" do %>
           <h3><%= article.title %></h3>
-          <p><%= article.body %></p>
+          <p class="article-body"><%= article.body %></p>
         <% end %>
       <% else %>
         <%= link_to article.link, target: "_blank" do %>
           <h3><%= article.title %></h3>
-          <p><%= article.body %></p>
+          <p class="article-body"><%= article.body %></p>
         <% end %>
       <% end %>
       <% if searched_user == Admin %>
