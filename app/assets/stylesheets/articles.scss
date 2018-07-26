@@ -1,0 +1,29 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "application";
+
+.article-index {
+  width: 80%;
+}
+
+.article-title {
+  height: 60px;
+  background-color: $links-hover;
+  text-align: center;
+  color: white;
+  font-family: $title !important;
+  font-size: 150%;
+  letter-spacing: 0.10em;
+  padding: 20px;
+}
+
+.body-article {
+  width: 250px;
+}
+
+.text-article {
+  width: 250px;
+  height: 100px;
+}

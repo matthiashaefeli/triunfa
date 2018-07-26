@@ -1,0 +1,31 @@
+<div class="article-index">
+  <div class="article-title">
+    <p> Superate y Triunfa Semanal</p>
+  </div>
+  <div>
+    <% searched_user = check_user(current_user) %>
+    <% if searched_user == Admin %>
+      <%= link_to "Crear nuevo articulo", new_article_path %> 
+    <% end %>
+  </div>
+  <div>
+    <% @articles.each do |article| %>
+      <% if article.link === "" || article.link === nil %>
+        <%= link_to article.document.url, target: "_blank" do %>
+          <h3><%= article.title %></h3>
+          <p><%= article.body %></p>
+        <% end %>
+      <% else %>
+        <%= link_to article.link, target: "_blank" do %>
+          <h3><%= article.title %></h3>
+          <p><%= article.body %></p>
+        <% end %>
+      <% end %>
+      <% if searched_user == Admin %>
+        <%= link_to article_path(article.id), method: "delete" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

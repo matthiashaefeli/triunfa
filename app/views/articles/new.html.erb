@@ -1,0 +1,27 @@
+<div class="under-nav group-index">
+  <div>
+    <p><%= link_to 'Regresar', comunity_index_path, class: "btn btn-sm back-button" %></p>
+    <p>Crear nuevo articulo</p>
+    <%= form_for :article, url: articles_path do |f| %>
+      <p>
+        <%= f.label :titulo %>
+        <%= f.text_field :title, class: "body-article", placeholder: "Titulo aquí..."  %>
+      </p>
+      <p>
+        <%= f.label :text %>
+        <%= f.text_area :body, class: "text-article", placeholder: "Text aquí..."  %>
+      </p>
+      <p>
+        <%= f.label :link %>
+        <%= f.text_field :link, class: "body-article", placeholder: "Link aquí..."  %>
+      </p>
+      <p>
+        <%= f.label :adjuntar_archivo %>
+        <%= f.file_field :document %>
+      </p>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
+    <% end %>
+  </div>
+</div>
