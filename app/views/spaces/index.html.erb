@@ -59,7 +59,7 @@
       </ul>
     </div>
     <div class="publication-themes">
-      <h3>Todos los themas:</h3>
+      <h3>Todos los temas:</h3>
       <% @spaces.each do |space| %>
         <div>
           <%= link_to space.name, space_path(space), class: "btn btn-sm space-button" %>
@@ -74,11 +74,11 @@
     </div>
     <div class="create-theme">
     <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
-      <p>Crear thema nueva</p>
+      <p>Crear tema nueva</p>
         <div>
           <%= form_for :space, url: spaces_path, html: {class: "save-chat"} do |f| %>
             <p>
-              <%= f.label :thema %>
+              <%= f.label :tema %>
               <%= f.text_field :name %>
             </p>
             <p>
