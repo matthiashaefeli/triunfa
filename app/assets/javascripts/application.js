@@ -335,15 +335,35 @@ $( document ).on('turbolinks:load', function() {
   });
 
   // slideshow resources index page
+
   $("#slideshow > div:gt(0)").hide();
-  setInterval(function() { 
+
+  $("#arrow-right").on("click", function() {
     $('#slideshow > div:first')
-      .fadeOut(1000)
-      .next()
-      .fadeIn(1000)
-      .end()
-      .appendTo('#slideshow');
-  },  3000);
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+  })
+
+  $("#arrow-left").on("click", function() {
+    $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+  })
+
+  // setInterval(function() { 
+  //   $('#slideshow > div:first')
+  //     .fadeOut(1000)
+  //     .next()
+  //     .fadeIn(1000)
+  //     .end()
+  //     .appendTo('#slideshow');
+  // },  3000);
 
   // jquery and ajax create new chat in comunity
   // $(".save-chat").on("submit",function(event) {
