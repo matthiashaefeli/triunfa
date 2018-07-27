@@ -15,14 +15,14 @@
   margin-right:35%;
 }
 
-@media screen and (max-width: 1300) {
+@media screen and (max-width: 1300px) {
   #studentTableTable td:nth-child(9),
   #studentTableTable th:nth-child(9) {
     display: none;
   }
 }
 
-@media screen and (max-width: 1260) {
+@media screen and (max-width: 1260px) {
   #studentTableTable td:nth-child(5),
   #studentTableTable th:nth-child(5) {
     display: none;

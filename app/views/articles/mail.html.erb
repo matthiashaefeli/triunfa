@@ -1,0 +1,21 @@
+
+<div style="height:60px;background-color:#A1B8E3;text-align:center;color:white;font-size:200%;letter-spacing:0.10em;padding:20px;">
+  <p> Superate y Triunfa Semanal</p>
+</div>
+<div>
+  <% Article.all.each do |article| %>
+    <% if article.link === "" || article.link === nil %>
+      <%= link_to article.document.url, target: "_blank" do %>
+        <h3><%= article.title %></h3>
+        <p><%= article.body %></p>
+      <% end %>
+    <% else %>
+      <%= link_to article.link, target: "_blank" do %>
+        <h3><%= article.title %></h3>
+        <p><%= article.body %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+  <p>Recibes este email de la plataforma de</p>
+  <p><%= link_to "SUPERATE Y TRIUNFA", "https://www.superateytriunfaedu.org/" %></p>
+</div>
