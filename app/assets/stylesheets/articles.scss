@@ -32,3 +32,44 @@
   text-align: initial;
   white-space: pre-line;
 }
+
+.articel-links-to-mail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mails-table {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  #user-table td:nth-child(10),
+  #user-table th:nth-child(10) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #user-table td:nth-child(5),
+  #user-table th:nth-child(5) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  #user-table td:nth-child(2),
+  #user-table th:nth-child(2),
+  #user-table td:nth-child(4),
+  #user-table th:nth-child(4),
+  #user-table td:nth-child(6),
+  #user-table th:nth-child(6),
+  #user-table td:nth-child(7),
+  #user-table th:nth-child(7),
+  #user-table td:nth-child(8),
+  #user-table th:nth-child(8),
+  #user-table td:nth-child(10),
+  #user-table th:nth-child(10) {
+    display: none;
+  }
+}

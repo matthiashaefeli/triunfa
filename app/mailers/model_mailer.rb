@@ -39,4 +39,24 @@ class ModelMailer < ApplicationMailer
     puts response.body
     puts response.headers
   end
+
+  def send_weekly_email(user)
+    from = Email.new(email: "plataforma.superateytriunfa@gmail.com")
+    to = Email.new(email: user.email)
+    subject = "Superate y Triunfa Semanal"
+    content = Content.new(
+                          type: 'text/html',
+                          value: ApplicationController.render(
+                            template: 'articles/mail',
+                            layout: nil
+                          ))
+    mail = Mail.new(from, subject, to, content)
+
+    sg = SendGrid::API.new(api_key: ENV["SENDGRID_API_KEY"])
+    response = sg.client.mail._("send").post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
+    puts response.headers
+  end
+  
 end

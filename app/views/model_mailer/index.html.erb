@@ -1,0 +1,50 @@
+<!-- User.where(weekly_subscriber: true).find_each do |user|
+  NewsMailer.weekly(user).deliver_now
+end -->
+
+<div class="under-nav group-index">
+  <div class="mails-table">
+    <div>
+      <p><%= link_to 'Regresar', comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <h1>Todos los usuarios que reciben el email semanal</h1>
+      <p><%= link_to "Mandar email semanal", model_mailer_index_path, method: "POST" %></p>
+    </div>
+    <input type="text" class="mySearch" id="userTableSearch" placeholder="Buscar por Nombre..">
+    <table class="table table-hover table-bordered" id="user-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email </th>
+          <th>Calle</th>
+          <th>Ciudad</th>
+          <th>Estado</th>
+          <th>Tel.</th>
+          <th>Logins</th>
+          <th>Ultimo L</th>
+        </tr>
+      </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <% if user.avatar_file_name != nil %>
+              <td><%= image_tag user.avatar.url(:thumb), :class => "user-avatar" %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+            <td><%= link_to user.name, student_path(user.id) %></td>
+            <td><%= user.lastname %></td>
+            <td><%= mail_to user.email %></td>
+            <td><%= user.street %></td>
+            <td><%= user.city %></td>
+            <td><%= user.state %></td>
+            <td><%= user.tel %></td>
+            <td><%= user.login_counts %></td>
+            <td><%= user.updated_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
