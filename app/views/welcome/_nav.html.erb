@@ -38,6 +38,11 @@
           <li><a href="/#ressourcen">Recursos</a></li>
           <li><a href="/#linkslink">Links</a></li>
           <li><%= link_to "Entrar", new_user_session_path(anchor: "link-to-item-login") %></li>
+          <li>
+          <%= link_to "#", id: "change-lang", remote: true do %>
+            <% image_tag("flag.jpg", size: "45x30", class: "d-inline-block img-nav img-nav-mo img-nav-margin") %>
+          <% end %>
+          </li>
         <% else %>
           <% if current_user.avatar_file_name == nil %>
             <li><%= link_to edituser_path(current_user.id) do %>
