@@ -1,0 +1,10 @@
+<p><%= link_to "Back", root_path, class: "btn btn-sm back-button" %></p>
+<h4>My Finished Tasks:</h4>
+<% total_points_done = 0 %>
+<% finished_ass(current_user, @group.id).each do |f| %>
+  <% if f.assignment.course == @group.course %>
+    <% total_points_done += f.assignment.points %>
+    <p><%= f.assignment.name %>: <span><%= f.assignment.points %></span></p>
+  <% end %>
+<% end %>
+<p>You have <%= total_points_done %> points of 40</p>

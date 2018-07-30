@@ -7,7 +7,7 @@
     <div class="text-student-index">
       <p><strong>Congratulations <span><%= current_user.name %> <%= current_user.lastname %></span> <br>
           You took the decision to join the Superate and Triunfa program.<br>
-          Here you find everything you need to finish the course <span><%= Student.find_by(user: current_user).group.course.name %></span>.</strong></p>
+          Here you will find everything you need to finish the course <span><%= Student.find_by(user: current_user).group.course.name %></span>.</strong></p>
     </div>
   </div>
   <div>

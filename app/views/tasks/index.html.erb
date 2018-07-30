@@ -10,16 +10,11 @@
           <% end %>
         <% end %>
       <% else %>
-        <p><%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %></p>
-        <h4>Mis Tareas Terminadas:</h4>
-        <% total_points_done = 0 %>
-        <% finished_ass(current_user, @group.id).each do |f| %>
-          <% if f.assignment.course == @group.course %>
-            <% total_points_done += f.assignment.points %>
-            <p><%= f.assignment.name %>: <span><%= f.assignment.points %></span></p>
-          <% end %>
+        <% if current_user.language == "spanish" %>
+          <%= render "task_es.html.erb" %>
+        <% else %>
+          <%= render "task_en.html.erb" %>
         <% end %>
-        <p>Tienes <%= total_points_done %> Creditos de 40</p>
       <% end %>
     </div>
     <div class="task-tasks forums">
@@ -50,7 +45,11 @@
         <br>
       <% elsif searched_user == Student %>
         <div class="forum-title">
-          <h2>Mi Tarea:</h2>
+          <% if current_user.language == "spanish" %>
+            <h2>Mi Tarea:</h2>
+          <% else %>
+            <h2>My tasks:</h2>
+          <% end %>
         </div>
       <% else %>
         <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
