@@ -1,0 +1,79 @@
+<div class="edit-user">
+  <div class="under-nav text-center">
+    <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
+   <% if @user.city == "" || @user.street == "" || @user.tel == "" || @user.state == nil %>
+      <h3>Para seguir a la plataforma<h3>
+      <h3>Favor de llenar los datos faltantes:</h3>
+      <p>(La foto se puede actualizar despues)</p>
+    <% end %>
+      <hr>
+      <h3>
+          Los datos proporcionados solo<br>
+          serán para uso estadístico y no <br>
+        serán divulgados de ninguna otra manera.
+      </h3>
+  </div>
+  <div class="under-nav text-center">
+    <h3>Completa tu Dirección</h3>
+    <%= form_for :user, url: updateuser_path do |f| %>
+      <p>
+        <%= f.label :nombre %>
+        <%= f.text_field :name, :autocomplete => 'name' %>
+      </p>
+      <p>
+        <%= f.label :apellido %>
+        <%= f.text_field :lastname, :autocomplete => 'family-name' %>
+      </p>
+      <p>
+        <%= f.label :email %>
+        <%= f.text_field :email, :autocomplete => 'email' %>
+      </p>
+      <p>
+        <%= f.label :fecha_de_nacimiento, 'Fecha de Nacimiento (mes/dia/año)' %>
+        <%= f.date_field :birthdate, :autocomplete => 'email' %>
+      </p>
+      <p>
+        <%= f.label :nacionalidad %>
+        <%= f.text_field :nationality, :autocomplete => 'email' %>
+      </p>
+      <p>
+        <%= f.label :calle %>
+        <%= f.text_field :street, :autocomplete => 'address-level1' %>
+      </p>
+      <p>
+        <%= f.label :Código_Postal %>
+        <%= f.number_field :cp, :autocomplete => 'postal-code' %>
+      </p>
+      <p>
+        <%= f.label :ciudad %>
+        <%= f.text_field :city, :autocomplete => 'address-level1' %>
+      </p>
+      <p>
+        <%= f.label :estado %>
+        <%= f.text_field :state, :autocomplete => 'address-level1' %>
+      </p>
+      <p>
+        <%= f.label :Teléfono %>
+        <%= f.number_field :tel, :autocomplete => 'tel' %>
+      </p>
+      <p>
+        <%= f.label :español %>
+        <%= f.radio_button :language, "spanish" %>
+        <%= f.label :english %>
+        <%= f.radio_button :language, "english" %>
+      </p>
+      <% if @user.avatar_file_name != nil %>
+        <p>
+          <%= image_tag current_user.avatar.url(:thumb) %> 
+        </p>
+      <% end %>
+      <p>
+        <%= f.label :Imagen %>
+        <%= f.file_field :avatar, :class => "file-field" %>
+      </p>
+      <p>
+        <%= f.submit "Guardar" %>
+      </p>
+    <% end %>
+  </div>
+</div>
