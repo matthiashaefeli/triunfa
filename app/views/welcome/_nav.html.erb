@@ -28,9 +28,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if current_user %>
       <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
-      <% else %>
-      <ul class="nav navbar-nav">
-      <% end %>
         <% if current_user.language == "spanish" %>
           <li>
             <a href="/", class="spanish"><i class="fas fa-home"></i> Inicio</a>
@@ -39,6 +36,9 @@
         <% else %>
           <a href="/"><i class="fas fa-home"></i> Home</a>
         <% end %>
+      <% else %>
+      <ul class="nav navbar-nav">
+      <% end %>
 
           <!-- nav for all -->
         <% if !current_user %>
