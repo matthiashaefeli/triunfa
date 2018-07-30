@@ -1,0 +1,23 @@
+<div class="forum-title">
+  <h3>Foro del Grupo <%= @room.group.name %></h3>
+  <%= form_for :message, url: messages_path, remote: "true" do |f| %>
+    <p>
+      <%= f.label :adjuntar_imagen %>
+      <%= f.file_field :avatar, :class => "file-field" %>
+    </p>
+    <p>
+      <%= f.label :adjuntar_archivo %>
+      <%= f.file_field :document, :class => "file-field"  %>
+    </p>
+    <p>
+      <%= f.label :link %>
+      <%= f.text_field :link %>
+    </p>
+    <p>
+      <%= f.text_area :body, :class => "text-area", :id => "room-message-text", :placeholder => "Escribe aquí..." %>
+      <%= hidden_field_tag "room", @room.id  %>
+    </p>
+    <br>
+    <%= f.submit "Enviar Mensaje", :id => "room-message-text-submit" %>
+  <% end %>
+</div>

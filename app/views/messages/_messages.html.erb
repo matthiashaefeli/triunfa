@@ -9,7 +9,11 @@
           <% end %>
         </div>
         <div class="user-name">
-          <%= m.user.name %> <%=m.user.lastname %> dijo:
+          <% if current_user.language == "spanish" %>
+            <%= m.user.name %> <%=m.user.lastname %> dijo:
+          <% else %>
+            <%= m.user.name %> <%=m.user.lastname %> said:
+          <% end %>
           </div>
           <% if m.user == current_user %>
             <div>
@@ -25,7 +29,11 @@
           <%= link_to m.link, m.link, :target => '_blank' %>
         <% end %> 
         <% if m.document_file_name != nil %>
-         <p>Descargar el archivo: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
+          <% if current_user.language == "spanish" %>
+            <p>Descargar el archivo: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
+          <% else %>
+            <p>Download the file: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
+          <% end %>
         <% end %>
       </div>
       <div class="message-image">
@@ -45,12 +53,20 @@
     <div class="add-like">
       <% if m.likes.where(user_id: current_user).count == 0 %>
         <%= link_to likes_path(model: Message, id: m.id), :class => "likeable", remote: true do %>
-          <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+          <% if current_user.language == "spanish" %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+          <% else %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
+          <% end %>
         <% end %>
       <% end %>
     </div>
     <div class="show-comments">
-      <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      <% if current_user.language == "spanish" %>
+        <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      <% else %>
+        <i class="fa fa-comment-o" aria-hidden="true"> Comment</i>
+      <% end %>
     </div>
     <%= render "comments/new", locals: { message: m } %>
   </div>

@@ -31,10 +31,14 @@
       <% else %>
       <ul class="nav navbar-nav">
       <% end %>
-        <li>
-          <a href="/", class="spanish"><i class="fas fa-home"></i> Inicio</a>
-          <a href="/", class="english change-language"><i class="fas fa-home"></i> Home</a>
-        </li>
+        <% if current_user.language == "spanish" %>
+          <li>
+            <a href="/", class="spanish"><i class="fas fa-home"></i> Inicio</a>
+            <a href="/", class="english change-language"><i class="fas fa-home"></i> Home</a>
+          </li>
+        <% else %>
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+        <% end %>
 
           <!-- nav for all -->
         <% if !current_user %>
@@ -100,6 +104,11 @@
             <i class="fas fa-child"></i> Com.
             <% end %>
           </li>
+          <li>
+            <%= link_to welcome_path(current_user.id), method:"delete" do %>
+            <i class="fas fa-sign-out-alt"></i> Salida
+            <% end %>
+          </li>
 
           <!-- nav for teachers -->
         <% elsif searched_user == Teacher %>
@@ -124,35 +133,25 @@
               <i class="fas fa-child"></i> Comunidad
               <% end %>
             </li>
+            <li>
+              <%= link_to welcome_path(current_user.id), method:"delete" do %>
+              <i class="fas fa-sign-out-alt"></i> Salida
+              <% end %>
+            </li>
           <% end %>
           
           <!-- nav for students -->
-        <% elsif searched_user == Student %>
-
-          <li><%= link_to tasks_path(group: Student.find_by(user: current_user).group) do %>
-            <i class="fas fa-briefcase"></i> Mi Tarea
+          <% elsif searched_user == Student %>
+            <% if current_user.language == "spanish" %>
+              <%= render "welcome/nav_es.html.erb" %>
+            <% else %>
+              <%= render "welcome/nav_en.html.erb" %>
             <% end %>
-          </li>
-          <li><%= link_to finished_assignments_path do %>
-            <i class="fas fa-trophy"></i> Mis Logros
-            <% end %>
-          </li>
-          <li><%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) do %>
-            <i class="fas fa-comments"></i> Foro de grupo
-            <% end %>
-          </li>
-          <li><%= link_to comunity_index_path do %>
-            <i class="fas fa-child"></i> Comunidad
-            <% end %>
-          </li>
-        <% end %>
-
-          <!-- logout for all -->
-        <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
-          <i class="fas fa-sign-out-alt"></i> Salida
           <% end %>
-        </li>
-            <% end %>
+
+          
+
+      <% end %>
       </ul>
     </div>
   </div>
