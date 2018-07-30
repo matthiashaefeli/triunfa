@@ -27,18 +27,23 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if current_user %>
-      <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
-      <% else %>
-      <ul class="nav navbar-nav">
-      <% end %>
+        <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
         <% if current_user.language == "spanish" %>
           <li>
-            <a href="/", class="spanish"><i class="fas fa-home"></i> Inicio</a>
-            <a href="/", class="english change-language"><i class="fas fa-home"></i> Home</a>
+            <a href="/"><i class="fas fa-home"></i> Inicio</a>
           </li>
         <% else %>
-          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <li>
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+          </li>
         <% end %>
+      <% else %>
+        <ul class="nav navbar-nav">
+        <li>
+          <a href="/", class="spanish"><i class="fas fa-home"></i> Inicio</a>
+          <a href="/", class="english change-language"><i class="fas fa-home"></i> Home</a>
+        </li>
+      <% end %>
 
           <!-- nav for all -->
         <% if !current_user %>
