@@ -398,8 +398,8 @@ $( document ).on('turbolinks:load', function() {
   });
 
   $("#change-lang").on("click", function() {
-    $(".change-language").removeClass("english");
-    $(".spanish").addClass("english");
+    $(".english").removeClass("change-language");
+    $(".spanish").addClass("change-language");
   });
 
 })
