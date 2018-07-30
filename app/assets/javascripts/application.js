@@ -397,9 +397,18 @@ $( document ).on('turbolinks:load', function() {
     });
   });
 
-  $("#change-lang").on("click", function() {
-    $(".change-language").removeClass("english");
-    $(".spanish").addClass("english");
+  $("#change-lang-to-en").on("click", function() {
+    $("#change-lang-to-en").addClass("active-lang")
+    $("#change-lang-to-es").removeClass("active-lang")
+    $(".english").removeClass("change-language");
+    $(".spanish").addClass("change-language");
+  });
+
+  $("#change-lang-to-es").on("click", function() {
+    $("#change-lang-to-en").removeClass("active-lang")
+    $("#change-lang-to-es").addClass("active-lang")
+    $(".spanish").removeClass("change-language");
+    $(".english").addClass("change-language");
   });
 
 })

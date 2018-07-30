@@ -6,43 +6,55 @@
       <%= image_tag "logo.png", :class => "logo_login" %>
   </div>
   <div class="item-login" id="link-to-item-register">
-    <h2>Registrar</h2>
+    <h2 class="spanish">Registrar</h2>
+    <h2 class="english change-language">Register</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <div class="field">
-        <%= f.label :clave_del_grupo %><br/>
-        <%= link_to "¿Donde consigo esta clave?", "../info.pdf", target: "_blank" %> 
+        <%= f.label :clave_del_grupo, class: "spanish" %>
+        <%= f.label :group_key, class: "english change-language" %>
+        <br>
+        <%= link_to "¿Donde consigo esta clave?", "../info.pdf", target: "_blank", class: "spanish" %> 
+        <%= link_to "Where i get this key?", "../info.pdf", target: "_blank", class: "english change-language" %> 
         <%= password_field :group, :key %>
       </div>
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field">
-        <%= f.label :nombre %><br />
+        <%= f.label :nombre, class: "spanish" %>
+        <%= f.label :name, class: "english change-language" %>
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
       <div class="field">
-        <%= f.label :apellido %><br />
+        <%= f.label :apellido, class: "spanish" %>
+        <%= f.label :last_name, class: "english change-language" %>
         <%= f.text_field :lastname, autofocus: true, autocomplete: "last_name" %>
       </div>
       <div class="field">
-        <%= f.label :Contraseña %>
+        <%= f.label :Contraseña, class: "spanish" %>
+        <%= f.label :Password, class: "english change-language" %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> dígitos)</em>
-        <% end %><br />
+        <em class="spanish">(<%= @minimum_password_length %> dígitos)</em>
+        <em class="english change-language">(<%= @minimum_password_length %> digits)</em>
+        <% end %>
         <%= f.password_field :password, autocomplete: "off" %>
       </div>
       <div class="field">
-        <%= f.label :confirmación_de_contraseña %><br />
+        <%= f.label :confirmación_de_contraseña, class: "spanish" %>
+        <%= f.label :password_confirmation, class: "english change-language" %>
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
       <br>
       <div class="actions">
-        <%= f.submit "Registrar" %>
+        <%= f.submit "Registrar", class: "spanish" %>
+        <%= f.submit "Register", class: "english change-language" %>
       </div>
     <% end %>
     <br>
-    <%= link_to "Entrar", new_user_session_path(anchor: "link-to-item-login") %>
+    <%= link_to "Entrar", new_user_session_path(anchor: "link-to-item-login"), class: "spanish" %>
+    <%= link_to "Login", new_user_session_path(anchor: "link-to-item-login"), class: "english change-language" %>
   </div>
 </div> 
+<%= render "devise/sessions/footer_barra" %>

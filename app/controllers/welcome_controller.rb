@@ -75,6 +75,6 @@ class WelcomeController < ApplicationController
     def userupdate_params
       params.require(:user).permit(:street, :city, :cp, :tel,
                                     :state, :avatar, :name, :lastname,
-                                    :email, :birthdate, :nationality)
+                                    :email, :birthdate, :nationality, :language)
     end
 end

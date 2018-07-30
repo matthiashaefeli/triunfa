@@ -551,3 +551,19 @@ nav a {
 .border {
   border: 1px solid red;
 }
+
+.language-choose {
+  font-size: 130%;
+  position: absolute;
+  top: 15px;
+  right: 10%;
+}
+
+.en-es-lang:hover {
+  cursor: pointer;
+  color: $links-hover;
+}
+
+.active-lang {
+  color: $background-index;
+}
