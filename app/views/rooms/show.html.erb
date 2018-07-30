@@ -1,41 +1,35 @@
 <div class="show-room under-nav flyer_forum">
   <div class="forums">
     <% @searched_user = check_user(current_user) %>
+
     <% if @searched_user == Teacher %>
       <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
     <% elsif @searched_user == Admin %>
       <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
     <% else %>
-      <%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %>
-    <% end %>
-    <div class="forum-title">
-      <h3>Foro del Grupo <%= @room.group.name %></h3>
-      <%= form_for :message, url: messages_path, remote: "true" do |f| %>
-        <p>
-          <%= f.label :adjuntar_imagen %>
-          <%= f.file_field :avatar, :class => "file-field" %>
-        </p>
-        <p>
-          <%= f.label :adjuntar_archivo %>
-          <%= f.file_field :document, :class => "file-field"  %>
-        </p>
-        <p>
-          <%= f.label :link %>
-          <%= f.text_field :link %>
-        </p>
-        <p>
-          <%= f.text_area :body, :class => "text-area", :id => "room-message-text", :placeholder => "Escribe aquí..." %>
-          <%= hidden_field_tag "room", @room.id  %>
-        </p>
-        <br>
-        <%= f.submit "Enviar Mensaje", :id => "room-message-text-submit" %>
+      <% if current_user.language == "spanish" %>
+        <%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %>
+      <% else %>
+        <%= link_to "Back", root_path, class: "btn btn-sm back-button" %>
       <% end %>
-    </div>
+    <% end %>
+    
+    <% if current_user.language == "spanish" %>
+      <%= render "rooms/form_for_rooms_es.html.erb" %>
+    <% else %>
+      <%= render "rooms/form_for_rooms_en.html.erb" %>
+    <% end %>
+
     <br>
     <div id="message_room<%= @room.id %>" class="all-forums">
       <%= render "messages/messages" %>
     </div>
-    <p><%= link_to "Ver más Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
+
+    <% if current_user.language == "spanish" %>
+      <p><%= link_to "Ver más Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
+    <% else %>
+      <p><%= link_to "See more messages", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
+    <% end %>
   </div>
   <div class="flyers-index">
     <%= render "flyers/index", locals: { searched_user: @searched_user } %>

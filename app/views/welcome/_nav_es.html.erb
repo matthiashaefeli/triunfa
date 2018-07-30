@@ -1,0 +1,20 @@
+<li><%= link_to tasks_path(group: Student.find_by(user: current_user).group) do %>
+  <i class="fas fa-briefcase"></i> Mi Tarea
+  <% end %>
+</li>
+<li><%= link_to finished_assignments_path do %>
+  <i class="fas fa-trophy"></i> Mis Logros
+  <% end %>
+</li>
+<li><%= link_to room_path(Room.find_by(group: Student.find_by(user: current_user).group.id)) do %>
+  <i class="fas fa-comments"></i> Foro de grupo
+  <% end %>
+</li>
+<li><%= link_to comunity_index_path do %>
+  <i class="fas fa-child"></i> Comunidad
+  <% end %>
+</li>
+<li><%= link_to welcome_path(current_user.id), method:"delete" do %>
+  <i class="fas fa-sign-out-alt"></i> Salida
+  <% end %>
+</li>

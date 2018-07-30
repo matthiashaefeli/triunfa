@@ -1,7 +1,11 @@
 <div id="online_users" class="currentuser-item-size-one">
   <div class="online-in">
     <%= link_to 'javascript:;', class: "btn btn-sm student-link-button", id: "who-is" do %>
-      <p>¿Quien esta en linea?</p>
+      <% if current_user.language == "spanish" %>
+        <p>¿Quien esta en linea?</p>
+      <% else %>
+        <p>Who is online?</p>
+      <% end %>
       <%= image_tag "users.png", class: "images-link-comunity" %> 
     <% end %>
     <div class="">
