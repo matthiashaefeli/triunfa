@@ -780,6 +780,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/articles_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -816,6 +818,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/comunity_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -935,6 +939,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/map_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -945,6 +951,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/model_mailer_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -979,6 +987,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/helpers/spaces_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -1254,6 +1264,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/articles_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -1261,6 +1273,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/articles_controller.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -1281,7 +1295,6 @@
         null,
         1,
         0,
-        null,
         null,
         null
       ],
@@ -1531,6 +1544,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/comunity_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -1538,13 +1553,14 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/comunity_controller.rb": [
+        null,
+        null,
         1,
         1,
         1,
         null,
         1,
         0,
-        null,
         null,
         null
       ],
@@ -2544,6 +2560,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/map_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -2551,6 +2569,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/map_controller.rb": [
+        null,
+        null,
         1,
         null
       ],
@@ -2630,6 +2650,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/model_mailer_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -2637,6 +2659,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/model_mailer_controller.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -2651,8 +2675,6 @@
         0,
         null,
         0,
-        null,
-        null,
         null,
         null
       ],
@@ -2966,6 +2988,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/controllers/spaces_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -3011,6 +3035,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/controllers/spaces_controller.rb": [
+        null,
+        null,
         1,
         1,
         null,
@@ -3058,8 +3084,6 @@
         null,
         1,
         4,
-        null,
-        null,
         null,
         null
       ],
@@ -3785,6 +3809,7 @@
         null,
         null,
         null,
+        null,
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/admins_helper_spec.rb": [
@@ -3807,6 +3832,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/articles_helper_spec.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -3881,6 +3908,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/comunity_helper_spec.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -4126,6 +4155,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/map_helper_spec.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -4143,6 +4174,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/model_mailer_helper_spec.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -4236,6 +4269,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/helpers/spaces_helper_spec.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -4492,7 +4527,6 @@
         null,
         null,
         null,
-        null,
         0,
         null,
         0,
@@ -4500,7 +4534,6 @@
         0,
         0,
         0,
-        null,
         null,
         null
       ],
@@ -4547,6 +4580,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/article_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -4554,6 +4589,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/article.rb": [
+        null,
+        null,
         1,
         1,
         null,
@@ -5438,6 +5475,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/spec/models/space_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -5455,6 +5494,8 @@
         null
       ],
       "/Users/matthiashaefeli/Documents/Documents - Matthias’s MacBook Pro/Devbootcamp/triunfa/superate/app/models/space.rb": [
+        null,
+        null,
         1,
         1,
         1,
@@ -5841,6 +5882,6 @@
         null
       ]
     },
-    "timestamp": 1533048877
+    "timestamp": 1533054480
   }
 }

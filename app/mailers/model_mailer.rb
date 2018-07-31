@@ -44,10 +44,9 @@ class ModelMailer < ApplicationMailer
     from = Email.new(email: "plataforma.superateytriunfa@gmail.com")
     to = Email.new(email: user.email)
     subject = "Superate y Triunfa Semanal"
-    content = Content.new(
-                          type: 'text/html',
+    content = Content.new(type: "text/html",
                           value: ApplicationController.render(
-                            template: 'articles/mail',
+                            template: "articles/mail",
                             layout: nil
                           ))
     mail = Mail.new(from, subject, to, content)
@@ -58,5 +57,4 @@ class ModelMailer < ApplicationMailer
     puts response.body
     puts response.headers
   end
-  
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   before_action :is_admin
   before_action :logged_in
@@ -14,10 +16,9 @@ class ArticlesController < ApplicationController
     redirect_to comunity_index_path
   end
 
-  private 
+  private
 
-  def article_params
-    params.require(:article).permit(:title, :body, :link, :document)
-  end
-
+    def article_params
+      params.require(:article).permit(:title, :body, :link, :document)
+    end
 end

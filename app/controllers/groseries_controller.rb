@@ -12,7 +12,7 @@ class GroseriesController < ApplicationController
     @grosery.save
     if request.xhr?
       respond_to do |format|
-        format.html {render partial: 'groseries/grosery', layout:false }
+        format.html { render partial: "groseries/grosery", layout: false }
       end
     else
       redirect_to groseries_index_path

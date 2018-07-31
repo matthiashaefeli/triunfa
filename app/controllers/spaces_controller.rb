@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class SpacesController < ApplicationController
   before_action :logged_in
-  
+
   def index
     @spaces = Space.all
   end
@@ -10,7 +12,7 @@ class SpacesController < ApplicationController
     @space.save
     if request.xhr?
       respond_to do |format|
-        format.html {render partial: 'spaces/link', layout:false }
+        format.html { render partial: "spaces/link", layout: false }
       end
     else
       redirect_to spaces_path
@@ -43,9 +45,7 @@ class SpacesController < ApplicationController
 
   private
 
-  def space_params
-    params.require(:space).permit(:name)
-  end
-
-
+    def space_params
+      params.require(:space).permit(:name)
+    end
 end

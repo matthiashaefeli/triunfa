@@ -12,7 +12,7 @@ class TodosController < ApplicationController
     @todo.save
     if request.xhr?
       respond_to do |format|
-        format.html {render partial: 'todos/todo', layout:false }
+        format.html { render partial: "todos/todo", layout: false }
       end
     else
       redirect_to todos_path

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ModelMailerController < ApplicationController
   before_action :logged_in
   before_action :is_admin
@@ -13,6 +15,4 @@ class ModelMailerController < ApplicationController
     end
     redirect_to comunity_index_path
   end
-
 end
-

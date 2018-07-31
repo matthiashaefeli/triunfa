@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 # Specs in this file have access to a helper object that includes
 # the MapHelper. For example:
@@ -11,5 +13,5 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe MapHelper, type: :helper do
- 
+
 end
