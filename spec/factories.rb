@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :article do
-    
+
   end
   factory :space do
-    
+
   end
   factory :event do
 

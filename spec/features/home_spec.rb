@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # require 'spec_helper'
 # describe "the signin process", type: :feature do
 #   before :each do
@@ -16,4 +18,3 @@
 #     expect(page).to have_content 'j@j.com'
 #   end
 # end
-

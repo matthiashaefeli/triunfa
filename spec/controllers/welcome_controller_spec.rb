@@ -62,7 +62,7 @@ RSpec.describe WelcomeController, type: :controller do
     u = create_user
     sign_in(user)
     put :updateuser, params: { id: User.last.id, user: { expired: "08-08-2018" } }
-    expect(User.last.expired).to eq('08-08-2018'.to_date)
+    expect(User.last.expired).to eq("08-08-2018".to_date)
   end
 
   it "updatets password from other user" do

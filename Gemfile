@@ -53,7 +53,7 @@ gem "axlsx_rails"
 gem "activerecord-session_store"
 gem "delayed_paperclip"
 gem "simple_calendar", "~> 2.0"
-gem 'google-api-client', '~> 0.9', require: 'google/apis/gmail_v1'
+gem "google-api-client", "~> 0.9", require: "google/apis/gmail_v1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,13 +66,10 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "rspec-rails", "~> 3.7"
   gem "rubocop-rails"
-  gem 'selenium-webdriver', '~> 3.13', '>= 3.13.1'
+  gem "selenium-webdriver", "~> 3.13", ">= 3.13.1"
   gem "simplecov", require: false, group: :test
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
-
-
-
+  gem "cucumber-rails", require: false
+  gem "database_cleaner"
 end
 
 group :development do

@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe Publication, type: :model do
   let(:user) { User.new(name: "juan", lastname: "bosa", email: "bosa@test.com", password: "1234") }
-  let(:space) { Space.create(name: "test")}
+  let(:space) { Space.create(name: "test") }
   let(:publication) { Publication.new(user: user, body: "hello", link: "link", space: space) }
   let(:publicationtwo) { Publication.new(user: user, body: nil) }
 

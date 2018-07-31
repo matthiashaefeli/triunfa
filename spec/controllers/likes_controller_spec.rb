@@ -13,7 +13,7 @@ RSpec.describe LikesController, type: :controller do
   let (:group) { Group.create(name: "group", key: "key", teacher: teacher, course: course) }
   let (:room) { Room.create(group: group) }
   let(:message) { Message.create(user: user, body: "hello", room: room) }
-  let(:space) { Space.create(name: "test")}
+  let(:space) { Space.create(name: "test") }
   let(:publication) { Publication.create(user: user, body: "hello", space: space) }
 
   it "creates a like with chat" do
