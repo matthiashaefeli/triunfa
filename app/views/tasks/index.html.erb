@@ -3,12 +3,7 @@
     <% searched_user = check_user(current_user) %>
     <div class="task-assignments">
       <% if searched_user == Admin || searched_user == Teacher %>
-        <h4>Todas las Tareas:</h4>
-        <% @group.course.assignments.each do |assignment| %>
-          <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
-            <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
-          <% end %>
-        <% end %>
+        <%= render "task_title.html.erb" %>
       <% else %>
         <% if current_user.language == "spanish" %>
           <%= render "task_es.html.erb" %>
@@ -19,30 +14,7 @@
     </div>
     <div class="task-tasks forums">
       <% if searched_user == Teacher  %>
-        <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
-        <div class="forum-title">
-            <h2>Crear una Tarea para el Grupo <%= @group.name %></h2>
-            <%= form_for :task, url: tasks_path  do |f| %>  
-              <p>
-                <%= f.text_area :body, :class => "text-area", :placeholder => "Escribe aquí..." %>
-              </p>
-              <p>
-                <%= f.label :Terminar_antes_de %>
-                <%= f.date_field :end %>
-                <%= hidden_field_tag "group", @group.id  %>
-              </p>
-              <p>
-                <%= f.label :link %>
-                <%= f.text_field :link %>
-              </p>
-              <p>
-                <%= f.label :adjuntar_archivo %>
-                <%= f.file_field :document, :class => "file-field"  %>
-              </p>
-              <%= f.submit "Crear Tarea" %>
-            <% end %>
-        </div>
-        <br>
+        <%= render "task_form.html.erb" %> 
       <% elsif searched_user == Student %>
         <div class="forum-title">
           <% if current_user.language == "spanish" %>

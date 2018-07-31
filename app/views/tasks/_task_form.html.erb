@@ -1,0 +1,5 @@
+<% if current_user.language == "spanish" %>
+  <%= render "task_form_es.html.erb" %>
+<% else %>
+  <%= render "task_form_en.html.erb" %>
+<% end %>

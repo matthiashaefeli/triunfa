@@ -3,7 +3,11 @@
     <% @searched_user = check_user(current_user) %>
 
     <% if @searched_user == Teacher %>
-      <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
+      <% if current_user.language == "spanish" %>
+        <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
+      <% else %>
+        <p><%= link_to "Back", rooms_path, class: "btn btn-sm back-button" %></p>
+      <% end %>     
     <% elsif @searched_user == Admin %>
       <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
     <% else %>

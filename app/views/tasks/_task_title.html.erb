@@ -1,0 +1,15 @@
+<% if current_user.language == "spanish" %>
+  <h4>Todas las Tareas:</h4>
+  <% @group.course.assignments.each do |assignment| %>
+    <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
+      <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Creditos</span></p>
+    <% end %>
+  <% end %>
+<% else %>
+  <h4>All tasks:</h4>
+  <% @group.course.assignments.each do |assignment| %>
+    <%= link_to assignment_path(assignment.id, :group => @group.id) do %>
+      <p><strong><%= assignment.name %></strong> <span><%= assignment.points %> Points</span></p>
+    <% end %>
+  <% end %>
+<% end %>

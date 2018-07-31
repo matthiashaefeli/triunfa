@@ -1,0 +1,24 @@
+<p><%= link_to "Back", rooms_path, class: "btn btn-sm back-button" %></p>
+<div class="forum-title">
+    <h2>Create a task for the group <%= @group.name %></h2>
+    <%= form_for :task, url: tasks_path  do |f| %>  
+      <p>
+        <%= f.text_area :body, :class => "text-area", :placeholder => "Write here..." %>
+      </p>
+      <p>
+        <%= f.label :finish_before %>
+        <%= f.date_field :end %>
+        <%= hidden_field_tag "group", @group.id  %>
+      </p>
+      <p>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </p>
+      <p>
+        <%= f.label :attach_file %>
+        <%= f.file_field :document, :class => "file-field"  %>
+      </p>
+      <%= f.submit "Create Task" %>
+    <% end %>
+</div>
+<br>

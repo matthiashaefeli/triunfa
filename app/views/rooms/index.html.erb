@@ -1,31 +1,5 @@
-<div class="under-nav group-index">
-  <div class="text-center">
-  <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
-    <h2>Mis Grupos</h2>
-    <% @teacher_rooms.each do |r| %>
-      <% if r.group.activ %>
-        <h4><strong><%=  r.group.name %> <%=  r.group.key %>:</strong></h4>
-        <div class="teacher-group-index">
-          <div>
-            <%= link_to group_path(r.group.id), class: "btn btn-sm student-link-button" do %>
-              <p>Grupo/Estudiantes</p>
-              <%= image_tag "students.png", class: "images-link-comunity" %> 
-            <% end %>
-          </div>
-          <div>
-            <%= link_to room_path(r.id), class: "btn btn-sm student-link-button" do %>
-              <p>Foro</p>
-              <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
-            <% end %>
-          </div>
-          <div>
-            <%= link_to tasks_path(group: r.group), class: "btn btn-sm student-link-button" do %>
-              <p>Tarea</p>
-              <%= image_tag "tarea.png", class: "images-link-comunity" %> 
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<% if current_user.language == "spanish" %>
+  <%= render "rooms/index_es.html.erb" %>
+<% else %>
+  <%= render "rooms/index_en.html.erb" %>
+<% end %>
