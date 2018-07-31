@@ -118,43 +118,21 @@
           <!-- nav for teachers -->
         <% elsif searched_user == Teacher %>
           <% if (Teacher.find_by(user: current_user)).activ %>
-            <li><%= link_to libraries_path do %>
-              <i class="fas fa-book"></i> bibl.
-              <% end %>
-            </li>
-            <li><%= link_to courses_path do %>
-              <i class="fas fa-box-open"></i> Cursos
-              <% end %>
-            </li>
-            <li><%= link_to teachers_path do %>
-              <i class="fas fa-user-circle"></i> Foro Instr.
-              <% end %>
-            </li>
-            <li><%= link_to rooms_path do %>
-              <i class="fas fa-users"></i> Grupos
-              <% end %>
-            </li>
-            <li><%= link_to comunity_index_path do %>
-              <i class="fas fa-child"></i> Comunidad
-              <% end %>
-            </li>
-            <li>
-              <%= link_to welcome_path(current_user.id), method:"delete" do %>
-              <i class="fas fa-sign-out-alt"></i> Salida
-              <% end %>
-            </li>
+            <% if current_user.language == "spanish" %>
+              <%= render "welcome/teacher_nav_es.html.erb" %>
+            <% else %>
+              <%= render "welcome/teacher_nav_en.html.erb" %>
+            <% end %>
           <% end %>
           
           <!-- nav for students -->
           <% elsif searched_user == Student %>
             <% if current_user.language == "spanish" %>
-              <%= render "welcome/nav_es.html.erb" %>
+              <%= render "welcome/student_nav_es.html.erb" %>
             <% else %>
-              <%= render "welcome/nav_en.html.erb" %>
+              <%= render "welcome/student_nav_en.html.erb" %>
             <% end %>
           <% end %>
-
-          
 
       <% end %>
       </ul>
