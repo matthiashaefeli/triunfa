@@ -1,47 +1,59 @@
-
+User platform for admin teacher and user
+create courses and groupes.
+online messages
 
 * Ruby 2.5.0p0
 
 * Rails 5.1.6
 
-* System dependencies
-
-* Configuration
-
 * Postgresql
 
-* Database initialization
-
 * How to run the test suite
-bundle exec rspec
+rspec
 Run your tests, open up coverage/index.html in your browser and check out what you've missed so far.
 
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
 # Gems
-
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-gem 'autoprefixer-rails'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem "bootstrap-sass", "~> 3.3", ">= 3.3.6"
+  front-end framework
+gem "autoprefixer-rails"
+  parce CSS
+gem "jquery-rails", "~> 4.3", ">= 4.3.1"
+  automate using jQuery with Rails
 gem "font-awesome-rails"
-gem 'devise'
+  provides the Font-Awesome web fonts and stylesheets
+gem "devise"
+  user authentication solution
 gem "paperclip", "~> 6.0.0"
-gem 'json'
-gem 'aws-sdk-s3'
-gem 'fog'
-gem 'figaro'
-gem 'sendgrid-ruby'
-gem 'rest-client'
-gem 'redis'
-gem 'rubyzip', '>= 1.2.1'
-gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
-gem 'axlsx_rails'
-gem 'activerecord-session_store'
-gem 'delayed_paperclip'
+  Easy file attachment management for ActiveRecord
+gem "json"
+  JSON implementation as a Ruby extension
+gem "aws-sdk-s3"
+  cloude storage
+gem "fog"
+  cloud services library
+gem "figaro"
+  using ENV and a single YAML file
+gem "sendgrid-ruby"
+  auto emails
+gem "rest-client"
+  simple http use for api calls
+gem "redis"
+  match Redis' API one-to-one
+gem "rubyzip", ">= 1.2.1"
+  reading and writing zip files
+gem "axlsx", git: "https://github.com/randym/axlsx.git", ref: "c8ac844"
+  generate beautiful Office Open XML Spreadsheet documents 
+gem "axlsx_rails"
+  provide templates for the axlsx gem
+gem "activerecord-session_store"
+  session store
+gem "delayed_paperclip"
+  Process Paperclip attachments in the background
+gem "simple_calendar", "~> 2.0"
+  simple calendar for views
+gem 'google-api-client', '~> 0.9', require: 'google/apis/gmail_v1'
+  google api 
+
 
 
 
