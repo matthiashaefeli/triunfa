@@ -1,0 +1,56 @@
+<div class="student-index">
+  <div class="student-index-title">
+    <div class="header-student-index">
+      <h3>WELCOME TO THE PLATFORM</h3>
+      <h3>OF SUPERATE Y TRIUNFA</h3>
+    </div>
+    <div class="text-student-index">
+      <p><strong>Congratulations <span><%= current_user.name %> <%= current_user.lastname %></span> <br>
+          You took the decision to join the Superate and Triunfa program.<br>
+          Here you will find everything you need to teach the course: <span>
+          <% @course.each do |c| %>
+            <%= c.name %>
+          <% end %>
+          </span>.</strong></p>
+    </div>
+  </div>
+  <div>
+    <%= render "online.html.erb" %>
+  </div>
+  <div>
+    <%= link_to rooms_path, class: "btn btn-sm student-link-button" do %>
+      <p>My Groupes</p>
+      <%= image_tag "group1.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to teachers_path, class: "btn btn-sm student-link-button" do %>
+      <p>Forum Teachers</p>
+      <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to courses_path, class: "btn btn-sm student-link-button" do %>
+      <p>Courses</p>
+      <%= image_tag "curso_student.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to libraries_path, class: "btn btn-sm student-link-button" do %>
+      <p>Library</p>
+      <%= image_tag "otherbooks.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to edituser_path(current_user.id), class: "btn btn-sm student-link-button" do %>
+      <p><%= current_user.name %></p>
+      <%= image_tag "user1.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
+      <p>Comunity</p>
+      <%= image_tag "comunity.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<li><%= link_to libraries_path do %>
+  <i class="fas fa-book"></i> Library
+  <% end %>
+</li>
+<li><%= link_to courses_path do %>
+  <i class="fas fa-box-open"></i> Courses
+  <% end %>
+</li>
+<li><%= link_to teachers_path do %>
+  <i class="fas fa-user-circle"></i> Forum Teachers
+  <% end %>
+</li>
+<li><%= link_to rooms_path do %>
+  <i class="fas fa-users"></i> Groups
+  <% end %>
+</li>
+<li><%= link_to comunity_index_path do %>
+  <i class="fas fa-child"></i> Comunity
+  <% end %>
+</li>
+<li>
+  <%= link_to welcome_path(current_user.id), method:"delete" do %>
+  <i class="fas fa-sign-out-alt"></i> Logout
+  <% end %>
+</li>
