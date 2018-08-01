@@ -31,7 +31,7 @@
       <p><%= link_to "Ver más Mensajes", space_path(@space, limit: (@publications_limit.to_i + 5)) %></p>
     </div>
     <div class="community-flyers">
-      <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+      <%= render "flyers/index" %>
     </div>
   </div>
 </div>

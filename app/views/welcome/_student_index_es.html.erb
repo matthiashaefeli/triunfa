@@ -34,7 +34,11 @@
   <div>
     <%= link_to edituser_path(current_user.id), class: "btn btn-sm student-link-button" do %>
       <p><%= current_user.name %></p>
-      <%= image_tag "user1.png", class: "images-link-comunity" %> 
+      <% if current_user.avatar_file_name == nil %>
+        <%= image_tag "user1.png", class: "images-link-comunity" %> 
+      <% else %>
+        <%= image_tag current_user.avatar.url(:thumb), class: "images-link-comunity" %>
+      <% end %>
     <% end %>
   </div>
   <div>

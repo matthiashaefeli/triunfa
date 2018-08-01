@@ -1,10 +1,9 @@
 <div  class="under-nav group-index">
   <div class="under-nav group-inner">
-  <% searched_user = check_user(current_user) %>
-  <% if searched_user == Admin %>
+  <% if @searched_user == Admin %>
     <p><%= link_to "Back", groups_path, class: "btn btn-sm back-button" %></p>
     <p><%= link_to "Click here to download the data of this Group", group_path(@group.id, format: :xlsx) %></p>
-  <% elsif searched_user == Teacher  %>
+  <% elsif @searched_user == Teacher  %>
     <p><%= link_to "Back", rooms_path, class: "btn btn-sm back-button" %></p>
   <% end %>
   <p><strong>Name of the group: </strong><%= @group.name %></p>
@@ -33,7 +32,7 @@
       <p><strong>Activ: </strong>Yes</p>
       <p><strong><%= link_to "Group Forum", room_path(Room.find_by(group: @group)) %></strong></p>
       <p><strong><%= link_to "Group Tasks", tasks_path(group: @group) %></strong></p>
-      <% if searched_user == Admin %>
+      <% if @searched_user == Admin %>
           <p id="edit-group">Edit Group</p>
           <div id="edit-group-hidden">
               <%= render "edit.html.erb" %>

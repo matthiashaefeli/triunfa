@@ -2,7 +2,7 @@
   <div class="teacher-inner">
     <div class="teacher-admin-show">
       <%= render "layouts/errors" %>
-      <% if check_user(current_user) == Admin %>
+      <% if @searched_user == Admin %>
       <p class="teacher-show-text"><i class="fas fa-angle-double-down"></i> Clic aquí para ver los Instructores</p>
       <div class="teacher-show-all">
         <%= render "teachers_all" %>

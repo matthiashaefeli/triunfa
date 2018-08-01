@@ -51,5 +51,11 @@ module ServiceUser
     end
     @language
   end
-  
+
+  def who_is
+    if current_user
+      @searched_user = check_user(current_user)
+    end
+    @searched_user
+  end
 end

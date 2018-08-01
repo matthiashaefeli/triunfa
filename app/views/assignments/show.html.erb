@@ -1,7 +1,6 @@
 <div class="group-index under-nav">
   <div class="group-inner">
-  <% searched_user = check_user(current_user) %>
-    <% if searched_user == Teacher %>
+    <% if @searched_user == Teacher %>
         <p><%= link_to 'Regresar', rooms_path, class: "btn btn-sm back-button" %></p>
     <% else %>
         <p><%= link_to 'Regresar', groups_path, class: "btn btn-sm back-button" %></p>

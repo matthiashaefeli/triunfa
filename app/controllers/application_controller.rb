@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   # before_action :authenticate_user!, except: [:index]
 
   before_action :check_language
+  before_action :who_is
 
 
   protected
