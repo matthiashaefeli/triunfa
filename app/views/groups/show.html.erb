@@ -1,4 +1,4 @@
-<% if current_user.language == "spanish" %>
+<% if @language %>
   <%= render "groups/show_es.html.erb" %>
 <% else %>
   <%= render "groups/show_en.html.erb" %>

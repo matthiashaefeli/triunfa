@@ -1,6 +1,6 @@
 
 <div class="finished-assig under-nav">
-  <% if current_user.language == "spanish" %>
+  <% if @language %>
     <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
     <h4>Todos mis Cursos graduados:</h4>
     <ul>

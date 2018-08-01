@@ -3,7 +3,7 @@
     <% @searched_user = check_user(current_user) %>
 
     <% if @searched_user == Teacher %>
-      <% if current_user.language == "spanish" %>
+      <% if @language %>
         <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
       <% else %>
         <p><%= link_to "Back", rooms_path, class: "btn btn-sm back-button" %></p>
@@ -11,14 +11,14 @@
     <% elsif @searched_user == Admin %>
       <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
     <% else %>
-      <% if current_user.language == "spanish" %>
+      <% if @language %>
         <%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %>
       <% else %>
         <%= link_to "Back", root_path, class: "btn btn-sm back-button" %>
       <% end %>
     <% end %>
     
-    <% if current_user.language == "spanish" %>
+    <% if @language %>
       <%= render "rooms/form_for_rooms_es.html.erb" %>
     <% else %>
       <%= render "rooms/form_for_rooms_en.html.erb" %>
@@ -29,7 +29,7 @@
       <%= render "messages/messages" %>
     </div>
 
-    <% if current_user.language == "spanish" %>
+    <% if @language %>
       <p><%= link_to "Ver más Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
     <% else %>
       <p><%= link_to "See more messages", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
