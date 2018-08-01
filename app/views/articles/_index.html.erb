@@ -3,8 +3,7 @@
     <p> Superate y Triunfa Semanal</p>
   </div>
   <div>
-    <% searched_user = check_user(current_user) %>
-    <% if searched_user == Admin %>
+    <% if @searched_user == Admin %>
       <div class="articel-links-to-mail">
         <p><%= link_to "Crear nuevo articulo", new_article_path %> </p>
         <p><%= link_to "Mandar Email Semanal", model_mailer_index_path %></p>
@@ -24,7 +23,7 @@
           <p class="article-body"><%= article.body %></p>
         <% end %>
       <% end %>
-      <% if searched_user == Admin %>
+      <% if @searched_user == Admin %>
         <%= link_to article_path(article.id), method: "delete" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>

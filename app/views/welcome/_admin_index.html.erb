@@ -1,47 +1,5 @@
-<div class="student-index">
-  <div>
-    <%= render "online.html.erb" %>
-  </div>
-  <div>
-    <%= link_to courses_path, class: "btn btn-sm student-link-button" do %>
-      <p>Cursos</p>
-      <%= image_tag "curso_student.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to teachers_path, class: "btn btn-sm student-link-button" do %>
-      <p>Instructores/Admin</p>
-      <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to groups_path, class: "btn btn-sm student-link-button" do %>
-      <p>Grupos</p>
-      <%= image_tag "group1.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to students_path, class: "btn btn-sm student-link-button" do %>
-      <p>Estudiantes</p>
-      <%= image_tag "students.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to libraries_path, class: "btn btn-sm student-link-button" do %>
-      <p>Biblioteca</p>
-      <%= image_tag "otherbooks.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to statistics_path, class: "btn btn-sm student-link-button" do %>
-      <p>Estadistica</p>
-      <%= image_tag "estadistica.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
-      <p>Comunidad</p>
-      <%= image_tag "comunity.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-</div>
+<% if @language %>
+  <%= render "welcome/admin_index_es.html.erb" %>
+<% else %>
+  <%= render "welcome/admin_index_en.html.erb" %>
+<% end %>

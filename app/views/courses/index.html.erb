@@ -1,4 +1,3 @@
-<% searched_user = check_user(current_user) %>
 <div class="under-nav course-index">
   <div class="course-inner">
     <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
@@ -14,7 +13,7 @@
           <!-- <th>Fecha inicio</th>
           <th>Fecha final</th> -->
           <th>Link</th>
-          <% if searched_user == Admin %>
+          <% if @searched_user == Admin %>
             <th>Activo</th>
           <% end %>
         </tr>
@@ -34,7 +33,7 @@
             <%= course.link %>
           <% end %>
           </td>
-          <% if searched_user == Admin %>
+          <% if @searched_user == Admin %>
             <td>
               <%= course.activ ? "Si" : "NO" %>
             </td>
@@ -43,7 +42,7 @@
         <% end %>
       </tbody>
     </table>
-    <% if searched_user == Admin %>
+    <% if @searched_user == Admin %>
       <div>
           <%= render "layouts/errors" %>
           <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>

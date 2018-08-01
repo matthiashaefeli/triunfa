@@ -4,7 +4,7 @@
     <h2>Biblioteca</h2>
     <h4>Para descargar el archivo haz clic en el nombre del archivo!</h4>
     <hr>
-    <% if check_user(current_user) == Admin %>
+    <% if @searched_user == Admin %>
       <%= render "layouts/errors" %>
       <p class="create-new-folder-text"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear una nueva carpeta</p>
       <div class="create-new-folder">

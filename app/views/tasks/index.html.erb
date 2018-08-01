@@ -1,8 +1,7 @@
 <div class=" under-nav group-index">
   <div class="task-index group-inner">
-    <% searched_user = check_user(current_user) %>
     <div class="task-assignments">
-      <% if searched_user == Admin || searched_user == Teacher %>
+      <% if @searched_user == Admin || @searched_user == Teacher %>
         <%= render "task_title.html.erb" %>
       <% else %>
         <% if @language %>
@@ -13,9 +12,9 @@
       <% end %>
     </div>
     <div class="task-tasks forums">
-      <% if searched_user == Teacher  %>
+      <% if @searched_user == Teacher  %>
         <%= render "task_form.html.erb" %> 
-      <% elsif searched_user == Student %>
+      <% elsif @searched_user == Student %>
         <div class="forum-title">
           <% if @language %>
             <h2>Mi Tarea:</h2>

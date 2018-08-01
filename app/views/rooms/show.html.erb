@@ -1,7 +1,5 @@
 <div class="show-room under-nav flyer_forum">
   <div class="forums">
-    <% @searched_user = check_user(current_user) %>
-
     <% if @searched_user == Teacher %>
       <% if @language %>
         <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
@@ -36,6 +34,6 @@
     <% end %>
   </div>
   <div class="flyers-index">
-    <%= render "flyers/index", locals: { searched_user: @searched_user } %>
+    <%= render "flyers/index" %>
   </div>
 </div>

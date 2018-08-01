@@ -1,33 +1,6 @@
 <div class="student-index">
-  <div class="student-index-title">
-    <div class="header-student-index">
-      <h3>BIENVENIDO A LA PLATAFORMA</h3>
-      <h3>DE SUPERATE Y TRIUNFA</h3>
-    </div>
-    <div class="text-student-index">
-      <p><strong>Felicidades <span><%= current_user.name %> <%= current_user.lastname %></span> <br>
-          Tomaste la decisión de unirte al programa de Superate y Triunfa.<br>
-          Aqui encuentras todo lo que necesitas para enseñar los cursos:<span>
-          <% @course.each do |c| %>
-            <%= c.name %>
-          <% end %>
-          </span>.</strong></p>
-    </div>
-  </div>
   <div>
     <%= render "online.html.erb" %>
-  </div>
-  <div>
-    <%= link_to rooms_path, class: "btn btn-sm student-link-button" do %>
-      <p>Mis Grupos</p>
-      <%= image_tag "group1.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
-  <div>
-    <%= link_to teachers_path, class: "btn btn-sm student-link-button" do %>
-      <p>Foro Instructores</p>
-      <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
-    <% end %>
   </div>
   <div>
     <%= link_to courses_path, class: "btn btn-sm student-link-button" do %>
@@ -36,9 +9,33 @@
     <% end %>
   </div>
   <div>
+    <%= link_to teachers_path, class: "btn btn-sm student-link-button" do %>
+      <p>Instructores/Admin</p>
+      <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to groups_path, class: "btn btn-sm student-link-button" do %>
+      <p>Grupos</p>
+      <%= image_tag "group1.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to students_path, class: "btn btn-sm student-link-button" do %>
+      <p>Estudiantes</p>
+      <%= image_tag "students.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
     <%= link_to libraries_path, class: "btn btn-sm student-link-button" do %>
       <p>Biblioteca</p>
       <%= image_tag "otherbooks.png", class: "images-link-comunity" %> 
+    <% end %>
+  </div>
+  <div>
+    <%= link_to statistics_path, class: "btn btn-sm student-link-button" do %>
+      <p>Estadistica</p>
+      <%= image_tag "estadistica.png", class: "images-link-comunity" %> 
     <% end %>
   </div>
   <div>
