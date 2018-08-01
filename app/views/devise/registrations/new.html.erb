@@ -16,21 +16,21 @@
         <br>
         <%= link_to "¿Donde consigo esta clave?", "../info.pdf", target: "_blank", class: "spanish" %> 
         <%= link_to "Where i get this key?", "../info.pdf", target: "_blank", class: "english change-language" %> 
-        <%= password_field :group, :key %>
+        <%= password_field :group, :key, class: "text-register-field" %>
       </div>
       <div class="field">
         <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-register-field" %>
       </div>
       <div class="field">
         <%= f.label :nombre, class: "spanish" %>
         <%= f.label :name, class: "english change-language" %>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "text-register-field" %>
       </div>
       <div class="field">
         <%= f.label :apellido, class: "spanish" %>
         <%= f.label :last_name, class: "english change-language" %>
-        <%= f.text_field :lastname, autofocus: true, autocomplete: "last_name" %>
+        <%= f.text_field :lastname, autofocus: true, autocomplete: "last_name", class: "text-register-field" %>
       </div>
       <div class="field">
         <%= f.label :Contraseña, class: "spanish" %>
@@ -39,12 +39,12 @@
         <em class="spanish">(<%= @minimum_password_length %> dígitos)</em>
         <em class="english change-language">(<%= @minimum_password_length %> digits)</em>
         <% end %>
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: "text-register-field" %>
       </div>
       <div class="field">
         <%= f.label :confirmación_de_contraseña, class: "spanish" %>
         <%= f.label :password_confirmation, class: "english change-language" %>
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "text-register-field" %>
       </div>
       <br>
       <div class="actions">

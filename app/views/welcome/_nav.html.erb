@@ -11,6 +11,7 @@
 <% if !current_user %>
   <%= image_tag('elearning.jpg', class: 'top-image') %>
 <% end %>
+
 <nav class="navbar text-uppercase bg-color">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,7 +26,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse font-times" id="bs-example-navbar-collapse-1">
       <% if current_user %>
         <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
         <% if current_user.language == "spanish" %>
@@ -133,8 +134,7 @@
               <%= render "welcome/student_nav_en.html.erb" %>
             <% end %>
           <% end %>
-
-      <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
