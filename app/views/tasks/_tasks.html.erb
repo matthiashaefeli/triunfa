@@ -1,4 +1,4 @@
-<% if current_user.language == "spanish" %>
+<% if @language %>
   <%= render "task_tasks_es.html.erb" %>
 <% else %>
   <%= render "task_tasks_en.html.erb" %>

@@ -40,4 +40,16 @@ module ServiceUser
       "new_user"
     end
   end
+
+  def check_language
+    if current_user
+      if current_user.language == "spanish"
+        @language = true
+      else
+        @language = false
+      end
+    end
+    @language
+  end
+  
 end

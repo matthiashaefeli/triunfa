@@ -1,6 +1,6 @@
 <div>
   <% @tasks.each do |task| %>
-    <div class="chats">
+    <div class="chats dont-break-out">
       <p><%= task.body %></p>
       <p>Finish before: <%= task.end %></p>
       <% if task.link != "" %>
