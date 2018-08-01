@@ -8,11 +8,12 @@
 }
 
 .slide-div-complete {
+  height: 400px;
   display: flex;
 }
 
 #slideshow { 
-    margin: 50px auto; 
+    margin: auto; 
     position: relative; 
     width: 80%; 
     height: 240px; 
@@ -29,7 +30,7 @@
 }
 
 .triangleright {
-  margin: auto 0 auto 0 ;
+  margin: auto 5px auto 0 ;
   border-right: 10px solid $index-color; 
   border-bottom: 10px solid $index-color;
   height: 30px;
@@ -38,7 +39,7 @@
 }
 
 .triangleleft {
-  margin: auto 0 auto 0 ;
+  margin: auto 0 auto 5px ;
   border-right: 10px solid $index-color; 
   border-bottom: 10px solid $index-color;
   height: 30px;
