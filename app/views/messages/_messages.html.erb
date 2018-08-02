@@ -9,11 +9,7 @@
           <% end %>
         </div>
         <div class="user-name">
-          <% if @language %>
-            <%= m.user.name %> <%=m.user.lastname %> dijo:
-          <% else %>
-            <%= m.user.name %> <%=m.user.lastname %> said:
-          <% end %>
+            <%= m.user.name %> <%=m.user.lastname %> <% if @language %> dijo: <% else %> said: <% end %>
           </div>
           <% if m.user == current_user %>
             <div>
@@ -44,7 +40,7 @@
         <% end %>
       </div>
       <div class="message-fin">
-        <small>el <%= l m.created_at, format: :short %></small>
+        <small><%= l m.created_at, format: :short %></small>
       </div>
     </div>
   </div>

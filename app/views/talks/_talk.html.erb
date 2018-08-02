@@ -9,7 +9,7 @@
           <% end %>
         </div>
         <div class="user-name">
-          <%= t.user.name %> <%=t.user.lastname %> dijo:
+            <%= t.user.name %> <%=t.user.lastname %> <% if @language %> dijo: <% else %> said: <% end %>
         </div>
         <% if t.user == current_user %>
           <div>
@@ -25,7 +25,7 @@
           <%= link_to t.link, t.link, :target => '_blank' %>
         <% end %>
         <% if t.document_file_name != nil %>
-         <p>Descargar el archivo: <%= link_to t.document_file_name, download_path(t.id, Talk) %></p>
+         <p> <% if @language %> Descargar el archivo: <% else %> download file: <% end %><%= link_to t.document_file_name, download_path(t.id, Talk) %></p>
         <% end %> 
       </div>
       <div class="chat-image">
@@ -36,7 +36,7 @@
       <% end %>
       </div>
       <div class="chat-fin">
-      <small>el <%= l t.created_at, format: :short %></small>
+      <small><%= l t.created_at, format: :short %></small>
       </div>
     </div>
   </div>
@@ -45,12 +45,12 @@
     <div class="add-like">
       <% if t.likes.where(user_id: current_user).count == 0 %>
           <%= link_to likes_path(model: Talk, id: t.id), :class => "likeable", remote: true do %>
-              <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
+              <i class="fa fa-thumbs-o-up" aria-hidden="true"> <% if @language %>Me Gusta <% else %> Like <% end %></i>
           <% end %>
       <% end %>
     </div>
     <div class="show-comments">
-      <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
+      <i class="fa fa-comment-o" aria-hidden="true"> <% if @language %>Comentar <% else %> Comment <% end %></i>
     </div>
     <%= render "comments/new", locals: { talk: t } %>
   </div>
