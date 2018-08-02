@@ -1,8 +1,14 @@
 <div class="under-nav library-index">
   <div class="library-innert">
-    <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
-    <h2>Biblioteca</h2>
-    <h4>Para descargar el archivo haz clic en el nombre del archivo!</h4>
+    <% if @language %>
+      <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
+      <h2>Biblioteca</h2>
+      <h4>Para descargar el archivo haz clic en el nombre del archivo!</h4>
+    <% else %>
+      <p><%= link_to 'Back', root_path, class: "btn btn-sm back-button" %></p>
+      <h2>Libray</h2>
+      <h4>To download the file, click on the file name!</h4>
+    <% end %>
     <hr>
     <% if @searched_user == Admin %>
       <%= render "layouts/errors" %>
