@@ -1,0 +1,29 @@
+<div class="forums">
+<p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
+  <div class="forum-title">
+  <h2>Foro Instructores</h2>
+    <%= form_for :talk, url: talks_path, remote: "true"  do |f| %>  
+      <p>
+        <%= f.label :adjuntar_imagen %>
+        <%= f.file_field :avatar, :class => "file-field" %>
+      </p>
+      <p>
+        <%= f.label :adjuntar_archivo %>
+        <%= f.file_field :document, :class => "file-field"  %>
+      </p>
+      <p>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </p>
+      <p>
+        <%= f.text_area :body, :class => "text-area", :id => "talk-text", :placeholder => "Escribe aquí..." %>
+      </p>
+      <%= f.submit "Enviar Mensaje", :class => "talk_send", :id => "talk-text-submit" %>
+    <% end %>
+  </div>
+  <br>
+  <div id="talk-table" class="all-forums">
+    <%= render "talks/talk" %>
+  </div> 
+  <p><%= link_to "Ver más Mensajes", teachers_path(limit: (@talks_limit.to_i + 5)) %></p>
+</div>
