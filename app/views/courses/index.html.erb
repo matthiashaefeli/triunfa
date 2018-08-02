@@ -1,20 +1,20 @@
 <div class="under-nav course-index">
   <div class="course-inner">
-    <p><%= link_to 'Regresar', root_path, class: "btn btn-sm back-button" %></p>
-    <h1>Cursos</h1>
-    <p><%= link_to "Clic aquí para descargar los datos de todos los Cursos", courses_path(format: :xlsx) %></p>
-    <input type="text" class="mySearch" id="courseTableSearch" placeholder="Buscar por Nombre..">
-    <br>
+    <% if @language %>
+      <%= render "courses/title_es.html.erb" %>
+    <% else %> 
+      <%= render "courses/title_en.html.erb" %>
+    <% end %>
     <table class="table table-hover table-bordered" id="course-table">
       <thead>
         <tr>
           <th></th>
-          <th>Nombre</th>
+          <th><% if @language %>Nombre<% else %>Name<% end %></th>
           <!-- <th>Fecha inicio</th>
           <th>Fecha final</th> -->
           <th>Link</th>
           <% if @searched_user == Admin %>
-            <th>Activo</th>
+            <th><% if @language %>Activo<% else %>Activ<% end %></th>
           <% end %>
         </tr>
       </thead>
