@@ -90,6 +90,19 @@
               <%= render "welcome/student_nav_en.html.erb" %>
             <% end %>
           <% end %>
+
+          <!-- logout for all users -->
+          <% if @language %>
+            <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
+              <i class="fas fa-sign-out-alt"></i> Salida
+              <% end %>
+            </li>
+          <% else %>
+            <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
+              <i class="fas fa-sign-out-alt"></i> Logout
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
