@@ -1,15 +1,8 @@
 <div class="com-student">
-  <div>
-    <%= link_to new_student_path, class: "btn btn-sm student-link-button" do %>
-      <p>Mi Curso</p>
-      <%= image_tag "curso_student.png", class: "images-link-comunity" %>
-    <% end %>
-  </div>
-  <div>
-    <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
-      <p>Comunidad</p>
-      <%= image_tag "comunity.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
+  <% if @language %>
+    <%= render "welcome/community_or_student_es.html.erb" %>
+  <% else %>
+    <%= render "welcome/community_or_student_en.html.erb" %>
+  <% end %>
 </div>
 

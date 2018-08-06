@@ -1,0 +1,11 @@
+<div class="article-title">
+  <p> Superate y Triunfa Semanal</p>
+</div>
+<div>
+  <% if @searched_user == Admin %>
+    <div class="articel-links-to-mail">
+      <p><%= link_to "Crear nuevo articulo", new_article_path %> </p>
+      <p><%= link_to "Mandar Email Semanal", model_mailer_index_path %></p>
+    </div> 
+  <% end %>
+</div>
