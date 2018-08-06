@@ -1,6 +1,6 @@
 <div class="under-nav course-index">
   <div class="course-inner">
-    <% if @language %>
+    <% if @spanish %>
       <%= render "courses/title_es.html.erb" %>
     <% else %> 
       <%= render "courses/title_en.html.erb" %>
@@ -9,12 +9,12 @@
       <thead>
         <tr>
           <th></th>
-          <th><% if @language %>Nombre<% else %>Name<% end %></th>
+          <th><% if @spanish %>Nombre<% else %>Name<% end %></th>
           <!-- <th>Fecha inicio</th>
           <th>Fecha final</th> -->
           <th>Link</th>
           <% if @searched_user == Admin %>
-            <th><% if @language %>Activo<% else %>Activ<% end %></th>
+            <th><% if @spanish %>Activo<% else %>Activ<% end %></th>
           <% end %>
         </tr>
       </thead>

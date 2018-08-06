@@ -397,6 +397,7 @@ $( document ).on('turbolinks:load', function() {
     });
   });
 
+  // change language on index without login
   $("#change-lang-to-en").on("click", function() {
     $("#change-lang-to-en").addClass("active-lang")
     $("#change-lang-to-es").removeClass("active-lang")

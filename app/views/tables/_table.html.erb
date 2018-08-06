@@ -16,7 +16,7 @@
       </div>
       <%= form_for :conversation, url: conversations_path, :remote => "true" do |f| %>  
         <p>
-          <% if @language %>
+          <% if @spanish %>
             <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Escribe aquí..." %>
           <% else %>
             <%= f.text_area :body, :class => "text-conversation conversation_content", :placeholder => "Write here..." %>

@@ -1,0 +1,12 @@
+<p>Crear tema nueva</p>
+<div>
+  <%= form_for :space, url: spaces_path, html: {class: "save-chat"} do |f| %>
+    <p>
+      <%= f.label :tema %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit "Guardar" %>
+    </p>
+  <% end %>
+</div>

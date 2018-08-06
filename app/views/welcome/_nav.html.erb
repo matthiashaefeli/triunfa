@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse font-times" id="bs-example-navbar-collapse-1">
       <% if current_user %>
         <ul class="nav navbar-nav" id="my_conversation_id<%= current_user.id %>">
-        <% if @language %>
+        <% if @spanish %>
           <li>
             <a href="/"><i class="fas fa-home"></i> Inicio</a>
           </li>
@@ -66,7 +66,7 @@
 
           <!-- nav for admin -->
         <% if @searched_user == Admin %>
-          <% if @language %>
+          <% if @spanish %>
             <%= render "welcome/admin_nav_es.html.erb" %>
           <% else %>
             <%= render "welcome/admin_nav_en.html.erb" %>
@@ -75,7 +75,7 @@
           <!-- nav for teachers -->
         <% elsif @searched_user == Teacher %>
           <% if (Teacher.find_by(user: current_user)).activ %>
-            <% if @language %>
+            <% if @spanish %>
               <%= render "welcome/teacher_nav_es.html.erb" %>
             <% else %>
               <%= render "welcome/teacher_nav_en.html.erb" %>
@@ -84,7 +84,7 @@
           
           <!-- nav for students -->
           <% elsif @searched_user == Student %>
-            <% if @language %>
+            <% if @spanish %>
               <%= render "welcome/student_nav_es.html.erb" %>
             <% else %>
               <%= render "welcome/student_nav_en.html.erb" %>
@@ -92,7 +92,7 @@
           <% end %>
 
           <!-- logout for all users -->
-          <% if @language %>
+          <% if @spanish %>
             <li><%= link_to welcome_path(current_user.id), method:"delete" do %>
               <i class="fas fa-sign-out-alt"></i> Salida
               <% end %>

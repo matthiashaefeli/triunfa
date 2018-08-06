@@ -9,7 +9,7 @@
           <% end %>
         </div>
         <div class="user-name">
-            <%= m.user.name %> <%=m.user.lastname %> <% if @language %> dijo: <% else %> said: <% end %>
+            <%= m.user.name %> <%=m.user.lastname %> <% if @spanish %> dijo: <% else %> said: <% end %>
           </div>
           <% if m.user == current_user %>
             <div>
@@ -25,7 +25,7 @@
           <%= link_to m.link, m.link, :target => '_blank' %>
         <% end %> 
         <% if m.document_file_name != nil %>
-          <% if @language %>
+          <% if @spanish %>
             <p>Descargar el archivo: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
           <% else %>
             <p>Download the file: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
@@ -49,7 +49,7 @@
     <div class="add-like">
       <% if m.likes.where(user_id: current_user).count == 0 %>
         <%= link_to likes_path(model: Message, id: m.id), :class => "likeable", remote: true do %>
-          <% if @language %>
+          <% if @spanish %>
             <i class="fa fa-thumbs-o-up" aria-hidden="true"> Me Gusta</i>
           <% else %>
             <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
@@ -58,7 +58,7 @@
       <% end %>
     </div>
     <div class="show-comments">
-      <% if @language %>
+      <% if @spanish %>
         <i class="fa fa-comment-o" aria-hidden="true"> Comentar</i>
       <% else %>
         <i class="fa fa-comment-o" aria-hidden="true"> Comment</i>
