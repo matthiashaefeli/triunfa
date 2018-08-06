@@ -1,0 +1,14 @@
+<h3>Welcome <%= current_user.name %> <%= current_user.lastname %></h3>
+<p>To follow, You have to belong to a group.</p>
+<p>Ask the teacher to write the group key</p>
+<br>
+<%= form_for :student, url: students_path do |f| %>
+  <p>
+    <%= f.label :key %>
+    <%= f.password_field :key %>
+  </p>
+  <br>
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>
