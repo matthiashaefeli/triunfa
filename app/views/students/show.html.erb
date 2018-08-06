@@ -25,7 +25,8 @@
       <div>
         <p><strong>Grupo que pertenece:</strong>
           <% if Student.exists?(user: @user) %>
-            <%= Student.find_by(user: @user).group.name %>
+            <% group = Student.find_by(user: @user).group %>
+            <%= link_to group.name, group_path(group.id) %>
           <% end %>
         </p>
         <% if @searched_user == Admin %>
