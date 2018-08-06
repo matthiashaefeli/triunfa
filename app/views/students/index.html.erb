@@ -10,7 +10,6 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
-        <th>Grupo</th>
         <th>Calle</th>
         <th>Ciudad</th>
         <th>Estado</th>
@@ -21,24 +20,16 @@
       <tbody>
         <% @users.each do |s| %>
         <% user = check_user(s) %>
-          <% if user == Student || user == "new_user" %>
-            <tr>
-              <td><%= link_to s.name, student_path(s.id) %></td>
-              <td><%= s.lastname %></td>
-              <td><%= mail_to s.email %></td>
-              <% if user == Student %>
-                <% group = Student.find_by(user: s).group %>
-                <td><%= link_to group.name, group_path(group.id)  %></td>
-              <% else %>
-                <td></td>
-              <% end %>
-              <td><%= s.street %></td>
-              <td><%= s.city %></td>
-              <td><%= s.state %></td>
-              <td><%= s.tel %></td>
-              <td><%= s.login_counts %></td>
-            </tr>
-          <% end %>
+          <tr>
+            <td><%= link_to s.name, student_path(s.id) %></td>
+            <td><%= s.lastname %></td>
+            <td><%= mail_to s.email %></td>
+            <td><%= s.street %></td>
+            <td><%= s.city %></td>
+            <td><%= s.state %></td>
+            <td><%= s.tel %></td>
+            <td><%= s.login_counts %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
