@@ -1,35 +1,9 @@
 <div class="group-index under-nav">
   <div class="group-inner">
-    <% if @searched_user == Teacher %>
-        <p><%= link_to 'Regresar', rooms_path, class: "btn btn-sm back-button" %></p>
+    <% if @language %>
+      <%= render "assignments/show_es.html.erb" %>
     <% else %>
-        <p><%= link_to 'Regresar', groups_path, class: "btn btn-sm back-button" %></p>
-    <% end %>
-    <h3>Assignacion: <%= @assignment.name %></h3>
-    <h4>Estudiantes:</h4>
-    <%= form_for :finishedAssignment, url: finished_assignments_path do |f| %>
-      <table class="table table-hover table-bordered" id="assignment-table-users">
-        <tr>
-          <th>Nombre</th>
-          <th>Terminado</th>
-          <th></th>
-        </tr>
-        <% for student in @group.students %>  
-          <tr>
-            <td><%= student.user.name %> <%= student.user.lastname %></td>
-            <% if FinishedAssignment.find_by(user: student.user, assignment: @assignment) %>
-              <td>Si</td>
-              <td><%= link_to "Siempre No", finished_assignment_path(FinishedAssignment.find_by(user: student.user, assignment: @assignment).id, :group => @group), method: "delete" %></td>
-            <% else %>
-              <td>No</td>
-              <td><%= f.check_box student.user.id %></td>
-            <% end %> 
-          </tr>
-        <% end %>
-      </table>
-      <%= hidden_field_tag "assignment", @assignment.id  %> 
-      <%= hidden_field_tag "group", @group.id  %>
-      <%= f.submit "Actualizar" %>
+      <%= render "assignments/show_en.html.erb" %>
     <% end %>
   </div>
 </div>
