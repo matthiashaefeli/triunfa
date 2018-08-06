@@ -1,7 +1,7 @@
 <div class="comments">
   <%= form_for :comment, url: comments_path, remote: "true" do |f| %>
     <p>
-      <% if @language %>
+      <% if @spanish %>
         <%= f.text_field :text, :class => "comment-text" , :placeholder => "Escribe aquí..." %>
       <% else %>
         <%= f.text_field :text, :class => "comment-text" , :placeholder => "Write here..." %>

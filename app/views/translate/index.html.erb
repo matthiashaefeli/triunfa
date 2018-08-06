@@ -1,65 +1,8 @@
 <div class="under-nav group-index">
   <div class="community-index">
-    <div class="list">
-      <ul class="flex-change">
-        <li>
-          <%= link_to root_path, class: "btn btn-sm link-button" do %>
-            <p>Inicio</p>
-            <%= image_tag "homeinicio.png", class: "images-link-comunity" %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to spaces_path, class: "btn btn-sm link-button" do %>
-            <p>Foros</p>
-            <%= image_tag "chat-512.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to calendars_path, class: "btn btn-sm link-button" do %>
-            <p>Calendario</p>
-            <%= image_tag "calendario.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to todos_path, class: "btn btn-sm link-button" do %>
-            <p>Lista de tareas</p>
-            <%= image_tag "task.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to groseries_index_path, class: "btn btn-sm link-button" do %>
-            <p>Lista de compras</p>
-            <%= image_tag "shop.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to weather_index_path, class: "btn btn-sm link-button" do %>
-            <p>El Tiempo</p>
-            <%= image_tag "weather-1.jpg", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to translate_index_path, class: "btn btn-sm link-button active" do %>
-            <p>Traductor</p>
-            <%= image_tag "trans.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to grammar_index_path, class: "btn btn-sm link-button" do %>
-            <p>Gramática</p>
-            <%= image_tag "gramm.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-        <li>
-          <%= link_to map_index_path, class: "btn btn-sm link-button" do %>
-            <p>Mapa</p>
-            <%= image_tag "pin.png", class: "images-link-comunity" %> 
-          <% end %>
-        </li>
-      </ul>
-    </div>
+    <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
-      <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+      <%= render "spaces/back_community_button" %>
       <h1>Traductor:</h1>
       <div>
         <div>

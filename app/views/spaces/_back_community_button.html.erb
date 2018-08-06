@@ -1,0 +1,5 @@
+<% if @spanish %>
+  <p class="back-comunity"><%= link_to "Regresar a la comunidad", comunity_index_path, class: "btn btn-sm back-button" %></p>
+<% else %>
+  <p class="back-comunity"><%= link_to "Back to Community", comunity_index_path, class: "btn btn-sm back-button" %></p>
+<% end %>

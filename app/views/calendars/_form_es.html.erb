@@ -1,0 +1,20 @@
+<div>
+  <h3>Nuevo evento</h3>
+  <%= form_for :event, url: events_path do |f| %>
+    <p>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :fecha_y_hora %>
+      <%= f.datetime_field :start_time %>
+    </p>
+    <p>
+      <%= f.label :comentarios %>
+      <%= f.text_field :description %>
+    </p>
+    <p>
+      <%= f.submit "Guardar" %>
+    </p>
+  <% end %>
+</div>

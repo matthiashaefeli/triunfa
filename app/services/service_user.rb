@@ -44,12 +44,12 @@ module ServiceUser
   def check_language
     if current_user
       if current_user.language == "spanish"
-        @language = true
+        @spanish = true
       else
-        @language = false
+        @spanish = false
       end
     end
-    @language
+    @spanish
   end
 
   def who_is

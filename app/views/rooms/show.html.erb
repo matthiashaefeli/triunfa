@@ -1,7 +1,7 @@
 <div class="show-room under-nav flyer_forum">
   <div class="forums">
     <% if @searched_user == Teacher %>
-      <% if @language %>
+      <% if @spanish %>
         <p><%= link_to "Regresar", rooms_path, class: "btn btn-sm back-button" %></p>
       <% else %>
         <p><%= link_to "Back", rooms_path, class: "btn btn-sm back-button" %></p>
@@ -9,14 +9,14 @@
     <% elsif @searched_user == Admin %>
       <%= link_to "Regresar", groups_path, class: "btn btn-sm back-button" %>
     <% else %>
-      <% if @language %>
+      <% if @spanish %>
         <%= link_to "Regresar", root_path, class: "btn btn-sm back-button" %>
       <% else %>
         <%= link_to "Back", root_path, class: "btn btn-sm back-button" %>
       <% end %>
     <% end %>
     
-    <% if @language %>
+    <% if @spanish %>
       <%= render "rooms/form_for_rooms_es.html.erb" %>
     <% else %>
       <%= render "rooms/form_for_rooms_en.html.erb" %>
@@ -27,7 +27,7 @@
       <%= render "messages/messages" %>
     </div>
 
-    <% if @language %>
+    <% if @spanish %>
       <p><%= link_to "Ver más Mensajes", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
     <% else %>
       <p><%= link_to "See more messages", room_path(@room.id,limit: (@room_limit.to_i + 5)) %></p>
