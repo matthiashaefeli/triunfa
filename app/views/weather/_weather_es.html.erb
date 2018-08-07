@@ -1,0 +1,9 @@
+<h1>El clima de hoy en <%= current_user.city %></h1>
+<%= image_tag @iconurl, class: "image-weather" %>
+<div class="temp">
+  <h3>Temperatura:&nbsp</h3>
+  <h3 class="value"><%= @main["temp"] %></h3>&nbsp
+  <h3 class="type">°C</h3>&nbsp
+  <h3 class="unit"> Cambiar a  °F</h3>
+</div>
+<h3>Humedad: <%= @main["humidity"] %> %</h3>

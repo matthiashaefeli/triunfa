@@ -1,0 +1,54 @@
+<div class="under-nav group-index">
+  <div class="group-inner">
+  <p><%= link_to 'Back', root_path, class: "btn btn-sm back-button" %></p>
+  <h1>Groups</h1>
+  <p><%= link_to "Click here to download the data of all Groups", groups_path(format: :xlsx) %></p>
+  <input type="text" class="mySearch" id="groupTableSearch" placeholder="Search by Name..">
+  <table class="table table-hover table-bordered" id="groupTableTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Forum</th>
+        <th>Tasks</th>
+        <th>Teacher</th>
+        <th>Course</th>
+        <th>Key</th>
+        <th>Students</th>
+        <th>Start Date</th>
+        <th>Finish Date</th>
+        <th>Activ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @groups.each do |g| %>
+      <tr>
+        <td><%= link_to g.name, group_path(g.id) %></td>
+        <td><%= g.city %></td>
+        <% if g.activ %>
+          <td><%= link_to "Forum", room_path(Room.find_by(group: g)) %></td>
+          <td><%= link_to "Tasks", tasks_path(group: g) %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
+        <td><%= link_to g.teacher.user.name, teacher_path(g.teacher.id) %> <%= g.teacher.user.lastname %></td>
+        <td><%= link_to g.course.name, course_path(g.course.id) %></td>
+        <td><%= g.key %></td>
+        <td><%= g.activ ? g.students.count : "Group Closed" %></td>
+        <td><%= g.startdate %></td>
+        <td><%= g.enddate %></td>
+        <td><%= g.activ ? "Yes" : "No" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+      <%= render "layouts/errors" %>
+      <p id="new-group"><i class="fa fa-arrow-right" aria-hidden="true"></i> Create new Group</p>
+      <div id="new-group-hidden">
+          <%= render "new.html.erb" %>
+      </div>
+  </div>
+</div>
+</div>

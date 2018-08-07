@@ -1,0 +1,52 @@
+<div class="under-nav group-index">
+  <div class="group-inner">
+    <div class="teacher_show">
+      <div>
+        <% unless @teacher.user.avatar_file_name.nil? %>
+          <%= image_tag @teacher.user.avatar.url(:medium) %> 
+        <% end %>
+      </div>
+      <div>
+        <p><strong>Activo?&nbsp&nbsp</strong>
+        <% if @teacher.activ? %>
+          <!-- <%= link_to teacher_path(@teacher.id), :method => "delete", class: "thumbs-teacher", remote: true do %> -->
+            <i class="fas fa-thumbs-up thumbs-teacher"><span><%= @teacher.id %></span></i></p>
+          <!-- <% end %> -->
+        <% else %>
+          <!-- <%= link_to teacher_path(@teacher.id), :method => "delete", class: "thumbs-teacher", remote: true do %> -->
+            <i class="fas fa-thumbs-down thumbs-teacher"><span><%= @teacher.id %></span></i></p>
+          <!-- <% end %> -->
+        <% end %>
+        <p><%= link_to "Cambiar contraseña", updatepassword_path(@teacher.user.id) %></p>
+        <p><strong>Nombre: </strong><%= @teacher.user.name %></p>
+        <p><strong>Apellido: </strong><%= @teacher.user.lastname %></p>
+        <p><strong>Email : </strong><%= @teacher.user.email %></p>
+        <p><strong>Fecha de nacimiento: </strong><%= @teacher.user.birthdate %></p>
+        <p><strong>Nacionalidad: </strong><%= @teacher.user.nationality %></p>
+        <p><strong>Logins: </strong><%= @teacher.user.login_counts %></p>
+        <td><strong>Ultimo Login: </strong><%= @teacher.user.updated_at.to_date %></td>
+      </div>
+      <div>
+        <p><strong>Calle: </strong><%= @teacher.user.street %></p>
+        <p><strong>Ciudad: </strong><%= @teacher.user.city %></p>
+        <p><strong>C.P.: </strong><%= @teacher.user.cp %></p>
+        <p><strong>Estado: </strong><%= @teacher.user.state %></p>
+        <p><strong>Tel.: </strong><%= @teacher.user.tel %></p>
+      </div>
+      <div>
+        <p><strong>Grupos que pertenece:</strong></p>
+        <ul>
+          <% @teacher.groups.each do |group| %>
+            <% if group.activ? %>
+              <li><strong>Nombre Grupo: </strong><%= link_to group.name, group_path(group.id) %></li>
+            <% end %>
+          <% end %>
+        </ul>
+        <p><strong>Total Grupos de <%= @teacher.user.name %>: </strong> <%= @teacher.groups.count %></p>
+        <p><strong>Grupos Activos: </strong><%= @teacher.groups.where(activ: true).count %></p>
+        <p><strong>Grupos Cerrados: </strong><%= @teacher.groups.where(activ: false).count %></p>
+      </div>
+    </div>
+    <p><%= link_to "Regresar", teachers_path, class: "btn btn-sm back-button" %></p>
+  </div>
+</div>

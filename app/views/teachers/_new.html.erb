@@ -1,21 +1,45 @@
-<%= form_for :teacher, url: teachers_path do |f| %>
-    <p>
-        <%= f.label :nombre %>
-        <%= f.text_field :name, :autocomplete => 'name' %>
-    </p>
-    <p>
-        <%= f.label :apellido %>
-        <%= f.text_field :lastname, :autocomplete => 'family-name' %>
-    </p>
-    <p>
-        <%= f.label :email %>
-        <%= f.text_field :email, :autocomplete => 'email' %>
-    </p>
-    <p>
-        <%= f.label :contraseña %>
-        <%= f.text_field :password %>
-    </p>
-    <p>
-        <%= f.submit "Guardar" %>
-    </p>
+<% if @spanish %>
+  <%= form_for :teacher, url: teachers_path do |f| %>
+      <p>
+          <%= f.label :nombre %>
+          <%= f.text_field :name, :autocomplete => 'name' %>
+      </p>
+      <p>
+          <%= f.label :apellido %>
+          <%= f.text_field :lastname, :autocomplete => 'family-name' %>
+      </p>
+      <p>
+          <%= f.label :email %>
+          <%= f.text_field :email, :autocomplete => 'email' %>
+      </p>
+      <p>
+          <%= f.label :contraseña %>
+          <%= f.text_field :password %>
+      </p>
+      <p>
+          <%= f.submit "Guardar" %>
+      </p>
+  <% end %>
+<% else %>
+  <%= form_for :teacher, url: teachers_path do |f| %>
+      <p>
+          <%= f.label :name %>
+          <%= f.text_field :name, :autocomplete => 'name' %>
+      </p>
+      <p>
+          <%= f.label :last_name %>
+          <%= f.text_field :lastname, :autocomplete => 'family-name' %>
+      </p>
+      <p>
+          <%= f.label :email %>
+          <%= f.text_field :email, :autocomplete => 'email' %>
+      </p>
+      <p>
+          <%= f.label :password %>
+          <%= f.text_field :password %>
+      </p>
+      <p>
+          <%= f.submit "Save" %>
+      </p>
+  <% end %>
 <% end %>

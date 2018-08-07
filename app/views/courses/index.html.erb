@@ -35,7 +35,11 @@
           </td>
           <% if @searched_user == Admin %>
             <td>
-              <%= course.activ ? "Si" : "NO" %>
+              <% if @spanish %>
+                <%= course.activ ? "Si" : "No" %>
+              <% else %>
+                <%= course.activ ? "Yes" : "No" %>
+              <% end %>
             </td>
           <% end %>
           </tr>
@@ -45,12 +49,11 @@
     <% if @searched_user == Admin %>
       <div>
           <%= render "layouts/errors" %>
-          <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> Crear nuevo Curso</p>
+          <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= @spanish ? "Crear nuevo Curso" : "Create new course" %></p>
           <div id="new-course-hidden">
               <%= render "new.html.erb" %>
           </div>
       </div>
-      <p><%= link_to "Página de Inicio", root_path %></p>
     <% end %>
   </div>
 </div>

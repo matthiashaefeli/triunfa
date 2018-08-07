@@ -1,0 +1,9 @@
+<h1>The weather today in <%= current_user.city %></h1>
+<%= image_tag @iconurl, class: "image-weather" %>
+<div class="temp">
+  <h3>Temperature:&nbsp</h3>
+  <h3 class="value"><%= @main["temp"] %></h3>&nbsp
+  <h3 class="type">°C</h3>&nbsp
+  <h3 class="unit"> Change to °F</h3>
+</div>
+<h3>Humidity: <%= @main["humidity"] %> %</h3>
