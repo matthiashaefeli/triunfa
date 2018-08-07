@@ -3,17 +3,7 @@
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
       <%= render "spaces/back_community_button" %>
-      <h1>Lista de compras</h1>
-      <h3>Me falta en la casa:</h3>
-      <div>
-        <%= form_for :grosery, url: groseries_index_path, html: { class: "grosery-form", remote: true } do |f| %>
-          <p>
-            <%= f.text_field :name, class: "text-todo" %>
-          </p>
-          <p>
-            <%= f.submit "Guardar" %>
-          </p>
-        <% end %>
+      <%= render "form.html.erb" %>
       </div>
       <div class="grocery-all">
         <% @groseries.each do |grosery| %>

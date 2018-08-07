@@ -1,0 +1,11 @@
+<h1>Shoping list</h1>
+<h3>I need to buy:</h3>
+<div>
+  <%= form_for :grosery, url: groseries_index_path, html: { class: "grosery-form", remote: true } do |f| %>
+    <p>
+      <%= f.text_field :name, class: "text-todo" %>
+    </p>
+    <p>
+      <%= f.submit "Save" %>
+    </p>
+  <% end %>

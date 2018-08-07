@@ -3,7 +3,11 @@
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
       <%= render "spaces/back_community_button" %>
-      <h1>El clima de hoy en <%= current_user.city %></h1>
+      <% if @spanish %>
+        <h1>El clima de hoy en <%= current_user.city %></h1>
+      <% else %>
+        <h1>The Weather today in <%= current_user.city %></h1>
+      <% end %>
       <%= image_tag @iconurl, class: "image-weather" %>
       <div class="temp">
         <h3>Temperatura:&nbsp</h3>

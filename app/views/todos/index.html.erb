@@ -3,17 +3,7 @@
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
       <%= render "spaces/back_community_button" %>
-      <h1>Lista de tareas</h1>
-      <h3>Tengo que hacer:</h3>
-      <div>
-        <%= form_for :todo, url: todos_path, html: { class: "todo-form", remote: true } do |f| %>
-          <p>
-            <%= f.text_field :name, class: "text-todo" %>
-          </p>
-          <p>
-            <%= f.submit "Guardar" %>
-          </p>
-        <% end %>
+      <%= render "form.html.erb" %>
       </div>
       <div class="todos-all">
       <% @todos.each do |todo| %>
