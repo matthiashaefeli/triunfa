@@ -1,52 +1,107 @@
-<%= form_for :group, url: groups_path do |f| %>
-  <p>
-    <%= f.label :ciudad %>
-    <%= f.text_field :city %>
-    <%= f.label :nombre %>
-    <%= f.text_field :name %>
-    <%= f.label :clave %>
-    <%= f.text_field :key %>
-  </p>
-  <p>
-    <%= f.label :instructor %>
-    <%= f.select(:teacher, teacher_array ) %>
-    <%= f.label :curso %>
-    <%= f.select(:course, course_array) %>
-  </p>
-  <p>
-    <%= f.label :fecha_inicio %>
-    <%= f.date_field :startdate %>
-    <%= f.label :fecha_final %>
-    <%= f.date_field :enddate %>
-  </p>
-  <p>
-    <%= f.label :lunes %>
-    <%= f.check_box :days, {multiple: true}, "Lunes", nil %>
-  </p>
-  <p>
-    <%= f.label :martes %>
-    <%= f.check_box :days, {multiple: true}, "Martes", nil %>
-  </p>
-  <p>
-    <%= f.label :miercoles %>
-    <%= f.check_box :days, {multiple: true}, "Miercoles", nil %>
-  </p> 
-  <p>
-    <%= f.label :jueves %>
-    <%= f.check_box :days, {multiple: true}, "Jueves", nil %>
-  </p> 
-  <p>
-    <%= f.label :viernes %>
-    <%= f.check_box :days, {multiple: true}, "Viernes", nil %>
-  </p>
-  <p>
-    <%= f.label :sabado %>
-    <%= f.check_box :days, {multiple: true}, "Sabado", nil %>
-  </p> 
-  <p>
-    <%= f.label :domingo %>
-    <%= f.check_box :days, {multiple: true}, "Domingo", nil %>
-  </p>
-    <%= f.submit "Guardar Grupo" %>
-  </p>
+<% if @spanish %>
+  <%= form_for :group, url: groups_path do |f| %>
+    <p>
+      <%= f.label :ciudad %>
+      <%= f.text_field :city %>
+      <%= f.label :nombre %>
+      <%= f.text_field :name %>
+      <%= f.label :clave %>
+      <%= f.text_field :key %>
+    </p>
+    <p>
+      <%= f.label :instructor %>
+      <%= f.select(:teacher, teacher_array ) %>
+      <%= f.label :curso %>
+      <%= f.select(:course, course_array) %>
+    </p>
+    <p>
+      <%= f.label :fecha_inicio %>
+      <%= f.date_field :startdate %>
+      <%= f.label :fecha_final %>
+      <%= f.date_field :enddate %>
+    </p>
+    <p>
+      <%= f.label :lunes %>
+      <%= f.check_box :days, {multiple: true}, "Lunes", nil %>
+    </p>
+    <p>
+      <%= f.label :martes %>
+      <%= f.check_box :days, {multiple: true}, "Martes", nil %>
+    </p>
+    <p>
+      <%= f.label :miercoles %>
+      <%= f.check_box :days, {multiple: true}, "Miercoles", nil %>
+    </p> 
+    <p>
+      <%= f.label :jueves %>
+      <%= f.check_box :days, {multiple: true}, "Jueves", nil %>
+    </p> 
+    <p>
+      <%= f.label :viernes %>
+      <%= f.check_box :days, {multiple: true}, "Viernes", nil %>
+    </p>
+    <p>
+      <%= f.label :sabado %>
+      <%= f.check_box :days, {multiple: true}, "Sabado", nil %>
+    </p> 
+    <p>
+      <%= f.label :domingo %>
+      <%= f.check_box :days, {multiple: true}, "Domingo", nil %>
+    </p>
+      <%= f.submit "Guardar Grupo" %>
+    </p>
+  <% end %>
+<% else %>
+  <%= form_for :group, url: groups_path do |f| %>
+    <p>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :key %>
+      <%= f.text_field :key %>
+    </p>
+    <p>
+      <%= f.label :teacher %>
+      <%= f.select(:teacher, teacher_array ) %>
+      <%= f.label :course %>
+      <%= f.select(:course, course_array) %>
+    </p>
+    <p>
+      <%= f.label :start_date %>
+      <%= f.date_field :startdate %>
+      <%= f.label :end_date %>
+      <%= f.date_field :enddate %>
+    </p>
+    <p>
+      <%= f.label :monday %>
+      <%= f.check_box :days, {multiple: true}, "Lunes", nil %>
+    </p>
+    <p>
+      <%= f.label :tuesday %>
+      <%= f.check_box :days, {multiple: true}, "Martes", nil %>
+    </p>
+    <p>
+      <%= f.label :wednesday %>
+      <%= f.check_box :days, {multiple: true}, "Miercoles", nil %>
+    </p> 
+    <p>
+      <%= f.label :thursday %>
+      <%= f.check_box :days, {multiple: true}, "Jueves", nil %>
+    </p> 
+    <p>
+      <%= f.label :friday %>
+      <%= f.check_box :days, {multiple: true}, "Viernes", nil %>
+    </p>
+    <p>
+      <%= f.label :saturday %>
+      <%= f.check_box :days, {multiple: true}, "Sabado", nil %>
+    </p> 
+    <p>
+      <%= f.label :sunday %>
+      <%= f.check_box :days, {multiple: true}, "Domingo", nil %>
+    </p>
+      <%= f.submit "Save Group" %>
+    </p>
+  <% end %>
 <% end %>
