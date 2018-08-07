@@ -3,24 +3,7 @@
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
       <%= render "spaces/back_community_button" %>
-      <h1>Traductor:</h1>
-      <div>
-        <div>
-          <input type="radio" id="en-es" name="drone" checked />
-          <label for="es-en">Ingles -> Espanol</label>
-        </div>
-        <div>
-          <input type="radio" id="es-en" name="drone" />
-          <label for="en-es">Espanol -> Ingles</label>
-        </div>
-        <div id="text-to-translate">
-          <textarea rows="4" cols="45" class="textarea"></textarea>
-        </div>
-        <div class="button-div">
-          <button type="button" class="translate-button">Traducir</button>
-        </div>
-        <div id="text-translated"></div>
-      </div>
+      <%= render "form.html.erb" %>
     </div>
   </div>
 </div>
