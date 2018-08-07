@@ -37,7 +37,7 @@
             <td><%= e.teachers %></td>
             <td><%= e.students %></td>
             <td><%= e.nostudents %></td>
-            <td><%= link_to "Delete Statistic", statistic_path(e.id), :method => "delete", :onclick => "return confirm('Quiere borrar la estadística?')" %></td>
+            <td><%= link_to "Delete Statistic", statistic_path(e.id), :method => "delete", :onclick => "return confirm('Confirm to delete statistic!')" %></td>
           </tr>
           <% end %>
         </tbody>
