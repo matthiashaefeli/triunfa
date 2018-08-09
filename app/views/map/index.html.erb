@@ -4,9 +4,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDathP7IQ65H1iVDU9tE2oiu7h
 </script>
 <div class="under-nav group-index">
   <div class="community-index">
+    <!-- nav for community -->
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
+      <!-- back button -->
       <%= render "spaces/back_community_button" %>
+      <!-- map -->
       <style> #map { height: 50vh; width: 60vw; } </style>
         <div> <div id="map"></div> </div>
         <script>
