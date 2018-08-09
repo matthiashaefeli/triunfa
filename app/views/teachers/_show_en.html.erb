@@ -20,7 +20,7 @@
         <p><%= link_to "Change Password", updatepassword_path(@teacher.user.id) %></p>
         <p><strong>Name: </strong><%= @teacher.user.name %></p>
         <p><strong>Last name: </strong><%= @teacher.user.lastname %></p>
-        <p><strong>Email : </strong><%= @teacher.user.email %></p>
+        <p><strong>Email : </strong><%= mail_to @teacher.user.email %></p>
         <p><strong>Birthday: </strong><%= @teacher.user.birthdate %></p>
         <p><strong>Nationality: </strong><%= @teacher.user.nationality %></p>
         <p><strong>Logins: </strong><%= @teacher.user.login_counts %></p>
@@ -34,7 +34,7 @@
         <p><strong>Phone: </strong><%= @teacher.user.tel %></p>
       </div>
       <div>
-        <p><strong>Groups he belongs:</strong></p>
+        <p><strong>Groups she/he belongs:</strong></p>
         <ul>
           <% @teacher.groups.each do |group| %>
             <% if group.activ? %>

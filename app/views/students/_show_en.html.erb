@@ -10,7 +10,7 @@
         <p><%= link_to "Change Password", updatepassword_path(@user.id) %></p>
         <p><strong>Name: </strong><%= @user.name %></p>
         <p><strong>Last Name: </strong><%= @user.lastname %></p>
-        <p><strong>Email : </strong><%= @user.email %></p>
+        <p><strong>Email : </strong><%= mail_to @user.email %></p>
         <p><strong>Nationality: </strong><%= @user.nationality %></p>
         <p><strong>Birthday: </strong><%= @user.birthdate %></p>
         <p><strong>Logins: </strong><%= @user.login_counts %></p>
