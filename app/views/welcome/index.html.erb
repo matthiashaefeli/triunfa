@@ -23,11 +23,7 @@
           
       <!-- Teacher user -->
     <% elsif @searched_user == Teacher %>
-      <% if (Teacher.find_by(user: current_user)).activ %>
-        <%= render "teacher_index.html.erb" %>
-      <% else %>
-        <h1>Este Instructor no es activo. Porfavor contactar a <%= link_to "Supérate y Triunfa", "http://www.juntospodemos.org/", :target => "_blank" %> !</h1>
-      <% end %>
+      <%= render "teacher_index.html.erb" %>
 
       <!-- Student user  -->
     <% elsif @searched_user == Student %>

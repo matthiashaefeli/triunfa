@@ -1,10 +1,13 @@
 <div class="under-nav group-index">
   <div class="community-index">
+    <!-- nav for community -->
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
+      <!-- back button -->
       <%= render "spaces/back_community_button" %>
+      <!-- form for grocery list -->
       <%= render "form.html.erb" %>
-      </div>
+      <!-- all groceries -->
       <div class="grocery-all">
         <% @groseries.each do |grosery| %>
           <div class="grosery-each" id="grosery<%= grosery.id %>">
@@ -13,9 +16,9 @@
             <% else %>
               <h3 class="grosery-name text-design"><%= grosery.name %></h3>
             <% end %>
-              <p class="grosery-done">Hecho</p>
+              <p class="grosery-done"><%= @spanish ? "Hecho" : "Done" %></p>
               <p>/</p>
-              <p class="grosery-delete">Borrar</p>
+              <p class="grosery-delete"><%= @spanish ? "Borrar" : "Delete" %></p>
           </div>
         <% end %>
       </div>

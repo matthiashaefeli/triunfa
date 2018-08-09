@@ -1,7 +1,7 @@
 <h1>Lista de tareas</h1>
 <h3>Tengo que hacer:</h3>
 <div>
-  <%= form_for :todo, url: todos_path, html: { class: "todo-form", remote: true } do |f| %>
+  <%= form_for :todo, url: todos_path do |f| %>
     <p>
       <%= f.text_field :name, class: "text-todo" %>
     </p>
@@ -9,3 +9,4 @@
       <%= f.submit "Guardar" %>
     </p>
   <% end %>
+</div>
