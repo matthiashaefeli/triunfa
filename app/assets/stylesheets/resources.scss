@@ -46,3 +46,21 @@
   width: 30px;
   transform: rotate(135deg);
 }
+
+.triangleright-course {
+  margin: auto 5px auto 0 ;
+  border-right: 10px solid white; 
+  border-bottom: 10px solid white;
+  height: 30px;
+  width: 30px;
+  transform: rotate(-45deg);
+}
+
+.triangleleft-course {
+  margin: auto 0 auto 5px ;
+  border-right: 10px solid white; 
+  border-bottom: 10px solid white;
+  height: 30px;
+  width: 30px;
+  transform: rotate(135deg);
+}

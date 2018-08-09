@@ -4,25 +4,50 @@
     <h1 class="spanish">CURSOS</h1>
     <h1 class="english change-language">COURSES</h1>
   </div>
-  <div class='course-images'>
-    <div class='image-text-course'>
-      <div><%= image_tag('course-inline.png', class: 'image-grad-book responsive-image') %></div>
-      <div class='text-text-course'>
-        <p class="spanish">Curso-Básico</p>
-        <p class="english change-language">Basic-Course</p>
-        <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
-        <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
+  <div class="course-images">
+    <div class="triangleleft-course" id="arrow-left-course"></div>
+    <div id='slideshow-course'>
+      <div class='res-images'>
+        <div class='image-text-course'>
+          <div><%= image_tag('course-inline.png', class: 'image-grad-book responsive-image') %></div>
+          <div class='text-text-course'>
+            <p class="spanish">Curso-Básico</p>
+            <p class="english change-language">Basic-Course</p>
+            <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
+            <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
+          </div>
+        </div>
+        <div class='image-text-course'>
+          <div><%= image_tag('curso-online.png', class: 'image-grad-book responsive-image') %></div>
+          <div class='text-text-course'>
+            <p class="spanish">Word-Intermedio</p>
+            <p class="english change-language">Word-Intermediate</p>
+            <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
+            <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
+          </div>
+        </div>
+      </div>
+      <div class='res-images'>
+        <div class='image-text-course'>
+          <div><%= image_tag('powerpoint.png', class: 'image-grad-book responsive-image') %></div>
+          <div class='text-text-course'>
+            <p class="spanish">PowerPoint-Intermedio</p>
+            <p class="english change-language">PowerPoint-Intermediate</p>
+            <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
+            <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
+          </div>
+        </div>
+        <div class='image-text-course'>
+          <div><%= image_tag('word-adv.png', class: 'image-grad-book responsive-image') %></div>
+          <div class='text-text-course'>
+            <p class="spanish">Excel-Intermedio</p>
+            <p class="english change-language">Excel-Intermediate</p>
+            <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
+            <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class='course-line'></div>
-    <div class='image-text-course'>
-      <div><%= image_tag('curso-online.png', class: 'image-grad-book responsive-image') %></div>
-      <div class='text-text-course'>
-        <p class="spanish">Word-Intermedio</p>
-        <p class="english change-language">Word-Intermediate</p>
-        <%= link_to "Leer más", new_user_session_path, class: "btn btn-sm link-button-course spanish" %>
-        <%= link_to "Read more", new_user_session_path, class: "btn btn-sm link-button-course english change-language" %>
-      </div>
-    </div>
+    <div class="triangleright-course" id="arrow-right-course"></div>
   </div>
 </div>
