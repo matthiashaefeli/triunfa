@@ -1,9 +1,13 @@
 <div class="under-nav group-index">
   <div class="community-index">
+    <!-- nav for community -->
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
+      <!-- back button -->
       <%= render "spaces/back_community_button" %>
+      <!-- form for spaces -->
       <%= render "form.html.erb" %>
+      <!-- calendar -->
       <div>
         <%= month_calendar events: @meetings do |date, meetings| %>
           <%= l date, format: :short %>

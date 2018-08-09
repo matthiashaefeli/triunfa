@@ -1,13 +1,11 @@
 <div class="under-nav group-index">
   <div class="community-index">
+    <!-- nav for community -->
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
+      <!-- back button -->
       <%= render "spaces/back_community_button" %>
-      <% if @spanish %>
-        <h1>Gramática:</h1>
-      <% else %>
-        <h1>Grammar:</h1>
-      <% end %>
+      <h1><%= @spanish ? "Gramática" : "Grammar" %></h1>
       <div>
         <div>
           <input type="radio" id="en" name="drone" checked />
@@ -22,11 +20,7 @@
         </div>
         <div class="button-div">
           <button type="button" class="grammar-button">
-          <% if @spanish %>
-            Verificar la gramática
-          <% else %>
-            Verify the grammar
-          <% end %>
+            <%= @spanish ? "Verificar la gramática" : "Verify the grammar" %>
           </button>
         </div>
         <div id="errors"></div>
