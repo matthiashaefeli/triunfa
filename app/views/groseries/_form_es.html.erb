@@ -1,7 +1,7 @@
 <h1>Lista de compras</h1>
 <h3>Me falta en la casa:</h3>
 <div>
-  <%= form_for :grosery, url: groseries_index_path, html: { class: "grosery-form", remote: true } do |f| %>
+  <%= form_for :grosery, url: groseries_index_path do |f| %>
     <p>
       <%= f.text_field :name, class: "text-todo" %>
     </p>
@@ -9,3 +9,4 @@
       <%= f.submit "Guardar" %>
     </p>
   <% end %>
+</div>

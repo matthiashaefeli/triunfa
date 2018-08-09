@@ -176,21 +176,6 @@ $( document ).on('turbolinks:load', function() {
     }, 1000)
   })
 
-  // send create todo data to controller and update on page
-  $(".todo-form").on("submit", function(event) {
-    event.preventDefault();
-    let $form = $(this);
-
-    $.ajax({
-      type: $form.attr("method"),
-      url: $form.attr("action"),
-      data: $form.serialize()
-
-    }).done(function(response) {
-      $form.get(0).reset()
-      $(".todos-all").append(response);
-    });
-  })
 
   // send update todo data to controller and update on page
   $(".todos-all").on("click", ".todo-done", function() {
@@ -219,22 +204,6 @@ $( document ).on('turbolinks:load', function() {
       $done.closest(".todo-each").remove()
     })
   })
-
-    // send create grocery data to controller and update on page
-    $(".grosery-form").on("submit", function(event) {
-      event.preventDefault();
-      let $form = $(this);
-  
-      $.ajax({
-        type: $form.attr("method"),
-        url: $form.attr("action"),
-        data: $form.serialize()
-  
-      }).done(function(response) {
-        $form.get(0).reset()
-        $(".grocery-all").append(response);
-      });
-    })
 
   // send update grocery data to controller and update on page
   $(".grocery-all").on("click", ".grosery-done", function() {

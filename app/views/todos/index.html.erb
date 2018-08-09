@@ -1,10 +1,13 @@
-<div class="under-nav group-index">
+<div class="under-nav group-index" id="todos">
   <div class="community-index">
+    <!-- nav for comunity -->
     <%= render "comunity/nav.html.erb" %>
     <div class="calendar-index">
+      <!-- back button -->
       <%= render "spaces/back_community_button" %>
+      <!-- form for todo list -->
       <%= render "form.html.erb" %>
-      </div>
+      <!-- all todos -->
       <div class="todos-all">
       <% @todos.each do |todo| %>
         <div class="todo-each" id="todo<%= todo.id %>">
@@ -13,9 +16,9 @@
           <% else %>
             <h3 class="todo-name text-design"><%= todo.name %></h3>
           <% end %>
-            <p class="todo-done">Hecho</p>
+            <p class="todo-done"><%= @spanish ? "Hecho" : "Done" %></p>
             <p>/</p>
-            <p class="todo-delete">Borrar</p>
+            <p class="todo-delete"><%= @spanish ? "Borrar" : "Delete" %></p>
         </div>
       <% end %>
       </div>
