@@ -9,12 +9,10 @@
       <thead>
         <tr>
           <th></th>
-          <th><% if @spanish %>Nombre<% else %>Name<% end %></th>
-          <!-- <th>Fecha inicio</th>
-          <th>Fecha final</th> -->
+          <th><%= @spanish ? "Nombre" : "Name" %></th>
           <th>Link</th>
           <% if @searched_user == Admin %>
-            <th><% if @spanish %>Activo<% else %>Activ<% end %></th>
+            <th><%= @spanish ? "Activo" : "Activ" %></th>
           <% end %>
         </tr>
       </thead>
@@ -27,8 +25,6 @@
             <th><%= image_tag course.avatar.url(:thumb), :class => "user-avatar" %></th>
           <% end %>
           <td><%= link_to course.name, course_path(course.id) %></td>
-          <!-- <td><%= course.startdate %></td>
-          <td><%= course.enddate%></td> -->
           <td class="break-words"><%= link_to course.link, target: "_blank" do %>
             <%= course.link %>
           <% end %>
@@ -48,11 +44,11 @@
     </table>
     <% if @searched_user == Admin %>
       <div>
-          <%= render "layouts/errors" %>
-          <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= @spanish ? "Crear nuevo Curso" : "Create new course" %></p>
-          <div id="new-course-hidden">
-              <%= render "new.html.erb" %>
-          </div>
+        <%= render "layouts/errors" %>
+        <p id="new-course"><i class="fa fa-arrow-right" aria-hidden="true"></i> <%= @spanish ? "Crear nuevo Curso" : "Create new course" %></p>
+        <div id="new-course-hidden">
+            <%= render "new.html.erb" %>
+        </div>
       </div>
     <% end %>
   </div>
