@@ -325,6 +325,28 @@ $( document ).on('turbolinks:load', function() {
     .appendTo('#slideshow');
   })
 
+    // slideshow course index page
+
+    $("#slideshow-course > div:gt(0)").hide();
+
+    $("#arrow-right-course").on("click", function() {
+      $('#slideshow-course > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slideshow-course');
+    })
+  
+    $("#arrow-left-course").on("click", function() {
+      $('#slideshow-course > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slideshow-course');
+    })
+
   // setInterval(function() { 
   //   $('#slideshow > div:first')
   //     .fadeOut(1000)
