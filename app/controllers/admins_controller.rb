@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
 
   def destroy
     admin = Admin.find(params[:id])
-    if admin.user.email == "it@juntospodemos.org"
+    if admin.user.email == "it@parentsalliance.org"
       redirect_to root_path
     else
       admin.destroy
