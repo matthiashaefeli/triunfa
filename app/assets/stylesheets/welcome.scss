@@ -455,7 +455,9 @@ nav a {
   }
 
   .text-welcome2 {
-    min-width: 100%;
+    margin: auto;
+    min-width: 90%;
+    max-width: 95%;
   }
 
   // course index without login
@@ -463,10 +465,7 @@ nav a {
     width: 80%;
   }
 
-  .course-images {
-    display: flex;
-    flex-direction: column;
-  }
+
 
   .course-line {
     margin-top: 20px;
