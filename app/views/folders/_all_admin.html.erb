@@ -1,11 +1,11 @@
 <div class="folder-index">
   <div>
-    <% for @folder in @folders %>
+    <% @adminfolders.each do |folder| %>
       <table class="folders-table">
         <tr class="folder-names">
           <td><i class="fas fa-angle-double-down papers-text"></i></td>
           <td><i class="fas fa-archive"></i></td>
-          <td><%= @folder.name %></td>
+          <td><%= folder.name %></td>
           <% if @searched_user == Admin %>
             <td><i class="fas fa-plus-square folders"></i></td>
             <td>
@@ -18,7 +18,7 @@
         <tr>
           <td></td>
           <td></td>
-          <td><%= render "papers/form", locals: { folder: @folder, user: @searched_user } %></td>
+          <td><%= render "papers/form", locals: { folder: folder, user: @searched_user } %></td>
         </tr>
         <%= render "papers/papers" %>
       </table>

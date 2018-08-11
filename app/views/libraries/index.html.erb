@@ -20,6 +20,12 @@
     <br>
     <div class="all-folders">
       <%= render "folders/all" %>
-    </div>  
+    </div>
+    <% if @searched_user == Admin %>
+      <div class="all-folders-admin">
+        <p>Solo para Admins visible.</p>
+        <%= render "folders/all_admin" %>
+      </div>
+    <% end %>  
   </div>
 </div>
