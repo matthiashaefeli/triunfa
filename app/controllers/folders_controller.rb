@@ -3,6 +3,9 @@
 class FoldersController < ApplicationController
   def create
     folder = Folder.new(name: params[:folder][:name])
+    if params[:folder][:admin] != nil
+      folder.admin = true
+    end
     if folder.save
       redirect_to libraries_path
     else

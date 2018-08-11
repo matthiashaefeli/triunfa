@@ -1,9 +1,13 @@
 <%= form_for :folder, url: folders_path do |f| %>
-    <p>
-        <%= f.label :nombre %>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.submit "Adjuntar Carpeta" %>
-    </p>
+  <p>
+    <%= f.label :nombre %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :solo_para_admin %>
+    <%= f.radio_button :admin, true %>
+  </p>
+  <p>
+    <%= f.submit "Adjuntar Carpeta" %>
+  </p>
 <% end %>
