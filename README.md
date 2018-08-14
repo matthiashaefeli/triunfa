@@ -1,6 +1,5 @@
-User platform for admin teacher and user
-create courses and groupes.
-online messages
+Superate y Triunfa  
+Platform for Admin, Teacher and Students  
 
 * Ruby 2.5.0p0
 
