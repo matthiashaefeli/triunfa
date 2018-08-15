@@ -47,10 +47,12 @@
       <%= image_tag "pokal.png", class: "images-link-comunity" %> 
     <% end %>
   </div>
-  <div>
-    <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
-      <p>Comunidad</p>
-      <%= image_tag "comunity.png", class: "images-link-comunity" %> 
-    <% end %>
-  </div>
+  <% if current_user.expired > Time.now %>
+    <div>
+      <%= link_to comunity_index_path, class: "btn btn-sm student-link-button" do %>
+        <p>Comunidad</p>
+        <%= image_tag "comunity.png", class: "images-link-comunity" %> 
+      <% end %>
+    </div>
+  <% end %>
 </div>
