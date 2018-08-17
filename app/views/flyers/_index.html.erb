@@ -3,6 +3,7 @@
     <div class="flyers">
       <% @flyers.each do |flyer| %>
         <div>
+          <p><%= flyer.name %></p>
           <% if flyer.link != nil %>
             <%= link_to flyer.link, target: "_blank" do %>
               <%= image_tag flyer.avatar.url(:medium), class: "flyer-imag" %>
