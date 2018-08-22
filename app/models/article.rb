@@ -19,7 +19,8 @@ class Article < ApplicationRecord
                                     /\.jpeg?$/,
                                     /\.docx?$/,
                                     /\.html?$/,
-                                    /\.php?$/]
+                                    /\.php?$/,
+                                    /\.ppt?$/]
 
   validates :title, presence: true
   validates :body, presence: true

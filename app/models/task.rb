@@ -17,7 +17,8 @@ class Task < ApplicationRecord
                                                       /\.png?$/,
                                                       /\.jpg?$/,
                                                       /\.jpeg?$/,
-                                                      /\.docx?$/]
+                                                      /\.docx?$/,
+                                                      /\.ppt?$/]
 
   validates :body, presence: true
   validates :user, presence: true

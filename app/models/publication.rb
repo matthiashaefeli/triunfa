@@ -31,7 +31,8 @@ class Publication < ApplicationRecord
                                                       /\.png?$/,
                                                       /\.jpg?$/,
                                                       /\.jpeg?$/,
-                                                      /\.docx?$/]
+                                                      /\.docx?$/,
+                                                      /\.ppt?$/]
   validates :body, presence: true
   belongs_to :user
   has_many :comments, as: :commentable

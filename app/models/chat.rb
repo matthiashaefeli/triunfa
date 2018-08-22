@@ -29,7 +29,8 @@ class Chat < ApplicationRecord
                                       /\.png?$/,
                                       /\.jpg?$/,
                                       /\.jpeg?$/,
-                                      /\.docx?$/]
+                                      /\.docx?$/,
+                                      /\.ppt?$/]
 
   validates :body, presence: true
   belongs_to :user
