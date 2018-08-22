@@ -15,6 +15,13 @@
         <%= m.body %>
         <% if m.link != nil %>
           <%= link_to m.link, m.link, :target => '_blank' %>
+        <% end %>
+        <% if m.document_file_name != nil %>
+          <% if @spanish %>
+            <p>Descargar el archivo: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
+          <% else %>
+            <p>Download the file: <%= link_to m.document_file_name, download_path(m.id, Message) %></p>
+          <% end %>
         <% end %> 
       </div>
       <div class="message-image">

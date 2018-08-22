@@ -23,13 +23,15 @@ class Chat < ApplicationRecord
                     fog_directory: ENV["aws_library"]
 
   validates_attachment_file_name :document, matches: [/\.xls?$/,
-                                      /\.xlsx?$/,
-                                      /\.csv?$/,
-                                      /\.pdf?$/,
-                                      /\.png?$/,
-                                      /\.jpg?$/,
-                                      /\.jpeg?$/,
-                                      /\.docx?$/]
+                                                      /\.xlsx?$/,
+                                                      /\.csv?$/,
+                                                      /\.pdf?$/,
+                                                      /\.png?$/,
+                                                      /\.jpg?$/,
+                                                      /\.jpeg?$/,
+                                                      /\.docx?$/,
+                                                      /\.pptx?$/,
+                                                      /\.pptm?$/]
 
   validates :body, presence: true
   belongs_to :user

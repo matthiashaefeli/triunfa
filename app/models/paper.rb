@@ -22,7 +22,9 @@ class Paper < ApplicationRecord
                                                       /\.png?$/,
                                                       /\.jpg?$/,
                                                       /\.jpeg?$/,
-                                                      /\.docx?$/]
+                                                      /\.docx?$/,
+                                                      /\.pptx?$/,
+                                                      /\.pptm?$/]
 
   process_in_background :document
 end
