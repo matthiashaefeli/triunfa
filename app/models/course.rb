@@ -27,7 +27,8 @@ class Course < ApplicationRecord
                                                       /\.pdf?$/,
                                                       /\.png?$/,
                                                       /\.jpg?$/,
-                                                      /\.ppt?$/]
+                                                      /\.pptx?$/,
+                                                      /\.pptm?$/]
   validates :name, presence: true
   # validates :startdate, presence: true
   # validates :enddate, presence: true

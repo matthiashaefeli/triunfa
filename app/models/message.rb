@@ -31,7 +31,8 @@ class Message < ApplicationRecord
                                                       /\.jpg?$/,
                                                       /\.jpeg?$/,
                                                       /\.docx?$/,
-                                                      /\.ppt?$/]
+                                                      /\.pptx?$/,
+                                                      /\.pptm?$/]
 
   validates :body, presence: true
   belongs_to :user
