@@ -1,4 +1,4 @@
-<h1>Teachers</h1>
+<h1><%= @teachers.count %> Teachers</h1>
 <p><%= link_to "Clic aquí para descargar los datos de los Instructores", teachers_path(format: :xlsx) %></p>
 <input type="text" class="mySearch" id="teacherTableSearch" placeholder="Search by Name..">
 <table class="table table-hover table-bordered" id="teacher-table">

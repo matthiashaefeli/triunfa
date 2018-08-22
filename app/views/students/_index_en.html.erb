@@ -1,7 +1,7 @@
 <div class="under-nav group-index">
   <div class="group-inner">
   <p><%= link_to 'Back', root_path, class: "btn btn-sm back-button" %></p>
-  <h1>Students</h1>
+  <h1><%= @users.count %> Users</h1>
   <p><%= link_to "Click here to download student data", students_path(format: :xlsx) %></p>
   <input type="text" class="mySearch" id="studentTableSearch" placeholder="Search by name..">
   <table class="table table-hover table-bordered" id="studentTableTable">
