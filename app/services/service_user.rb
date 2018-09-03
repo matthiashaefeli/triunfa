@@ -14,7 +14,7 @@ module ServiceUser
   end
 
   def expired
-    render template: "publications/expired.html.erb" unless current_user.expired > Time.now || check_user(current_user) != "new_user"
+    render template: "publications/expired.html.erb" unless current_user.expired > Time.now || check_user(current_user) == Admin || check_user(current_user) == Teacher
   end
 
   def user_has_direction
